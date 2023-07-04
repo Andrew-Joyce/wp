@@ -105,12 +105,12 @@
         
         <section id="now-showing">
     <h2>Now Showing</h2>
-    < class="movie-container">
+    <div class="movie-container">
         <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <a href="https://www.youtube.com/watch?v=eQfMbSe7F2g" target="_blank">
-                    <img src="../media/indiana-jones-poster.jpg" alt="Indiana Jones and the Dial of Destiny">
+                    <img src="media/indiana-jones-poster.jpg" alt="Indiana Jones and the Dial of Destiny">
                 </a>
                 <div>
                     <h3>Indiana Jones and the Dial of Destiny</h3>
@@ -132,7 +132,7 @@
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <a href="https://www.youtube.com/watch?v=pBk4NYhWNMM" target="_blank">
-                    <img src="../media/barbie-poster.jpg" alt="Barbie">
+                    <img src="media/barbie-poster.jpg" alt="Barbie">
                 </a>
                 <div>
                     <h3>Barbie</h3>
@@ -153,7 +153,7 @@
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <a href="https://www.youtube.com/watch?v=IHvzw4Ibuho" target="_blank">
-                    <img src="../media/ninja-turtles-poster.jpg" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
+                    <img src="media/ninja-turtles-poster.jpg" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
                 </a>
                 <div>
                     <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
@@ -171,10 +171,11 @@
             </div>
         </div>
 
+        <!-- Movie 4 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank">
-                    <img src="../media/oppenheimer-poster.jpg" alt="Oppenheimer">
+                    <img src="media/oppenheimer-poster.jpg" alt="Oppenheimer">
                 </a>
                 <div>
                     <h3>Oppenheimer</h3>
@@ -190,8 +191,8 @@
                 <a href="booking.php?movie=DRM" class="book-now">Book Now</a>
             </div>
         </div>
-
     </div>
+</section>
 
     </main>
 
