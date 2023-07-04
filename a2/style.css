@@ -109,3 +109,26 @@ footer {
 .copyright p {
     margin-bottom: 0;
 }
+
+/* Table Styles */
+.seats-prices-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.seats-prices-table th, .seats-prices-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-container {
+    overflow-x: auto; /* This will add horizontal scrolling on smaller screens */
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+    .seats-prices-table, .seats-prices-table th, .seats-prices-table td {
+        font-size: 0.8em; /* You can decrease the font size for smaller screens */
+    }
+}
