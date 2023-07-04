@@ -117,14 +117,14 @@ footer {
 }
 
 .seats-prices-table th, .seats-prices-table td {
-    padding: 20px;
+    padding: 10px;
     text-align: center; 
     border-bottom: 1px solid #ddd;
     word-wrap: break-word; 
 }
 
-.seats-prices-table td {
-    min-width: 200px; 
+.seats-prices-table th, .seats-prices-table td {
+    width: 25%; 
 }
 
 .table-container {
