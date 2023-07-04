@@ -126,7 +126,7 @@ footer {
 
 /* Optionally set a minimum width for table cells */
 .seats-prices-table td {
-    min-width: 100px; /* You can adjust this value */
+    min-width: 200px; /* You can adjust this value */
 }
 
 .table-container {
