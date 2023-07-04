@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>A short synopsis of the Indiana Jones movie plot.</p>
+                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
                 <ul>
                     <li>Mon - Tue: 9pm</li>
                     <li>Wed - Fri: 9pm</li>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>A short synopsis of the Barbie movie plot.</p>
+                <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
                 <ul>
                     <li>Wed - Fri: 12pm</li>
                     <li>Sat - Sun: 3pm</li>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>A short synopsis of the Teenage Mutant Ninja Turtles movie plot.</p>
+                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate, but they soon get in over their heads when an army of mutants is unleashed upon them.</p>
                 <ul>
                     <li>Mon - Tue: 12pm</li>
                     <li>Wed - Fri: 6pm</li>
@@ -183,7 +183,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>A short synopsis of the Oppenheimer movie plot.</p>
+                <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
                 <ul>
                     <li>Mon - Tue: 6pm</li>
                     <li>Sat - Sun: 9pm</li>
