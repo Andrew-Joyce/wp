@@ -110,34 +110,31 @@ footer {
     margin-bottom: 0;
 }
 
-/* Table Styles */
 .seats-prices-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* This ensures the columns have a fixed width */
+    table-layout: fixed; 
 }
 
 .seats-prices-table th, .seats-prices-table td {
     padding: 20px;
-    text-align: center; /* This centers the text in the columns */
+    text-align: center; 
     border-bottom: 1px solid #ddd;
-    word-wrap: break-word; /* This will prevent text from overflowing */
+    word-wrap: break-word; 
 }
 
-/* Optionally set a minimum width for table cells */
 .seats-prices-table td {
-    min-width: 200px; /* You can adjust this value */
+    min-width: 200px; 
 }
 
 .table-container {
-    overflow-x: auto; /* This will add horizontal scrolling on smaller screens */
+    overflow-x: auto; 
 }
 
-/* Media query for mobile devices */
 @media screen and (max-width: 600px) {
     .seats-prices-table, .seats-prices-table th, .seats-prices-table td {
-        font-size: 0.8em; /* You can decrease the font size for smaller screens */
-        padding: 10px; /* Decreased padding for mobile view */
+        font-size: 0.8em; 
+        padding: 10px; 
     }
 }
 
