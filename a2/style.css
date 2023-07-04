@@ -114,12 +114,19 @@ footer {
 .seats-prices-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; /* This ensures the columns have a fixed width */
 }
 
 .seats-prices-table th, .seats-prices-table td {
     padding: 20px;
-    text-align: left;
+    text-align: center; /* This centers the text in the columns */
     border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* This will prevent text from overflowing */
+}
+
+/* Optionally set a minimum width for table cells */
+.seats-prices-table td {
+    min-width: 100px; /* You can adjust this value */
 }
 
 .table-container {
@@ -130,5 +137,7 @@ footer {
 @media screen and (max-width: 600px) {
     .seats-prices-table, .seats-prices-table th, .seats-prices-table td {
         font-size: 0.8em; /* You can decrease the font size for smaller screens */
+        padding: 10px; /* Decreased padding for mobile view */
     }
 }
+
