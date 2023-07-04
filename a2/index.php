@@ -132,7 +132,7 @@
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <a href="https://www.youtube.com/watch?v=pBk4NYhWNMM" target="_blank">
-                    <img src="media/barbie-poster.jpg" alt="Barbie">
+                    <img src="../media/barbie-poster.jpg" alt="Barbie">
                 </a>
                 <div>
                     <h3>Barbie</h3>
