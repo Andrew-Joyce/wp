@@ -1,19 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
+
+header {
     background: #35424a;
     color: #ffffff;
     text-align: center;
     padding: 1em 0;
-  }
-  
-  header h1 {
-    margin: 0;
   }
   
   header img {
@@ -21,116 +11,109 @@ body {
     height: 60px;
   }
   
+
   nav {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    background: #333;
+  }
+  
+  nav li {
+    margin: 0 10px;
   }
   
   nav a {
     color: #ffffff;
-    padding: 15px 20px;
     text-decoration: none;
-    text-align: center;
+    padding: 5px;
   }
   
-  nav a:hover {
-    background: #555;
-  }
-  
+
   main {
-    padding: 20px;
-  }
-  
-  /* Form Styles */
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  form input[type="radio"] {
-    margin-right: 5px;
-  }
-  
-  form select,
-  form input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px;
-  }
-  
-  form input[type="submit"] {
-    display: inline-block;
-    background: #333;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  form input[type="submit"]:hover {
-    background: #444;
-  }
-  
-  footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 1em 0;
-    background: #35424a;
-    color: #ffffff;
   }
   
-  .contact-info {
+  section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  h2 {
     margin-bottom: 20px;
   }
   
-  .contact-info h3 {
-    margin-top: 0;
+
+  .about-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
-  .contact-info p {
-    margin: 5px 0;
+  .about-info p {
+    margin: 10px;
   }
   
-  .contact-info a {
-    color: #ffffff;
-    text-decoration: none;
+
+  .seats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
-  /* Table Styles */
-  .seats-prices-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
-  
-  .seats-prices-table th,
-  .seats-prices-table td {
-    padding: 10px;
+  .seats-info {
+    flex-basis: 100%;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-    word-wrap: break-word;
+    margin-bottom: 20px;
   }
   
-  .seats-prices-table th,
-  .seats-prices-table td {
-    width: 25%;
+  .seats-info img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
   }
   
-  .table-container {
+  .pricing-table {
     overflow-x: auto;
   }
   
+  .pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pricing-table th,
+  .pricing-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .pricing-table th {
+    background: #f2f2f2;
+  }
+  
+
   .movie-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
     gap: 20px;
   }
   
@@ -162,48 +145,23 @@ body {
     transform: rotateY(180deg);
   }
   
-  @media screen and (min-width: 600px) {
-    .movie-container {
-      justify-content: flex-start;
-    }
-  
-    .movie-card {
-      flex-basis: calc(50% - 20px);
-    }
-  }
-  #seats-and-prices {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: Left;
-    align-items: flex-start;
-    padding: 20px;
+
+  footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #35424a;
+    color: #ffffff;
   }
   
-  .seats-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  footer p {
+    margin: 5px;
   }
   
-  .seats-info {
-    flex: 0 0 100%;
-    max-width: 400px;
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
   }
   
-  .pricing-table {
-    flex: 0 0 400px;
-  }
-  
-  .pricing-table table {
-    width: 100%;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .seats-info {
-      flex: 0 0 calc(50% - 20px);
-    }
-  }
   
   
   
