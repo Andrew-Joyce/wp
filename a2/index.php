@@ -49,59 +49,69 @@
     	<p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
        </section>
         
-        <section id="seats-and-prices">
-            <h2>Seats and Prices</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Seat Type</th>
-                            <th>Seat Code</th>
-                            <th>Discounted Prices</th>
-                            <th>Normal Prices</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Standard Adult</td>
-                            <td>STA</td>
-                            <td>16.00</td>
-                            <td>21.50</td>
-                        </tr>
-                        <tr>
-                            <td>Standard Concession</td>
-                            <td>STP</td>
-                            <td>14.50</td>
-                            <td>19.00</td>
-                        </tr>
-                        <tr>
-                            <td>Standard Child</td>
-                            <td>STC</td>
-                            <td>13.00</td>
-                            <td>17.50</td>
-                        </tr>
-                        <tr>
-                            <td>First Class Adult</td>
-                            <td>FCA</td>
-                            <td>25.00</td>
-                            <td>31.00</td>
-                        </tr>
-                        <tr>
-                            <td>First Class Concession</td>
-                            <td>FCP</td>
-                            <td>23.50</td>
-                            <td>28.00</td>
-                        </tr>
-                        <tr>
-                            <td>First Class Child</td>
-                            <td>FCC</td>
-                            <td>22.00</td>
-                            <td>25.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+       <section id="seats-and-prices">
+    <h2>Seats and Prices</h2>
+    <div class="seats-info-container">
+        <div class="seats-info">
+            <h3>Standard Seats</h3>
+            <p>The standard seats at the cinema offer comfortable seating options for moviegoers, providing a balanced combination of support and relaxation during the movie-watching experience. These seats are designed to accommodate a wide range of audience preferences and ensure a pleasant and enjoyable viewing atmosphere.</p>
+        </div>
+        <div class="seats-info">
+            <h3>First Class Seats</h3>
+            <p>The first-class seats at the cinema offer a luxurious and premium movie-watching experience, providing extra comfort and amenities. These seats typically come with additional legroom, plush seating, and enhanced services, allowing viewers to indulge in a more exclusive and upscale cinematic experience.</p>
+        </div>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Seat Type</th>
+                    <th>Seat Code</th>
+                    <th>Discounted Prices</th>
+                    <th>Normal Prices</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Standard Adult</td>
+                    <td>STA</td>
+                    <td>16.00</td>
+                    <td>21.50</td>
+                </tr>
+                <tr>
+                    <td>Standard Concession</td>
+                    <td>STP</td>
+                    <td>14.50</td>
+                    <td>19.00</td>
+                </tr>
+                <tr>
+                    <td>Standard Child</td>
+                    <td>STC</td>
+                    <td>13.00</td>
+                    <td>17.50</td>
+                </tr>
+                <tr>
+                    <td>First Class Adult</td>
+                    <td>FCA</td>
+                    <td>25.00</td>
+                    <td>31.00</td>
+                </tr>
+                <tr>
+                    <td>First Class Concession</td>
+                    <td>FCP</td>
+                    <td>23.50</td>
+                    <td>28.00</td>
+                </tr>
+                <tr>
+                    <td>First Class Child</td>
+                    <td>FCC</td>
+                    <td>22.00</td>
+                    <td>25.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
         
         <section id="now-showing">
     <h2>Now Showing</h2>
