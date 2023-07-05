@@ -351,7 +351,13 @@ header {
   .pricing-table {
     width: max-content;
     margin: 0 auto;
+    text-align: center;
   }
+  
+  .pricing-table table {
+    margin: 0 auto;
+  }
+  
   
   .seats-info {
     width: 100%;
