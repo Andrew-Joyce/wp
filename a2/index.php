@@ -109,9 +109,7 @@
         <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <a href="https://www.youtube.com/watch?v=eQfMbSe7F2g" target="_blank">
-                    <img src="../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
-                </a>
+                <img src="../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
                 <div>
                     <h3>Indiana Jones and the Dial of Destiny</h3>
                     <p>Rating: PG</p>
@@ -131,9 +129,7 @@
         <!-- Movie 2 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <a href="https://www.youtube.com/watch?v=pBk4NYhWNMM" target="_blank">
-                    <img src="../media/barbie-poster.png" alt="Barbie">
-                </a>
+                <img src="../media/barbie-poster.png" alt="Barbie">
                 <div>
                     <h3>Barbie</h3>
                     <p>Rating: G</p>
@@ -152,9 +148,7 @@
         <!-- Movie 3 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <a href="https://www.youtube.com/watch?v=IHvzw4Ibuho" target="_blank">
-                    <img src="../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
-                </a>
+                <img src="../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
                 <div>
                     <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
                     <p>Rating: PG-13</p>
@@ -174,9 +168,7 @@
         <!-- Movie 4 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank">
-                    <img src="../media/oppenheimer-poster.png" alt="Oppenheimer">
-                </a>
+                <img src="../media/oppenheimer-poster.png" alt="Oppenheimer">
                 <div>
                     <h3>Oppenheimer</h3>
                     <p>Rating: R</p>
