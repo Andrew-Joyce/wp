@@ -4,238 +4,250 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-/* Header */
-header {
+  }
+  
+  /* Header */
+  header {
     background: #35424a;
     color: #ffffff;
     text-align: center;
     padding: 1em 0;
-}
-
-header h1 {
+  }
+  
+  header h1 {
     margin: 0;
-}
-
-header img {
+  }
+  
+  header img {
     width: 60px;
     height: 60px;
-}
-
-/* Navigation */
-nav {
+  }
+  
+  /* Navigation */
+  nav {
     display: flex;
     justify-content: center;
     background: #333;
-}
-
-nav a {
+  }
+  
+  nav a {
     color: #ffffff;
     padding: 15px 20px;
     text-decoration: none;
     text-align: center;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
     background: #555;
-}
-
-/* Main Content */
-main {
+  }
+  
+  /* Main Content */
+  main {
     padding: 20px;
-}
-
-/* Form Styles */
-form {
+  }
+  
+  /* Form Styles */
+  form {
     max-width: 600px;
     margin: 0 auto;
-}
-
-form label {
+  }
+  
+  form label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-}
-
-form input[type="radio"] {
+  }
+  
+  form input[type="radio"] {
     margin-right: 5px;
-}
-
-form select, form input[type="number"] {
+  }
+  
+  form select,
+  form input[type="number"] {
     width: 100%;
     padding: 8px;
     margin: 5px 0 20px;
-}
-
-form input[type="submit"] {
+  }
+  
+  form input[type="submit"] {
     display: inline-block;
     background: #333;
     color: #ffffff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-}
-
-form input[type="submit"]:hover {
+  }
+  
+  form input[type="submit"]:hover {
     background: #444;
-}
-
-/* Footer Styles */
-footer {
+  }
+  
+  /* Footer Styles */
+  footer {
     text-align: center;
     padding: 1em 0;
     background: #35424a;
     color: #ffffff;
-}
-
-.contact-info {
+  }
+  
+  .contact-info {
     margin-bottom: 20px;
-}
-
-.contact-info h3 {
+  }
+  
+  .contact-info h3 {
     margin-top: 0;
-}
-
-.contact-info p {
+  }
+  
+  .contact-info p {
     margin: 5px 0;
-}
-
-.contact-info a {
+  }
+  
+  .contact-info a {
     color: #ffffff;
     text-decoration: none;
-}
-
-/* Table Styles */
-.seats-prices-table {
+  }
+  
+  /* Table Styles */
+  .seats-prices-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.seats-prices-table th, .seats-prices-table td {
+  }
+  
+  .seats-prices-table th,
+  .seats-prices-table td {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     word-wrap: break-word;
-}
-
-.seats-prices-table th, .seats-prices-table td {
+  }
+  
+  .seats-prices-table th,
+  .seats-prices-table td {
     width: 25%;
-}
-
-.table-container {
+  }
+  
+  .table-container {
     overflow-x: auto;
-}
-
-/* Seats and Prices Section */
-#seats-and-prices {
-    margin-top: 40px;
-}
-
-#seats-and-prices h2 {
-    text-align: center;
-}
-
-.seats-info-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.seats-info {
-    flex-basis: 100%;
-}
-
-.seats-info h3 {
-    margin-top: 0;
-}
-
-@media screen and (min-width: 600px) {
-    .seats-info {
-        flex-basis: 50%;
-    }
-}
-
-/* Movie Cards */
-.movie-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.movie-card {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
-    perspective: 1000px;
-}
-
-.movie-card:focus .movie-front {
-    transform: rotateY(180deg);
-}
-
-.movie-card:focus .movie-back {
-    transform: rotateY(0deg);
-}
-
-.movie-card {
+  }
+  
+  /* Movie Card Styles */
+  .movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .movie-card {
     position: relative;
-}
-
-.movie-front,
-.movie-back {
+    perspective: 1000px;
+  }
+  
+  .movie-card .movie-front,
+  .movie-card .movie-back {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    transition: transform 0.6s;
-}
-
-.movie-front {
-    z-index: 2;
-}
-
-.movie-back {
+    transition: transform 0.5s ease;
+  }
+  
+  .movie-card .movie-front {
+    transform: rotateY(0deg);
+  }
+  
+  .movie-card .movie-back {
     transform: rotateY(180deg);
+  }
+  
+  .movie-card:focus .movie-front,
+  .movie-card:focus .movie-back {
+    transform: rotateY(180deg);
+  }
+  
+  .movie-card:focus .movie-back {
     z-index: 1;
-    background-color: #f5f5f5;
+  }
+  
+  .movie-card .movie-front img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-card .movie-back {
+    background-color: #fff;
     padding: 20px;
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.movie-back p {
+    justify-content: space-between;
+  }
+  
+  .movie-card .movie-back p {
     margin-bottom: 10px;
-}
-
-.movie-back ul {
-    margin: 0;
+  }
+  
+  .movie-card .movie-back ul {
     padding: 0;
+    margin: 0;
     list-style: none;
-}
-
-.movie-back li {
+  }
+  
+  .movie-card .movie-back li {
     margin-bottom: 5px;
-}
-
-.movie-back .book-now {
+  }
+  
+  .movie-card .movie-back .book-now {
     display: inline-block;
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
+    border: none;
     text-decoration: none;
-    border-radius: 4px;
-}
-
-/* Responsive Styles */
-@media screen and (min-width: 600px) {
-    .movie-card {
-        width: calc(50% - 20px);
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    .movie-container {
+      grid-template-columns: 1fr;
     }
-}
+  
+    .movie-card {
+      margin-bottom: 20px;
+    }
+  
+    .movie-card .movie-front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .movie-card .movie-front img {
+      margin-bottom: 10px;
+    }
+  
+    .movie-card .movie-back {
+      padding: 10px;
+      font-size: 0.8em;
+    }
+  
+    .seats-info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  
+    .seats-info {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  
+  
 
