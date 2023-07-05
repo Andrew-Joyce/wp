@@ -359,11 +359,16 @@ header {
   
   .pricing-table {
     width: 100%;
+    margin: 0 auto;
   }
   
-  .pricing-table {
-    width: max-content;
-    margin: 0 auto;
+  .pricing-table th:nth-child(2),
+  .pricing-table td:nth-child(2),
+  .pricing-table th:nth-child(3),
+  .pricing-table td:nth-child(3),
+  .pricing-table th:nth-child(4),
+  .pricing-table td:nth-child(4) {
+    text-align: center;
   }
   
   .pricing-table th,
@@ -376,6 +381,7 @@ header {
   .pricing-table th {
     background: #f2f2f2;
   }
+  
   
   .movie-container {
     display: flex;
