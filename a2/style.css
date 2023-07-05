@@ -1,4 +1,4 @@
-
+/* Header Area */
 header {
     background: #35424a;
     color: #ffffff;
@@ -11,6 +11,7 @@ header {
     height: 60px;
   }
   
+  /* Navigation Area */
   nav {
     position: sticky;
     top: 0;
@@ -36,6 +37,7 @@ header {
     padding: 5px;
   }
   
+  /* Main Area */
   main {
     min-height: 100vh;
     display: flex;
@@ -55,6 +57,7 @@ header {
     margin-bottom: 20px;
   }
   
+  /* About Us Section */
   .about-info {
     display: flex;
     align-items: center;
@@ -66,6 +69,7 @@ header {
     margin: 10px;
   }
   
+  /* Seats and Prices Section */
   .seats-container {
     display: flex;
     justify-content: flex-start;
@@ -106,6 +110,7 @@ header {
     background: #f2f2f2;
   }
   
+  /* Now Showing Section */
   .movie-container {
     display: flex;
     flex-wrap: wrap;
@@ -157,6 +162,7 @@ header {
     color: #ffffff;
     text-decoration: none;
   }
+  
   
   
   
