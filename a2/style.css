@@ -345,6 +345,12 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    justify-items: center;
+  }
+  
+  .pricing-table {
+    width: max-content;
+    margin: 0 auto;
   }
   
   .seats-info {
@@ -355,15 +361,6 @@ header {
     width: 200px;
     height: auto;
     margin-bottom: 10px;
-  }
-  
-  .pricing-table {
-    width: max-content;
-    margin: 0 auto;
-  }
-  
-  .pricing-table table {
-    margin: 0 auto;
   }
   
   .pricing-table th:nth-child(2),
