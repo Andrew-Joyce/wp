@@ -66,9 +66,8 @@ header {
   }
   
   .seats-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
   
@@ -132,26 +131,6 @@ header {
     padding: 20px;
   }
   
-  .movie-card:focus .movie-front,
-  .movie-card:focus .movie-back {
-    transform: rotateY(180deg);
-  }
-  
-  footer {
-    text-align: left;
-    padding: 1em;
-    background: #35424a;
-    color: #ffffff;
-  }
-  
-  footer p {
-    margin: 5px;
-  }
-  
-  footer a {
-    color: #ffffff;
-    text-decoration: none;
-  }
   
   
   
