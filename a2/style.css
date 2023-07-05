@@ -138,8 +138,9 @@ body {
   }
   
   .movie-card {
-    position: relative;
+    position: relative; 
     perspective: 1000px;
+    margin-bottom: 40px; 
   }
   
   .movie-card .movie-front,
