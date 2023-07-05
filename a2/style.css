@@ -358,7 +358,11 @@ header {
   }
   
   .pricing-table {
-    width: 100%;
+    width: max-content;
+    margin: 0 auto;
+  }
+  
+  .pricing-table table {
     margin: 0 auto;
   }
   
