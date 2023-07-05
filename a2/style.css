@@ -174,7 +174,7 @@ body {
   #seats-and-prices {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: Left;
     align-items: flex-start;
     padding: 20px;
   }
@@ -192,11 +192,11 @@ body {
   }
   
   .pricing-table {
-    flex: 0 0 400px;
+    flex: 0 0 600px;
   }
   
   .pricing-table table {
-    width: 100%;
+    width: 200%;
   }
   
   @media screen and (min-width: 768px) {
