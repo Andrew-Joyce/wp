@@ -171,31 +171,31 @@ body {
       flex-basis: calc(50% - 20px);
     }
   }
-  #seats-and-prices {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .seats-container {
-    flex: 1 1 100%;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-  
   .seats-info {
     flex: 1 1 100%;
     max-width: 400px;
   }
   
-  .pricing-table {
-    flex: 1 1 400px;
+  .seat-info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .seat-info-content img {
+    width: 100px;
+    height: 100px;
   }
   
   @media screen and (min-width: 768px) {
+    .seat-info-content {
+      flex-wrap: wrap;
+    }
+  
+    .seat-info-content img {
+      flex: 0 0 100px;
+    }
+  
     .seats-info {
       flex-basis: calc(50% - 20px);
     }
@@ -204,6 +204,7 @@ body {
       flex-basis: 400px;
     }
   }
+  
   
   
   
