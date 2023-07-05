@@ -1,26 +1,76 @@
 
-main {
+header {
+    background: #35424a;
+    color: #ffffff;
+    text-align: left;
+    padding: 1em;
+  }
+  
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  nav {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  main {
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    text-align: left;
     padding: 20px;
   }
   
   section {
     width: 100%;
-    max-width: 1200px;
     margin-bottom: 20px;
   }
   
-
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .about-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .about-info p {
+    margin: 10px;
+  }
+  
   .seats-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
   }
   
   .seats-info {
@@ -41,7 +91,7 @@ main {
   }
   
   .pricing-table table {
-    width: 100%;
+    width: max-content;
     border-collapse: collapse;
   }
   
@@ -56,12 +106,10 @@ main {
     background: #f2f2f2;
   }
   
-
   .movie-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
     gap: 20px;
   }
   
@@ -93,6 +141,22 @@ main {
     transform: rotateY(180deg);
   }
   
+  /* Footer Area */
+  footer {
+    text-align: left;
+    padding: 1em;
+    background: #35424a;
+    color: #ffffff;
+  }
+  
+  footer p {
+    margin: 5px;
+  }
+  
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
   
   
   
