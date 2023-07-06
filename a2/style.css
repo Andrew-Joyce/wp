@@ -114,15 +114,15 @@ footer {
     justify-content: center;
 }
 
-.movie-card {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    perspective 750px;
-    margin: 20px;
-    width: 100px;
-    height: 700px; 
-    position: relative;
-}
+.movie-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: start;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
 .movie-card:focus .movie-front {
     transform: rotateY(180deg);
