@@ -115,18 +115,13 @@ footer {
 }
 
 .movie-card {
-    background: #c46e6e;
     border: 1px solid #ddd;
     perspective: 750px;
     margin: 20px;
     width: 200px;
     height: auto;
     position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
-  
 
 .movie-card:focus .movie-front {
     transform: rotateY(180deg);
