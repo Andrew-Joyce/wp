@@ -112,28 +112,28 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.movie-card {
+  }
+  
+  .movie-card {
     background: #c46e6e;
     border: 1px solid #ddd;
-    perspective 750px;
-    margin: 30px;
-    width: 50px;
-    height: 700px; 
+    perspective: 750px;
+    margin: 20px;
+    width: 200px;
+    height: auto;
     position: relative;
-}
-
-.movie-card:focus .movie-front {
+  }
+  
+  .movie-card:focus .movie-front {
     transform: rotateY(180deg);
-}
-
-.movie-card:focus .movie-back {
+  }
+  
+  .movie-card:focus .movie-back {
     transform: rotateY(0);
-}
-
-.movie-front,
-.movie-back {
+  }
+  
+  .movie-front,
+  .movie-back {
     transition: transform 0.7s ease-in-out;
     transform-style: preserve-3d;
     position: absolute;
@@ -144,25 +144,25 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.movie-back {
+  }
+  
+  .movie-back {
     transform: rotateY(180deg);
-}
-
-.movie-front img {
-    width: 500px;
-    height: 1100px; 
+  }
+  
+  .movie-front img {
+    width: 100%;
+    height: auto;
     margin-bottom: 10px;
-}
-
-.movie-front div,
-.movie-back {
+  }
+  
+  .movie-front div,
+  .movie-back {
     padding: 10px;
     text-align: center;
-}
-
-.book-now {
+  }
+  
+  .book-now {
     display: inline-block;
     padding: 10px 20px;
     background-color: #333;
@@ -170,29 +170,36 @@ footer {
     text-decoration: none;
     text-align: center;
     margin-top: 10px;
-}
-
-.book-now:hover {
+  }
+  
+  .book-now:hover {
     background-color: #444;
-}
-
-@media screen and (max-width: 768px) {
+  }
+  
+  @media screen and (max-width: 767px) {
     .movie-container {
-        flex-direction: column;
+      flex-direction: column;
     }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1199px) {
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 991px) {
     .movie-card {
-        width: 45%;
+      width: 45%;
     }
-}
-
-@media screen and (min-width: 1200px) {
+  }
+  
+  @media screen and (min-width: 992px) {
     .movie-card {
-        width: 20%;
+      width: 20%;
     }
-}
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .movie-container {
+      justify-content: flex-start;
+    }
+  }
+  
 
 
   
