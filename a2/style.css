@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -6,7 +5,6 @@ body {
     padding: 0;
   }
   
-  /* Header */
   header {
     background: #35424a;
     color: #ffffff;
@@ -23,7 +21,6 @@ body {
     height: 60px;
   }
   
-  /* Navigation */
   nav {
     display: flex;
     justify-content: center;
@@ -41,12 +38,10 @@ body {
     background: #555;
   }
   
-  /* Main Content */
   main {
     padding: 20px;
   }
   
-  /* Form Styles */
   form {
     max-width: 600px;
     margin: 0 auto;
@@ -82,7 +77,6 @@ body {
     background: #444;
   }
   
-  /* Footer Styles */
   footer {
     text-align: center;
     padding: 1em 0;
@@ -144,8 +138,9 @@ body {
   }
   
   .movie-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
     justify-content: center;
   }
   
@@ -153,8 +148,7 @@ body {
     background: #f4f4f4;
     border: 1px solid #ddd;
     perspective: 1000px;
-    margin: 20px;
-    width: 150%;
+    width: 100%;
     max-width: 300px;
     position: relative;
   }
@@ -209,20 +203,14 @@ body {
   }
   
   @media screen and (max-width: 768px) {
-    .movie-card {
-      width: 45%;
-      max-width: none;
+    .movie-container {
+      grid-template-columns: 1fr;
     }
   }
   
   @media screen and (max-width: 480px) {
-    .movie-container {
-      flex-direction: column;
-    }
-  
     .movie-card {
-      width: 100%;
-      max-width: 100%;
+      max-width: none;
     }
   }
   
