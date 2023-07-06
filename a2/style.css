@@ -140,14 +140,14 @@ body {
   .movie-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 100px;
     justify-content: center;
   }
   
   .movie-card {
     background: #f4f4f4;
     border: 1px solid #ddd;
-    perspective: 1000px;
+    perspective: 100px;
     width: 100%;
     max-width: 100px;
     position: relative;
