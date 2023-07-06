@@ -151,8 +151,8 @@ footer {
 }
 
 .movie-front img {
-    width: 1000px;
-    height: 2500px; 
+    width: 300px;
+    height: auto; 
     margin-bottom: 10px;
 }
 
