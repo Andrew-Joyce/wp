@@ -115,8 +115,7 @@ footer {
 }
 
 .movie-card {
-    border: 1px solid #ddd;
-    perspective: 750px;
+    perspective: 1000px;
     margin: 20px;
     width: 200px;
     height: 900px;
