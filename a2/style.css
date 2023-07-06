@@ -112,7 +112,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
   }
+  
   
   .movie-card {
     background: #c46e6e;
