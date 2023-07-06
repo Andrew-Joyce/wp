@@ -99,23 +99,25 @@
     <div class="movie-container">
         <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
-                <div>
-                    <h3>Indiana Jones and the Dial of Destiny</h3>
-                    <p>Rating: PG</p>
-                </div>
+        <div class="movie-front">
+            <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
+            <div>
+            <h3>Indiana Jones and the Dial of Destiny</h3>
+            <p>Rating: PG</p>
             </div>
-            <div class="movie-back">
-                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
-                <ul>
-                    <li>Mon - Tue: 9pm</li>
-                    <li>Wed - Fri: 9pm</li>
-                    <li>Sat - Sun: 6pm</li>
-                </ul>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <a href="booking.php?movie=ACT" class="book-now">Book Now</a>
+        </div>
+        <div class="movie-back">
+            <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
+            <ul>
+            <li>Mon - Tue: 9pm</li>
+            <li>Wed - Fri: 9pm</li>
+            <li>Sat - Sun: 6pm</li>
+            </ul>
+            <a href="booking.php?movie=ACT" class="book-now">Book Now</a>
+            <div class="video-container">
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/eQfMbSe7F2g?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
+        </div>
         </div>
         <!-- Movie 2 -->
         <div class="movie-card" tabindex="0">
