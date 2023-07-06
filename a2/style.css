@@ -217,10 +217,11 @@ body {
   }
   
   @media screen and (min-width: 1200px) {
-    .movie-card {
-      width: 30%;
+    .movie-container {
+      justify-content: space-between;
     }
   }
+  
   
   
 
