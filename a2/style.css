@@ -154,8 +154,8 @@ body {
     border: 1px solid #ddd;
     perspective: 1000px;
     margin: 20px;
-    width: 100%;
-    max-width: 400px;
+    width: 150%;
+    max-width: 300px;
     position: relative;
   }
   
