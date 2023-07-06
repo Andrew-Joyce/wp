@@ -147,11 +147,12 @@ body {
   .movie-card {
     background: #f4f4f4;
     border: 1px solid #ddd;
-    perspective: 100px;
-    width: 100%;
-    max-width: 100px;
+    perspective: 1000px;
+    margin: 20px;
+    width: 100px; 
     position: relative;
   }
+  
   
   .movie-card:focus .movie-front {
     transform: rotateY(180deg);
