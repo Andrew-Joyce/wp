@@ -175,8 +175,6 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    text-align: center;
 }
 
 .movie-back {
@@ -189,25 +187,46 @@ footer {
     margin-bottom: 10px;
 }
 
-.movie-front div {
-    margin-bottom: 10px;
+.movie-front div,
+.movie-back {
+    padding: 10px;
+    text-align: center;
+    color: #333;
 }
 
-.movie-front p {
-    margin-bottom: 10px;
+.book-now {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #35424a;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.movie-front ul {
-    margin-bottom: 10px;
-    padding: 0;
-}
-
-.movie-front li {
-    list-style-type: none;
-    margin-bottom: 5px;
+.book-now:hover {
+    background-color: #555;
 }
 
 .movie-back iframe {
     width: 100%;
     height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .movie-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .movie-card {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .movie-card {
+        width: 20%;
+    }
 }
