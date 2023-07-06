@@ -193,7 +193,7 @@ body {
       
       .book-now:hover {
         background-color: #444;
-      }
+      }      
       
       @media screen and (max-width: 768px) {
         .movie-container {
