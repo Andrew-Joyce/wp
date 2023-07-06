@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -21,7 +20,6 @@ header {
 header h1 {
     margin: 0;
 }
-
 
 header img {
     width: 60px;
@@ -201,28 +199,28 @@ footer {
     width: 100%;
     height: 100%;
     pointer-events: none;
-  }
-  
-  .youtube-video {
+}
+
+.youtube-video {
     width: 100%;
     height: 100%;
-  }
-  
-  .movie-card:focus .video-container {
+}
+
+.movie-card:focus .video-container {
     pointer-events: auto;
-  }
-  
-  .movie-card:focus .video-container iframe {
+}
+
+.movie-card:focus .video-container iframe {
     display: block;
-  }
-  
-  .movie-card:focus .movie-front {
+}
+
+.movie-card:focus .movie-front {
     transform: rotateY(180deg);
-  }
-  
-  .movie-card:focus .movie-back {
+}
+
+.movie-card:focus .movie-back {
     transform: rotateY(0);
-  }
+}
 
 .book-now {
     display: inline-block;
