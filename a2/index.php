@@ -97,28 +97,130 @@
         <section id="now-showing">
     <h2>Now Showing</h2>
     <div class="movie-container">
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Card with YouTube Clip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* Add your other CSS styles here */
+
+        .movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .movie-card {
+            perspective: 1000px;
+            margin: 20px;
+            width: 200px;
+            height: 900px;
+            position: relative;
+        }
+
+        .movie-card:focus .movie-front {
+            transform: rotateY(180deg);
+        }
+
+        .movie-card:focus .movie-back {
+            transform: rotateY(0);
+        }
+
+        .movie-front,
+        .movie-back {
+            transition: transform 0.7s ease-in-out;
+            transform-style: preserve-3d;
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie-back {
+            transform: rotateY(180deg);
+        }
+
+        .movie-front img {
+            width: 500px;
+            height: 800px;
+            margin-bottom: 10px;
+        }
+
+        .movie-front div,
+        .movie-back {
+            padding: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .youtube-video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .movie-card:focus .video-container {
+            pointer-events: auto;
+        }
+
+        .movie-card:focus .video-container iframe {
+            display: block;
+        }
+
+        .movie-card:focus .movie-front {
+            transform: rotateY(180deg);
+        }
+
+        .movie-card:focus .movie-back {
+            transform: rotateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="movie-container">
         <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
-        <div class="movie-front">
-            <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
-            <div>
-            <h3>Indiana Jones and the Dial of Destiny</h3>
-            <p>Rating: PG</p>
+            <div class="movie-front">
+                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
+                <div>
+                    <h3>Indiana Jones and the Dial of Destiny</h3>
+                    <p>Rating: PG</p>
+                </div>
             </div>
-        </div>
-        <div class="movie-back">
-            <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
-            <ul>
-            <li>Mon - Tue: 9pm</li>
-            <li>Wed - Fri: 9pm</li>
-            <li>Sat - Sun: 6pm</li>
-            </ul>
-            <a href="booking.php?movie=ACT" class="book-now">Book Now</a>
-            <div class="video-container">
-            <iframe class="youtube-video" src="https://www.youtube.com/embed/eQfMbSe7F2g?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="movie-back">
+                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
+                <ul>
+                    <li>Mon - Tue: 9pm</li>
+                    <li>Wed - Fri: 9pm</li>
+                    <li>Sat - Sun: 6pm</li>
+                </ul>
+                book-now">Book Now</a>
+                <div class="video-container">
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/eQfMbSe7F2g?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
-        </div>
         <!-- Movie 2 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
