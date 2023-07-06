@@ -143,15 +143,38 @@ footer {
 
 
 .movie-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 20px;
   }
   
-  .panel-front {
+  .panel {
     width: 100%;
+    perspective: 1000px;
+  }
+  
+  .panel-front,
+  .panel-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+  }
+  
+  .panel-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+  
+  .panel-back {
+    transform: rotateY(180deg);
+    background-color: #f9f9f9;
     text-align: center;
+  }
+  
+  .movie-panel:focus .panel {
+    transform: rotateY(180deg);
   }
   
   .panel-front img {
@@ -165,12 +188,6 @@ footer {
   
   .rating {
     margin-top: 5px;
-  }
-  
-  .panel-back {
-    display: none;
-    padding: 10px;
-    text-align: center;
   }
   
   .synopsis {
@@ -195,45 +212,6 @@ footer {
     text-decoration: none;
   }
   
-  @media (min-width: 768px) {  /* Medium / Tablet View */
-    .movie-panel {
-      flex-direction: row;
-      align-items: flex-start;
-    }
-  
-    .panel-front {
-      width: 40%;
-    }
-  
-    .panel-back {
-      display: none;
-    }
-  }
-  
-  @media (min-width: 992px) {  /* Large / Desktop View */
-    .movie-panel {
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-  
-    .panel-front {
-      width: 48%;
-    }
-  
-    .panel-back {
-      display: none;
-    }
-  }
-  
-  /* Styling for the flip effect on focus */
-  .movie-panel:focus .panel-front {
-    display: none;
-  }
-  
-  .movie-panel:focus .panel-back {
-    display: block;
-  }
   
 
 
