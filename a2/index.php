@@ -9,14 +9,10 @@
     <script src='../wireframe.js'></script>
   </head>
   <body>
-  <header>
-  <video autoplay loop muted>
-    <source src="../../media/HeaderClip.mp4" type="video/mp4">
-  </video>
-  <img src="logo.png" alt="Lunardo Cinema">
-  <h1>Lunardo Cinema</h1>
-</header>
-
+    <header>
+        <img src="logo.png" alt="Lunardo Cinema">
+        <h1>Lunardo Cinema</h1>
+    </header>
     
     <nav id="navbar">
         <a href="#about-us">About Us</a>
