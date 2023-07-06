@@ -56,7 +56,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Header Area */
 header {
   position: fixed;
   top: 0;
@@ -67,7 +66,6 @@ header {
   z-index: 100;
 }
 
-/* Navigation Area */
 nav {
   position: sticky;
   top: 0;
@@ -92,7 +90,7 @@ nav a {
   color: var(--text-color);
 }
 
-/* Main Area */
+
 main {
   padding: 50px;
 }
@@ -102,13 +100,13 @@ section {
   margin-bottom: 50px;
 }
 
-/* About Us */
+
 #about-us {
   background-color: var(--background-color);
   padding: 50px;
 }
 
-/* Seats and Prices */
+
 #seats-prices {
   background-color: var(--background-color);
   padding: 50px;
@@ -125,7 +123,6 @@ table th, table td {
   text-align: left;
 }
 
-/* Now Showing */
 #now-showing {
   padding: 50px;
 }
@@ -167,99 +164,27 @@ table th, table td {
   transform: rotateY(0);
 }
 
-/* Footer area */
-footer {
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+
+@media (max-width: 767px) {
+  .movie-panel {
+    flex-direction: column;
   }
-  
-  footer a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  /* Responsive Styles */
-  
-  /* Small / Mobile View */
-  @media (max-width: 767px) {
-    header {
-      padding: 10px;
-    }
-  
-    nav {
-      padding: 10px;
-    }
-  
-    main {
-      padding: 20px;
-    }
-  
-    section {
-      margin-bottom: 30px;
-    }
-  
-    #about-us,
-    #seats-prices,
-    #now-showing {
-      padding: 20px;
-    }
-  
-    .movie-panel {
-      flex-direction: column;
-    }
-  
-    .front,
-    .back {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    .front img {
-      margin-bottom: 10px;
-    }
-  }
-  
-  /* Medium / Tablet View */
-  @media (min-width: 768px) and (max-width: 991px) {
-    nav li {
-      display: block;
-      margin-bottom: 10px;
-    }
-  
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
     .movie-panel {
       flex-direction: row;
+      justify-content: space-between;
     }
-  
-    .front,
-    .back {
-      width: 50%;
-      padding: 20px;
-    }
-  
-    .front img {
-      margin-bottom: 20px;
+    
+    .front, .back {
+      width: 48%;
+      margin-bottom: 0;
     }
   }
   
-  /* Large / Desktop View */
-  @media (min-width: 992px) {
-    .movie-panel {
-      flex-wrap: nowrap;
-      margin-bottom: 30px;
-    }
-  
-    .front,
-    .back {
-      width: 50%;
-      padding: 30px;
-    }
-  
-    .front img {
-      margin-bottom: 30px;
-    }
-  }
+
   
  
 
