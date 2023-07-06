@@ -115,10 +115,9 @@
   </div>
 </section>
         
-        <section id="now-showing">
+<section id="now-showing">
     <h2>Now Showing</h2>
     <div class="movie-container">
-        <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
                 <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
