@@ -155,7 +155,8 @@ body {
     border: 1px solid #ddd;
     perspective: 1000px;
     margin: 20px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px; 
     position: relative;
   }
   
@@ -213,12 +214,14 @@ body {
   @media screen and (min-width: 769px) and (max-width: 1199px) {
     .movie-card {
       width: 45%;
+      max-width: none; 
     }
   }
   
   @media screen and (min-width: 1200px) {
-    .movie-container {
-      justify-content: space-between;
+    .movie-card {
+      width: 30%;
+      max-width: none; 
     }
   }
   
