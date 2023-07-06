@@ -143,7 +143,6 @@ body {
     }
   }
   
-  /* Movie Styles */
   .movie-container {
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +155,7 @@ body {
     perspective: 1000px;
     margin: 20px;
     width: 100%;
-    max-width: 300px; 
+    max-width: 300px;
     position: relative;
   }
   
@@ -214,14 +213,13 @@ body {
   @media screen and (min-width: 769px) and (max-width: 1199px) {
     .movie-card {
       width: 45%;
-      max-width: none; 
+      max-width: none;
     }
   }
   
   @media screen and (min-width: 1200px) {
-    .movie-card {
-      width: 30%;
-      max-width: none; 
+    .movie-container {
+      justify-content: space-between;
     }
   }
   
