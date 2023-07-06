@@ -143,16 +143,16 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 1500px; 
+    margin-bottom: 15000px; 
 }
 
 
 .movie-card {
     background: #f4f4f4;
     border: 1px solid #ddd;
-    perspective: 1000px;
+    perspective: 500px;
     margin: 20px;
-    width: 300px;
+    width: 150px;
     position: relative;
 }
 
