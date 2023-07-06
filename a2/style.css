@@ -120,6 +120,7 @@ footer {
     perspective: 1000px;
     margin: 20px;
     width: 200px;
+    height: 300px; 
     position: relative;
 }
 
@@ -131,13 +132,18 @@ footer {
     transform: rotateY(0);
 }
 
-.movie-front, .movie-back {
+.movie-front,
+.movie-back {
     transition: transform 0.7s ease-in-out;
     transform-style: preserve-3d;
     position: absolute;
     backface-visibility: hidden;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie-back {
@@ -145,11 +151,15 @@ footer {
 }
 
 .movie-front img {
-    width: 100%;
+    width: auto;
+    height: 250px; 
+    margin-bottom: 10px;
 }
 
-.movie-front div, .movie-back {
+.movie-front div,
+.movie-back {
     padding: 10px;
+    text-align: center;
 }
 
 .book-now {
@@ -183,6 +193,7 @@ footer {
         width: 30%;
     }
 }
+
 
   
   
