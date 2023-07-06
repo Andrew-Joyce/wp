@@ -138,20 +138,16 @@ body {
   }
   
   .movie-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 100px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
   }
   
   .movie-card {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    perspective: 1000px;
+    width: 200px;
     margin: 20px;
-    width: 100px; 
-    position: relative;
   }
+  
   
   
   .movie-card:focus .movie-front {
