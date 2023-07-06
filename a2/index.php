@@ -53,12 +53,12 @@
   <h2>Seats and Prices</h2>
   <div class="seats-container">
     <div class="seats-info standard-seats">
-      <img src="../media/Profern-Standard-Twin.png" alt="Standard Seats">
+      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats">
       <h3>Standard Seats</h3>
       <p>The standard seats at the cinema offer comfortable seating options for moviegoers, providing a balanced combination of support and relaxation during the movie-watching experience. These seats are designed to accommodate a wide range of audience preferences and ensure a pleasant and enjoyable viewing atmosphere.</p>
     </div>
     <div class="seats-info first-class-seats">
-      <img src="../media/Profern-Verona_Twin.png" alt="First Class Seats">
+      <img src="../../media/Profern-Verona_Twin.png" alt="First Class Seats">
       <h3>First Class Seats</h3>
       <p>The first-class seats at the cinema offer a luxurious and premium movie-watching experience, providing extra comfort and amenities. These seats typically come with additional legroom, plush seating, and enhanced services, allowing viewers to indulge in a more exclusive and upscale cinematic experience.</p>
     </div>
@@ -121,7 +121,7 @@
         <!-- Movie 1 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <img src="../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
+                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
                 <div>
                     <h3>Indiana Jones and the Dial of Destiny</h3>
                     <p>Rating: PG</p>
@@ -141,7 +141,7 @@
         <!-- Movie 2 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <img src="../media/barbie-poster.png" alt="Barbie">
+                <img src="../../media/barbie-poster.png" alt="Barbie">
                 <div>
                     <h3>Barbie</h3>
                     <p>Rating: G</p>
@@ -160,7 +160,7 @@
         <!-- Movie 3 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <img src="../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
+                <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
                 <div>
                     <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
                     <p>Rating: PG-13</p>
@@ -180,7 +180,7 @@
         <!-- Movie 4 -->
         <div class="movie-card" tabindex="0">
             <div class="movie-front">
-                <img src="../media/oppenheimer-poster.png" alt="Oppenheimer">
+                <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
                 <div>
                     <h3>Oppenheimer</h3>
                     <p>Rating: R</p>
