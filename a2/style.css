@@ -149,7 +149,7 @@ body {
     border: 1px solid #ddd;
     perspective: 1000px;
     width: 100%;
-    max-width: 300px;
+    max-width: 100px;
     position: relative;
   }
   
