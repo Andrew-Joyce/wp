@@ -1,3 +1,5 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 
 body {
@@ -12,7 +14,7 @@ header {
     color: #ffffff;
     text-align: center;
     padding: 1em 0;
-    font-family: 'Monoton'
+    font-family: 'Monoton', cursive;
 }
 header h1 {
     margin: 0;
