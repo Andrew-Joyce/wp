@@ -13,7 +13,7 @@
   <body>
 
     <header>
-        <img src="logo.png" alt="Lunardo Cinema">
+        <img src="../../logo.png" alt="Lunardo Cinema">
         <h1>Lunardo Cinema</h1>
     </header>
     
