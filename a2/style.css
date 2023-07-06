@@ -119,8 +119,8 @@ footer {
     border: 1px solid #ddd;
     perspective: 1000px;
     margin: 20px;
-    width: 100px;
-    height: 200px; 
+    width: 300x;
+    height: auto; 
     position: relative;
 }
 
