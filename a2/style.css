@@ -114,6 +114,16 @@ footer {
     justify-content: center;
 }
 
+.movie-card {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    perspective: 1000px;
+    margin: 20px;
+    width: 300x;
+    height: auto; 
+    position: relative;
+}
+
 .movie-card:focus .movie-front {
     transform: rotateY(180deg);
 }
