@@ -1,189 +1,114 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&display=swap');
-
+/* General Styles */
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
-  font-family: 'Oswald', Arial, sans-serif;
-}
-
-/* Color Scheme */
-:root {
-  --primary-color: #ff3366;
-  --secondary-color: #333333;
-  --background-color: #f5f5f5;
-  --text-color: #333333;
-  --link-color: #ff3366;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
+/* Header */
 header {
-  background-color: var(--background-color);
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
 }
 
+header h1 {
+    margin: 0;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Navigation */
 nav {
-  background-color: var(--background-color);
-}
-
-h1, h2 {
-  color: var(--primary-color);
-}
-
-table th, table td {
-  color: var(--secondary-color);
-}
-
-.movie-panel {
-  background-color: var(--background-color);
-}
-
-.back {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-a {
-  color: var(--link-color);
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--background-color);
-  padding: 20px;
-  z-index: 100;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  background-color: var(--background-color);
-  padding: 20px;
-  z-index: 99;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    background: #333;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--text-color);
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
 }
 
+nav a:hover {
+    background: #555;
+}
 
+/* Main Content */
 main {
-  padding: 50px;
+    padding: 20px;
 }
 
-section {
-  min-height: 100vh;
-  margin-bottom: 50px;
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-
-#about-us {
-  background-color: var(--background-color);
-  padding: 50px;
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
-
-#seats-prices {
-  background-color: var(--background-color);
-  padding: 50px;
+form input[type="radio"] {
+    margin-right: 5px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+form select, form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
 }
 
-table th, table td {
-  padding: 10px;
-  text-align: left;
+form input[type="submit"] {
+    display: inline-block;
+    background: #333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-#now-showing {
-  padding: 50px;
+form input[type="submit"]:hover {
+    background: #444;
 }
 
-.movie-panel {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #35424a;
+    color: #ffffff;
 }
 
-.front, .back {
-  width: 100%;
-  padding: 20px;
-  background-color: var(--background-color);
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+.contact-info {
+    margin-bottom: 20px;
 }
 
-.front {
-  margin-bottom: 20px;
+.contact-info h3 {
+    margin-top: 0;
 }
 
-.front img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.contact-info p {
+    margin: 5px 0;
 }
 
-.back {
-  display: none;
+.contact-info a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.movie-panel:focus .front {
-  transform: rotateY(180deg);
+.copyright p {
+    margin-bottom: 0;
 }
-
-.movie-panel:focus .back {
-  display: block;
-  transform: rotateY(0);
-}
-
-
-@media (max-width: 767px) {
-  .movie-panel {
-    flex-direction: column;
-  }
-}
-
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .movie-panel {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    
-    .front, .back {
-      width: 48%;
-      margin-bottom: 0;
-    }
-  }
-  
 
   
  
