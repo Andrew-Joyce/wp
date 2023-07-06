@@ -37,6 +37,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transform: rotateY(0deg);
   }
   
   .back {
@@ -70,8 +71,7 @@
   .back .book-now:hover {
     background-color: #0056b3;
   }
-  
-  
+    
   .front {
     display: grid;
     grid-template-columns: 1fr;
@@ -95,18 +95,12 @@
     color: #888;
   }
   
-  @media (min-width: 768px) {
-    .front {
-      grid-template-columns: 1fr 2fr;
-    }
+  .panel:focus .front {
+    transform: rotateY(180deg);
+  }
   
-    .front .poster {
-      justify-self: center;
-    }
-  
-    .front .title {
-      text-align: left;
-    }
+  .panel:focus .back {
+    transform: rotateY(0deg);
   }
   
   @media (max-width: 767px) {
@@ -154,6 +148,7 @@
       justify-content: center;
     }
   }
+  
   
   
 
