@@ -345,6 +345,23 @@ footer {
       margin-top: 20px;
     }
   }
+  .seats-image {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .gold-class-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin-right: 20px;
+  }
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
   
   
   

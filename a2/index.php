@@ -89,53 +89,46 @@
   <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
 </div>
 
-<div class="seats-text">
-</div>  
-  <h3>Gold Class Seats</h3>
-  <div class="table-container">
-  <div class="seats-image">
-  <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats Image" class="gold-class-image">
-    <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience.</p>
-    <p>Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
-    <table class="seats-prices-table">
-      <thead>
-        <tr>
-          <th>Seat Type</th>
-          <th>Seat Code</th>
-          <th>Discounted Prices</th>
-          <th>Normal Prices</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>First Class Adult</td>
-          <td>FCA</td>
-          <td>$25.00</td>
-          <td>$31.00</td>
-        </tr>
-        <tr>
-          <td>First Class Concession</td>
-          <td>FCP</td>
-          <td>$23.50</td>
-          <td>$28.00</td>
-        </tr>
-        <tr>
-          <td>First Class Child</td>
-          <td>FCC</td>
-          <td>$22.00</td>
-          <td>$25.00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
 <div class="seats-image">
   <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats Image" class="gold-class-image">
 </div>
 
-
-        
+<div class="table-container">
+  <h3>Gold Class Seats</h3>
+  <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience.</p>
+  <p>Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
+  <table class="seats-prices-table">
+    <thead>
+      <tr>
+        <th>Seat Type</th>
+        <th>Seat Code</th>
+        <th>Discounted Prices</th>
+        <th>Normal Prices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Class Adult</td>
+        <td>FCA</td>
+        <td>$25.00</td>
+        <td>$31.00</td>
+      </tr>
+      <tr>
+        <td>First Class Concession</td>
+        <td>FCP</td>
+        <td>$23.50</td>
+        <td>$28.00</td>
+      </tr>
+      <tr>
+        <td>First Class Child</td>
+        <td>FCC</td>
+        <td>$22.00</td>
+        <td>$25.00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+     
         <section id="now-showing">
     <h2>Now Showing</h2>
     <div class="movie-container">
