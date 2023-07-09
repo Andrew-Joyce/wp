@@ -53,9 +53,9 @@ nav a {
     border: none;
     border-radius: 4px;
     transition: background 0.3s;
-    margin: 0 5px;
     position: relative;
     overflow: hidden;
+    flex-grow: 1; 
 }
 
 nav a::before {
@@ -76,6 +76,7 @@ nav a:hover {
 nav a:hover::before {
     left: 100%;
 }
+
 
 
 main {
