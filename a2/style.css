@@ -55,7 +55,8 @@ nav a {
     transition: background 0.3s;
     position: relative;
     overflow: hidden;
-    flex-grow: 1; 
+    flex-grow: 1;
+    font-size: 18px;
 }
 
 nav a::before {
@@ -76,7 +77,6 @@ nav a:hover {
 nav a:hover::before {
     left: 100%;
 }
-
 
 
 main {
