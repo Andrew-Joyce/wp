@@ -145,7 +145,6 @@
 }
 
 .movie-card {
-    font-size: 3vw;
     box-sizing: border-box;
     perspective: 1000px;
     margin: 20px;
