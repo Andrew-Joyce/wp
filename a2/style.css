@@ -134,11 +134,11 @@
   .movie-card {
     perspective: 1000px;
     margin: 20px;
-    width: calc(100% - 40px);
+    width: calc(25% - 60px);
     max-width: 450px;
     height: auto;
     position: relative;
-
+  }
   
   .movie-card:focus .movie-front {
     transform: rotateY(180deg);
@@ -173,7 +173,7 @@
   }
 
   .movie-front {
-    height: auto;
+    height: 50vh;
   }  
   
   
