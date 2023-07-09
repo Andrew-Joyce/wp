@@ -52,15 +52,15 @@
     <div class="seats-text">
       <h2>Seats and Prices</h2>
       <div class="seats-content">
+        <div class="seats-image">
+          <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
+        </div>
         <div class="seats-text-content">
           <h3>Standard Seats</h3>
           <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience.</p>
           <p>With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema.</p>
           <p>Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts.</p>
           <p>Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
-        </div>
-        <div class="seats-image">
-          <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
         </div>
       </div>
     </div>
@@ -145,6 +145,7 @@
     </div>
   </div>
 </section>
+
 
 
 
