@@ -330,9 +330,14 @@
       margin-top: 20px;
       flex-basis: 100%;
     }
-    
+
   h2, h3, p {
   overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
     
