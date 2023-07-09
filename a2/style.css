@@ -132,13 +132,7 @@
   }
   
   .movie-card {
-    box-sizing: border-box;
-    perspective: 1000px;
-    margin: 20px;
-    width: calc(100% - 60px);
-    max-width: 450px;
-    height: auto;
-    position: relative;
+    flex-basis: calc(100% - 40px);
   }
   
   
@@ -286,13 +280,13 @@
   
   @media (min-width: 768px) {
     .movie-card {
-      width: calc(50% - 60px);
+      flex-basis: calc(50% - 40px);
     }
   }
   
   @media (min-width: 1200px) {
     .movie-card {
-      width: calc(25% - 60px);
+      flex-basis: calc(25% - 40px);
     }
   }
   
