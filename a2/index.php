@@ -11,7 +11,7 @@
   <body>
   <header style="text-align: center;">
     <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px;">
+        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 200px; height: auto;">
         <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
     </header>
