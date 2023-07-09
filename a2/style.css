@@ -359,5 +359,9 @@ table {
   table tr:nth-child(2n-1) {
     background-color: #cccccc;
   }
-  
+  #myTable th {
+    font-weight: bold;
+    font-size: 20px;
+  }
+   
     
