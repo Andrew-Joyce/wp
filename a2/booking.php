@@ -367,18 +367,19 @@
 </main>
 
 <footer>
-  <div class="contact-info">
-    <h3>Contact Us</h3>
-    <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
-    <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
-    <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2023 Lunardo Cinema. All rights reserved.</p>
-  </div>
+<div class="contact-info">
+  <h3>Contact Us</h3>
+  <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+  <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+</div>
+<div class="copyright">
+  <p>&copy; 2023 Lunardo Cinema. All rights reserved.</p>
+</div>
 </footer>
 </body>
 
 </html>
+
 
        
