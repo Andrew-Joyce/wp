@@ -90,11 +90,11 @@
 </div>
 
 <div class="seats-text">
+</div>  
+  <h3>Gold Class Seats</h3>
   <div class="table-container">
   <div class="seats-image">
   <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats Image" class="gold-class-image">
-</div>  
-  <h3>Gold Class Seats</h3>
     <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience.</p>
     <p>Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
     <table class="seats-prices-table">
