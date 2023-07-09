@@ -111,6 +111,20 @@
   </div>
 </fieldset>
 
+<fieldset>
+    <legend>Contact Information:</legend>
+    <div class="contact-info">
+      <label for="name">Full Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" name="mobile" id="mobile" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+  </fieldset>
+
 
       <button type="submit">Submit</button>
     </form>
