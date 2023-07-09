@@ -40,100 +40,101 @@
 
   <main>
     <form method="POST" action="" id="booking-form">
-      <fieldset id="fieldset-session-ACT">
-        <legend>Select Session for Indiana Jones and the Dial of Destiny:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-1" value="9pm">
-            <label for="session-1">9pm</label>
-            <select name="day" id="day1">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-2" value="6pm">
-            <label for="session-2">6pm</label>
-            <select name="day" id="day2">
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
+        <fieldset id="fieldset-session-ACT">
+    <legend>Select Session for Indiana Jones and the Dial of Destiny:</legend>
+    <div class="session-selection">
+        <div class="session">
+        <input type="radio" name="session" id="session-1" value="9pm">
+        <label for="session-1">9pm</label>
+        <select name="day" id="day1">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+        </select>
         </div>
-      </fieldset>
+        <div class="session">
+        <input type="radio" name="session" id="session-2" value="6pm">
+        <label for="session-2">6pm</label>
+        <select name="day" id="day2">
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+        </select>
+        </div>
+    </div>
+    </fieldset>
 
-      <fieldset id="fieldset-session-RMC">
-        <legend>Select Session for Barbie:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-3" value="12pm">
-            <label for="session-3">12pm</label>
-            <select name="day" id="day3">
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-4" value="3pm">
-            <label for="session-4">3pm</label>
-            <select name="day" id="day4">
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
+    <fieldset id="fieldset-session-RMC">
+    <legend>Select Session for Barbie:</legend>
+    <div class="session-selection">
+        <div class="session">
+        <input type="radio" name="session" id="session-3" value="12pm">
+        <label for="session-3">12pm</label>
+        <select name="day" id="day3">
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+        </select>
         </div>
-      </fieldset>
+        <div class="session">
+        <input type="radio" name="session" id="session-4" value="3pm">
+        <label for="session-4">3pm</label>
+        <select name="day" id="day4">
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+        </select>
+        </div>
+    </div>
+    </fieldset>
 
-      <fieldset id="fieldset-session-ANM">
-        <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-5" value="12pm">
-            <label for="session-5">12pm</label>
-            <select name="day" id="day5">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-6" value="6pm">
-            <label for="session-6">6pm</label>
-            <select name="day" id="day6">
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
+    <fieldset id="fieldset-session-ANM">
+    <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
+    <div class="session-selection">
+        <div class="session">
+        <input type="radio" name="session" id="session-5" value="12pm">
+        <label for="session-5">12pm</label>
+        <select name="day" id="day5">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+        </select>
         </div>
-      </fieldset>
+        <div class="session">
+        <input type="radio" name="session" id="session-6" value="6pm">
+        <label for="session-6">6pm</label>
+        <select name="day" id="day6">
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+        </select>
+        </div>
+    </div>
+    </fieldset>
 
-      <fieldset id="fieldset-session-DRM">
-        <legend>Select Session for Oppenheimer:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-7" value="6pm">
-            <label for="session-7">6pm</label>
-            <select name="day" id="day7">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-8" value="9pm">
-            <label for="session-8">9pm</label>
-            <select name="day" id="day8">
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
+    <fieldset id="fieldset-session-DRM">
+    <legend>Select Session for Oppenheimer:</legend>
+    <div class="session-selection">
+        <div class="session">
+        <input type="radio" name="session" id="session-7" value="6pm">
+        <label for="session-7">6pm</label>
+        <select name="day" id="day7">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+        </select>
         </div>
-      </fieldset>
+        <div class="session">
+        <input type="radio" name="session" id="session-8" value="9pm">
+        <label for="session-8">9pm</label>
+        <select name="day" id="day8">
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+        </select>
+        </div>
+    </div>
+    </fieldset>
+
 
       <fieldset>
         <legend>Select Standard Seats:</legend>
@@ -157,7 +158,7 @@
             </div>
         </div>
         </fieldset>
-        
+
       <fieldset>
         <legend>Contact Information:</legend>
         <div class="contact-info">
