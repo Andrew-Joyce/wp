@@ -21,53 +21,55 @@
     </nav>
 
     <main>
-        <h2>Movie Booking Form</h2>
-        <form action="confirmation.php" method="post">
-            <fieldset>
-                <legend>Select Movie</legend>
-                <input type="radio" name="movie" value="indiana-jones" id="indiana-jones">
-                <label for="indiana-jones">Indiana Jones and the Dial of Destiny</label><br>
+    <form action="" method="post">
+      <input type="hidden" name="movie" value="<?php echo $_GET['movie']; ?>">
+      
+      <fieldset>
+        <legend>Select Session:</legend>
+        <div class="session-label">
+          <input type="radio" id="session1" name="day" value="WED" data-pricing="discprice">
+          <label for="session1" class="session-button">Wednesday (Discount)</label>
+        </div>
+        <div class="session-label">
+          <input type="radio" id="session2" name="day" value="MON" data-pricing="fullprice">
+          <label for="session2" class="session-button">Monday (Full Price)</label>
+        </div>
 
-                <input type="radio" name="movie" value="barbie" id="barbie">
-                <label for="barbie">Barbie</label><br>
-
-                <input type="radio" name="movie" value="ninja-turtles" id="ninja-turtles">
-                <label for="ninja-turtles">Teenage Mutant Ninja Turtles: Mutant Mayhem</label><br>
-
-                <input type="radio" name="movie" value="oppenheimer" id="oppenheimer">
-                <label for="oppenheimer">Oppenheimer</label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Select Date and Time</legend>
-                <label for="date">Date:</label>
-                <input type="date" name="date" id="date" required><br>
-                <label for="time">Time:</label>
-                <input type="time" name="time" id="time" required>
-            </fieldset>
-
-            <fieldset>
-                <legend>Select Tickets</legend>
-                <label for="standard-tickets">Standard Tickets:</label>
-                <input type="number" name="standard-tickets" id="standard-tickets" min="0" value="0"><br>
-                
-                <label for="first-class-tickets">First Class Tickets:</label>
-                <input type="number" name="first-class-tickets" id="first-class-tickets" min="0" value="0">
-            </fieldset>
-
-            <fieldset>
-                <legend>Contact Information</legend>
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required><br>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required><br>
-                <label for="phone">Phone:</label>
-                <input type="tel" name="phone" id="phone" required>
-            </fieldset>
-
-            <input type="submit" value="Submit Booking">
-        </form>
-    </main>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Select Seats:</legend>
+        <div id="seats-&-prices">
+          <div class="seats-container">
+            <div class="seat standard-seat">
+              <label for="seats[STA]">Standard Adult</label>
+              <select name="seats[STA]">
+                <option value="" selected disabled>Please select</option>
+                <option value="1" data-fullprice="21.5" data-discprice="16">1</option>
+                <option value="2" data-fullprice="21.5" data-discprice="16">2</option>
+              </select>
+              <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Customer Details:</legend>
+        <label for="customer-name">Full Name:</label>
+        <input type="text" id="customer-name" name="customer[name]" required>
+        
+        <label for="customer-email">Email Address:</label>
+        <input type="email" id="customer-email" name="customer[email]" required>
+        
+        <label for="customer-mobile">Australian Mobile Number:</label>
+        <input type="tel" id="customer-mobile" name="customer[mobile]" pattern="[0-9]{10}" required>
+      </fieldset>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  
 
     <footer>
                     ...
