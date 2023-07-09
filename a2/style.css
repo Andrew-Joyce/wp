@@ -367,17 +367,17 @@ footer {
     overflow-x: auto;
   }
   
-  @media (max-width: 767px) {
+  @media screen and (max-width: 600px) {
     .seats-content {
       flex-direction: column;
     }
-  
-    .seats-text,
+    
     .seats-image {
-      margin-right: 0;
-      margin-bottom: 20px;
+      order: 1;
+      margin-top: 20px;
     }
   }
+  
   
   
   

@@ -45,6 +45,7 @@
       </div>
     </div>
     <section id="seats-and-prices">
+    <section id="seats-and-prices">
   <h2>Seats and Prices</h2>
   <div class="seats-content">
     <div class="seats-text">
@@ -91,6 +92,7 @@
     </div>
   </div>
 </section>
+
         
         <section id="now-showing">
     <h2>Now Showing</h2>
