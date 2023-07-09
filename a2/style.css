@@ -359,5 +359,12 @@ table {
   table tr:nth-child(2n-1) {
     background-color: #cccccc;
   }
-   
+
+  fieldset legend {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
     
