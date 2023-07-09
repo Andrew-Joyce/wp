@@ -29,8 +29,6 @@
       <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
       <h3>A Fresh New Look</h3>
       <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
-      <h3>Upgraded Seating for Ultimate Comfort</h3>
-      <p>With the comfort of our audience as a priority, we’ve installed plush new seating. Our standard seats have been designed to offer generous legroom and superior comfort. For those looking for an extra luxurious experience, our first-class reclining seats offer the ultimate in comfort and elegance, ensuring that you can relax and lose yourself in the movie.</p>
       <h3>World-Class Projection and Sound Systems</h3>
       <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
       <h3>Serving the Local Community</h3>
