@@ -22,25 +22,29 @@
     </nav>
     
     <main>
-        <section id="about-us">
-    	<h2>About Us</h2>
-    	<p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art 	movie destination.</p>
-    
+  <section id="about-us">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
     	<h3>A Fresh New Look</h3>
    	 <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambience that sets the stage for an unforgettable movie-	going experience.</p>
     	<h3>Upgraded Seating for Ultimate Comfort</h3>
    	 <p>With the comfort of our audience as a priority, we’ve installed plush new seating. Our standard seats have been designed to offer generous legroom and superior comfort. For those looking for an extra luxurious experience, our first-class reclining seats offer the ultimate in comfort and 	elegance, ensuring that you can relax and lose yourself in the movie.</p>
     	<h3>World-Class Projection and Sound Systems</h3>
     	<p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colours that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. 	Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
-    
    	 <h3>Serving the Local Community</h3>
     	<p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
     	<h3>Sustainable and Eco-Friendly</h3>
    	 <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimised HVAC systems not only enhance your experience but also minimise our carbon footprint. Our commitment to sustainability also extends to using 	locally sourced concessions, and we are actively engaging in recycling programs.</p>
     	<p>Learn more about <a href="https://professional.dolby.com/cinema/" target="_blank" rel="noopener noreferrer">Dolby Vision</a> and <a href="https://professional.dolby.com/cinema/dolby-atmos" target="_blank" rel="noopener noreferrer">Dolby Atmos</a>.</p>
     	<p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
-       </section>
-        
+        </div>
+      <div class="about-image">
+        <img src="../../media/capri.png" alt="Cinema Image">
+      </div>
+    </div>
+  </section>
         <section id="seats-and-prices">
             <h2>Seats and Prices</h2>
             <div class="table-container">
