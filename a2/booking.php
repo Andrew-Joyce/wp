@@ -56,7 +56,30 @@
   <main>
     <form method="POST" action="" id="booking-form">
     <fieldset>
-  <legend>Select Session:</legend>
+  <legend>Select Session for Indiana Jones:</legend>
+  <div class="session-selection">
+    <div class="session">
+      <input type="radio" name="session" id="session-3" value="12pm">
+      <label for="session-3">12pm</label>
+      <select name="day" id="day">
+        <option value="wed">Wednesday</option>
+        <option value="thu">Thursday</option>
+        <option value="fri">Friday</option>
+      </select>
+    </div>
+    <div class="session">
+      <input type="radio" name="session" id="session-4" value="3pm">
+      <label for="session-4">3pm</label>
+      <select name="day" id="day">
+        <option value="sat">Saturday</option>
+        <option value="sun">Sunday</option>
+      </select>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Select Session for Other Movies:</legend>
   <div class="session-selection">
     <div class="session">
       <input type="radio" name="session" id="session-1" value="9pm">
@@ -77,25 +100,9 @@
         <option value="sun">Sunday</option>
       </select>
     </div>
-    <div class="session">
-      <input type="radio" name="session" id="session-3" value="12pm">
-      <label for="session-3">12pm</label>
-      <select name="day" id="day">
-        <option value="wed">Wednesday</option>
-        <option value="thu">Thursday</option>
-        <option value="fri">Friday</option>
-      </select>
-    </div>
-    <div class="session">
-      <input type="radio" name="session" id="session-4" value="3pm">
-      <label for="session-4">3pm</label>
-      <select name="day" id="day">
-        <option value="sat">Saturday</option>
-        <option value="sun">Sunday</option>
-      </select>
-    </div>
   </div>
 </fieldset>
+
 
 
       <fieldset>
