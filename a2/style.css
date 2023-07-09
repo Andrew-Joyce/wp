@@ -129,7 +129,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+    margin-bottom: 50px; 
+    min-height: 100vh; 
+    }
   
   .movie-card {
     perspective: 1000px;
@@ -138,7 +140,7 @@
     max-width: 450px;
     height: auto;
     position: relative;
-
+  }
   
   .movie-card:focus .movie-front {
     transform: rotateY(180deg);
@@ -243,7 +245,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+    min-height: 100vh; 
+}
   
   .seats-container {
     display: flex;
