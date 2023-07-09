@@ -322,6 +322,7 @@ footer {
   
   .seats-image {
     flex-shrink: 0;
+    margin-right: 20px;
   }
   
   .standard-seat-image {
@@ -355,7 +356,6 @@ footer {
     max-width: 100%;
     height: auto;
     max-height: 100%;
-    margin-right: 20px;
   }
   
   .table-container {
