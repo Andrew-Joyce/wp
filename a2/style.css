@@ -332,11 +332,9 @@ footer {
     flex-shrink: 0;
   }
   
-  .standard-seat-image,
-  .gold-class-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
+  .standard-seat-image {
+    float: right;
+    margin-left: 10px;
   }
   
   .table-container {
