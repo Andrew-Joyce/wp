@@ -11,7 +11,7 @@
   <body>
   <header style="text-align: center;">
     <div style="display: inline-block;">
-        <img src="../../media/cinema.png" alt="Cinema">
+        <img src="../../media/Cinema.png" alt="Cinema">
         <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
     </header>
