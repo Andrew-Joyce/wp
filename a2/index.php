@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
+                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller.</p>
                 <ul>
                     <li>Mon - Tue: 9pm</li>
                     <li>Wed - Fri: 9pm</li>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="movie-back">
-                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate, but they soon get in over their heads when an army of mutants is unleashed upon them.</p>
+                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate.</p>
                 <ul>
                     <li>Mon - Tue: 12pm</li>
                     <li>Wed - Fri: 6pm</li>
