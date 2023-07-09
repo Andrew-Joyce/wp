@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 
 body {
@@ -14,16 +14,30 @@ header {
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 3vw;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
-                 0 0 20px rgba(255, 0, 0, 0.8),
-                 0 0 30px rgba(255, 0, 0, 0.8),
-                 0 0 40px rgba(255, 0, 0, 0.8),
-                 0 0 50px rgba(255, 0, 0, 0.8),
-                 0 0 60px rgba(255, 0, 0, 0.8),
-                 0 0 70px rgba(255, 0, 0, 0.8),
-                 0 0 80px rgba(255, 0, 0, 0.8);
-    animation: flicker 1s infinite alternate;
+    background-color: black;
+    border: 2px solid #fff;
+    animation: rainbow 5s infinite linear, flicker 1s infinite alternate;
+  }
+  
+  @keyframes rainbow {
+    0% {
+      text-shadow: 0 0 10px red,
+                   0 0 20px orange,
+                   0 0 30px yellow,
+                   0 0 40px green,
+                   0 0 50px blue,
+                   0 0 60px indigo,
+                   0 0 70px violet;
+    }
+    100% {
+      text-shadow: 0 0 10px violet,
+                   0 0 20px indigo,
+                   0 0 30px blue,
+                   0 0 40px green,
+                   0 0 50px yellow,
+                   0 0 60px orange,
+                   0 0 70px red;
+    }
   }
   
   @keyframes flicker {
@@ -40,8 +54,7 @@ header {
     50% {
       text-shadow: none;
     }
-  }
-  
+  }  
 
 
 header h1 {
@@ -79,7 +92,7 @@ nav a {
     position: relative;
     overflow: hidden;
     flex-grow: 1;
-    font-family: 'Black Han Sans', sans-serif; 
+    font-family: 'Oswald', sans-serif; 
     font-size: 24px;
 }
 
