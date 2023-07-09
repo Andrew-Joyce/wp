@@ -128,17 +128,15 @@
   .movie-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px; 
-    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .movie-card {
     box-sizing: border-box;
     perspective: 1000px;
-    margin: 10px; 
-    width: calc(33.33% - 20px); 
-    max-width: 350px; 
+    margin: 20px;
+    width: calc(100% - 60px);
+    max-width: 450px;
     height: auto;
     position: relative;
 }
