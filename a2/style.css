@@ -130,7 +130,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 50px; 
-    min-height: 100vh; 
     }
   
   .movie-card {
