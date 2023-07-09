@@ -309,49 +309,30 @@ footer {
     flex-wrap: wrap;
   }
   
-  .seats-content {
+  #seats-and-prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .seats-container {
+    flex: 1;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: flex-end;
   }
   
   .seats-text {
     flex: 1;
     margin-right: 20px;
+    text-align: right;
   }
   
   .seats-image {
     flex-shrink: 0;
-    margin-right: 20px;
   }
   
-  .standard-seat-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-  }
-  
-  .table-container {
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .seats-content {
-      flex-direction: column;
-    }
-    
-    .seats-image {
-      order: 2;
-      margin-top: 20px;
-    }
-  }
-  .seats-image {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
+  .standard-seat-image,
   .gold-class-image {
     max-width: 100%;
     height: auto;
@@ -362,6 +343,7 @@ footer {
     width: 100%;
     overflow-x: auto;
   }
+  
   
   
   

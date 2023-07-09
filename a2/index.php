@@ -51,7 +51,7 @@
   <div class="seats-container">
     <div class="seats-text">
       <h2>Seats and Prices</h2>
-      <div class="seats-text">
+      <div class="seats-text-content">
         <h3>Standard Seats</h3>
         <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience.</p>
         <p>With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema.</p>
@@ -138,6 +138,7 @@
     </table>
   </div>
 </section>
+
 
      
         <section id="now-showing">
