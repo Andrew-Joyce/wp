@@ -11,31 +11,16 @@
     const selectedMovie = urlParams.get('movie');
 
     document.addEventListener('DOMContentLoaded', () => {
-      switch (selectedMovie) {
-        case 'ACT':
-          document.getElementById('movie-1').checked = true;
-          document.getElementById('session-1').disabled = true;
-          document.getElementById('session-3').disabled = true;
-          break;
-        case 'RMC':
-          document.getElementById('movie-2').checked = true;
-          document.getElementById('session-1').disabled = true;
-          document.getElementById('session-2').disabled = true;
-          document.getElementById('session-4').disabled = true;
-          break;
-        case 'ANM':
-          document.getElementById('movie-3').checked = true;
-          document.getElementById('session-2').disabled = true;
-          document.getElementById('session-4').disabled = true;
-          break;
-        case 'DRM':
-          document.getElementById('movie-4').checked = true;
-          document.getElementById('session-1').disabled = true;
-          document.getElementById('session-2').disabled = true;
-          document.getElementById('session-3').disabled = true;
-          break;
-        default:
-          break;
+      const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+      sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+      });
+
+      if (selectedMovie) {
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+          selectedFieldset.style.display = 'block';
+        }
       }
     });
   </script>
