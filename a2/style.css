@@ -426,5 +426,10 @@ table {
   .select-options li:hover {
     background-color: #f1f1f1;
   }
+  .select-options li {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 18px;
+  }
   
     
