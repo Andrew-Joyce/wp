@@ -128,7 +128,7 @@
 </div>
 
 <div class="seats-image">
-  <img src="../../media/Profern-Verona-Image.png" alt="Gold Class Seats Image" class="gold-class-image">
+  <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats Image" class="gold-class-image">
 </div>
 
 
