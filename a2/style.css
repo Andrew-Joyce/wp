@@ -253,7 +253,7 @@
   }
   .about-container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
   }
   
@@ -261,15 +261,18 @@
     flex-basis: 70%;
   }
   
+  .about-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  
   .about-image {
     flex-basis: 30%;
     display: flex;
-    align-items: flex-start; 
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
+    align-items: flex-start;
   }
   
   
