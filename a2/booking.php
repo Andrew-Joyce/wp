@@ -46,7 +46,7 @@
             <div class="synopsis">
             <h2>Indiana Jones and the Dial of Destiny</h2>
             <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
-            <p><strong>Starring:</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
+            <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
             </div>
             <div class="trailer">
@@ -83,7 +83,7 @@
         <div class="synopsis">
             <h2>Barbie</h2>
             <p>Enter the fascinating world of Barbie and join her on an exciting adventure. Experience a heartwarming story filled with friendship, courage, and dreams. Barbie will captivate you with her charm and inspire you to believe in yourself. Get ready for an unforgettable journey with Barbie!</p>
-            <p><strong>Starring:</strong> - Margot Robbie · Kingsley Ben-Adi · Ryan Gosling ·  Emma Mackey</p>
+            <p><strong>Starring</strong> - Margot Robbie · Kingsley Ben-Adi · Ryan Gosling ·  Emma Mackey</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1517268/" target="_blank">IMDb</a>.</p>
         </div>
         <div class="trailer">
@@ -121,7 +121,7 @@
         <div class="synopsis">
             <h2>Teenage Mutant Ninja Turtles: Mutant Mayhem</h2>
             <p>Join the fearless Teenage Mutant Ninja Turtles in their latest mission to save the city from the clutches of evil. Watch as Leonardo, Donatello, Michelangelo, and Raphael unleash their ninja skills to combat powerful enemies. Get ready for an adrenaline-pumping adventure with the heroes in a half-shell!</p>
-            <p><strong>Starring:</strong> - Ayo Edebiri · Rose Byrne · Seth Rogen · Jackie Chan</p>
+            <p><strong>Starring</strong> - Ayo Edebiri · Rose Byrne · Seth Rogen · Jackie Chan</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt8589698/" target="_blank">IMDb</a>.</p>
         </div>
         <div class="trailer">
@@ -156,7 +156,7 @@
         <div class="synopsis">
             <h2>Oppenheimer</h2>
             <p>Discover the untold story of J. Robert Oppenheimer, the brilliant scientist behind the development of the atomic bomb. Dive into the complex world of physics, politics, and moral dilemmas as Oppenheimer grapples with the consequences of his groundbreaking work. Experience a thought-provoking journey through history and ethics.</p>
-            <p><strong>Starring:</strong> - Cillian Murphy · Emily Blunt· Matt Damon · Robert Downey Jr.</p>
+            <p><strong>Starring</strong> - Cillian Murphy · Emily Blunt· Matt Damon · Robert Downey Jr.</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt15398776/" target="_blank">IMDb</a>.</p>
         </div>
         <div class="trailer">

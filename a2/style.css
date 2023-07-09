@@ -389,6 +389,11 @@ table {
       flex-basis: 100%;
     }
   }
-  
+  select {
+    width: 200px;
+    height: 60px;
+    padding: 20px;
+    font-size: 16px; 
+  }
   
     
