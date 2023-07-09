@@ -42,6 +42,15 @@
     
     <form method="POST" action="" id="booking-form">
         <fieldset id="fieldset-session-ACT">
+        <div class="movie-details" id="indiana-jones-details" style="display: block;">
+            <div class="synopsis">
+                <h2>Indiana Jones and the Dial of Destiny</h2>
+                <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
+            </div>
+            <div class="trailer">
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div> 
     <legend>Select Session for Indiana Jones and the Dial of Destiny:</legend>
     <div class="session-selection">
         <div class="session">
