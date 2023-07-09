@@ -51,7 +51,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div> 
-        <legend>Select Session for Indiana Jones and the Dial of Destiny:</legend>
+        <legend>Select Session</legend>
         <div class="session-selection">
             <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
@@ -86,7 +86,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         </div>
-        <legend>Select Session for Barbie:</legend>
+        <legend>Select Session</legend>
         <div class="session-selection">
             <div class="session">
             <input type="radio" name="session" id="session-3" value="12pm">
@@ -111,7 +111,7 @@
 
 
     <fieldset id="fieldset-session-ANM">
-    <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
+    <legend>Select Session</legend>
 
             <div class="movie-details" id="tmnt-details" style="display: block;">
         <div class="synopsis">
@@ -146,7 +146,17 @@
     </fieldset>
 
     <fieldset id="fieldset-session-DRM">
-    <legend>Select Session for Oppenheimer:</legend>
+            <div class="movie-details" id="oppenheimer-details" style="display: block;">
+        <div class="synopsis">
+            <h2>Oppenheimer</h2>
+            <p>Discover the untold story of J. Robert Oppenheimer, the brilliant scientist behind the development of the atomic bomb. Dive into the complex world of physics, politics, and moral dilemmas as Oppenheimer grapples with the consequences of his groundbreaking work. Experience a thought-provoking journey through history and ethics.</p>
+        </div>
+        <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bK6ldnjE3Y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
+
+    <legend>Select Session</legend>
     <div class="session-selection">
         <div class="session">
         <input type="radio" name="session" id="session-7" value="6pm">
