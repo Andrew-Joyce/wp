@@ -18,18 +18,25 @@ header {
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 3vw; 
+    animation: flicker 1.5s infinite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
+@keyframes flicker {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+}
 
 header h1 {
     color: black;
     margin: 0;
-}
-
-
-header img {
-    width: 60px;
-    height: 60px;
 }
 
 header img {
