@@ -61,11 +61,6 @@
       <p>Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts.</p>
       <p>Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
     </div>
-    <div class="seats-image">
-      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
-    </div>
-  </div>
-
   <div class="table-container">
     <table class="seats-prices-table">
       <thead>
@@ -97,7 +92,9 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  <    <div class="seats-image">
+      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
+    </div>
 </div>
 
 
