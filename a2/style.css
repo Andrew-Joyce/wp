@@ -389,8 +389,18 @@ table {
       flex-basis: 100%;
     }
   }
-  .label-size {
-    font-size: 20px;
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
   }
-  
+
+  .contact-info .form-field {
+    flex-basis: 50%; /* Two columns on larger screens */
+  }
+
+  @media (max-width: 600px) {
+    .contact-info .form-field {
+      flex-basis: 100%; /* One column on smaller screens */
+    }
+  }
     
