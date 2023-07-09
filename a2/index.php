@@ -82,7 +82,7 @@
       </table>
     </div>
     <div class="seat-image">
-      <img src="../../media/Profern-Standard-TWin.png" alt="Standard Seats Image">
+      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image">
     </div>
   </div>
 </section>
