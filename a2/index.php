@@ -45,6 +45,12 @@
       </div>
     </div>
 
+
+
+    <section id="Seats and Prices">
+    <div class="seats-container">
+      <div class="seats-text">
+        <h2>Seats and Prices </h2>
     <div class="seats-text">
   <div class="table-container">
     <h3>Standard Seats</h3>
