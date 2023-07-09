@@ -16,41 +16,90 @@
     </div>
     </header>
     <nav id="navbar">
-        <a href="#about-us">About Us</a>
-        <a href="#seats-&-prices">Seats & Prices</a>
         <a href="#now-showing">Now Showing</a>
+        <a href="#seats-&-prices">Seats & Prices</a>
+        <a href="#about-us">About Us</a>
     </nav>
     
     <main>
-    <section id="about-us">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
-      <h3>A Fresh New Look</h3>
-      <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
-        <div class="about-image">
-            <img src="../../media/Capri.png" alt="Cinema Image">
+    <section id="now-showing">
+    <h2>Now Showing</h2>
+    <div class="movie-container">
+        <!-- Movie 1 -->
+        <div class="movie-card" tabindex="0">
+            <div class="movie-front">
+                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
+                <div>
+                    <h3>Indiana Jones and the Dial of Destiny</h3>
+                    <p>Rating: PG</p>
+                </div>
+            </div>
+            <div class="movie-back">
+                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
+                <ul>
+                    <li>Mon - Tue: 9pm</li>
+                    <li>Wed - Fri: 9pm</li>
+                    <li>Sat - Sun: 6pm</li>
+                </ul>
+                <a href="booking.php?movie=ACT" class="book-now">Book Now</a>
+            </div>
         </div>
-      <h3>World-Class Projection and Sound Systems</h3>
-        <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
-
-        <div style="display: flex; justify-content: center; gap: 20px;">
-        <a href="https://professional.dolby.com/cinema/">
-            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:300px;height:100px;border:0;">
-        </a>
-
-        <a href="https://professional.dolby.com/cinema/dolby-atmos">
-            <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:300px;height:100px;border:0;">
-        </a>
+        <!-- Movie 2 -->
+        <div class="movie-card" tabindex="0">
+            <div class="movie-front">
+                <img src="../../media/barbie-poster.png" alt="Barbie">
+                <div>
+                    <h3>Barbie</h3>
+                    <p>Rating: G</p>
+                </div>
+            </div>
+            <div class="movie-back">
+                <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
+                <ul>
+                    <li>Wed - Fri: 12pm</li>
+                    <li>Sat - Sun: 3pm</li>
+                </ul>
+                <a href="booking.php?movie=RMC" class="book-now">Book Now</a>
+            </div>
         </div>
-
-      <h3>Serving the Local Community</h3>
-      <p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
-      <h3>Sustainable and Eco-Friendly</h3>
-      <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
-      <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
-  </div>
+        <!-- Movie 3 -->
+        <div class="movie-card" tabindex="0">
+            <div class="movie-front">
+                <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
+                <div>
+                    <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
+                    <p>Rating: PG-13</p>
+                </div>
+            </div>
+            <div class="movie-back">
+                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate, but they soon get in over their heads when an army of mutants is unleashed upon them.</p>
+                <ul>
+                    <li>Mon - Tue: 12pm</li>
+                    <li>Wed - Fri: 6pm</li>
+                    <li>Sat - Sun: 12pm</li>
+                </ul>
+                <a href="booking.php?movie=ANM" class="book-now">Book Now</a>
+            </div>
+        </div>
+        <!-- Movie 4 -->
+        <div class="movie-card" tabindex="0">
+            <div class="movie-front">
+                <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
+                <div>
+                    <h3>Oppenheimer</h3>
+                    <p>Rating: R</p>
+                </div>
+            </div>
+            <div class="movie-back">
+                <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
+                <ul>
+                    <li>Mon - Tue: 6pm</li>
+                    <li>Sat - Sun: 9pm</li>
+                </ul>
+                <a href="booking.php?movie=DRM" class="book-now">Book Now</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section>
@@ -140,87 +189,37 @@
   </div>
 </section>
 
+<section id="about-us">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
+      <h3>A Fresh New Look</h3>
+      <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
+        <div class="about-image">
+            <img src="../../media/Capri.png" alt="Cinema Image">
+        </div>
+      <h3>World-Class Projection and Sound Systems</h3>
+        <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
 
-     
-        <section id="now-showing">
-    <h2>Now Showing</h2>
-    <div class="movie-container">
-        <!-- Movie 1 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
-                <div>
-                    <h3>Indiana Jones and the Dial of Destiny</h3>
-                    <p>Rating: PG</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.</p>
-                <ul>
-                    <li>Mon - Tue: 9pm</li>
-                    <li>Wed - Fri: 9pm</li>
-                    <li>Sat - Sun: 6pm</li>
-                </ul>
-                <a href="booking.php?movie=ACT" class="book-now">Book Now</a>
-            </div>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+        <a href="https://professional.dolby.com/cinema/">
+            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:300px;height:100px;border:0;">
+        </a>
+
+        <a href="https://professional.dolby.com/cinema/dolby-atmos">
+            <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:300px;height:100px;border:0;">
+        </a>
         </div>
-        <!-- Movie 2 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/barbie-poster.png" alt="Barbie">
-                <div>
-                    <h3>Barbie</h3>
-                    <p>Rating: G</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
-                <ul>
-                    <li>Wed - Fri: 12pm</li>
-                    <li>Sat - Sun: 3pm</li>
-                </ul>
-                <a href="booking.php?movie=RMC" class="book-now">Book Now</a>
-            </div>
-        </div>
-        <!-- Movie 3 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
-                <div>
-                    <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
-                    <p>Rating: PG-13</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate, but they soon get in over their heads when an army of mutants is unleashed upon them.</p>
-                <ul>
-                    <li>Mon - Tue: 12pm</li>
-                    <li>Wed - Fri: 6pm</li>
-                    <li>Sat - Sun: 12pm</li>
-                </ul>
-                <a href="booking.php?movie=ANM" class="book-now">Book Now</a>
-            </div>
-        </div>
-        <!-- Movie 4 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
-                <div>
-                    <h3>Oppenheimer</h3>
-                    <p>Rating: R</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
-                <ul>
-                    <li>Mon - Tue: 6pm</li>
-                    <li>Sat - Sun: 9pm</li>
-                </ul>
-                <a href="booking.php?movie=DRM" class="book-now">Book Now</a>
-            </div>
-        </div>
-    </div>
+
+      <h3>Serving the Local Community</h3>
+      <p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
+      <h3>Sustainable and Eco-Friendly</h3>
+      <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
+      <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
+  </div>
 </section>
+
     </main>
     <footer>
        <div class="contact-info">
