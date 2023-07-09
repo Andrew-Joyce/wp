@@ -241,20 +241,20 @@
   }
 
   section {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
   }
   
   h2 {
-    text-align: center;
+    text-align: left;
     font-size: 28px;
     margin-bottom: 20px;
   }
   .about-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   
   .about-text {
