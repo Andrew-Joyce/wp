@@ -11,27 +11,28 @@
     const selectedMovie = urlParams.get('movie');
 
     document.addEventListener('DOMContentLoaded', () => {
-      const movieFieldsets = document.querySelectorAll('fieldset');
-      movieFieldsets.forEach((fieldset) => {
-        fieldset.style.display = 'none';
-      });
-
       switch (selectedMovie) {
         case 'ACT':
           document.getElementById('movie-1').checked = true;
-          document.getElementById('fieldset-1').style.display = 'block';
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-3').disabled = true;
           break;
         case 'RMC':
           document.getElementById('movie-2').checked = true;
-          document.getElementById('fieldset-2').style.display = 'block';
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-4').disabled = true;
           break;
         case 'ANM':
           document.getElementById('movie-3').checked = true;
-          document.getElementById('fieldset-3').style.display = 'block';
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-4').disabled = true;
           break;
         case 'DRM':
           document.getElementById('movie-4').checked = true;
-          document.getElementById('fieldset-4').style.display = 'block';
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-3').disabled = true;
           break;
         default:
           break;
@@ -53,120 +54,106 @@
   </nav>
 
   <main>
-    <form method="POST" action="" id="booking-form">
-      <div>
-        <input type="radio" name="movie" id="movie-1" value="ACT">
-        <label for="movie-1">Indiana Jones and the Dial of Destiny</label>
-      </div>
-      <fieldset id="fieldset-1" style="display: none;">
-        <legend>Select Session:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-1" value="9pm">
-            <label for="session-1">9pm</label>
-            <select name="day" id="day">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-2" value="6pm">
-            <label for="session-2">6pm</label>
-            <select name="day" id="day">
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
+  <form method="POST" action="" id="booking-form">
+    <fieldset>
+      <legend>Select Session for Indiana Jones and the Dial of Destiny:</legend>
+      <div class="session-selection">
+        <div class="session">
+          <input type="radio" name="session" id="session-1" value="9pm">
+          <label for="session-1">9pm</label>
+          <select name="day" id="day">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+          </select>
         </div>
-      </fieldset>
-
-      <div>
-        <input type="radio" name="movie" id="movie-2" value="RMC">
-        <label for="movie-2">Barbie</label>
-      </div>
-      <fieldset id="fieldset-2" style="display: none;">
-        <legend>Select Session:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-3" value="12pm">
-            <label for="session-3">12pm</label>
-            <select name="day" id="day">
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-4" value="3pm">
-            <label for="session-4">3pm</label>
-            <select name="day" id="day">
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <div>
-        <input type="radio" name="movie" id="movie-3" value="ANM">
-        <label for="movie-3">Teenage Mutant Ninja Turtles: Mutant Mayhem</label>
-      </div>
-      <fieldset id="fieldset-3" style="display: none;">
-        <legend>Select Session:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-5" value="12pm">
-            <label for="session-5">12pm</label>
-            <select name="day" id="day">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-              <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-6" value="6pm">
-            <label for="session-6">6pm</label>
-            <select name="day" id="day">
-              <option value="wed">Wednesday</option>
-              <option value="thu">Thursday</option>
-              <option value="fri">Friday</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <div>
-        <input type="radio" name="movie" id="movie-4" value="DRM">
-        <label for="movie-4">Oppenheimer</label>
-      </div>
-      <fieldset id="fieldset-4" style="display: none;">
-        <legend>Select Session:</legend>
-        <div class="session-selection">
-          <div class="session">
-            <input type="radio" name="session" id="session-7" value="6pm">
-            <label for="session-7">6pm</label>
-            <select name="day" id="day">
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-            </select>
-          </div>
-          <div class="session">
-            <input type="radio" name="session" id="session-8" value="9pm">
-            <label for="session-8">9pm</label>
-            <select name="day" id="day">
+        <div class="session">
+          <input type="radio" name="session" id="session-2" value="6pm">
+          <label for="session-2">6pm</label>
+          <select name="day" id="day">
             <option value="sat">Saturday</option>
-              <option value="sun">Sunday</option>
-            </select>
-          </div>
+            <option value="sun">Sunday</option>
+          </select>
         </div>
-      </fieldset>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Select Session for Barbie:</legend>
+      <div class="session-selection">
+        <div class="session">
+          <input type="radio" name="session" id="session-3" value="12pm">
+          <label for="session-3">12pm</label>
+          <select name="day" id="day">
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+          </select>
+        </div>
+        <div class="session">
+          <input type="radio" name="session" id="session-4" value="3pm">
+          <label for="session-4">3pm</label>
+          <select name="day" id="day">
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
+      <div class="session-selection">
+        <div class="session">
+          <input type="radio" name="session" id="session-5" value="12pm">
+          <label for="session-5">12pm</label>
+          <select name="day" id="day">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+        </div>
+        <div class="session">
+          <input type="radio" name="session" id="session-6" value="6pm">
+          <label for="session-6">6pm</label>
+          <select name="day" id="day">
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Select Session for Oppenheimer:</legend>
+      <div class="session-selection">
+        <div class="session">
+          <input type="radio" name="session" id="session-7" value="6pm">
+          <label for="session-7">6pm</label>
+          <select name="day" id="day">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+          </select>
+        </div>
+        <div class="session">
+          <input type="radio" name="session" id="session-8" value="9pm">
+          <label for="session-8">9pm</label>
+          <select name="day" id="day">
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</main>
+
+
+</fieldset>
 
       <fieldset>
         <legend>Select Standard Seats:</legend>
@@ -232,19 +219,20 @@
       <button type="submit">Submit</button>
     </form>
   </main>
+  
 
-  <footer>
-    <div class="contact-info">
-      <h3>Contact Us</h3>
-      <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
-      <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2023 Lunardo Cinema. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+    <footer>
+                    ...
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+                <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Lunardo Cinema. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
 
 </html>
-
