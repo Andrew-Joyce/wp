@@ -134,7 +134,7 @@
   .movie-card {
     perspective: 1000px;
     margin: 20px;
-    width: calc(25% - 40px);
+    width: calc(25% - 60px);
     max-width: 450px;
     height: auto;
     position: relative;
@@ -173,7 +173,7 @@
   }
 
   .movie-front {
-    height: 60vh; 
+    height: 50vh;
   }  
   
   
