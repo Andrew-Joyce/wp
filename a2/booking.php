@@ -112,6 +112,16 @@
 
     <fieldset id="fieldset-session-ANM">
     <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
+
+            <div class="movie-details" id="tmnt-details" style="display: block;">
+        <div class="synopsis">
+            <h2>Teenage Mutant Ninja Turtles: Mutant Mayhem</h2>
+            <p>Join the fearless Teenage Mutant Ninja Turtles in their latest mission to save the city from the clutches of evil. Watch as Leonardo, Donatello, Michelangelo, and Raphael unleash their ninja skills to combat powerful enemies. Get ready for an adrenaline-pumping adventure with the heroes in a half-shell!</p>
+        </div>
+        <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IHvzw4Ibuho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
     <div class="session-selection">
         <div class="session">
         <input type="radio" name="session" id="session-5" value="12pm">
