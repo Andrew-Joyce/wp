@@ -264,20 +264,20 @@ footer {
     background-color: #555;
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 480px) {
     .movie-card {
       width: 100%;
       max-width: none;
     }
   }
   
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 481px) and (max-width: 768px) {
     .movie-card {
       width: calc(50% - 40px);
     }
   }
   
-  @media (min-width: 992px) {
+  @media (min-width: 769px) {
     .movie-card {
       width: calc(33.33% - 40px);
     }
