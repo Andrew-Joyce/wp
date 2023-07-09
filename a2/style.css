@@ -148,7 +148,14 @@
 
 .movie-card:focus .movie-back {
     transform: rotateY(0);
+
 }
+.movie-front h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+}
+    
 
 .movie-front,
 .movie-back {
