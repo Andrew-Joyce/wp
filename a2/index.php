@@ -85,6 +85,10 @@
   </div>
 </div>
 
+<div class="seats-image">
+  <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
+</div>
+
 <div class="seats-text">
   <div class="table-container">
     <h3>Gold Class Seats</h3>
@@ -121,10 +125,6 @@
       </tbody>
     </table>
   </div>
-</div>
-
-<div class="seats-image">
-  <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats Image" class="standard-seat-image">
 </div>
 
 <div class="seats-image">
