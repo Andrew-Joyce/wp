@@ -27,6 +27,19 @@
       <fieldset>
         <legend>Select Session:</legend>
         <div class="session-label">
+          <input type="radio" id="session2" name="day" value="MON" data-pricing="fullprice">
+          <label for="session2" class="session-button">Monday (Full Price)</label>
+        </div>
+        <div class="session-label">
+          <input type="radio" id="session1" name="day" value="WED" data-pricing="discprice">
+          <label for="session1" class="session-button">Wednesday (Discount)</label>
+        </div>
+
+      </fieldset>
+      
+      <fieldset>
+        <legend>Select Session:</legend>
+        <div class="session-label">
           <input type="radio" id="session1" name="day" value="WED" data-pricing="discprice">
           <label for="session1" class="session-button">Wednesday (Discount)</label>
         </div>
@@ -34,38 +47,46 @@
           <input type="radio" id="session2" name="day" value="MON" data-pricing="fullprice">
           <label for="session2" class="session-button">Monday (Full Price)</label>
         </div>
+      </fieldset>
+      
+      <fieldset>
+  <legend>Select Seats:</legend>
+  <div id="seats-&-prices">
+    <div class="seats-container">
+      <div class="seat standard-seat">
+        <label for="seats[STA]">Standard Adult</label>
+        <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
+      </div>
+      <div class="seat concession-seat">
+        <label for="seats[STP]">Concession</label>
+        <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
+      </div>
+      <div class="seat child-seat">
+        <label for="seats[STC]">Child</label>
+        <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
+      </div>
+      <div class="seat gold-class">
+        <label for="seats[GCA]">Gold Class Adult</label>
+        <input type="number" name="seats[GCA]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $30.00 / Discount: $25.00</span>
+      </div>
+      <div class="seat gold-class-concession">
+        <label for="seats[GCP]">Gold Class Concession</label>
+        <input type="number" name="seats[GCP]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $27.00 / Discount: $22.00</span>
+      </div>
+      <div class="seat gold-class-child">
+        <label for="seats[GCC]">Gold Class Child</label>
+        <input type="number" name="seats[GCC]" min="0" placeholder="Enter quantity" required>
+        <span class="seat-price">Full Price: $25.00 / Discount: $20.00</span>
+      </div>
+    </div>
+  </div>
+</fieldset>
 
-      </fieldset>
-      
-      <fieldset>
-        <legend>Select Seats:</legend>
-        <div id="seats-&-prices">
-          <div class="seats-container">
-            <div class="seat standard-seat">
-              <label for="seats[STA]">Standard Adult</label>
-              <select name="seats[STA]">
-                <option value="" selected disabled>Please select</option>
-                <option value="1" data-fullprice="21.5" data-discprice="16">1</option>
-                <option value="2" data-fullprice="21.5" data-discprice="16">2</option>
-              </select>
-              <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-      
-      <fieldset>
-        <legend>Customer Details:</legend>
-        <label for="customer-name">Full Name:</label>
-        <input type="text" id="customer-name" name="customer[name]" required>
-        
-        <label for="customer-email">Email Address:</label>
-        <input type="email" id="customer-email" name="customer[email]" required>
-        
-        <label for="customer-mobile">Australian Mobile Number:</label>
-        <input type="tel" id="customer-mobile" name="customer[mobile]" pattern="[0-9]{10}" required>
-      </fieldset>
-      
       <button type="submit">Submit</button>
     </form>
   </main>
