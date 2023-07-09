@@ -15,9 +15,9 @@ header {
     font-family: 'Oswald', sans-serif;
     font-size: 3vw;
     background-color: black;
-    color: #fff; 
+    color: #fff;
     animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
-  }
+}
   
   @keyframes rainbow {
     0% {
@@ -302,6 +302,10 @@ footer {
     .movie-card {
       width: calc(33.33% - 40px);
     }
+  }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
   }
   
   
