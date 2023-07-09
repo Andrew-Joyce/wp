@@ -18,12 +18,12 @@ header {
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     line-height: 1.2;
 }
 
 header h1 {
     color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     margin: 0;
 }
 
