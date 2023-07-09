@@ -41,7 +41,7 @@
     	<p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
         </div>
       <div class="about-image">
-        <img src="../../media/capri.png" alt="Cinema Image">
+        <img src="../../media/Capri.png" alt="Cinema Image">
       </div>
     </div>
   </section>
