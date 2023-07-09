@@ -46,7 +46,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day1">
               <option value="mon">Monday</option>
               <option value="tue">Tuesday</option>
               <option value="wed">Wednesday</option>
@@ -57,7 +57,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-2" value="6pm">
             <label for="session-2">6pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day2">
               <option value="sat">Saturday</option>
               <option value="sun">Sunday</option>
             </select>
@@ -71,7 +71,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-3" value="12pm">
             <label for="session-3">12pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day3">
               <option value="wed">Wednesday</option>
               <option value="thu">Thursday</option>
               <option value="fri">Friday</option>
@@ -80,7 +80,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-4" value="3pm">
             <label for="session-4">3pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day4">
               <option value="sat">Saturday</option>
               <option value="sun">Sunday</option>
             </select>
@@ -94,7 +94,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-5" value="12pm">
             <label for="session-5">12pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day5">
               <option value="mon">Monday</option>
               <option value="tue">Tuesday</option>
               <option value="sat">Saturday</option>
@@ -104,7 +104,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-6" value="6pm">
             <label for="session-6">6pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day6">
               <option value="wed">Wednesday</option>
               <option value="thu">Thursday</option>
               <option value="fri">Friday</option>
@@ -119,7 +119,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-7" value="6pm">
             <label for="session-7">6pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day7">
               <option value="mon">Monday</option>
               <option value="tue">Tuesday</option>
             </select>
@@ -127,7 +127,7 @@
           <div class="session">
             <input type="radio" name="session" id="session-8" value="9pm">
             <label for="session-8">9pm</label>
-            <select name="day" id="day">
+            <select name="day" id="day8">
               <option value="sat">Saturday</option>
               <option value="sun">Sunday</option>
             </select>
@@ -138,49 +138,26 @@
       <fieldset>
         <legend>Select Standard Seats:</legend>
         <div id="seats-&-prices">
-          <div class="seats-container">
+            <div class="seats-container">
             <div class="seat standard-seat">
-              <label for="seats[STA]">Standard Adult</label>
-              <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
+                <label for="seats[STA]">Standard Adult</label>
+                <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+                <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
             </div>
             <div class="seat concession-seat">
-              <label for="seats[STP]">Concession</label>
-              <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
+                <label for="seats[STP]">Concession</label>
+                <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+                <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
             </div>
             <div class="seat child-seat">
-              <label for="seats[STC]">Child</label>
-              <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
+                <label for="seats[STC]">Child</label>
+                <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+                <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
             </div>
             </div>
         </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Select Gold Class Seats:</legend>
-        <div id="seats-&-prices">
-          <div class="seats-container">
-            <div class="seat gold-class">
-              <label for="seats[GCA]">Gold Class Adult</label>
-              <input type="number" name="seats[GCA]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $30.00 / Discount: $25.00</span>
-            </div>
-            <div class="seat gold-class-concession">
-              <label for="seats[GCP]">Gold Class Concession</label>
-              <input type="number" name="seats[GCP]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $27.00 / Discount: $22.00</span>
-            </div>
-            <div class="seat gold-class-child">
-              <label for="seats[GCC]">Gold Class Child</label>
-              <input type="number" name="seats[GCC]" min="0" placeholder="Enter quantity" required>
-              <span class="seat-price">Full Price: $25.00 / Discount: $20.00</span>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-
+        </fieldset>
+        
       <fieldset>
         <legend>Contact Information:</legend>
         <div class="contact-info">
