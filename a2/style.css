@@ -11,11 +11,11 @@ body {
 
 header {
     text-align: center;
-    padding: 0.5em 0; 
+    padding: 0.5em 0;
     font-family: 'Oswald', sans-serif;
     font-size: 3vw;
     background-color: black;
-    Color: white
+    color: #fff; 
     animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
   }
   
@@ -54,6 +54,7 @@ header {
       text-shadow: none;
     }
   }
+  
 
 nav {
     display: flex;
