@@ -98,7 +98,7 @@
   }
   
   main {
-    padding: 10px;
+    padding: 20px;
   }
   
   footer {
@@ -129,17 +129,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-height: flex-start; 
-    }
+  }
   
   .movie-card {
     perspective: 1000px;
-    margin: 10px;
+    margin: 20px;
     width: calc(100% - 40px);
     max-width: 450px;
     height: auto;
     position: relative;
-  }
+
   
   .movie-card:focus .movie-front {
     transform: rotateY(180deg);
@@ -168,38 +167,15 @@
   
   .movie-front img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%; 
+    object-fit: cover; 
     margin-bottom: 10px;
-}
+  }
 
   .movie-front {
     height: 50vh;
   }  
-  .movie-front img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; 
-    margin-bottom: 10px;
-    }   
-
-    @media screen and (min-width: 600px) {
-    .movie-card {
-        width: calc(50% - 40px); 
-    }
-    }
-
-    @media screen and (min-width: 900px) {
-    .movie-card {
-        width: calc(33% - 40px); 
-    }
-    }
-
-    @media screen and (min-width: 1200px) {
-    .movie-card {
-        width: calc(25% - 40px); 
-    }
-    }
+  
   
   .movie-front div,
   .movie-back {
@@ -244,7 +220,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+  }
   
   .seats-container {
     display: flex;
