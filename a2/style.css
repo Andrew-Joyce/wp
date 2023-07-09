@@ -11,15 +11,13 @@ body {
 
 header {
     background-image: url(../../media/MovieBanner.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    background-attachment: fixed;
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
 }
-
 
 header h1 {
     color: black;
