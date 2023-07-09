@@ -30,12 +30,22 @@
       <h3>A Fresh New Look</h3>
       <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
       <h3>World-Class Projection and Sound Systems</h3>
-      <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
+        <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
+
+        <div style="display: flex; justify-content: center; gap: 20px;">
+        <a href="https://professional.dolby.com/cinema/">
+            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:100px;height:100px;border:0;">
+        </a>
+
+        <a href="https://professional.dolby.com/cinema/dolby-atmos">
+            <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:100px;height:100px;border:0;">
+        </a>
+        </div>
+
       <h3>Serving the Local Community</h3>
       <p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
       <h3>Sustainable and Eco-Friendly</h3>
       <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
-      <p>Learn more about <a href="https://professional.dolby.com/cinema/" target="_blank" rel="noopener noreferrer">Dolby Vision</a> and <a href="https://professional.dolby.com/cinema/dolby-atmos" target="_blank" rel="noopener noreferrer">Dolby Atmos</a>.</p>
       <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
     </div>
     <div class="about-image">
