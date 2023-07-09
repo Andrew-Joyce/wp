@@ -201,13 +201,14 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; 
   }
   
   .movie-card {
     perspective: 1000px;
-    margin: 20px;
-    width: 200px;
-    height: auto;
+    margin-bottom: 20px;
+    width: 100%; 
+    max-width: 300px; 
     position: relative;
   }
   
