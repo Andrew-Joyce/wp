@@ -23,6 +23,27 @@
     <main>
     <form method="POST" action="" id="booking-form">
     <fieldset>
+    <legend>Movie Selection:</legend>
+    <div class="movie-selection">
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-1" value="ACT">
+        <label for="movie-1">Indiana Jones and the Dial of Destiny</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-2" value="RMC">
+        <label for="movie-2">Barbie</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-3" value="ANM">
+        <label for="movie-3">Teenage Mutant Ninja Turtles: Mutant Mayhem</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-4" value="DRM">
+        <label for="movie-4">Oppenheimer</label>
+      </div>
+    </div>
+  </fieldset>
+    <fieldset>
     <legend>Select Session:</legend>
     <div class="session-selection">
       <div class="session">
