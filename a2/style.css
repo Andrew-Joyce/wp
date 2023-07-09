@@ -10,15 +10,16 @@ body {
 }
 
 header {
-    background: #003399; 
-    color: #ffffff;
+    background-image: url(../../media/MovieBaner.jpg;);
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 40px;
+    color: #ffffff;
 }
 
 header h1 {
+    color: black;
     margin: 0;
 }
 
