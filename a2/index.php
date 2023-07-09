@@ -102,92 +102,96 @@
     </div>
 </section>
 
-<section>
 <section id="seats-&-prices">
   <h2>Seats & Pricing</h2>
 
-  <div class="seat-type">
-    <h3>Standard Seats</h3>
-    <p>
-      Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience. With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema. Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts. Sit back, relax, and let our standard seats enhance your cinematic journey.
-    </p>
+  <div class="seats-container">
+    <div class="seats-text">
+      <h3>Standard Seats</h3>
+      <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience. With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema. Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts. Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
 
-    <table>
-      <caption>Seat Prices</caption>
-      <thead>
-        <tr>
-          <th>Seat Type</th>
-          <th>Seat Code</th>
-          <th>Discounted Prices</th>
-          <th>Normal Prices</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Standard Adult</td>
-          <td>STA</td>
-          <td>16.00</td>
-          <td>21.50</td>
-        </tr>
-        <tr>
-          <td>Standard Concession</td>
-          <td>STP</td>
-          <td>14.50</td>
-          <td>19.00</td>
-        </tr>
-        <tr>
-          <td>Standard Child</td>
-          <td>STC</td>
-          <td>13.00</td>
-          <td>17.50</td>
-        </tr>
-      </tbody>
-    </table>
+      <table>
+        <caption>Seat Prices</caption>
+        <thead>
+          <tr>
+            <th>Seat Type</th>
+            <th>Seat Code</th>
+            <th>Discounted Prices</th>
+            <th>Normal Prices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Standard Adult</td>
+            <td>STA</td>
+            <td>16.00</td>
+            <td>21.50</td>
+          </tr>
+          <tr>
+            <td>Standard Concession</td>
+            <td>STP</td>
+            <td>14.50</td>
+            <td>19.00</td>
+          </tr>
+          <tr>
+            <td>Standard Child</td>
+            <td>STC</td>
+            <td>13.00</td>
+            <td>17.50</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats">
+    <div class="seats-image">
+      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats">
+    </div>
   </div>
 
-  <div class="seat-type">
-    <h3>Gold Class Seats</h3>
-    <p>
-      Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience. Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.
-    </p>
+  <div class="seats-container">
+    <div class="seats-text">
+      <h3>Gold Class Seats</h3>
+      <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience. Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
 
-    <table>
-      <caption>Seat Prices</caption>
-      <thead>
-        <tr>
-          <th>Seat Type</th>
-          <th>Seat Code</th>
-          <th>Discounted Prices</th>
-          <th>Normal Prices</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>First Class Adult</td>
-          <td>FCA</td>
-          <td>25.00</td>
-          <td>31.00</td>
-        </tr>
-        <tr>
-          <td>First Class Concession</td>
-          <td>FCP</td>
-          <td>23.50</td>
-          <td>28.00</td>
-        </tr>
-        <tr>
-          <td>First Class Child</td>
-          <td>FCC</td>
-          <td>22.00</td>
-          <td>25.00</td>
-        </tr>
-      </tbody>
-    </table>
+      <table>
+        <caption>Seat Prices</caption>
+        <thead>
+          <tr>
+            <th>Seat Type</th>
+            <th>Seat Code</th>
+            <th>Discounted Prices</th>
+            <th>Normal Prices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First Class Adult</td>
+            <td>FCA</td>
+            <td>25.00</td>
+            <td>31.00</td>
+          </tr>
+          <tr>
+            <td>First Class Concession</td>
+            <td>FCP</td>
+            <td>23.50</td>
+            <td>28.00</td>
+          </tr>
+          <tr>
+            <td>First Class Child</td>
+            <td>FCC</td>
+            <td>22.00</td>
+            <td>25.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats">
+    <div class="seats-image">
+      <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats">
+    </div>
   </div>
 </section>
+
 
 <section id="about-us">
   <div class="about-container">
