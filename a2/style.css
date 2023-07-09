@@ -264,13 +264,14 @@
   #about-us {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center; /* Center vertically */
   }
 
   .about-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .about-text {
@@ -280,7 +281,7 @@
   .about-image {
     flex-basis: 30%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .about-image img {
