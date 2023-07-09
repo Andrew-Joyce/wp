@@ -13,10 +13,9 @@ header {
     text-align: center;
     padding: 0.5em 0; 
     font-family: 'Oswald', sans-serif;
-    font-display: #fff;
     font-size: 3vw;
     background-color: black;
-    border: 10px solid #fff; 
+    Color: white
     animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
   }
   
@@ -29,7 +28,6 @@ header {
                    0 0 50px blue,
                    0 0 60px indigo,
                    0 0 70px violet;
-      border-color: blue;
     }
     100% {
       text-shadow: 0 0 10px violet,
@@ -39,7 +37,6 @@ header {
                    0 0 50px yellow,
                    0 0 60px orange,
                    0 0 70px red;
-      border-color: violet;
     }
   }
   
