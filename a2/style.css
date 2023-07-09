@@ -166,6 +166,7 @@
     background-color: black;
     transform: rotateY(180deg);
     color: white;
+    height: inherit;
 }
 
 .movie-front img {
@@ -189,10 +190,11 @@
     text-align: center;
     margin-top: 10px;
 }
-  
-  .book-now:hover {
+
+.book-now:hover {
     background-color: #555;
-  }
+}
+
   
   h2 {
     font-family: 'Oswald', sans-serif;
