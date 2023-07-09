@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-body {
+  body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
-}
+  }
 
-header {
+  header {
     text-align: center;
     padding: 0.5em 0;
     font-family: 'Oswald', sans-serif;
@@ -18,7 +17,7 @@ header {
     background-color: black;
     color: #fff;
     animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
-}
+  }
   
   @keyframes rainbow {
     0% {
@@ -56,152 +55,77 @@ header {
     }
   }
   
-
-nav {
+  nav {
     display: flex;
     justify-content: center;
-    background: #222; 
-}
-
-nav a {
+    background: #222;
+  }
+  
+  nav a {
     display: inline-block;
-    color: #fff; 
+    color: #fff;
     padding: 15px 20px;
     text-decoration: none;
     text-align: center;
-    background: linear-gradient(90deg, #444 0%, #888 100%); 
+    background: linear-gradient(90deg, #444 0%, #888 100%);
     border: none;
     border-radius: 4px;
     transition: background 0.3s;
     position: relative;
     overflow: hidden;
     flex-grow: 1;
-    font-family: 'Oswald', sans-serif; 
+    font-family: 'Oswald', sans-serif;
     font-size: 24px;
-}
-
-nav a::before {
+  }
+  
+  nav a::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #888 0%, #444 100%); 
+    background: linear-gradient(90deg, #888 0%, #444 100%);
     transition: left 0.3s;
-}
-
-nav a:hover {
+  }
+  
+  nav a:hover {
     background: transparent;
-}
-
-nav a:hover::before {
+  }
+  
+  nav a:hover::before {
     left: 100%;
-}
-
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
   }
   
-  .about-text {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-  }  
-
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-    }
-    
-    .about-text {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-    
-    .about-image {
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-main {
+  main {
     padding: 20px;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-form input[type="radio"] {
-    margin-right: 5px;
-}
-
-form select,
-form input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px;
-}
-
-form input[type="submit"] {
-    display: inline-block;
-    background: #333;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-form input[type="submit"]:hover {
-    background: #444;
-}
-
-footer {
+  }
+  
+  footer {
     text-align: center;
     padding: 1em 0;
     background: #35424a;
     color: #ffffff;
-}
-
-.contact-info {
+  }
+  
+  .contact-info {
     margin-bottom: 20px;
-}
-
-.contact-info h3 {
+  }
+  
+  .contact-info h3 {
     margin-top: 0;
-}
-
-.contact-info p {
+  }
+  
+  .contact-info p {
     margin: 5px 0;
-}
-
-.contact-info a {
+  }
+  
+  .contact-info a {
     color: #ffffff;
     text-decoration: none;
-}
-
-.movie-container {
+  }
+  
+  .movie-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -268,79 +192,72 @@ footer {
     background-color: #555;
   }
   
-  @media (max-width: 480px) {
-    .movie-card {
-      width: 100%;
-      max-width: none;
-    }
-  }
-  
-  @media (min-width: 481px) and (max-width: 768px) {
-    .movie-card {
-      width: calc(50% - 40px);
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .movie-card {
-      width: calc(33.33% - 40px);
-    }
-  }
-
   h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 40px;
   }
   
   h3 {
-    font-family: 'Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: bold;
-    
+  }
+  
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14;
-  }
-  
-  #seats-and-prices {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
   #seats-and-prices {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  
+
   .seats-container {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 20px;
   }
-  
+
   .seats-text {
-    flex: 1;
-    margin-right: 20px;
-    text-align: left;
+    flex-basis: 70%;
   }
-  
+
   .seats-image {
-    flex-shrink: 0;
+    flex-basis: 30%;
   }
-  
+
   .standard-seat-image {
-    float: right;
-    margin-left: 10px;
+    width: 100%; /* Adjust the width as needed */
   }
-  
+
   .table-container {
     width: 100%;
     overflow-x: auto;
   }
+
+  .seats-prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .seats-prices-table th,
+  .seats-prices-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+
+  .seats-prices-table th {
+    background-color: #f2f2f2;
+  }
   
-  
+
   
   
   
