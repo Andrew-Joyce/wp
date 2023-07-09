@@ -44,7 +44,7 @@
         <img src="../../media/Capri.png" alt="Cinema Image">
       </div>
     </div>
-    
+
     <div class="seats-text">
   <div class="table-container">
     <h3>Standard Seats</h3>
@@ -128,7 +128,7 @@
 </div>
 
 <div class="seats-image">
-  <img src="../../media/Gold-Class-Image.png" alt="Gold Class Seats Image" class="gold-class-image">
+  <img src="../../media/Profern-Verona-Image.png" alt="Gold Class Seats Image" class="gold-class-image">
 </div>
 
 
