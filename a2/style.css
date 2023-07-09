@@ -13,12 +13,13 @@ header {
     background-image: url(../../media/MovieBanner.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
 }
 
 header h1 {
