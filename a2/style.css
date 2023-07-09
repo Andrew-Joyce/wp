@@ -265,7 +265,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* Center vertically */
+    align-items: center; 
   }
 
   .about-container {
@@ -282,6 +282,7 @@
     flex-basis: 30%;
     display: flex;
     justify-content: center;
+    padding: 20px;
   }
 
   .about-image img {
