@@ -16,7 +16,6 @@ header {
     font-size: 3vw;
     background-color: black;
     border: 10px solid #fff; 
-    Color: #fff
     animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
   }
   
