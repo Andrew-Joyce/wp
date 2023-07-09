@@ -78,11 +78,11 @@
     font-size: 40px;
   }
   @media (min-width: 768px) {
-    font-size: 30px; /* Font size for medium-sized screens */
+    font-size: 20px; 
   }
 
   @media (min-width: 1200px) {
-    font-size: 40px; /* Font size for large screens */
+    font-size: 40px;
   }
 
   nav a::before {
