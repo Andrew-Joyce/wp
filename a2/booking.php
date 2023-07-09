@@ -7,55 +7,37 @@
   <link rel="stylesheet" href="style.css">
   <title>Booking Form</title>
   <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const selectedMovie = urlParams.get('movie');
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedMovie = urlParams.get('movie');
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const movieFieldsets = document.querySelectorAll('fieldset');
-    movieFieldsets.forEach((fieldset) => {
-      fieldset.style.display = 'none';
-    });
-
-    switch (selectedMovie) {
-      case 'ACT':
-        document.getElementById('movie-1').checked = true;
-        document.getElementById('fieldset-1').style.display = 'block';
-        break;
-      case 'RMC':
-        document.getElementById('movie-2').checked = true;
-        document.getElementById('fieldset-2').style.display = 'block';
-        break;
-      case 'ANM':
-        document.getElementById('movie-3').checked = true;
-        document.getElementById('fieldset-3').style.display = 'block';
-        break;
-      case 'DRM':
-        document.getElementById('movie-4').checked = true;
-        document.getElementById('fieldset-4').style.display = 'block';
-        break;
-      default:
-        break;
-    }
-  });
-
-  function showSessions() {
-    const selectedMovie = document.querySelector('input[name="movie"]:checked').value;
-    const movieFieldsets = document.querySelectorAll('fieldset');
-
-    movieFieldsets.forEach((fieldset) => {
-      if (fieldset.id === `fieldset-${selectedMovie}`) {
-        fieldset.style.display = 'block';
-      } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      const movieFieldsets = document.querySelectorAll('fieldset');
+      movieFieldsets.forEach((fieldset) => {
         fieldset.style.display = 'none';
+      });
+
+      switch (selectedMovie) {
+        case 'ACT':
+          document.getElementById('movie-1').checked = true;
+          document.getElementById('fieldset-1').style.display = 'block';
+          break;
+        case 'RMC':
+          document.getElementById('movie-2').checked = true;
+          document.getElementById('fieldset-2').style.display = 'block';
+          break;
+        case 'ANM':
+          document.getElementById('movie-3').checked = true;
+          document.getElementById('fieldset-3').style.display = 'block';
+          break;
+        case 'DRM':
+          document.getElementById('movie-4').checked = true;
+          document.getElementById('fieldset-4').style.display = 'block';
+          break;
+        default:
+          break;
       }
     });
-  }
-
-  const movieInputs = document.querySelectorAll('input[name="movie"]');
-  movieInputs.forEach((input) => {
-    input.addEventListener('change', showSessions);
-  });
-</script>
+  </script>
 </head>
 
 <body>
