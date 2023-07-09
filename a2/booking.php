@@ -22,42 +22,24 @@
 
     <main>
     <form method="POST" action="" id="booking-form">
-  <fieldset>
-    <legend>Movie Selection:</legend>
-    <div class="movie-selection">
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-1" value="ACT">
-        <label for="movie-1">Indiana Jones and the Dial of Destiny</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-2" value="RMC">
-        <label for="movie-2">Barbie</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-3" value="ANM">
-        <label for="movie-3">Teenage Mutant Ninja Turtles: Mutant Mayhem</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-4" value="DRM">
-        <label for="movie-4">Oppenheimer</label>
-      </div>
-    </div>
-  </fieldset>
-
-  <fieldset>
+    <fieldset>
     <legend>Select Session:</legend>
     <div class="session-selection">
-      <div class="session">
-        <input type="radio" name="session" id="session-1" value="9pm">
-        <label for="session-1">9pm</label>
-      </div>
       <div class="session">
         <input type="radio" name="session" id="session-2" value="12pm">
         <label for="session-2">12pm</label>
       </div>
       <div class="session">
-        <input type="radio" name="session" id="session-3" value="6pm">
-        <label for="session-3">6pm</label>
+        <input type="radio" name="session" id="session-3" value="3pm">
+        <label for="session-3">3pm</label>
+      </div>
+      <div class="session">
+        <input type="radio" name="session" id="session-4" value="6pm">
+        <label for="session-4">6pm</label>
+      </div>
+      <div class="session">
+        <input type="radio" name="session" id="session-5" value="9pm">
+        <label for="session-5">9pm</label>
       </div>
     </div>
   </fieldset>
