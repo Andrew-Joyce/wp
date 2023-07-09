@@ -129,9 +129,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  
-  .movie-card {
+}
+
+.movie-card {
     box-sizing: border-box;
     perspective: 1000px;
     margin: 20px;
@@ -139,19 +139,18 @@
     max-width: 450px;
     height: auto;
     position: relative;
-  }
-  
-  
-  .movie-card:focus .movie-front {
+}
+
+.movie-card:focus .movie-front {
     transform: rotateY(180deg);
-  }
-  
-  .movie-card:focus .movie-back {
+}
+
+.movie-card:focus .movie-back {
     transform: rotateY(0);
-  }
-  
-  .movie-front,
-  .movie-back {
+}
+
+.movie-front,
+.movie-back {
     transition: transform 0.7s ease-in-out;
     transform-style: preserve-3d;
     position: absolute;
@@ -161,27 +160,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  .movie-back {
-    transform: rotateY(180deg);
-  }
-  
+}
 
-  .movie-front img {
+.movie-back {
+    background-color: black;
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.movie-front img {
     width: 100%;
     height: auto;
     object-fit: cover;
-  }
-  
-  .movie-front div,
-  .movie-back {
+}
+
+.movie-front div,
+.movie-back {
     padding: 10px;
     text-align: center;
-    color: #black;
-  }
-  
-  .book-now {
+}
+
+.book-now {
     display: inline-block;
     padding: 10px 20px;
     background-color: #35424a;
@@ -189,7 +188,7 @@
     text-decoration: none;
     text-align: center;
     margin-top: 10px;
-  }
+}
   
   .book-now:hover {
     background-color: #555;
