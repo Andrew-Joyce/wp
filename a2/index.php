@@ -10,12 +10,11 @@
   </head>
   <body>
   <header style="text-align: center;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <img src="../../media/Cinema.png" alt="Cinema" style="margin-bottom: 10px;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px;">
         <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
-   </header>
-
+    </header>
     <nav id="navbar">
         <a href="#about-us">About Us</a>
         <a href="#seats-and-prices">Seats and Prices</a>
