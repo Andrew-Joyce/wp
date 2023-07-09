@@ -67,27 +67,38 @@
     </fieldset>
 
     <fieldset id="fieldset-session-RMC">
-    <legend>Select Session for Barbie:</legend>
-    <div class="session-selection">
-        <div class="session">
-        <input type="radio" name="session" id="session-3" value="12pm">
-        <label for="session-3">12pm</label>
-        <select name="day" id="day3">
-            <option value="wed">Wednesday</option>
-            <option value="thu">Thursday</option>
-            <option value="fri">Friday</option>
-        </select>
+        <legend>Select Session for Barbie:</legend>
+        <div class="session-selection">
+            <div class="session">
+            <input type="radio" name="session" id="session-3" value="12pm">
+            <label for="session-3">12pm</label>
+            <select name="day" id="day3">
+                <option value="wed">Wednesday</option>
+                <option value="thu">Thursday</option>
+                <option value="fri">Friday</option>
+            </select>
+            </div>
+            <div class="session">
+            <input type="radio" name="session" id="session-4" value="3pm">
+            <label for="session-4">3pm</label>
+            <select name="day" id="day4">
+                <option value="sat">Saturday</option>
+                <option value="sun">Sunday</option>
+            </select>
+            </div>
         </div>
-        <div class="session">
-        <input type="radio" name="session" id="session-4" value="3pm">
-        <label for="session-4">3pm</label>
-        <select name="day" id="day4">
-            <option value="sat">Saturday</option>
-            <option value="sun">Sunday</option>
-        </select>
+        </fieldset>
+
+        <div class="movie-details" id="barbie-details" style="display: none;">
+        <div class="synopsis">
+            <h2>Barbie</h2>
+            <p>Enter the fascinating world of Barbie and join her on an exciting adventure. Experience a heartwarming story filled with friendship, courage, and dreams. Barbie will captivate you with her charm and inspire you to believe in yourself. Get ready for an unforgettable journey with Barbie!</p>
         </div>
-    </div>
-    </fieldset>
+        <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </div>
+
 
     <fieldset id="fieldset-session-ANM">
     <legend>Select Session for Teenage Mutant Ninja Turtles: Mutant Mayhem:</legend>
