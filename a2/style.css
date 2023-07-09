@@ -388,6 +388,43 @@ table {
     .form-row {
       flex-basis: 100%;
     }
+
+  label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-row input {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 767px) {
+    .form-row {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .contact-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact-info .form-field {
+      flex-basis: 100%;
+    }
+  }
+</style>
+
   }
   .contact-info {
     display: flex;
@@ -396,7 +433,7 @@ table {
   }
 
   .contact-info label {
-    font-size: 40px; 
+    font-size: 18px; 
   }
 
   .contact-info .form-field {
@@ -405,7 +442,7 @@ table {
     align-items: center;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .contact-info {
       flex-direction: column; 
       align-items: flex-start; 
