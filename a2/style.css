@@ -167,17 +167,17 @@
     transform: rotateY(180deg);
   }
   
+  .movie-front {
+    padding-bottom: 150%;
+    height: 0;
+  }
+
   .movie-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
-  .movie-front {
-    padding-bottom: 150%;
-  } 
-  
-  
+    
   .movie-front div,
   .movie-back {
     padding: 10px;
@@ -291,7 +291,7 @@
   
   @media (min-width: 1200px) {
     .movie-card {
-      flex-basis: calc(25% - 40px);
+      flex-basis: calc(25% - 60px);
     }
   }
   
