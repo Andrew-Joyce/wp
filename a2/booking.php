@@ -21,36 +21,54 @@
     </nav>
 
     <main>
-    <form action="" method="post">
-      <input type="hidden" name="movie" value="<?php echo $_GET['movie']; ?>">
-      
-      <fieldset>
-        <legend>Select Session:</legend>
-        <div class="session-label">
-          <input type="radio" id="session2" name="day" value="MON" data-pricing="fullprice">
-          <label for="session2" class="session-button">Monday (Full Price)</label>
-        </div>
-        <div class="session-label">
-          <input type="radio" id="session1" name="day" value="WED" data-pricing="discprice">
-          <label for="session1" class="session-button">Wednesday (Discount)</label>
-        </div>
+    <form method="POST" action="" id="booking-form">
+  <fieldset>
+    <legend>Movie Selection:</legend>
+    <div class="movie-selection">
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-1" value="ACT">
+        <label for="movie-1">Indiana Jones and the Dial of Destiny</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-2" value="RMC">
+        <label for="movie-2">Barbie</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-3" value="ANM">
+        <label for="movie-3">Teenage Mutant Ninja Turtles: Mutant Mayhem</label>
+      </div>
+      <div class="movie">
+        <input type="radio" name="movie" id="movie-4" value="DRM">
+        <label for="movie-4">Oppenheimer</label>
+      </div>
+    </div>
+  </fieldset>
 
-      </fieldset>
+  <fieldset>
+    <legend>Select Session:</legend>
+    <div class="session-selection">
+      <div class="session">
+        <input type="radio" name="session" id="session-1" value="9pm">
+        <label for="session-1">9pm</label>
+      </div>
+      <div class="session">
+        <input type="radio" name="session" id="session-2" value="12pm">
+        <label for="session-2">12pm</label>
+      </div>
+      <div class="session">
+        <input type="radio" name="session" id="session-3" value="6pm">
+        <label for="session-3">6pm</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <input type="hidden" name="imdb_link" value="https://www.imdb.com/title/tt1462764">
+  
+  <button type="submit">Submit</button>
+</form>
       
       <fieldset>
-        <legend>Select Session:</legend>
-        <div class="session-label">
-          <input type="radio" id="session1" name="day" value="WED" data-pricing="discprice">
-          <label for="session1" class="session-button">Wednesday (Discount)</label>
-        </div>
-        <div class="session-label">
-          <input type="radio" id="session2" name="day" value="MON" data-pricing="fullprice">
-          <label for="session2" class="session-button">Monday (Full Price)</label>
-        </div>
-      </fieldset>
-      
-      <fieldset>
-  <legend>Select Seats:</legend>
+  <legend>Select Standard Seats:</legend>
   <div id="seats-&-prices">
     <div class="seats-container">
       <div class="seat standard-seat">
@@ -68,6 +86,14 @@
         <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
         <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
       </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Select Gold Class Seats:</legend>
+  <div id="seats-&-prices">
+    <div class="seats-container">
       <div class="seat gold-class">
         <label for="seats[GCA]">Gold Class Adult</label>
         <input type="number" name="seats[GCA]" min="0" placeholder="Enter quantity" required>
@@ -86,6 +112,7 @@
     </div>
   </div>
 </fieldset>
+
 
       <button type="submit">Submit</button>
     </form>
