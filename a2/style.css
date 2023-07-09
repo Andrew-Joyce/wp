@@ -139,6 +139,7 @@
     max-width: 450px;
     height: auto;
     position: relative;
+    padding-bottom: 30px;
 }
 
 .movie-card:focus .movie-front {
