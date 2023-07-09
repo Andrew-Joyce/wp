@@ -50,13 +50,13 @@
     <section id="seats-and-prices">
   <div class="seats-container">
     <div class="seats-text">
-      <h2>Seats and Prices</h2>
+      <h2"left-justify">Seats and Prices</h2>
       <div class="seats-text-content">
-        <h3>Standard Seats</h3>
-        <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience.</p>
-        <p>With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema.</p>
-        <p>Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts.</p>
-        <p>Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
+        <h3"left-justify">Standard Seats</h3>
+        <p"left-justify">Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience.</p>
+        <p"left-justify">With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema.</p>
+        <p"left-justify">Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts.</p>
+        <p"left-justify">Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
         <table class="seats-prices-table">
           <thead>
             <tr>
@@ -99,9 +99,9 @@
       <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats Image" class="gold-class-image">
     </div>
     <div class="seats-text">
-      <h3>Gold Class Seats</h3>
-      <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience.</p>
-      <p>Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
+      <h3"left-justify">Gold Class Seats</h3>
+      <p"left-justify">Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience.</p>
+      <p"left-justify">Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
     </div>
   </div>
   
