@@ -9,13 +9,12 @@
     <script src='../wireframe.js'></script>
   </head>
   <body>
-  <header>
-    <div style="display: flex; align-items: center;">
-        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px;">
-        <h1>Lunardo Cinema</h1>
+  <header style="text-align: center;">
+    <div style="display: inline-block;">
+        <img src="../../media/cinema.png" alt="Cinema">
+        <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
     </header>
-    
     <nav id="navbar">
         <a href="#about-us">About Us</a>
         <a href="#seats-and-prices">Seats and Prices</a>
