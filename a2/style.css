@@ -258,7 +258,13 @@
   }
   
   .about-text {
-    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .about-text p {
+    margin-bottom: 20px;
   }
   
   .about-image img {
