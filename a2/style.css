@@ -395,6 +395,10 @@ table {
     justify-content: space-between; 
   }
 
+  .contact-info label {
+    font-size: 40px; 
+  }
+
   .contact-info .form-field {
     flex-basis: 50%; 
     display: flex;
