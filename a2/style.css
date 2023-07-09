@@ -167,10 +167,6 @@
     transform: rotateY(180deg);
   }
   
-  .movie-front {
-    padding-bottom: 150%;
-    height: 500;
-  }
 
   .movie-front img {
     width: 100%;
