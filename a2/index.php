@@ -9,9 +9,9 @@
     <script src='../wireframe.js'></script>
   </head>
   <body>
-    <header>
-        <img src="logo.png" alt="Lunardo Cinema">
-        <h1>Lunardo Cinema</h1>
+  <header>
+    <img src="../../media/cinema.png" alt="Cinema" style="float: left;">
+    <h1>Lunardo Cinema</h1>
     </header>
     
     <nav id="navbar">
