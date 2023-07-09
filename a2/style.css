@@ -120,8 +120,23 @@ nav a:hover::before {
     height: auto;
     max-height: 100%;
   }  
-  
-  
+
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+    
+    .about-text {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    .about-image {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 main {
     padding: 20px;
 }
@@ -306,7 +321,7 @@ footer {
 
   h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
   }
   
   
