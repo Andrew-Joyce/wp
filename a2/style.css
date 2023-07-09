@@ -229,10 +229,15 @@
 
   .seats-image {
     flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .standard-seat-image {
-    width: 100%; /* Adjust the width as needed */
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
   }
 
   .table-container {
@@ -256,7 +261,7 @@
   .seats-prices-table th {
     background-color: #f2f2f2;
   }
-  
+
 
   
   
