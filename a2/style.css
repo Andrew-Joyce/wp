@@ -11,6 +11,8 @@ body {
 
 header {
     background-image: url(../../media/MovieBanner.png);
+    background-size: cover;
+    background-position: center;
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
