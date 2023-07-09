@@ -66,7 +66,8 @@
     </div>
     </fieldset>
 
-    <div class="movie-details" id="barbie-details" style="display: block;">
+        <fieldset id="fieldset-session-RMC">
+        <div class="movie-details" id="barbie-details" style="display: block;">
         <div class="synopsis">
             <h2>Barbie</h2>
             <p>Enter the fascinating world of Barbie and join her on an exciting adventure. Experience a heartwarming story filled with friendship, courage, and dreams. Barbie will captivate you with her charm and inspire you to believe in yourself. Get ready for an unforgettable journey with Barbie!</p>
@@ -75,8 +76,6 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         </div>
-
-        <fieldset id="fieldset-session-RMC">
         <legend>Select Session for Barbie:</legend>
         <div class="session-selection">
             <div class="session">
