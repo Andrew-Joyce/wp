@@ -187,22 +187,12 @@
     height: inherit;
 }
 
-.movie-front {
-    display: flex;
-    align-items: flex-start;
-  }
-  
 .movie-front img {
-    flex-basis: 40%;
-    max-width: 100%;
+    width: 100%;
     height: auto;
-  }
+    object-fit: cover;
+}
 
-  .movie-front .title-rating {
-    flex-basis: 60%;
-    padding-left: 10px;
-  }
-  
 .movie-front div,
 .movie-back {
     padding: 10px;
@@ -344,7 +334,6 @@
   h2, h3, p {
   overflow-wrap: break-word;
 }
-
 img {
   max-width: 100%;
   height: auto;
