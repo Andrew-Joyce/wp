@@ -10,27 +10,34 @@
     const urlParams = new URLSearchParams(window.location.search);
     const selectedMovie = urlParams.get('movie');
 
-    switch (selectedMovie) {
-      case 'ACT':
-        document.getElementById('movie-1').checked = true;
-        document.getElementById('session-2').disabled = true;
-        document.getElementById('session-4').disabled = true;
-        document.getElementById('session-5').disabled = true;
-        break;
-      case 'RMC':
-        document.getElementById('movie-2').checked = true;
-        document.getElementById('session-2').disabled = true;
-        break;
-      case 'ANM':
-        document.getElementById('movie-3').checked = true;
-        document.getElementById('session-3').disabled = true;
-        break;
-      case 'DRM':
-        document.getElementById('movie-4').checked = true;
-        document.getElementById('session-4').disabled = true;
-        break;
-      default:
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      switch (selectedMovie) {
+        case 'ACT':
+          document.getElementById('movie-1').checked = true;
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-3').disabled = true;
+          break;
+        case 'RMC':
+          document.getElementById('movie-2').checked = true;
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-4').disabled = true;
+          break;
+        case 'ANM':
+          document.getElementById('movie-3').checked = true;
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-4').disabled = true;
+          break;
+        case 'DRM':
+          document.getElementById('movie-4').checked = true;
+          document.getElementById('session-1').disabled = true;
+          document.getElementById('session-2').disabled = true;
+          document.getElementById('session-3').disabled = true;
+          break;
+        default:
+          break;
+      }
+    });
   </script>
 </head>
 
@@ -50,7 +57,7 @@
     <form method="POST" action="" id="booking-form">
       <fieldset>
         <legend>Movie Selection:</legend>
-
+        <!-- Movie selection options... -->
       </fieldset>
 
       <fieldset>
