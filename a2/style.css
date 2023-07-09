@@ -16,7 +16,7 @@
     font-size: 3vw;
     background-color: black;
     color: #fff;
-    animation: rainbow 3s infinite linear, flicker 1s infinite alternate;
+    animation: rainbow 1s infinite linear, flicker 1s infinite alternate;
   }
   
   @keyframes rainbow {
@@ -75,16 +75,21 @@
     overflow: hidden;
     flex-grow: 1;
     font-family: 'Oswald', sans-serif;
-    font-size: 40px;
+    font-size: 3vw; 
   }
+  
   @media (min-width: 768px) {
-    font-size: 20px; 
+    nav a {
+      font-size: 20px; 
+    }
   }
-
+  
   @media (min-width: 1200px) {
-    font-size: 40px;
+    nav a {
+      font-size: 40px; 
+    }
   }
-
+  
   nav a::before {
     content: '';
     position: absolute;
@@ -103,6 +108,7 @@
   nav a:hover::before {
     left: 100%;
   }
+  
   
   main {
     padding: 20px;
