@@ -7,64 +7,31 @@
     <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
     <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const selectedMovie = urlParams.get('movie');
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedMovie = urlParams.get('movie');
 
-  switch (selectedMovie) {
-    case 'ACT':
-      document.getElementById('movie-1').checked = true;
-
-      document.getElementById('session-2').disabled = true;
-      document.getElementById('session-3').disabled = true;
-      document.getElementById('session-4').disabled = true;
-
-      document.getElementById('session-1').disabled = false;
-      document.getElementById('session-6').disabled = false;
-
-      break;
-    case 'RMC':
-      document.getElementById('movie-2').checked = true;
-
-
-      document.getElementById('session-1').disabled = true;
-      document.getElementById('session-4').disabled = true;
-      document.getElementById('session-5').disabled = true;
-
-
-      document.getElementById('session-2').disabled = false;
-      document.getElementById('session-3').disabled = false;
-
-      break;
-    case 'ANM':
-
-      document.getElementById('movie-3').checked = true;
-
-
-      document.getElementById('session-1').disabled = true;
-      document.getElementById('session-2').disabled = true;
-      document.getElementById('session-3').disabled = true;
-      document.getElementById('session-5').disabled = true;
-
-
-      document.getElementById('session-4').disabled = false;
-      document.getElementById('session-6').disabled = false;
-
-      break;
-    case 'DRM':
-
-      document.getElementById('movie-4').checked = true;
-
-      document.getElementById('session-1').disabled = true;
-      document.getElementById('session-2').disabled = true;
-      document.getElementById('session-3').disabled = true;
-
-      document.getElementById('session-4').disabled = false;
-      document.getElementById('session-5').disabled = false;
-
-      break;
-    default:
-  }
-</script>
+        switch (selectedMovie) {
+            case 'ACT':
+                document.getElementById('movie-1').checked = true;
+                document.getElementById('session-2').disabled = true;
+                document.getElementById('session-4').disabled = true;
+                document.getElementById('session-5').disabled = true;
+                break;
+            case 'RMC':
+                document.getElementById('movie-2').checked = true;
+                document.getElementById('session-2').disabled = true;
+                break;
+            case 'ANM':
+                document.getElementById('movie-3').checked = true;
+                document.getElementById('session-3').disabled = true;
+                break;
+            case 'DRM':
+                document.getElementById('movie-4').checked = true;
+                document.getElementById('session-4').disabled = true;
+                break;
+            default:
+        }
+    </script>
 </head>
 
 <body>
@@ -80,50 +47,37 @@
     </nav>
 
     <main>
-    <form method="POST" action="" id="booking-form">
-    <fieldset>
+    < method="POST" action="" id="booking-form">
+  <fieldset>
     <legend>Movie Selection:</legend>
-    <div class="movie-selection">
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-1" value="ACT">
-        <label for="movie-1">Indiana Jones and the Dial of Destiny</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-2" value="RMC">
-        <label for="movie-2">Barbie</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-3" value="ANM">
-        <label for="movie-3">Teenage Mutant Ninja Turtles: Mutant Mayhem</label>
-      </div>
-      <div class="movie">
-        <input type="radio" name="movie" id="movie-4" value="DRM">
-        <label for="movie-4">Oppenheimer</label>
-      </div>
-    </div>
+    
   </fieldset>
-    <fieldset>
+
+  <fieldset>
     <legend>Select Session:</legend>
     <div class="session-selection">
       <div class="session">
-        <input type="radio" name="session" id="session-2" value="12pm">
-        <label for="session-2">12pm</label>
+        <input type="radio" name="session" id="session-1" value="9pm">
+        <label for="session-1">9pm</label>
+        <select name="day" id="day">
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+        </select>
       </div>
       <div class="session">
-        <input type="radio" name="session" id="session-3" value="3pm">
-        <label for="session-3">3pm</label>
-      </div>
-      <div class="session">
-        <input type="radio" name="session" id="session-4" value="6pm">
-        <label for="session-4">6pm</label>
-      </div>
-      <div class="session">
-        <input type="radio" name="session" id="session-5" value="9pm">
-        <label for="session-5">9pm</label>
+        <input type="radio" name="session" id="session-2" value="6pm">
+        <label for="session-2">6pm</label>
+        <select name="day" id="day">
+          <option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select>
       </div>
     </div>
   </fieldset>
-      
+
       <fieldset>
   <legend>Select Standard Seats:</legend>
   <div id="seats-&-prices">
