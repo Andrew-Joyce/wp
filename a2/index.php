@@ -59,7 +59,7 @@
                     <li>Wed - Fri: 12pm</li>
                     <li>Sat - Sun: 3pm</li>
                 </ul>
-                <a href="booking.php?movie=RCM">Book Now</a>
+                <a href="booking.php?movie=RMC">Book Now</a>
             </div>
         </div>
         <!-- Movie 3 -->
