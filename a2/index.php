@@ -17,7 +17,7 @@
     </header>
     <nav id="navbar">
         <a href="#about-us">About Us</a>
-        <a href="#seats-&-prices">Seats and Prices</a>
+        <a href="#seats-&-prices">Seats & Prices</a>
         <a href="#now-showing">Now Showing</a>
     </nav>
     

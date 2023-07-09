@@ -251,7 +251,26 @@
     font-size: 28px;
     margin-bottom: 20px;
   }
+  .about-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
   
+  .about-text {
+    flex-basis: 70%;
+  }
+  
+  .about-image {
+    flex-basis: 30%;
+    display: flex;
+    align-items: flex-start; 
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+  }
   
   
   
