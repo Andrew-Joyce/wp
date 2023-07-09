@@ -10,15 +10,38 @@ body {
 }
 
 header {
-    background-image: url(../../media/MovieBanner.png);
-    background-size: 100% auto; 
-    background-position: center;
-    background-repeat: no-repeat; 
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 3vw; 
-}
+    font-size: 3vw;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                 0 0 20px rgba(255, 0, 0, 0.8),
+                 0 0 30px rgba(255, 0, 0, 0.8),
+                 0 0 40px rgba(255, 0, 0, 0.8),
+                 0 0 50px rgba(255, 0, 0, 0.8),
+                 0 0 60px rgba(255, 0, 0, 0.8),
+                 0 0 70px rgba(255, 0, 0, 0.8),
+                 0 0 80px rgba(255, 0, 0, 0.8);
+    animation: flicker 1s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                   0 0 20px rgba(255, 0, 0, 0.8),
+                   0 0 30px rgba(255, 0, 0, 0.8),
+                   0 0 40px rgba(255, 0, 0, 0.8),
+                   0 0 50px rgba(255, 0, 0, 0.8),
+                   0 0 60px rgba(255, 0, 0, 0.8),
+                   0 0 70px rgba(255, 0, 0, 0.8),
+                   0 0 80px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+      text-shadow: none;
+    }
+  }
+  
 
 
 header h1 {
