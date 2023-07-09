@@ -10,7 +10,6 @@ body {
 }
 
 header {
-    background-image: url(../../media/MovieBanner.png);
     background-size: 100% auto; 
     background-position: center;
     background-repeat: no-repeat; 
