@@ -34,11 +34,11 @@
 
         <div style="display: flex; justify-content: center; gap: 20px;">
         <a href="https://professional.dolby.com/cinema/">
-            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:100px;height:100px;border:0;">
+            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:300px;height:100px;border:0;">
         </a>
 
         <a href="https://professional.dolby.com/cinema/dolby-atmos">
-            <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:100px;height:100px;border:0;">
+            <img src="../../media/DolbyA.png" alt="Dobly Atmos" style="width:300px;height:100px;border:0;">
         </a>
         </div>
 
