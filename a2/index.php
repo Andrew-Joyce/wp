@@ -47,6 +47,7 @@
 </section>
 
 <section>
+<section id="seats-&-prices">
   <h2>Seats & Pricing</h2>
 
   <div class="seat-type">
