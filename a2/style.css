@@ -187,12 +187,22 @@
     height: inherit;
 }
 
+.movie-front {
+    display: flex;
+    align-items: flex-start;
+  }
+  
 .movie-front img {
-    width: 100%;
+    flex-basis: 40%;
+    max-width: 100%;
     height: auto;
-    object-fit: cover;
-}
+  }
 
+  .movie-front .title-rating {
+    flex-basis: 60%;
+    padding-left: 10px;
+  }
+  
 .movie-front div,
 .movie-back {
     padding: 10px;
@@ -304,7 +314,7 @@
     }
     
     .movie-front h3 {
-      font-size: 24px; /* Font size for medium-sized screens */
+      font-size: 24px; 
     }
     
     .movie-front .rating {
