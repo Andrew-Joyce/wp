@@ -84,7 +84,7 @@
   @media (min-width: 1200px) {
     font-size: 40px; /* Font size for large screens */
   }
-   
+
   nav a::before {
     content: '';
     position: absolute;
@@ -330,5 +330,9 @@
       margin-top: 20px;
       flex-basis: 100%;
     }
-  
+    
+  h2, h3, p {
+  overflow-wrap: break-word;
+}
+
     
