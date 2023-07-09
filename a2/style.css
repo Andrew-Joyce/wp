@@ -356,5 +356,8 @@ table {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
   }
+  table tr:nth-child(2n-1) {
+    background-color: #cccccc;
+  }
   
     
