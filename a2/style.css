@@ -297,7 +297,11 @@
     }
     
     .movie-front h3 {
-      font-size: 16px; /* Font size for medium-sized screens */
+      font-size: 24px; /* Font size for medium-sized screens */
+    }
+    
+    .movie-front .rating {
+      font-size: 12px; /
     }
   }
   
@@ -307,9 +311,13 @@
     }
     
     .movie-front h3 {
-      font-size: 26px; /* Font size for large screens */
+      font-size: 26px; /
     }
-  }
+    
+    .movie-front .rating {
+      font-size: 18px; /
+    }
+  }  
   
     .about-image {
       margin-top: 20px;
