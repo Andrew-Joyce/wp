@@ -118,6 +118,7 @@ nav a:hover::before {
   .about-image img {
     max-width: 100%;
     height: auto;
+    max-height: 400px;
   }
   
   
