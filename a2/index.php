@@ -10,8 +10,10 @@
   </head>
   <body>
   <header>
-    <img src="../../media/cinema.png" alt="Cinema" style="float: left;">
-    <h1>Lunardo Cinema</h1>
+    <div style="display: flex; align-items: center;">
+        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px;">
+        <h1>Lunardo Cinema</h1>
+    </div>
     </header>
     
     <nav id="navbar">
