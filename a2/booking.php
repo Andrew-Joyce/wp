@@ -28,14 +28,14 @@
 
 <body>
 <header>
-  <a href="index.html"><img src="logo.png" alt="Lunardo Cinema"></a>
-  <h1><a href="index.html">Lunardo Cinema</a></h1>
+  <a href="index.pnp"><img src="logo.png" alt="Lunardo Cinema"></a>
+  <h1><a href="index.pnp">Lunardo Cinema</a></h1>
 </header>
 
 <nav id="navbar">
-  <a href="index.html#about-us">About Us</a>
-  <a href="index.html#seats-and-prices">Seats and Prices</a>
-  <a href="index.html#now-showing">Now Showing</a>
+  <a href="index.pnp#about-us">About Us</a>
+  <a href="index.pnp#seats-and-prices">Seats and Prices</a>
+  <a href="index.pnp#now-showing">Now Showing</a>
 </nav>
 
 
