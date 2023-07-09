@@ -6,6 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
+    <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedMovie = urlParams.get('movie');
+
+  switch (selectedMovie) {
+    case 'ACT':
+      document.getElementById('movie-1').checked = true;
+
+      document.getElementById('session-2').disabled = true;
+      document.getElementById('session-3').disabled = true;
+      document.getElementById('session-4').disabled = true;
+
+      document.getElementById('session-1').disabled = false;
+      document.getElementById('session-6').disabled = false;
+
+      break;
+    case 'RMC':
+      document.getElementById('movie-2').checked = true;
+
+
+      document.getElementById('session-1').disabled = true;
+      document.getElementById('session-4').disabled = true;
+      document.getElementById('session-5').disabled = true;
+
+
+      document.getElementById('session-2').disabled = false;
+      document.getElementById('session-3').disabled = false;
+
+      break;
+    case 'ANM':
+
+      document.getElementById('movie-3').checked = true;
+
+
+      document.getElementById('session-1').disabled = true;
+      document.getElementById('session-2').disabled = true;
+      document.getElementById('session-3').disabled = true;
+      document.getElementById('session-5').disabled = true;
+
+
+      document.getElementById('session-4').disabled = false;
+      document.getElementById('session-6').disabled = false;
+
+      break;
+    case 'DRM':
+
+      document.getElementById('movie-4').checked = true;
+
+      document.getElementById('session-1').disabled = true;
+      document.getElementById('session-2').disabled = true;
+      document.getElementById('session-3').disabled = true;
+
+      document.getElementById('session-4').disabled = false;
+      document.getElementById('session-5').disabled = false;
+
+      break;
+    default:
+  }
+</script>
 </head>
 
 <body>
