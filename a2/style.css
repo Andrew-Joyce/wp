@@ -132,13 +132,15 @@
   }
   
   .movie-card {
+    box-sizing: border-box;
     perspective: 1000px;
     margin: 20px;
-    width: calc(25% - 60px);
+    width: calc(100% - 60px);
     max-width: 450px;
     height: auto;
     position: relative;
   }
+  
   
   .movie-card:focus .movie-front {
     transform: rotateY(180deg);
@@ -282,11 +284,17 @@
     justify-content: center;
   }
   
-  @media screen and (max-width: 1200px) {
-    .about-container {
-      flex-direction: column;
-      align-items: center;
+  @media (min-width: 768px) {
+    .movie-card {
+      width: calc(50% - 60px);
     }
+  }
+  
+  @media (min-width: 1200px) {
+    .movie-card {
+      width: calc(25% - 60px);
+    }
+  }
   
     .about-image {
       margin-top: 20px;
