@@ -61,11 +61,6 @@
       </div>
     </div>
   </fieldset>
-
-  <input type="hidden" name="imdb_link" value="https://www.imdb.com/title/tt1462764">
-  
-  <button type="submit">Submit</button>
-</form>
       
       <fieldset>
   <legend>Select Standard Seats:</legend>
