@@ -389,12 +389,8 @@ table {
       flex-basis: 100%;
     }
   }
-  .quantity-input {
-    width: 400px; 
-    height: 70px; 
-    padding: 10px; 
-    font-size: 20px; 
+  .label-size {
+    font-size: 20px;
   }
-  
   
     
