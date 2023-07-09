@@ -78,7 +78,7 @@
                     <li>Wed - Fri: 6pm</li>
                     <li>Sat - Sun: 12pm</li>
                 </ul>
-                <a href="booking.php?movie=ANM" class="book-now">Book Now</a>
+                <a href="booking.php?movie=ANM">Book Now</a>
             </div>
         </div>
         <!-- Movie 4 -->
@@ -96,7 +96,7 @@
                     <li>Mon - Tue: 6pm</li>
                     <li>Sat - Sun: 9pm</li>
                 </ul>
-                <a href="booking.php?movie=DRM" class="book-now">Book Now</a>
+                <a href="booking.php?movie=DRM">Book Now</a>
             </div>
         </div>
     </div>
