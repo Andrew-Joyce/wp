@@ -200,14 +200,14 @@ footer {
 .movie-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-centre;
+    justify-content: space-between;
   }
   
   .movie-card {
     perspective: 1000px;
     margin: 20px;
-    width: calc(33.33% - 40px);
-    max-width: 450px; /
+    width: calc(25% - 40px);
+    max-width: 450px;
     height: auto;
     position: relative;
   }
@@ -273,15 +273,16 @@ footer {
   
   @media (min-width: 768px) and (max-width: 991px) {
     .movie-card {
-      width: 50%;
+      width: calc(50% - 40px);
     }
   }
   
   @media (min-width: 992px) {
     .movie-card {
-      width: calc(25% - 40px);
+      width: calc(33.33% - 40px);
     }
   }
+  
   
   
   
