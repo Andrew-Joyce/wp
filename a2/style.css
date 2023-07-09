@@ -10,12 +10,11 @@ body {
 }
 
 header {
-    background-image: url(../../media/MovieBaner.jpg;);
+    background-image: url(../../media/MovieBanner.png;);
     text-align: center;
     padding: 1em 0;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 40px;
-    color: #ffffff;
 }
 
 header h1 {
