@@ -22,6 +22,21 @@
           selectedFieldset.style.display = 'block';
         }
       }
+
+      const movieDetailsContainer = document.getElementById('movie-details');
+      if (selectedMovie === 'RMC') {
+        movieDetailsContainer.innerHTML = `
+          <div class="synopsis">
+            <h2>Barbie</h2>
+            <p>Enter the fascinating world of Barbie and join her on an exciting adventure. Experience a heartwarming story filled with friendship, courage, and dreams. Barbie will captivate you with her charm and inspire you to believe in yourself. Get ready for an unforgettable journey with Barbie!</p>
+          </div>
+          <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        `;
+      } else {
+        movieDetailsContainer.innerHTML = '';
+      }
     });
   </script>
 </head>
