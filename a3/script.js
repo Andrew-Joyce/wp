@@ -10,53 +10,55 @@
 
     let totalPrice = 0;
 
-    selectedSeats.forEach((seat) => {
+    selectedSeats.forEach(function(seat) {
       const seatType = seat.getAttribute('name').match(/\[(.*?)\]/)[1];
       const isFullPrice = seatType === 'STA' || seatType === 'STP' || seatType === 'STC';
       totalPrice += getSeatPrice(seat, isFullPrice) * parseInt(seat.value, 10);
     });
 
     const totalPriceElement = document.getElementById('total-price');
-    totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    totalPriceElement.textContent = 'Total Price: $' + totalPrice.toFixed(2);
   }
 
   function getSeatPrice(seatElement, isFullPrice) {
     const fullPriceAttr = isFullPrice ? 'data-full-price' : 'data-discount';
     return parseFloat(seatElement.getAttribute(fullPriceAttr));
   }
+
+  // Call the calculateTotalPrice function after defining it
   calculateTotalPrice();
-}
 
-function validateName(name) {
-  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/; 
-  return namePattern.test(name);
-}
-function validateMobile(mobile) {
-  const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-  return mobilePattern.test(mobile);
-}
-
-function validateForm() {
-  const nameInput = document.getElementById('name');
-  const mobileInput = document.getElementById('mobile');
-
-  const isNameValid = validateName(nameInput.value);
-  const isMobileValid = validateMobile(mobileInput.value);
-
-  if (!isNameValid) {
-    alert('Please enter a valid name.');
-    return false;
+  function validateName(name) {
+    const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
+    return namePattern.test(name);
   }
 
-  if (!isMobileValid) {
-    alert('Please enter a valid Australian mobile number (starting with 04).');
-    return false;
+  function validateMobile(mobile) {
+    const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+    return mobilePattern.test(mobile);
   }
 
-  return true; 
-}
+  function validateForm() {
+    const nameInput = document.getElementById('name');
+    const mobileInput = document.getElementById('mobile');
 
-document.addEventListener('DOMContentLoaded', () => {
+    const isNameValid = validateName(nameInput.value);
+    const isMobileValid = validateMobile(mobileInput.value);
+
+    if (!isNameValid) {
+      alert('Please enter a valid name.');
+      return false;
+    }
+
+    if (!isMobileValid) {
+      alert('Please enter a valid Australian mobile number (starting with 04).');
+      return false;
+    }
+
+    return true;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('booking-form');
     const seatInputs = form.querySelectorAll('input[type="number"]');
     const dayRadios = form.querySelectorAll('input[type="radio"][name="session"]');
@@ -79,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isRemembered = localStorage.getItem('rememberMe') === 'true';
     rememberCheckbox.checked = isRemembered;
 
-    rememberCheckbox.addEventListener('change', () => {
+    rememberCheckbox.addEventListener('change', function() {
       if (rememberCheckbox.checked) {
         const nameInput = document.getElementById('name').value;
         const mobileInput = document.getElementById('mobile').value;
@@ -98,4 +100,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 </script>
-
