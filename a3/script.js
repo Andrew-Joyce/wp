@@ -25,9 +25,6 @@
     return parseFloat(seatElement.getAttribute(fullPriceAttr));
   }
 
-  // Call the calculateTotalPrice function after defining it
-  calculateTotalPrice();
-
   function validateName(name) {
     const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
     return namePattern.test(name);
