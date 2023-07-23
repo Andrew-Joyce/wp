@@ -1,34 +1,34 @@
 <script>
-function getSeatPrice(seatElement, isFullPrice) {
-  const fullPriceAttr = isFullPrice ? 'data-full-price' : 'data-discount';
-  return parseFloat(seatElement.getAttribute(fullPriceAttr));
-}
+  const form = document.getElementById('booking-form');
+  form.addEventListener('change', calculateTotalPrice);
 
-function calculateTotalPrice() {
-  const selectedSeats = document.querySelectorAll('input[type="number"]');
-  const selectedDay = document.querySelector('select[name="day"]:checked');
-  let totalPrice = 0;
+  function calculateTotalPrice() {
+    const selectedSeats = document.querySelectorAll('input[type="number"]');
+    const standardAdultPrice = getSeatPrice(document.querySelector('.seat.standard-seat'), true);
+    const concessionPrice = getSeatPrice(document.querySelector('.seat.concession-seat'), true);
+    const childPrice = getSeatPrice(document.querySelector('.seat.child-seat'), true);
 
-  if (selectedDay) {
+    let totalPrice = 0;
+
     selectedSeats.forEach((seat) => {
       const seatType = seat.getAttribute('name').match(/\[(.*?)\]/)[1];
       const isFullPrice = seatType === 'STA' || seatType === 'STP' || seatType === 'STC';
       totalPrice += getSeatPrice(seat, isFullPrice) * parseInt(seat.value, 10);
     });
 
-    if (totalPrice > 0) {
-      const formattedPrice = '$' + totalPrice.toFixed(2);
-      document.getElementById('total-price').textContent = formattedPrice;
-    } else {
-      document.getElementById('total-price').textContent = '';
-    }
-  } else {
-    document.getElementById('total-price').textContent = '';
+    const totalPriceElement = document.getElementById('total-price');
+    totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
   }
+
+  function getSeatPrice(seatElement, isFullPrice) {
+    const fullPriceAttr = isFullPrice ? 'data-full-price' : 'data-discount';
+    return parseFloat(seatElement.getAttribute(fullPriceAttr));
+  }
+  calculateTotalPrice();
 }
 
 function validateName(name) {
-  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/; // Allow Western and European accented alphabet chars and limited punctuation
+  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/; 
   return namePattern.test(name);
 }
 function validateMobile(mobile) {
