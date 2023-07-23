@@ -232,10 +232,10 @@
         </div>
         </fieldset>
 
-        <fieldset>
-            <legend>Total Price:</legend>
-            <div id="total-price"></div>
-        </fieldset>
+    <fieldset>
+        <legend>Total Price:</legend>
+        <div id="total-price"></div>
+    </fieldset>
 
       <fieldset>
         <legend>Contact Information:</legend>
