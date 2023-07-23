@@ -1,7 +1,4 @@
 <script>
-  const form = document.getElementById('booking-form');
-  form.addEventListener('change', calculateTotalPrice);
-
   function calculateTotalPrice() {
     const selectedSeats = document.querySelectorAll('input[type="number"]');
     const standardAdultPrice = getSeatPrice(document.querySelector('.seat.standard-seat'), true);
@@ -57,9 +54,13 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('booking-form');
+    form.addEventListener('change', calculateTotalPrice);
+
     const seatInputs = form.querySelectorAll('input[type="number"]');
     const dayRadios = form.querySelectorAll('input[type="radio"][name="session"]');
     const daySelects = form.querySelectorAll('select[name="day"]');
+
+    calculateTotalPrice();
 
     const storedName = localStorage.getItem('customerName');
     const storedMobile = localStorage.getItem('customerMobile');
@@ -93,6 +94,12 @@
         localStorage.removeItem('customerMobile');
         localStorage.removeItem('customerEmail');
         localStorage.removeItem('rememberMe');
+      }
+    });
+
+    form.addEventListener('submit', function(event) {
+      if (!validateForm()) {
+        event.preventDefault();
       }
     });
   });
