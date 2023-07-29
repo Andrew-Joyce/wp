@@ -51,11 +51,7 @@
             <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
-        <div class="trailer">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div> 
-    <legend>Select Session</legend>
+        <legend>Select Session</legend>
     <div class="session-selection">
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
@@ -75,6 +71,9 @@
                 <option value="sat">Saturday</option>
                 <option value="sun">Sunday</option>
             </select>
+        </div>
+        <div class="trailer">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </fieldset>
