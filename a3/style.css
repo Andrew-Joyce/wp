@@ -438,8 +438,8 @@ label {
 }
 
 .trailer {
-  width: 100%;
   position: relative;
+  width: 100%;
   padding-bottom: 56.25%;
   overflow: hidden;
 }
