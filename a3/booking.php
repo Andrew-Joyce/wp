@@ -43,7 +43,7 @@
   <main>
     
     <form method="POST" action="" id="booking-form">
-    <fieldset id="fieldset-session-ACT">
+<fieldset id="fieldset-session-ACT">
     <div class="movie-details" id="indiana-jones-details" style="display: block;">
         <div class="synopsis">
             <h2>Indiana Jones and the Dial of Destiny</h2>
@@ -52,8 +52,7 @@
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
         <div class="trailer">
-        <iframe src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div> 
     <legend>Select Session</legend>
