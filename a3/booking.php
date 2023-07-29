@@ -51,26 +51,30 @@
             <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
-        <legend>Select Session</legend>
-    <div class="session-selection">
-        <div class="session">
-            <input type="radio" name="session" id="session-1" value="9pm">
-            <label for="session-1">9pm</label>
-            <select name="day" id="day1">
+        <div class="session-selection">
+            <div class="session">
+                <label>
+                <input type="radio" name="session" id="session-1" value="9pm">
+                9pm
+                </label>
+                <select name="day" id="day1">
                 <option value="mon">Monday</option>
                 <option value="tue">Tuesday</option>
                 <option value="wed">Wednesday</option>
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
-            </select>
-        </div>
-        <div class="session">
-            <input type="radio" name="session" id="session-2" value="6pm">
-            <label for="session-2">6pm</label>
-            <select name="day" id="day2">
+                </select>
+            </div>
+            <div class="session">
+                <label>
+                <input type="radio" name="session" id="session-2" value="6pm">
+                6pm
+                </label>
+                <select name="day" id="day2">
                 <option value="sat">Saturday</option>
                 <option value="sun">Sunday</option>
-            </select>
+                </select>
+            </div>
         </div>
         <div class="trailer">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
