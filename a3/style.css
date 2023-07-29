@@ -451,7 +451,8 @@ label {
   left: 0;
 }
 .session-selection {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
 }
 
@@ -463,4 +464,5 @@ label {
 .session label {
   margin: 0;
 }
+
 
