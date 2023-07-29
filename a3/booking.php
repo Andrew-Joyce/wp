@@ -44,20 +44,20 @@
     
     <form method="POST" action="" id="booking-form">
     <fieldset id="fieldset-session-ACT">
-        <div class="movie-details" id="indiana-jones-details" style="display: block;">
-            <div class="synopsis">
+    <div class="movie-details" id="indiana-jones-details" style="display: block;">
+        <div class="synopsis">
             <h2>Indiana Jones and the Dial of Destiny</h2>
             <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
             <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
-            </div>
-            <div class="trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div> 
-        <legend>Select Session</legend>
-        <div class="session-selection">
-            <div class="session">
+        </div>
+        <div class="trailer">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div> 
+    <legend>Select Session</legend>
+    <div class="session-selection">
+        <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
             <select name="day" id="day1">
@@ -67,17 +67,18 @@
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
             </select>
-            </div>
-            <div class="session">
+        </div>
+        <div class="session">
             <input type="radio" name="session" id="session-2" value="6pm">
             <label for="session-2">6pm</label>
             <select name="day" id="day2">
                 <option value="sat">Saturday</option>
                 <option value="sun">Sunday</option>
             </select>
-            </div>
         </div>
-        </fieldset>
+    </div>
+</fieldset>
+
 
 
         <fieldset id="fieldset-session-RMC">
