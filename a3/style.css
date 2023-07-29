@@ -467,11 +467,6 @@ table {
     margin-top: 20px;
   }  
 
-  #fieldset-session-ACT {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .movie-details {
     display: flex;
     flex-wrap: wrap;
