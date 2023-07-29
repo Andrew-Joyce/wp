@@ -58,7 +58,7 @@
     </div>
     <legend>Indiana Jones and the Dial of Destiny</legend>
     <div class="Indiana Jones and the Dial of Destiny">
-        <h3>"Select Session"</h3>
+        <h3>Select Session</h3>
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
