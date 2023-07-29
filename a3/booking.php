@@ -56,7 +56,7 @@
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
     </div>
-    <legend>Select Session</legend>
+    <legend>Indiana Jones and the Dial of Destiny</legend>
     <div class="Indiana Jones and the Dial of Destiny">
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
