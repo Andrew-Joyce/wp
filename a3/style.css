@@ -452,9 +452,3 @@ label {
   top: 0;
   left: 0;
 }
-
-@media (max-width: 767px) {
-  .trailer {
-    padding-bottom: 75%;
-  }
-}
