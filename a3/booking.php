@@ -51,14 +51,14 @@
             </div>
         </div>
         <div class="synopsis">
-            <h2>Indiana Jones and the Dial of Destiny</h2>
             <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
             <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
     </div>
     <legend>Select Session</legend>
-    <div class="session-selection">
+    <div class="Indiana Jones and the Dial of Destiny">
+        <h3>"Select Session"</h3>
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
