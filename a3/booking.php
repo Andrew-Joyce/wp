@@ -43,7 +43,6 @@
   <main>
     
     <form method="POST" action="" id="booking-form">
-    <fieldset id="fieldset-session-ACT">
   <div class="movie-details" id="indiana-jones-details">
     <div class="synopsis">
       <h2>Indiana Jones and the Dial of Destiny</h2>
