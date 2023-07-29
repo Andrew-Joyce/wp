@@ -437,19 +437,37 @@ label {
   }
 }
 
-.trailer {
+.responsive-video {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; 
+  height: 0;
 }
 
-.trailer iframe {
+.responsive-video iframe {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
+
+.movie-details {
+  display: block;
+}
+
+.movie-details h2 {
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+}
+
+.movie-details .synopsis p,
+.movie-details .synopsis strong {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .session-selection {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -461,5 +479,26 @@ label {
   padding: 10px;
   text-align: center;
 }
+
+.session label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.session input[type="radio"],
+.session select {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .session-selection {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
