@@ -467,19 +467,49 @@ table {
     margin-top: 20px;
   }  
 
-  #fieldset-session-ACT .trailer {
+  #fieldset-session-ACT {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .movie-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .synopsis {
+    flex-basis: 50%;
+  }
+  
+  .trailer {
+    flex-basis: 40%;
+  }
+  
+  .trailer .video-container {
     position: relative;
     padding-bottom: 56.25%;
     overflow: hidden;
     width: 100%;
   }
   
-  #fieldset-session-ACT iframe {
+  .trailer iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
+  
+  .session-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .session {
+    flex-basis: 48%;
+  }
+  
   
