@@ -41,15 +41,20 @@
 
 
   <main>
-  <fieldset id="fieldset-session-ACT">
-    <h2>Indiana Jones and the Dial of Destiny</h2>
-    <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
-    <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
-    <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
-     <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allowfullscreen></iframe>
-    </div>
-  <form method="POST" action="" id="booking-form">
+    
+    <form method="POST" action="" id="booking-form">
+    <fieldset id="fieldset-session-ACT">
+        <div class="movie-details" id="indiana-jones-details" style="display: block;">
+            <div class="synopsis">
+            <h2>Indiana Jones and the Dial of Destiny</h2>
+            <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
+            <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
+            <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
+            </div>
+            <div class="trailer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div> 
         <legend>Select Session</legend>
         <div class="session-selection">
             <div class="session">
@@ -73,6 +78,8 @@
             </div>
         </div>
         </fieldset>
+
+
         <fieldset id="fieldset-session-RMC">
         <div class="movie-details" id="barbie-details" style="display: block;">
         <div class="synopsis">
@@ -187,17 +194,17 @@
             <div class="seats-container">
             <div class="seat standard-seat">
                 <label for="seats[STA]">Standard Adult</label>
-                <input type="number" name="seats[STA]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
             </div>
             <div class="seat concession-seat">
                 <label for="seats[STP]">Concession</label>
-                <input type="number" name="seats[STP]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
             </div>
             <div class="seat child-seat">
                 <label for="seats[STC]">Child</label>
-                <input type="number" name="seats[STC]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
             </div>
             </div>
@@ -208,27 +215,22 @@
             <div class="seats-container">
             <div class="seat standard-seat">
                 <label for="seats[STA]">Standard Adult</label>
-                <input type="number" name="seats[STA]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $31.00/ Discount: $25.00</span>
             </div>
             <div class="seat concession-seat">
                 <label for="seats[STP]">Concession</label>
-                <input type="number" name="seats[STP]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $28.00 / Discount: $23.50</span>
             </div>
             <div class="seat child-seat">
                 <label for="seats[STC]">Child</label>
-                <input type="number" name="seats[STC]" min="0" placeholder="0" required>
+                <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
                 <span class="seat-price">Full Price: $25.00 / Discount: $22.00</span>
             </div>
             </div>
         </div>
         </fieldset>
-
-    <fieldset>
-        <legend>Total Price:</legend>
-        <div id="total-price"></div>
-    </fieldset>
 
       <fieldset>
         <legend>Contact Information:</legend>
@@ -243,14 +245,6 @@
           <input type="email" name="email" id="email" required>
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>Remember me:</legend>
-        <label for="remember">
-        <input type="checkbox" id="remember" name="remember" />
-        Remember me
-        </label>
-        </fieldset>
 
       <button type="submit">Submit</button>
     </form>
