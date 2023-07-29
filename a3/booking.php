@@ -45,7 +45,6 @@
     <form method="POST" action="" id="booking-form">
     <fieldset id="fieldset-session-ACT">
     <div class="movie-details" id="indiana-jones-details" style="display: block;">
-        <h2>Indiana Jones and the Dial of Destiny</h2>
         <div class="trailer">
             <div class="responsive-video">
                 <iframe src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -58,7 +57,7 @@
         </div>
     </div>
     <legend>Select Session</legend>
-    <div class="session-selection">
+    <div class="Indiana Jones and the Dial of Destiny">
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
