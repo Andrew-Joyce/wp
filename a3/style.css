@@ -450,3 +450,19 @@ label {
   top: 0;
   left: 0;
 }
+
+.session-selection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.session label {
+  margin-right: 5px;
+}
