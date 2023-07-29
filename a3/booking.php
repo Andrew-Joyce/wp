@@ -194,17 +194,17 @@
             <div class="seats-container">
             <div class="seat standard-seat">
                 <label for="seats[STA]">Standard Adult</label>
-                <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STA]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
             </div>
             <div class="seat concession-seat">
                 <label for="seats[STP]">Concession</label>
-                <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STP]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
             </div>
             <div class="seat child-seat">
                 <label for="seats[STC]">Child</label>
-                <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STC]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
             </div>
             </div>
@@ -215,17 +215,17 @@
             <div class="seats-container">
             <div class="seat standard-seat">
                 <label for="seats[STA]">Standard Adult</label>
-                <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STA]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $31.00/ Discount: $25.00</span>
             </div>
             <div class="seat concession-seat">
                 <label for="seats[STP]">Concession</label>
-                <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STP]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $28.00 / Discount: $23.50</span>
             </div>
             <div class="seat child-seat">
                 <label for="seats[STC]">Child</label>
-                <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+                <input type="number" name="seats[STC]" min="0" placeholder="0" required>
                 <span class="seat-price">Full Price: $25.00 / Discount: $22.00</span>
             </div>
             </div>
