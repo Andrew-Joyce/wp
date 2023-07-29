@@ -41,6 +41,10 @@
 
 
   <main>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
     
     <form method="POST" action="" id="booking-form">
     <fieldset id="fieldset-session-ACT">
