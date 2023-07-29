@@ -44,21 +44,21 @@
     
     <form method="POST" action="" id="booking-form">
     <fieldset id="fieldset-session-ACT">
-    <div class="movie-details" id="indiana-jones-details" style="display: block;">
+    <div class="movie-details" id="indiana-jones-details">
         <div class="trailer">
             <div class="responsive-video">
                 <iframe src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="synopsis">
+            <h2>Indiana Jones and the Dial of Destiny</h2>
             <p>Embark on an epic adventure with Indiana Jones as he searches for the mystical Dial of Destiny. Join him in a thrilling quest filled with ancient artifacts, hidden treasures, and dangerous foes. Prepare for heart-stopping action and breathtaking discoveries in this action-packed blockbuster!</p>
             <p><strong>Starring</strong> - Harrison Ford · Phoebe Waller-Bridge · Antonio Banderas</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1462764/" target="_blank">IMDb</a>.</p>
         </div>
     </div>
-    <legend>Indiana Jones and the Dial of Destiny</legend>
-    <div class="Indiana Jones and the Dial of Destiny">
-        <h2>Select Session</h2>
+    <legend>Select Session</legend>
+    <div class="session-selection">
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
@@ -81,9 +81,6 @@
     </div>
 </fieldset>
 
-        </div>
-    </div>
-</fieldset>
 
 
 
