@@ -119,25 +119,27 @@
     </div>
 </fieldset>
 
-    <fieldset id="fieldset-session-ANM">
-    <legend>Select Session</legend>
 
-            <div class="movie-details" id="tmnt-details" style="display: block;">
+<fieldset id="fieldset-session-ANM">
+    <div class="movie-details" id="tmnt-details" style="display: block;">
+        <div class="trailer">
+            <div class="responsive-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IHvzw4Ibuho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
         <div class="synopsis">
-            <h2>Teenage Mutant Ninja Turtles: Mutant Mayhem</h2>
             <p>Join the fearless Teenage Mutant Ninja Turtles in their latest mission to save the city from the clutches of evil. Watch as Leonardo, Donatello, Michelangelo, and Raphael unleash their ninja skills to combat powerful enemies. Get ready for an adrenaline-pumping adventure with the heroes in a half-shell!</p>
             <p><strong>Starring</strong> - Ayo Edebiri · Rose Byrne · Seth Rogen · Jackie Chan</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt8589698/" target="_blank">IMDb</a>.</p>
         </div>
-        <div class="trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IHvzw4Ibuho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-    <div class="session-selection">
+    </div>
+    <legend>Teenage Mutant Ninja Turtles: Mutant Mayhem</legend>
+    <div class="Teenage Mutant Ninja Turtles: Mutant Mayhem">
+        <h3>Select Session</h3>
         <div class="session">
         <input type="radio" name="session" id="session-5" value="12pm">
         <label for="session-5">12pm</label>
-        <select name="day" id="day5">
+            <select name="day" id="day5">
             <option value="mon">Monday</option>
             <option value="tue">Tuesday</option>
             <option value="sat">Saturday</option>
@@ -146,15 +148,15 @@
         </div>
         <div class="session">
         <input type="radio" name="session" id="session-6" value="6pm">
-        <label for="session-6">6pm</label>
-        <select name="day" id="day6">
+            <label for="session-6">6pm</label>
+            <select name="day" id="day6">
             <option value="wed">Wednesday</option>
             <option value="thu">Thursday</option>
             <option value="fri">Friday</option>
         </select>
         </div>
     </div>
-    </fieldset>
+</fieldset>
 
     <fieldset id="fieldset-session-DRM">
             <div class="movie-details" id="oppenheimer-details" style="display: block;">
