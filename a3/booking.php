@@ -44,8 +44,9 @@
   <main>
     
     <form method="POST" action="" id="booking-form">
-    <fieldset id="fieldset-session-ACT">
-    <div class="movie-details" id="indiana-jones-details">
+
+<fieldset id="fieldset-session-ACT">
+    <div class="movie-details" id="indiana-jones-details"style="display: block;">
         <div class="trailer">
             <div class="responsive-video">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/eQfMbSe7F2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -82,44 +83,41 @@
     </div>
 </fieldset>
 
-
-
-
-        <fieldset id="fieldset-session-RMC">
-        <div class="movie-details" id="barbie-details" style="display: block;">
+<fieldset id="fieldset-session-RMC">
+    <div class="movie-details" id="barbie-details"style="display: block;">
+        <div class="trailer">
+            <div class="responsive-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
         <div class="synopsis">
-            <h2>Barbie</h2>
             <p>Enter the fascinating world of Barbie and join her on an exciting adventure. Experience a heartwarming story filled with friendship, courage, and dreams. Barbie will captivate you with her charm and inspire you to believe in yourself. Get ready for an unforgettable journey with Barbie!</p>
             <p><strong>Starring</strong> - Margot Robbie · Kingsley Ben-Adi · Ryan Gosling ·  Emma Mackey</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt1517268/" target="_blank">IMDb</a>.</p>
         </div>
-        <div class="trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-        <legend>Select Session</legend>
-        <div class="session-selection">
-            <div class="session">
-            <input type="radio" name="session" id="session-3" value="12pm">
+    </div>
+    <legend>Barbie</legend>
+    <div class="Barbie">
+        <h3>Select Session</h3>
+        <div class="session">
+        <input type="radio" name="session" id="session-3" value="12pm">
             <label for="session-3">12pm</label>
             <select name="day" id="day3">
                 <option value="wed">Wednesday</option>
                 <option value="thu">Thursday</option>
                 <option value="fri">Friday</option>
             </select>
-            </div>
-            <div class="session">
-            <input type="radio" name="session" id="session-4" value="3pm">
+        </div>
+        <div class="session">
+        <input type="radio" name="session" id="session-4" value="3pm">
             <label for="session-4">3pm</label>
             <select name="day" id="day4">
                 <option value="sat">Saturday</option>
                 <option value="sun">Sunday</option>
             </select>
-            </div>
         </div>
-        </fieldset>
-
-
+    </div>
+</fieldset>
 
     <fieldset id="fieldset-session-ANM">
     <legend>Select Session</legend>
