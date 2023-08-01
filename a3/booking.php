@@ -66,7 +66,7 @@
         <div class="session">
             <input type="radio" name="session" id="session-1" value="9pm">
             <label for="session-1">9pm</label>
-            <select name="day" id="day1">
+            <select class="select-input" name="day" id="day1">
                 <option value="mon">Monday</option>
                 <option value="tue">Tuesday</option>
                 <option value="wed">Wednesday</option>
@@ -77,7 +77,7 @@
         <div class="session">
             <input type="radio" name="session" id="session-2" value="6pm">
             <label for="session-2">6pm</label>
-            <select name="day" id="day2">
+            <select class="select-input" name="day" id="day2">
                 <option value="sat">Saturday</option>
                 <option value="sun">Sunday</option>
             </select>
