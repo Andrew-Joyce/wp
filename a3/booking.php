@@ -28,17 +28,19 @@
 </head>
 
 <body>
-<header style="text-align: center;">
+  <header style="text-align: center;">
     <div style="display: flex; justify-content: center; align-items: center;">
+      <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php">
         <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 100px; height: auto;">
         <h1 style="display: inline;">Lunardo Cinema</h1>
+      </a>
     </div>
-</header>
-<nav id="navbar">
-    <a href="#now-showing">Now Showing</a>
-    <a href="#seats-&-prices">Seats & Prices</a>
-    <a href="#about-us">About Us</a>
-</nav>
+  </header>
+  <nav id="navbar">
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#now-showing">Now Showing</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#seats-&-prices">Seats & Prices</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#about-us">About Us</a>
+  </nav>
 
 
   <main>
