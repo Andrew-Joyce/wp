@@ -158,21 +158,22 @@
     </div>
 </fieldset>
 
-    <fieldset id="fieldset-session-DRM">
-            <div class="movie-details" id="oppenheimer-details" style="display: block;">
+<fieldset id="fieldset-session-DRM">
+    <div class="movie-details" id="tmnt-details" style="display: block;">
+        <div class="trailer">
+            <div class="responsive-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bK6ldnjE3Y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
         <div class="synopsis">
-            <h2>Oppenheimer</h2>
             <p>Discover the untold story of J. Robert Oppenheimer, the brilliant scientist behind the development of the atomic bomb. Dive into the complex world of physics, politics, and moral dilemmas as Oppenheimer grapples with the consequences of his groundbreaking work. Experience a thought-provoking journey through history and ethics.</p>
             <p><strong>Starring</strong> - Cillian Murphy · Emily Blunt· Matt Damon · Robert Downey Jr.</p>
             <p>For more information, visit <a href="https://www.imdb.com/title/tt15398776/" target="_blank">IMDb</a>.</p>
         </div>
-        <div class="trailer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/bK6ldnjE3Y0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-
-    <legend>Select Session</legend>
-    <div class="session-selection">
+    </div>
+    <legend>Oppenheimer</legend>
+    <div class="Oppenheimer">
+        <h3>Select Session</h3>
         <div class="session">
         <input type="radio" name="session" id="session-7" value="6pm">
         <label for="session-7">6pm</label>
@@ -190,11 +191,12 @@
         </select>
         </div>
     </div>
-    </fieldset>
+</fieldset>
+
 
 
       <fieldset>
-        <legend>Select Standard Seats:</legend>
+        <legend>Select Standard Seats</legend>
         <div id="seats-&-prices">
             <div class="seats-container">
             <div class="seat standard-seat">
@@ -215,7 +217,7 @@
             </div>
         </div>
         
-        <legend>Gold Class Seats:</legend>
+        <legend>Gold Class Seats</legend>
         <div id="seats-&-prices">
             <div class="seats-container">
             <div class="seat standard-seat">
