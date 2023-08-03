@@ -11,10 +11,20 @@ function calculateTotalPrice() {
     'GSTC': { 'fullPrice': 25.00, 'discount': 22.00 },
   };
 
-  const selectedSeats = document.querySelectorAll('input[type="number"]');
+  const standardSeatsInputs = document.querySelectorAll('#standard-seats input[type="number"]');
+  const goldClassSeatsInputs = document.querySelectorAll('#gold-class-seats input[type="number"]');
   let totalPrice = 0;
 
-  selectedSeats.forEach((seat) => {
+  standardSeatsInputs.forEach((seat) => {
+    const seatType = seat.name.split('[')[1].split(']')[0];
+    const seatQuantity = parseInt(seat.value);
+
+    if (!isNaN(seatQuantity)) {
+      totalPrice += seatQuantity * seatPrices[seatType].fullPrice;
+    }
+  });
+
+  goldClassSeatsInputs.forEach((seat) => {
     const seatType = seat.name.split('[')[1].split(']')[0];
     const seatQuantity = parseInt(seat.value);
 
@@ -42,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('booking-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  calculateTotalPrice(); 
+  calculateTotalPrice();
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('booking-form');
@@ -125,3 +136,4 @@ function validateForm() {
 
   return true;
 }
+

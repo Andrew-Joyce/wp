@@ -200,6 +200,7 @@
       <fieldset>
         <legend>Select Standard Seats</legend>
         <div id="seats-&-prices">
+        <div id="standard-seats">
             <div class="seats-container">
             <div class= "seat standard-seat">
                 <label for="seats[STA]">Standard Adult</label>
@@ -220,6 +221,7 @@
         </div>
         
         <legend>Gold Class Seats</legend>
+        <div id="gold-class-seats">
         <div id="seats-&-prices">
             <div class="seats-container">
             <div class= "seat standard-seat">
