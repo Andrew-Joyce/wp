@@ -1,23 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const selectedMovie = urlParams.get('movie');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-  sessionFieldsets.forEach((fieldset) => {
-    fieldset.style.display = 'none';
-  });
-
-  if (selectedMovie) {
-    const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-    if (selectedFieldset) {
-      selectedFieldset.style.display = 'block';
-    }
-  }
-});
-
-document.getElementById('booking-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-
+function calculateTotalPrice() {
   const seatPrices = {
     'STA': { 'fullPrice': 21.50, 'discount': 16.00 },
     'STP': { 'fullPrice': 19.50, 'discount': 14.00 },
@@ -40,42 +24,25 @@ document.getElementById('booking-form').addEventListener('submit', function (eve
   });
 
   document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+  sessionFieldsets.forEach((fieldset) => {
+    fieldset.style.display = 'none';
+  });
+
+  if (selectedMovie) {
+    const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+    if (selectedFieldset) {
+      selectedFieldset.style.display = 'block';
+    }
+  }
 });
 
-function getSeatPrice(seatElement, isFullPrice) {
-  const fullPriceAttr = isFullPrice ? 'data-full-price' : 'data-discount';
-  return parseFloat(seatElement.getAttribute(fullPriceAttr));
-}
-
-function validateName(name) {
-  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
-  return namePattern.test(name);
-}
-
-function validateMobile(mobile) {
-  const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-  return mobilePattern.test(mobile);
-}
-
-function validateForm() {
-  const nameInput = document.getElementById('name');
-  const mobileInput = document.getElementById('mobile');
-
-  const isNameValid = validateName(nameInput.value);
-  const isMobileValid = validateMobile(mobileInput.value);
-
-  if (!isNameValid) {
-    alert('Please enter a valid name.');
-    return false;
-  }
-
-  if (!isMobileValid) {
-    alert('Please enter a valid Australian mobile number (starting with 04).');
-    return false;
-  }
-
-  return true;
-}
+document.getElementById('booking-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  calculateTotalPrice(); 
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('booking-form');
@@ -128,3 +95,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+function validateName(name) {
+  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
+  return namePattern.test(name);
+}
+
+function validateMobile(mobile) {
+  const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+  return mobilePattern.test(mobile);
+}
+
+function validateForm() {
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+
+  const isNameValid = validateName(nameInput.value);
+  const isMobileValid = validateMobile(mobileInput.value);
+
+  if (!isNameValid) {
+    alert('Please enter a valid name.');
+    return false;
+  }
+
+  if (!isMobileValid) {
+    alert('Please enter a valid Australian mobile number (starting with 04).');
+    return false;
+  }
+
+  return true;
+}
