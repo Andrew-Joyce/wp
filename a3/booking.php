@@ -245,8 +245,6 @@
             <legend>Total Price</legend>
             <div id="total-price"></div>
         </fieldset>
-        <button type="submit">Submit</button>
-    </form>
 
 
       <fieldset>
@@ -262,6 +260,11 @@
           <input type="email" name="email" id="email" required>
         </div>
       </fieldset>
+
+      </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+   
 
   <footer>
        <div class="contact-info">
