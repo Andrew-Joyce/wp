@@ -25,7 +25,6 @@ function calculateTotalPrice() {
     }
   });
 
-  const selectedSession = document.querySelector('input[name="session"]:checked');
   if (selectedSession && selectedSession.value === '6pm') {
     goldClassSeatsInputs.forEach((seat) => {
       const seatType = seat.name.split('[')[1].split(']')[0];
@@ -64,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const movieSelect = document.getElementById('movie-select');
   movieSelect.addEventListener('change', () => {
+    selectedSession = document.querySelector('input[name="session"]:checked');
     const selectedMovie = movieSelect.value;
     const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
     sessionFieldsets.forEach((fieldset) => {
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
   sessionRadios.forEach((radio) => {
     radio.addEventListener('change', () => {
+      selectedSession = document.querySelector('input[name="session"]:checked');
       calculateTotalPrice();
     });
   });
