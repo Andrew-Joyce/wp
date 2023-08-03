@@ -60,12 +60,29 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedFieldset.style.display = 'block';
     }
   }
-});
 
-document.getElementById('booking-form').addEventListener('submit', function (event) {
-  event.preventDefault();
+  const movieSelect = document.getElementById('movie-select');
+  movieSelect.addEventListener('change', () => {
+    const selectedMovie = movieSelect.value;
+    const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+    sessionFieldsets.forEach((fieldset) => {
+      fieldset.style.display = 'none';
+    });
+    if (selectedFieldset) {
+      selectedFieldset.style.display = 'block';
+    }
+
+    calculateTotalPrice(); 
+  });
+
+  const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
+  sessionRadios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      calculateTotalPrice();
+    });
+  });
+
   calculateTotalPrice();
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('booking-form');
