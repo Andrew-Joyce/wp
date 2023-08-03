@@ -245,8 +245,9 @@
     
         <fieldset>
             <legend>Total Price</legend>
-            <div id="total-price"></div>
+            <div id="total-price">Total Price: $0.00</div>
         </fieldset>
+
 
 
       <fieldset>
