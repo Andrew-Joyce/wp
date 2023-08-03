@@ -167,6 +167,6 @@ function validateForm() {
     alert('Please enter a valid Australian mobile number (starting with 04).');
     return false;
   }
-  
+
   return true;
 }
