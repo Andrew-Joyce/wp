@@ -24,22 +24,29 @@ function calculateTotalPrice() {
     }
   });
 
-  goldClassSeatsInputs.forEach((seat) => {
-    const seatType = seat.name.split('[')[1].split(']')[0];
-    const seatQuantity = parseInt(seat.value);
+  const selectedSession = document.querySelector('input[name="session"]:checked');
+  if (selectedSession && selectedSession.value === '6pm') {
+    goldClassSeatsInputs.forEach((seat) => {
+      const seatType = seat.name.split('[')[1].split(']')[0];
+      const seatQuantity = parseInt(seat.value);
 
-    if (!isNaN(seatQuantity)) {
-      if (selectedSession && selectedSession.value === '6pm') {
-        totalPrice += seatQuantity * seatPrices[seatType].discount;
-      } else {
-        totalPrice += seatQuantity * seatPrices[seatType].fullPrice;
+      if (!isNaN(seatQuantity)) {
+        totalPrice += seatQuantity * seatPrices[`GST${seatType}`].discount;
       }
-    }
-  });
+    });
+  } else {
+    goldClassSeatsInputs.forEach((seat) => {
+      const seatType = seat.name.split('[')[1].split(']')[0];
+      const seatQuantity = parseInt(seat.value);
+
+      if (!isNaN(seatQuantity)) {
+        totalPrice += seatQuantity * seatPrices[`GST${seatType}`].fullPrice;
+      }
+    });
+  }
 
   document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
