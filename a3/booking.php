@@ -82,6 +82,7 @@
                 <option value="sun">Sunday</option>
             </select>
         </div>
+        <div id="total-price"></div>
     </div>
 </fieldset>
 
@@ -118,6 +119,7 @@
                 <option value="sun">Sunday</option>
             </select>
         </div>
+        <div id="total-price"></div>
     </div>
 </fieldset>
 
@@ -157,6 +159,7 @@
             <option value="fri">Friday</option>
         </select>
         </div>
+        <div id="total-price"></div>
     </div>
 </fieldset>
 
@@ -192,6 +195,7 @@
             <option value="sun">Sunday</option>
         </select>
         </div>
+        <div id="total-price"></div>
     </div>
 </fieldset>
 
