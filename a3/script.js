@@ -29,24 +29,17 @@ function calculateTotalPrice() {
     const seatQuantity = parseInt(seat.value);
 
     if (!isNaN(seatQuantity)) {
-      totalPrice += seatQuantity * seatPrices[seatType].fullPrice;
+      if (selectedSession && selectedSession.value === '6pm') {
+        totalPrice += seatQuantity * seatPrices[seatType].discount;
+      } else {
+        totalPrice += seatQuantity * seatPrices[seatType].fullPrice;
+      }
     }
   });
 
-  const selectedSession = document.querySelector('input[name="session"]:checked');
-  if (selectedSession && selectedSession.value === '6pm') {
-    totalPrice -= goldClassSeatsInputs.length * seatPrices['GSTA'].fullPrice;
-    totalPrice -= goldClassSeatsInputs.length * seatPrices['GSTP'].fullPrice;
-    totalPrice -= goldClassSeatsInputs.length * seatPrices['GSTC'].fullPrice;
-
-    totalPrice += goldClassSeatsInputs.length * seatPrices['GSTA'].discount;
-    totalPrice += goldClassSeatsInputs.length * seatPrices['GSTP'].discount;
-    totalPrice += goldClassSeatsInputs.length * seatPrices['GSTC'].discount;
-  }
-
   document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
-}
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
@@ -110,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Attach the calculateTotalPrice function to the change event of seatInputs
   seatInputs.forEach((seat) => {
     seat.addEventListener('change', calculateTotalPrice);
   });
