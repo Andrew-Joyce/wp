@@ -199,7 +199,6 @@
 
       <fieldset>
         <legend>Select Standard Seats</legend>
-        <div id="seats-&-prices">
         <div id="standard-seats">
             <div class="seats-container">
             <div class= "seat standard-seat">
