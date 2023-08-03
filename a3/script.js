@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const selectedMovie = urlParams.get('movie');
+let selectedSession = null;
 
 function calculateTotalPrice() {
   const seatPrices = {
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   calculateTotalPrice();
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('booking-form');
