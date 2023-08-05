@@ -2,48 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Booking Form</title>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedMovie = urlParams.get('movie');
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Booking Form</title>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedMovie = urlParams.get('movie');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-            sessionFieldsets.forEach((fieldset) => {
-                fieldset.style.display = 'none';
-            });
+    document.addEventListener('DOMContentLoaded', () => {
+      const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+      sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+      });
 
-            if (selectedMovie) {
-                const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-                if (selectedFieldset) {
-                    selectedFieldset.style.display = 'block';
-                }
-            }
-        });
-    </script>
+      if (selectedMovie) {
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+          selectedFieldset.style.display = 'block';
+        }
+      }
+    });
+  </script>
 </head>
 
 <body>
-    <header style="text-align: center;">
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php">
-                <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 100px; height: auto;">
-                <h1 style="display: inline;">Lunardo Cinema</h1>
-            </a>
-        </div>
-    </header>
-    <nav id="navbar">
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#now-showing">Now Showing</a>
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#seats-&-prices">Seats & Prices</a>
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#about-us">About Us</a>
-    </nav>
+  <header style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php">
+        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 100px; height: auto;">
+        <h1 style="display: inline;">Lunardo Cinema</h1>
+      </a>
+    </div>
+  </header>
+  <nav id="navbar">
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#now-showing">Now Showing</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#seats-&-prices">Seats & Prices</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#about-us">About Us</a>
+  </nav>
 
-    <main>
-        <form method="POST" action="" id="booking-form">
+  <main>
+  <form method="POST" action="" id="booking-form">
             <?php foreach ($movies as $movieCode) {
                 $movieDetails = getMovieDetails($movieCode);
                 if ($movieDetails) {
@@ -76,26 +76,90 @@
             <?php }
             } ?>
 
-            <!-- Seat selection fieldset and other form fields... -->
-            <!-- ... -->
-
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-
-    <footer>
-        <div class="contact-info">
-            <h3>Contact Us</h3>
-            <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
-            <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+      <fieldset>
+        <legend>Select Standard Seats</legend>
+        <div id="standard-seats">
+            <div class="seats-container">
+                <div class= "seat standard-seat">
+                    <label for="seats[STA]">Standard Adult</label>
+                    <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
+                </div>
+                <div class=  "seat concession-seat">
+                    <label for="seats[STP]">Concession</label>
+                    <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
+                </div>
+                <div class= "seat child-seat">
+                    <label for="seats[STC]">Child</label>
+                    <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
+                </div>
+                </div>
+            </div>
         </div>
-        <div>&copy;<script>
-                document.write(new Date().getFullYear());
-            </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-    </footer>
+
+        <legend>Gold Class Seats</legend>
+        <div id="gold-class-seats">
+            <div id="seats-&-prices">
+                <div class="seats-container">
+                <div class= "seat standard-seat">
+                    <label for="seats[STA]">Standard Adult</label>
+                    <input type="number" name="seats[STA]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $31.00/ Discount: $25.00</span>
+                </div>
+                <div class="seat concession-seat">
+                    <label for="seats[STP]">Concession</label>
+                    <input type="number" name="seats[STP]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $28.00 / Discount: $23.50</span>
+                </div>
+                <div class="seat child-seat">
+                    <label for="seats[STC]">Child</label>
+                    <input type="number" name="seats[STC]" min="0" placeholder="Enter quantity" required>
+                    <span class="seat-price">Full Price: $25.00 / Discount: $22.00</span>
+                </div>
+                </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Total Price</legend>
+        <div id="total-price">Total Price: $0.00</div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact Information:</legend>
+        <div class="contact-info">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required>
+  
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" name="mobile" id="mobile" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number">
+  
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+      <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+    </div>
+    <div>&copy;<script>
+        document.write(new Date().getFullYear());
+      </script>Andrew Joyce, student number - S3876520. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+    <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+    <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+  </footer>
 </body>
 
-</html>    
+</html>
+       
