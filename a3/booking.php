@@ -62,7 +62,7 @@ include 'tools.php';
                         <div class="synopsis">
                             <p><?php echo $movieDetails['summary']; ?></p>
                             <p><strong>Starring</strong> - <?php echo $movieDetails['cast']; ?></p>
-                            <p>For more information, visit <a href="https://www.imdb.com/title/<?php echo $movieDetails['imdb']; ?>/" target="_blank">IMDb</a>.</p> 
+                            <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                         </div>
                     </div>
                     <legend><?php echo $movieDetails['title']; ?></legend>
