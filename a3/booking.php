@@ -48,11 +48,9 @@ include 'tools.php';
     </nav>
 
     <main>
-        <form method="POST" action="" id="booking-form">
-            <?php foreach ($movies as $movieCode) {
-                $movieDetails = getMovieDetails($movieCode);
-                if ($movieDetails) {
-                    $screenings = $movieDetails['screenings'];
+          <form method="POST" action="" id="booking-form">
+            <?php foreach ($moviesObject as $movieCode => $movieDetails) {
+                $screenings = $movieDetails['screenings'];
             ?>
                     <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
                         <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
