@@ -56,7 +56,7 @@ include 'tools.php';
                     <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
                         <div class="trailer">
                             <div class="responsive-video">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $movieDetails['trailer']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($movieDetails['trailer'], strrpos($movieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="synopsis">
