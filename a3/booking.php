@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'tools.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
