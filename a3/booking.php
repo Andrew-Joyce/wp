@@ -48,36 +48,35 @@ include 'tools.php';
     </nav>
 
     <main>
-          <form method="POST" action="" id="booking-form">
+        <form method="POST" action="" id="booking-form">
             <?php foreach ($moviesObject as $movieCode => $movieDetails) {
                 $screenings = $movieDetails['screenings'];
             ?>
-                    <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
-                        <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
-                            <div class="trailer">
-                                <div class="responsive-video">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $movieDetails['imdb']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                            <div class="synopsis">
-                                <p><?php echo $movieDetails['summary']; ?></p>
-                                <p><strong>Starring</strong> - <?php echo $movieDetails['cast']; ?></p>
-                                <p>For more information, visit <a href="https://www.imdb.com/title/<?php echo $movieDetails['imdb']; ?>/" target="_blank">IMDb</a>.</p>
+                <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
+                    <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
+                        <div class="trailer">
+                            <div class="responsive-video">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $movieDetails['imdb']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
-                        <legend><?php echo $movieDetails['title']; ?></legend>
-                        <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
-                            <h3>Select Session</h3>
-                            <?php foreach ($screenings as $day => $screening) { ?>
-                                <div class="session">
-                                    <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $screening; ?>">
-                                    <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening; ?></label>
-                                </div>
-                            <?php } ?>
+                        <div class="synopsis">
+                            <p><?php echo $movieDetails['summary']; ?></p>
+                            <p><strong>Starring</strong> - <?php echo $movieDetails['cast']; ?></p>
+                            <p>For more information, visit <a href="https://www.imdb.com/title/<?php echo $movieDetails['imdb']; ?>/" target="_blank">IMDb</a>.</p>
                         </div>
-                    </fieldset>
-            <?php }
-            } ?>
+                    </div>
+                    <legend><?php echo $movieDetails['title']; ?></legend>
+                    <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
+                        <h3>Select Session</h3>
+                        <?php foreach ($screenings as $day => $screening) { ?>
+                            <div class="session">
+                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $screening; ?>">
+                                <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening; ?></label>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </fieldset>
+            <?php } ?>
 
             <fieldset>
                 <legend>Select Standard Seats</legend>
@@ -128,7 +127,7 @@ include 'tools.php';
 
             <fieldset>
                 <legend>Total Price</legend>
-                <div id="total-price">Total Price: $0.00</div>
+                <div id="total-price">Total Price: $0</div>
             </fieldset>
 
             <fieldset>
@@ -165,4 +164,6 @@ include 'tools.php';
 </body>
 
 </html>
+
+
     
