@@ -480,6 +480,7 @@ label {
 .session {
   padding: 10px;
   text-align: center;
+  border: none;
 }
 
 .session label {
