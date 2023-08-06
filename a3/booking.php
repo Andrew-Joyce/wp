@@ -141,7 +141,7 @@ include 'tools.php';
                     <input type="text" name="name" id="name" required>
 
                     <label for="mobile">Mobile Number:</label>
-                    <input type="tel" name="mobile" id="mobile" required pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number">
+                    <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
 
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email" required>

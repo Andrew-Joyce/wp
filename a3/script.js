@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function validateMobile(mobile) {
     const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
     return mobilePattern.test(mobile);
-  }
+  }  
 
   function validateForm() {
     const nameInput = document.getElementById('name');
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return true;
   }
-  
+
   const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
   sessionRadios.forEach((radio) => {
     radio.addEventListener('change', calculateTotalPrice);
