@@ -61,7 +61,7 @@ include 'tools.php';
                         </div>
                         <div class="synopsis">
                             <p><?php echo $movieDetails['summary']; ?></p>
-                            <p><strong>Starring</strong> - <?php echo $movieDetails['cast']; ?></p>
+                            <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
                             <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                         </div>
                     </div>
