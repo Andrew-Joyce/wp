@@ -3,61 +3,54 @@ const selectedMovie = urlParams.get('movie');
 let selectedSession = null;
 
 function calculateTotalPrice() {
-  const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
-  let selectedSessionRate = 0;
-
-  sessionRadios.forEach((radio) => {
-    if (radio.checked) {
-      selectedSessionRate = parseFloat(radio.value.split('-')[2]);
-    }
-  });
-
-  const standardAdultSeats = parseInt(document.getElementsByName("seats[STA]")[0].value);
-  const standardConcessionSeats = parseInt(document.getElementsByName("seats[STP]")[0].value);
-  const standardChildSeats = parseInt(document.getElementsByName("seats[STC]")[0].value);
-
-  const goldClassAdultSeats = parseInt(document.getElementsByName("seats[FCA]")[0].value);
-  const goldClassConcessionSeats = parseInt(document.getElementsByName("seats[FCP]")[0].value);
-  const goldClassChildSeats = parseInt(document.getElementsByName("seats[FCC]")[0].value);
-
-  const standardAdultPrice = parseFloat(document.querySelector('.seat.standard-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-  const standardConcessionPrice = parseFloat(document.querySelector('.seat.concession-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-  const standardChildPrice = parseFloat(document.querySelector('.seat.child-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-
-  const goldClassAdultPrice = parseFloat(document.querySelector('.seat.standard-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-  const goldClassConcessionPrice = parseFloat(document.querySelector('.seat.concession-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-  const goldClassChildPrice = parseFloat(document.querySelector('.seat.child-seat .seat-price').textContent.split('Full Price: $')[1].split(' /')[0]);
-
-  const totalStandardPrice = standardAdultSeats * standardAdultPrice + standardConcessionSeats * standardConcessionPrice + standardChildSeats * standardChildPrice;
-  const totalGoldClassPrice = goldClassAdultSeats * goldClassAdultPrice + goldClassConcessionSeats * goldClassConcessionPrice + goldClassChildSeats * goldClassChildPrice;
-
-  const totalPrice = selectedSessionRate === 0 ? 0 : totalStandardPrice + totalGoldClassPrice;
-  const totalPriceDisplay = document.getElementById('total-price');
-  
-  if (totalPrice === 0) {
-    totalPriceDisplay.textContent = '';
-  } else {
-    totalPriceDisplay.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+  const selectedSession = document.querySelector('input[type="radio"][name="session"]:checked');
+  if (!selectedSession) {
+    document.getElementById('total-price').innerText = '';
+    return;
   }
+
+  const selectedRate = selectedSession.value.split('-')[2];
+  const standardAdultSeats = parseInt(document.getElementsByName('seats[STA]')[0].value);
+  const standardConcessionSeats = parseInt(document.getElementsByName('seats[STP]')[0].value);
+  const standardChildSeats = parseInt(document.getElementsByName('seats[STC]')[0].value);
+  const goldClassAdultSeats = parseInt(document.getElementsByName('seats[FCA]')[0].value);
+  const goldClassConcessionSeats = parseInt(document.getElementsByName('seats[FCP]')[0].value);
+  const goldClassChildSeats = parseInt(document.getElementsByName('seats[FCC]')[0].value);
+
+  const standardAdultPrice = parseFloat(document.querySelector('.seat.standard-seat .seat-price').dataset.fullPrice);
+  const standardConcessionPrice = parseFloat(document.querySelector('.seat.concession-seat .seat-price').dataset.fullPrice);
+  const standardChildPrice = parseFloat(document.querySelector('.seat.child-seat .seat-price').dataset.fullPrice);
+  const goldClassAdultPrice = parseFloat(document.querySelector('.seat.gold-class-seat .seat-price').dataset.fullPrice);
+  const goldClassConcessionPrice = parseFloat(document.querySelector('.seat.gold-class-seat .seat-price').dataset.fullPrice);
+  const goldClassChildPrice = parseFloat(document.querySelector('.seat.gold-class-seat .seat-price').dataset.fullPrice);
+
+  const totalPrice =
+    standardAdultSeats * standardAdultPrice * selectedRate +
+    standardConcessionSeats * standardConcessionPrice * selectedRate +
+    standardChildSeats * standardChildPrice * selectedRate +
+    goldClassAdultSeats * goldClassAdultPrice * selectedRate +
+    goldClassConcessionSeats * goldClassConcessionPrice * selectedRate +
+    goldClassChildSeats * goldClassChildPrice * selectedRate;
+
+  const totalPriceFormatted = totalPrice.toFixed(2);
+  document.getElementById('total-price').innerText = `Total Price: $${totalPriceFormatted}`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
-  sessionRadios.forEach((radio) => {
-    radio.addEventListener('change', calculateTotalPrice);
-  });
+const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
+sessionRadios.forEach((radio) => {
+  radio.addEventListener('change', calculateTotalPrice);
+});
 
-  const seatInputs = document.querySelectorAll('input[type="number"]');
-  seatInputs.forEach((seat) => {
-    seat.addEventListener('input', calculateTotalPrice);
-  });
+const seatInputs = document.querySelectorAll('input[type="number"]');
+seatInputs.forEach((seat) => {
+  seat.addEventListener('input', calculateTotalPrice);
+});
 
   const bookingForm = document.getElementById('booking-form');
   bookingForm.addEventListener('submit', (event) => {
     if (!validateForm()) {
       event.preventDefault();
     }
-  });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
