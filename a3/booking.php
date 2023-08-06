@@ -62,7 +62,7 @@ include 'tools.php';
                         <div class="synopsis">
                             <p><?php echo $movieDetails['summary']; ?></p>
                             <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
-                            <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
+                             <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
                             <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                         </div>
                     </div>
@@ -71,8 +71,7 @@ include 'tools.php';
                         <h3>Select Session</h3>
                         <?php foreach ($screenings as $day => $screening) { ?>
                             <div class="session">
-                            <div class="session">
-                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
+                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $screening; ?>">
                                 <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
                             </div>
                         <?php } ?>
