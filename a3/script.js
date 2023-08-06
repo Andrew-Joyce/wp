@@ -34,30 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
 
-    function validateForm() {
+    const standardAdultSeats = parseInt(document.getElementsByName("seats[STA]")[0].value);
+    const standardConcessionSeats = parseInt(document.getElementsByName("seats[STP]")[0].value);
+    const standardChildSeats = parseInt(document.getElementsByName("seats[STC]")[0].value);
 
-      const standardAdultSeats = parseInt(document.getElementsByName("seats[STA]")[0].value);
-      const standardConcessionSeats = parseInt(document.getElementsByName("seats[STP]")[0].value);
-      const standardChildSeats = parseInt(document.getElementsByName("seats[STC]")[0].value);
-  
-      const goldClassAdultSeats = parseInt(document.getElementsByName("seats[FCA]")[0].value);
-      const goldClassConcessionSeats = parseInt(document.getElementsByName("seats[FCP]")[0].value);
-      const goldClassChildSeats = parseInt(document.getElementsByName("seats[FCC]")[0].value);
-  
-      if (
-        standardAdultSeats === 0 &&
-        standardConcessionSeats === 0 &&
-        standardChildSeats === 0 &&
-        goldClassAdultSeats === 0 &&
-        goldClassConcessionSeats === 0 &&
-        goldClassChildSeats === 0
-      ) {
-        alert("Please select at least one ticket.");
-        return false;
-      }
-  
-      return true;
+    const goldClassAdultSeats = parseInt(document.getElementsByName("seats[FCA]")[0].value);
+    const goldClassConcessionSeats = parseInt(document.getElementsByName("seats[FCP]")[0].value);
+    const goldClassChildSeats = parseInt(document.getElementsByName("seats[FCC]")[0].value);
 
+    if (
+      standardAdultSeats <= 0 &&
+      standardConcessionSeats <= 0 &&
+      standardChildSeats <= 0 &&
+      goldClassAdultSeats <= 0 &&
+      goldClassConcessionSeats <= 0 &&
+      goldClassChildSeats <= 0
+    ) {
+      alert("Please select at least one ticket.");
+      return false;
+    }
+
+    return true;
+  }
+  
   const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
   sessionRadios.forEach((radio) => {
     radio.addEventListener('change', calculateTotalPrice);
