@@ -14,31 +14,31 @@ $moviesObject = [
         'screenings' => [
             'MON' => [
                 'time' => '9pm',
-                'rate' => 'discount'
+                'rate' => 'dis'
             ],
             'TUE' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'WED' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'THU' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'FRI' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SAT' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SUN' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ]
         ]
     ],
@@ -55,23 +55,23 @@ $moviesObject = [
         'screenings' => [
             'WED' => [
                 'time' => '12pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'THU' => [
                 'time' => '12pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'FRI' => [
                 'time' => '12pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SAT' => [
                 'time' => '3pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SUN' => [
                 'time' => '3pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ]
         ]
     ],
@@ -92,27 +92,27 @@ $moviesObject = [
             ],
             'TUE' => [
                 'time' => '12pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'WED' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'THU' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'FRI' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SAT' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SUN' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ]
         ]
     ],
@@ -129,19 +129,19 @@ $moviesObject = [
         'screenings' => [
             'MON' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'TUE' => [
                 'time' => '6pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SAT' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'SUN' => [
                 'time' => '9pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ]
         ]
     ],
