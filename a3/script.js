@@ -170,3 +170,15 @@ function validateForm() {
 
   return true;
 }
+function updateSessionStyle(selectedSessionId) {
+  const sessionLabels = document.querySelectorAll('.session label');
+  
+  sessionLabels.forEach(label => {
+      label.style.fontWeight = 'normal';
+      label.style.color = 'black';
+  });
+  
+  const selectedLabel = document.querySelector(`label[for="${selectedSessionId}"]`);
+  selectedLabel.style.fontWeight = 'bold';
+  selectedLabel.style.color = 'blue';
+}
