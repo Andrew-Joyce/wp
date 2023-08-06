@@ -507,3 +507,8 @@ label {
   font-size: 18px;
   height: 40px;
 }
+
+.movie-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+}

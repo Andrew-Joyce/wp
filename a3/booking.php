@@ -48,37 +48,38 @@ include 'tools.php';
     </nav>
 
     <main>
-        <form method="POST" action="" id="booking-form">
-            <?php foreach ($moviesObject as $movieCode => $movieDetails) {
-                $screenings = $movieDetails['screenings'];
-            ?>
-                <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
-                    <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
-                        <div class="trailer">
-                            <div class="responsive-video">
+    <form method="POST" action="" id="booking-form">
+        <?php foreach ($moviesObject as $movieCode => $movieDetails) {
+            $screenings = $movieDetails['screenings'];
+        ?>
+            <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
+                <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
+                    <div class="trailer">
+                        <div class="responsive-video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($movieDetails['trailer'], strrpos($movieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="synopsis">
-                            <p><?php echo $movieDetails['summary']; ?></p>
-                            <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
-                             <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
-                            <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                         </div>
                     </div>
-                    <legend><?php echo $movieDetails['title']; ?></legend>
-                    <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
-                        <h3>Select Session</h3>
-                        <div class="session-selection">
-                            <?php foreach ($screenings as $day => $screening) { ?>
-                                <div class="session">
-                                    <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
-                                    <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
-                                </div>
+                    <div class="synopsis">
+                        <p><?php echo $movieDetails['summary']; ?></p>
+                        <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
+                        <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
+                        <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
+                    </div>
+                </div>
+                <legend class="movie-title"><?php echo $movieDetails['title']; ?></legend>
+                <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
+                    <h3>Select Session</h3>
+                    <div class="session-selection">
+                        <?php foreach ($screenings as $day => $screening) { ?>
+                            <div class="session">
+                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
+                                <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
+                            </div>
                         <?php } ?>
                     </div>
-                </fieldset>
-            <?php } ?>
+                </div>
+            </fieldset>
+        <?php } ?>
 
             <fieldset>
                 <legend>Select Standard Seats</legend>
