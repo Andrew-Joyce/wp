@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $moviesObject = [
     'ACT' => [
