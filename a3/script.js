@@ -154,21 +154,26 @@ document.getElementById('forget-btn').addEventListener('click', function () {
 
 document.addEventListener('DOMContentLoaded', populateCustomerDetails);
 
-document.getElementById('booking-form').addEventListener('submit', function(event) {
-  // Check if at least one ticket for either Standard Seats or Gold Class Seats is selected
-  const standardAdultSeats = parseInt(document.querySelector('input[name="seats[STA]"]').value);
-  const standardConcessionSeats = parseInt(document.querySelector('input[name="seats[STP]"]').value);
-  const standardChildSeats = parseInt(document.querySelector('input[name="seats[STC]"]').value);
-  
-  const goldClassAdultSeats = parseInt(document.querySelector('input[name="seats[FCA]"]').value);
-  const goldClassConcessionSeats = parseInt(document.querySelector('input[name="seats[FCP]"]').value);
-  const goldClassChildSeats = parseInt(document.querySelector('input[name="seats[FCC]"]').value);
-  
-  const totalStandardSeats = standardAdultSeats + standardConcessionSeats + standardChildSeats;
-  const totalGoldClassSeats = goldClassAdultSeats + goldClassConcessionSeats + goldClassChildSeats;
-  
-  if (totalStandardSeats === 0 && totalGoldClassSeats === 0) {
-      event.preventDefault();
-      alert("Please select at least one ticket for either Standard Seats or Gold Class Seats.");
+function validateForm() {
+  const standardAdultSeats = parseInt(document.getElementsByName("seats[STA]")[0].value);
+  const standardConcessionSeats = parseInt(document.getElementsByName("seats[STP]")[0].value);
+  const standardChildSeats = parseInt(document.getElementsByName("seats[STC]")[0].value);
+
+  const goldClassAdultSeats = parseInt(document.getElementsByName("seats[FCA]")[0].value);
+  const goldClassConcessionSeats = parseInt(document.getElementsByName("seats[FCP]")[0].value);
+  const goldClassChildSeats = parseInt(document.getElementsByName("seats[FCC]")[0].value);
+
+  if (
+      standardAdultSeats === 0 &&
+      standardConcessionSeats === 0 &&
+      standardChildSeats === 0 &&
+      goldClassAdultSeats === 0 &&
+      goldClassConcessionSeats === 0 &&
+      goldClassChildSeats === 0
+  ) {
+      alert("Please select at least one ticket.");
+      return false; 
   }
-});
+
+  return true;
+}
