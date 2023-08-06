@@ -62,7 +62,7 @@ include 'tools.php';
                         <div class="synopsis">
                             <p><?php echo $movieDetails['summary']; ?></p>
                             <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
-                             <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
+                            <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
                             <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                         </div>
                     </div>
@@ -75,7 +75,8 @@ include 'tools.php';
                                     <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
                                     <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
                                 </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </fieldset>
             <?php } ?>
