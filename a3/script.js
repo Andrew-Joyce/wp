@@ -175,5 +175,21 @@ function validateForm() {
       return false; 
   }
 
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+
+  const isNameValid = validateName(nameInput.value);
+  const isMobileValid = validateMobile(mobileInput.value);
+
+  function validateName(name) {
+    const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
+    return namePattern.test(name);
+  }
+
+  function validateMobile(mobile) {
+    const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+    return mobilePattern.test(mobile);
+  }
+
   return true;
 }
