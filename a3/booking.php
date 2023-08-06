@@ -81,6 +81,7 @@ include 'tools.php';
             </fieldset>
         <?php } ?>
 
+
             <fieldset>
                 <legend>Select Standard Seats</legend>
                 <div id="standard-seats">
@@ -150,6 +151,10 @@ include 'tools.php';
 
             <button type="submit">Submit</button>
         </form>
+        <div>
+            <button id="remember-btn">Remember Me</button>
+            <button id="forget-btn">Forget Me</button>
+        </div>
     </main>
 
     <footer>

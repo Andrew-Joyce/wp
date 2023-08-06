@@ -104,3 +104,52 @@ function updateSessionStyle(selectedSessionId) {
   selectedLabel.style.fontWeight = 'bold';
   selectedLabel.style.color = 'blue';
 }
+
+function saveCustomerDetails() {
+  const nameInput = document.getElementById('name').value;
+  const mobileInput = document.getElementById('mobile').value;
+  const emailInput = document.getElementById('email').value;
+  const rememberCheckbox = document.getElementById('remember');
+
+  if (rememberCheckbox.checked) {
+      localStorage.setItem('customerName', nameInput);
+      localStorage.setItem('customerMobile', mobileInput);
+      localStorage.setItem('customerEmail', emailInput);
+  } else {
+      localStorage.removeItem('customerName');
+      localStorage.removeItem('customerMobile');
+      localStorage.removeItem('customerEmail');
+  }
+}
+
+function populateCustomerDetails() {
+  const storedName = localStorage.getItem('customerName');
+  const storedMobile = localStorage.getItem('customerMobile');
+  const storedEmail = localStorage.getItem('customerEmail');
+
+  if (storedName) {
+      document.getElementById('name').value = storedName;
+  }
+  if (storedMobile) {
+      document.getElementById('mobile').value = storedMobile;
+  }
+  if (storedEmail) {
+      document.getElementById('email').value = storedEmail;
+  }
+}
+
+document.getElementById('booking-form').addEventListener('submit', saveCustomerDetails);
+
+document.getElementById('remember-btn').addEventListener('click', function () {
+  const rememberCheckbox = document.getElementById('remember');
+  rememberCheckbox.checked = true;
+  saveCustomerDetails();
+});
+
+document.getElementById('forget-btn').addEventListener('click', function () {
+  const rememberCheckbox = document.getElementById('remember');
+  rememberCheckbox.checked = false;
+  saveCustomerDetails();
+});
+
+document.addEventListener('DOMContentLoaded', populateCustomerDetails);
