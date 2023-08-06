@@ -27,22 +27,21 @@
 </head>
 
 <body>
-<header style="text-align: center;">
+  <header style="text-align: center;">
     <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 100px; height: auto;">
-        <h1 style="display: inline;">Lunardo Cinema</h1>
+      <img src="../../media/Cinema.png" alt="Cinema" style="margin-right: 10px; width: 100px; height: auto;">
+      <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
-</header>
-<nav id="navbar">
+  </header>
+  <nav id="navbar">
     <a href="#now-showing">Now Showing</a>
     <a href="#seats-&-prices">Seats & Prices</a>
     <a href="#about-us">About Us</a>
-</nav>
-
+  </nav>
 
   <main>
-    
-    <form method="POST" action="" id="booking-form">
+
+    <form method="POST" action="submit.php" id="booking-form">
     <fieldset id="fieldset-session-ACT">
         <div class="movie-details" id="indiana-jones-details" style="display: block;">
             <div class="synopsis">
