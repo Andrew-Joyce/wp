@@ -6,7 +6,6 @@ $moviesObject = [
         'rating' => 'PG-13',
         'genre' => 'Action, Adventure',
         'summary' => 'Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller, a former Nazi who works for NASA.',
-        'plot' => 'Finding himself in a new era, approaching retirement, Indy wrestles with fitting into a world that seems to have outgrown him. But as the tentacles of an all-too-familiar evil return in the form of an old rival, Indy must don his hat and pick up his whip once more to make sure an ancient and powerful artifact doesn&apos;t fall into the wrong hands.',
         'imdb' => 'https://www.imdb.com/title/tt1462764/',
         'trailer' => 'https://www.youtube.com/embed/eQfMbSe7F2g',
         'cast' => 'Harrison Ford, Antonio Banderas, Phoebe Waller-Bridge, Mads Mikkelsen and Karen Allen',
