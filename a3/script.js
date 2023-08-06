@@ -1,3 +1,11 @@
+const urlParams = new URLSearchParams(window.location.search);
+const selectedMovie = urlParams.get('movie');
+let selectedSession = null;
+
+function calculateTotalPrice() {
+  // ... Your existing calculateTotalPrice() function ...
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // ... Your existing event listeners ...
 
@@ -60,7 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
   seatInputs.forEach((seat) => {
     seat.addEventListener('input', calculateTotalPrice);
   });
+
+  const bookingForm = document.getElementById('booking-form');
+  bookingForm.addEventListener('submit', (event) => {
+    if (!validateForm()) {
+      event.preventDefault();
+    }
+  });
 });
+
 function updateSessionStyle(selectedSessionId) {
   const sessionLabels = document.querySelectorAll('.session label');
   
