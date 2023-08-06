@@ -36,24 +36,18 @@ function calculateTotalPrice() {
   document.getElementById('total-price').innerText = `Total Price: $${totalPriceFormatted}`;
 }
 
-const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
-sessionRadios.forEach((radio) => {
-  radio.addEventListener('change', calculateTotalPrice);
-});
-
-const seatInputs = document.querySelectorAll('input[type="number"]');
-seatInputs.forEach((seat) => {
-  seat.addEventListener('input', calculateTotalPrice);
-});
-
-  const bookingForm = document.getElementById('booking-form');
-  bookingForm.addEventListener('submit', (event) => {
-    if (!validateForm()) {
-      event.preventDefault();
-    }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+  const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
+  sessionRadios.forEach((radio) => {
+    radio.addEventListener('change', calculateTotalPrice);
+  });
+
+  const seatInputs = document.querySelectorAll('input[type="number"]');
+  seatInputs.forEach((seat) => {
+    seat.addEventListener('input', calculateTotalPrice);
+  });
+
+  calculateTotalPrice();
 
   function validateName(name) {
     const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
@@ -63,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function validateMobile(mobile) {
     const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
     return mobilePattern.test(mobile);
-  }  
+  }
 
   function validateForm() {
     const nameInput = document.getElementById('name');
@@ -105,16 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  const sessionRadios = document.querySelectorAll('input[type="radio"][name="session"]');
-  sessionRadios.forEach((radio) => {
-    radio.addEventListener('change', calculateTotalPrice);
-  });
-
-  const seatInputs = document.querySelectorAll('input[type="number"]');
-  seatInputs.forEach((seat) => {
-    seat.addEventListener('input', calculateTotalPrice);
-  });
-
   const bookingForm = document.getElementById('booking-form');
   bookingForm.addEventListener('submit', (event) => {
     if (!validateForm()) {
@@ -123,19 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function updateSessionStyle(selectedSessionId) {
-  const sessionLabels = document.querySelectorAll('.session label');
-  
-  sessionLabels.forEach(label => {
-      label.style.fontWeight = 'normal';
-      label.style.color = 'black';
-  });
-  
-  const selectedLabel = document.querySelector(`label[for="${selectedSessionId}"]`);
-  selectedLabel.style.fontWeight = 'bold';
-  selectedLabel.style.color = 'blue';
-}
-
 function saveCustomerDetails() {
   const nameInput = document.getElementById('name').value;
   const mobileInput = document.getElementById('mobile').value;
@@ -143,13 +114,13 @@ function saveCustomerDetails() {
   const rememberCheckbox = document.getElementById('remember');
 
   if (rememberCheckbox.checked) {
-      localStorage.setItem('customerName', nameInput);
-      localStorage.setItem('customerMobile', mobileInput);
-      localStorage.setItem('customerEmail', emailInput);
+    localStorage.setItem('customerName', nameInput);
+    localStorage.setItem('customerMobile', mobileInput);
+    localStorage.setItem('customerEmail', emailInput);
   } else {
-      localStorage.removeItem('customerName');
-      localStorage.removeItem('customerMobile');
-      localStorage.removeItem('customerEmail');
+    localStorage.removeItem('customerName');
+    localStorage.removeItem('customerMobile');
+    localStorage.removeItem('customerEmail');
   }
 }
 
@@ -159,13 +130,13 @@ function populateCustomerDetails() {
   const storedEmail = localStorage.getItem('customerEmail');
 
   if (storedName) {
-      document.getElementById('name').value = storedName;
+    document.getElementById('name').value = storedName;
   }
   if (storedMobile) {
-      document.getElementById('mobile').value = storedMobile;
+    document.getElementById('mobile').value = storedMobile;
   }
   if (storedEmail) {
-      document.getElementById('email').value = storedEmail;
+    document.getElementById('email').value = storedEmail;
   }
 }
 
