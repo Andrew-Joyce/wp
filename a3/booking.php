@@ -71,7 +71,8 @@ include 'tools.php';
                         <h3>Select Session</h3>
                         <?php foreach ($screenings as $day => $screening) { ?>
                             <div class="session">
-                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $screening; ?>">
+                            <div class="session">
+                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
                                 <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
                             </div>
                         <?php } ?>
