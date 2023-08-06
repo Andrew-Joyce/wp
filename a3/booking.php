@@ -69,11 +69,12 @@ include 'tools.php';
                     <legend><?php echo $movieDetails['title']; ?></legend>
                     <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
                         <h3>Select Session</h3>
-                        <?php foreach ($screenings as $day => $screening) { ?>
-                            <div class="session">
-                                <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $screening; ?>">
-                                <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
-                            </div>
+                        <div class="session-selection">
+                            <?php foreach ($screenings as $day => $screening) { ?>
+                                <div class="session">
+                                    <input type="radio" name="session[<?php echo $movieCode; ?>]" id="session-<?php echo $movieCode . '-' . $day; ?>" value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
+                                    <label for="session-<?php echo $movieCode . '-' . $day; ?>"><?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)</label>
+                                </div>
                         <?php } ?>
                     </div>
                 </fieldset>
