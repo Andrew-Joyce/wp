@@ -153,3 +153,22 @@ document.getElementById('forget-btn').addEventListener('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', populateCustomerDetails);
+
+document.getElementById('booking-form').addEventListener('submit', function(event) {
+  // Check if at least one ticket for either Standard Seats or Gold Class Seats is selected
+  const standardAdultSeats = parseInt(document.querySelector('input[name="seats[STA]"]').value);
+  const standardConcessionSeats = parseInt(document.querySelector('input[name="seats[STP]"]').value);
+  const standardChildSeats = parseInt(document.querySelector('input[name="seats[STC]"]').value);
+  
+  const goldClassAdultSeats = parseInt(document.querySelector('input[name="seats[FCA]"]').value);
+  const goldClassConcessionSeats = parseInt(document.querySelector('input[name="seats[FCP]"]').value);
+  const goldClassChildSeats = parseInt(document.querySelector('input[name="seats[FCC]"]').value);
+  
+  const totalStandardSeats = standardAdultSeats + standardConcessionSeats + standardChildSeats;
+  const totalGoldClassSeats = goldClassAdultSeats + goldClassConcessionSeats + goldClassChildSeats;
+  
+  if (totalStandardSeats === 0 && totalGoldClassSeats === 0) {
+      event.preventDefault();
+      alert("Please select at least one ticket for either Standard Seats or Gold Class Seats.");
+  }
+});

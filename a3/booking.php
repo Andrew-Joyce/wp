@@ -48,7 +48,7 @@ include 'tools.php';
     </nav>
 
     <main>
-    <form method="POST" action="" id="booking-form">
+    <form method="POST" action="submit.php" id="booking-form">
         <?php foreach ($moviesObject as $movieCode => $movieDetails) {
             $screenings = $movieDetails['screenings'];
         ?>
