@@ -598,6 +598,7 @@ fieldset {
 }
 
 .session {
+  flex: 1;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   padding: 10px 15px;
