@@ -149,8 +149,8 @@ include 'tools.php';
                 </div>
                 <div>
                 <div>
-                    <button class="button" id="remember-btn" type="button">Remember Me</button>
-                    <button class="button" id="forget-btn" type="button">Forget Me</button>
+                    <button class="contact-Button" id="remember-btn" type="contact-Button">Remember Me</button>
+                    <button class="contact-Button" id="forget-btn" type="contact-Button">Forget Me</button>
                 </div>
             </fieldset>
 >

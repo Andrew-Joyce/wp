@@ -513,7 +513,7 @@ label {
   font-size: 40px;
 }
 
-.button {
+.contact-Button {
   font-family: 'Poppins', sans-serif;
   font-size: 36px; 
   padding: 30x 40px; 
@@ -523,6 +523,6 @@ label {
   transition: background-color 0.3s;
 }
 
-.button:hover {
+.contact-Button:hover {
   background-color: #e0e0e0; 
 }
