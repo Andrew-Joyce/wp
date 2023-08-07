@@ -596,7 +596,7 @@ fieldset {
   .contact-info input[type="text"],
   .contact-info input[type="tel"],
   .contact-info input[type="email"] {
-    width: 100%; 
+    width: 50%; 
     max-width: 300px;
   }
 }
