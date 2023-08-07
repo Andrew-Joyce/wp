@@ -606,13 +606,13 @@ fieldset {
 
 @media screen and (min-width: 1024px) {
   .contact-info label {
-    width: 250px;
+    width: 100px;
   }
 
   .contact-info input[type="text"],
   .contact-info input[type="tel"],
   .contact-info input[type="email"] {
-    max-width: 400px;
+    max-width: 100px;
   }
 }
 
