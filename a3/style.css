@@ -569,8 +569,8 @@ fieldset {
 .contact-info label {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  padding: 10px 5%;
-  margin-right: 5px;
+  padding: 10px 10px;
+  margin-right: 10px;
 }
 
 .contact-info input[type="text"],
