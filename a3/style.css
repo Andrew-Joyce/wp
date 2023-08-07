@@ -520,10 +520,10 @@ label {
   padding: 10px 40px;
   background-color: hwb(214 82% 15%);
   border: 1px solid hwb(214 82% 15%);
-  color: black; 
+  color: black;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s; 
   margin-right: 20px;
 }
 
@@ -533,8 +533,10 @@ label {
 
 .contact-Button:hover {
   background-color: #080808;
-  color: white; 
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
+
 
 .submit-button {
   font-family: 'Poppins', sans-serif;
