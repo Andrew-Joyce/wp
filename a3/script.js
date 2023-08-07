@@ -9,7 +9,7 @@ function calculateTotalPrice() {
     return;
   }
 
-  const selectedRate = selectedSession.value.split('-')[2];
+  const selectedRate = parseInt(selectedSession.value.split('-')[2]);
   const standardAdultSeats = parseInt(document.getElementsByName('seats[STA]')[0].value);
   const standardConcessionSeats = parseInt(document.getElementsByName('seats[STP]')[0].value);
   const standardChildSeats = parseInt(document.getElementsByName('seats[STC]')[0].value);
@@ -48,63 +48,61 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   calculateTotalPrice();
+});
 
-  function validateName(name) {
-    const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
-    return namePattern.test(name);
+function validateName(name) {
+  const namePattern = /^[a-zA-ZÀ-ÿ\s'\.,-]{1,}$/;
+  return namePattern.test(name);
+}
+
+function validateMobile(mobile) {
+  const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+  return mobilePattern.test(mobile);
+}
+
+function validateForm() {
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+
+  const isNameValid = validateName(nameInput.value);
+  const isMobileValid = validateMobile(mobileInput.value);
+
+  if (!isNameValid) {
+    alert('Please enter a valid name.');
+    return false;
   }
 
-  function validateMobile(mobile) {
-    const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-    return mobilePattern.test(mobile);
+  if (!isMobileValid) {
+    alert('Please enter a valid Australian mobile number (starting with 04).');
+    return false;
   }
 
-  function validateForm() {
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
+  const standardAdultSeats = parseInt(document.getElementsByName('seats[STA]')[0].value);
+  const standardConcessionSeats = parseInt(document.getElementsByName('seats[STP]')[0].value);
+  const standardChildSeats = parseInt(document.getElementsByName('seats[STC]')[0].value);
+  const goldClassAdultSeats = parseInt(document.getElementsByName('seats[FCA]')[0].value);
+  const goldClassConcessionSeats = parseInt(document.getElementsByName('seats[FCP]')[0].value);
+  const goldClassChildSeats = parseInt(document.getElementsByName('seats[FCC]')[0].value);
 
-    const isNameValid = validateName(nameInput.value);
-    const isMobileValid = validateMobile(mobileInput.value);
-
-    if (!isNameValid) {
-      alert('Please enter a valid name.');
-      return false;
-    }
-
-    if (!isMobileValid) {
-      alert('Please enter a valid Australian mobile number (starting with 04).');
-      return false;
-    }
-
-    const standardAdultSeats = parseInt(document.getElementsByName("seats[STA]")[0].value);
-    const standardConcessionSeats = parseInt(document.getElementsByName("seats[STP]")[0].value);
-    const standardChildSeats = parseInt(document.getElementsByName("seats[STC]")[0].value);
-
-    const goldClassAdultSeats = parseInt(document.getElementsByName("seats[FCA]")[0].value);
-    const goldClassConcessionSeats = parseInt(document.getElementsByName("seats[FCP]")[0].value);
-    const goldClassChildSeats = parseInt(document.getElementsByName("seats[FCC]")[0].value);
-
-    if (
-      standardAdultSeats <= 0 &&
-      standardConcessionSeats <= 0 &&
-      standardChildSeats <= 0 &&
-      goldClassAdultSeats <= 0 &&
-      goldClassConcessionSeats <= 0 &&
-      goldClassChildSeats <= 0
-    ) {
-      alert("Please select at least one ticket.");
-      return false;
-    }
-
-    return true;
+  if (
+    standardAdultSeats <= 0 &&
+    standardConcessionSeats <= 0 &&
+    standardChildSeats <= 0 &&
+    goldClassAdultSeats <= 0 &&
+    goldClassConcessionSeats <= 0 &&
+    goldClassChildSeats <= 0
+  ) {
+    alert('Please select at least one ticket.');
+    return false;
   }
 
-  const bookingForm = document.getElementById('booking-form');
-  bookingForm.addEventListener('submit', (event) => {
-    if (!validateForm()) {
-      event.preventDefault();
-    }
-  });
+  return true;
+}
+const bookingForm = document.getElementById('booking-form');
+bookingForm.addEventListener('submit', (event) => {
+  if (!validateForm()) {
+    event.preventDefault();
+  }
 });
 
 function saveCustomerDetails() {
