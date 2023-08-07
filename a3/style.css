@@ -516,7 +516,7 @@ label {
 .contact-Button {
   font-family: 'Poppins', sans-serif;
   font-size: 36px; 
-  padding: 30x 40px; 
+  padding: 30px 40px; 
   cursor: pointer; 
   border: 1px solid #000; 
   background-color: #f0f0f0; 
@@ -526,3 +526,4 @@ label {
 .contact-Button:hover {
   background-color: #e0e0e0; 
 }
+
