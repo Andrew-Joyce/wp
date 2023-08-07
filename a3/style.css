@@ -569,18 +569,23 @@ fieldset {
 .contact-info {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .input-row {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 15px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-row label {
-  min-width: 150px; 
-  margin-right: 10px; 
+  width: 100%;
+  max-width: 180px;
+  margin-right: 10px;
 }
 
 .contact-info input[type="text"],
@@ -592,16 +597,19 @@ fieldset {
 }
 
 @media screen and (min-width: 768px) {
-  .input-row label {
-    min-width: 200px; 
+  .input-row {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .input-row label {
-    min-width: 250px; 
+  .input-row {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 }
+
 
 
 
