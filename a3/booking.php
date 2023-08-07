@@ -152,7 +152,8 @@ include 'tools.php';
                 </div>
             </fieldset>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-button">Submit</button>
+
         </form>
     </main>
 
