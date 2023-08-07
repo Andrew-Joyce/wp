@@ -133,26 +133,24 @@ include 'tools.php';
         <fieldset>
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
-            </fieldset>
-            <fieldset>
-                <legend>Contact Information:</legend>
-                <fieldset>
-                    <legend>Contact Information:</legend>
-                    <div class="contact-info">
-                        <label for="name">Full Name:</label>
-                        <input type="text" name="name" id="name" required>
+        </fieldset>
+        <fieldset>
+    <legend>Contact Information:</legend>
+        <div class="contact-info">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required>
 
-                        <label for="mobile">Mobile Number:</label>
-                        <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
 
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-                <div>
-                    <button class="contact-Button" id="remember-btn">Remember Me</button>
-                    <button class="contact-Button" id="forget-btn">Forget Me</button>
-                </div>
-            </fieldset>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <button class="contact-Button" id="remember-btn">Remember Me</button>
+            <button class="contact-Button" id="forget-btn">Forget Me</button>
+        </div>
+    </fieldset>
 
             <button type="submit" class="submit-button">Submit</button>
 

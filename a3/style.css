@@ -567,13 +567,14 @@ fieldset {
 }
 .contact-info label {
   font-size: 20px;
+  padding: 5px 10px; 
+  margin-right: 10px; 
 }
 
-.contact-info input[type="text"],
-.contact-info input[type="tel"],
-.contact-info input[type="email"] {
-  height: 40px;
-  width: 2000;
+.label-name {
+  width: 300px; 
+  height: 30px; 
 }
+
 
 
