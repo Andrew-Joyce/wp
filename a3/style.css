@@ -514,6 +514,7 @@ label {
 }
 
 .button {
+  font-family: 'Poppins', sans-serif;
   font-size: 36px; 
   padding: 10px 20px; 
   cursor: pointer; 
@@ -521,6 +522,7 @@ label {
   background-color: #f0f0f0; 
   transition: background-color 0.3s;
 }
+
 
 .button:hover {
   background-color: #e0e0e0; 
