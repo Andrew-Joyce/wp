@@ -573,8 +573,10 @@ fieldset {
 .contact-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 5px;
+  gap: 10px; 
+  justify-items: start;
 }
+
 
 .contact-info label {
   display: flex;
