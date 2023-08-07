@@ -577,6 +577,19 @@ fieldset {
   text-align: left;
 }
 
+.contact-info input[type="text"],
+.contact-info input[type="tel"],
+.contact-info input[type="email"] {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+
+
+
 
 
 
