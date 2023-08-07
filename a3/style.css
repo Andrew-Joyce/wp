@@ -520,7 +520,7 @@ label {
   padding: 10px 40px;
   background-color: hwb(214 82% 15%);
   border: 1px solid hwb(214 82% 15%);
-  color: #fff;
+  color: black; 
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
@@ -533,6 +533,8 @@ label {
 
 .contact-Button:hover {
   background-color: #080808;
+  color: white; 
 }
+
 
 
