@@ -603,6 +603,10 @@ fieldset {
   font-size: 18px;
   height: 40px;
   padding: 10px 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: hwb(214 82% 15%);
   border: 1px solid hwb(214 82% 15%);
   color: black;
@@ -611,6 +615,7 @@ fieldset {
   transition: background-color 0.3s, box-shadow 0.3s;
   margin-right: 20px;
 }
+
 
 
 .session:hover {
