@@ -135,7 +135,6 @@ include 'tools.php';
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
             </fieldset>
-
             <fieldset>
                 <legend>Contact Information:</legend>
                 <div class="contact-info">
@@ -148,14 +147,15 @@ include 'tools.php';
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email" required>
                 </div>
+                <div>
+                    <button id="remember-btn" type="button">Remember Me</button>
+                    <button id="forget-btn" type="button">Forget Me</button>
+                </div>
             </fieldset>
+>
 
             <button type="submit">Submit</button>
         </form>
-        <div>
-            <button id="remember-btn">Remember Me</button>
-            <button id="forget-btn">Forget Me</button>
-        </div>
     </main>
 
     <footer>
