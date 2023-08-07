@@ -514,31 +514,19 @@ label {
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
 }
-button {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  padding: 90px 90px;
-  background-color: #f0f0f0;
-  border: 1px solid #000;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e0e0e0;
-}
-
 .contact-Button {
   font-family: 'Poppins', sans-serif;
-  font-size: 36px; 
-  padding: 90px 90px; 
-  cursor: pointer; 
-  border: 1px solid #000; 
-  background-color: #f0f0f0; 
+  font-size: 18px;
+  padding: 20px 40px;
+  background-color: #007bff; 
+  border: 1px solid #007bff; 
+  color: #fff; 
+  cursor: pointer;
+  border-radius: 4px; 
   transition: background-color 0.3s;
 }
 
 .contact-Button:hover {
-  background-color: #e0e0e0; 
+  background-color: #0056b3;
 }
 
