@@ -153,3 +153,4 @@ document.getElementById('forget-btn').addEventListener('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', populateCustomerDetails);
+
