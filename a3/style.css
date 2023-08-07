@@ -602,6 +602,8 @@ fieldset {
   height: 40px; 
   margin: 5px; 
   display: flex;
+  justify-content: center;
+  align-items: center; 
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   padding: 10px 40px;
