@@ -154,3 +154,10 @@ document.getElementById('forget-btn').addEventListener('click', function () {
 
 document.addEventListener('DOMContentLoaded', populateCustomerDetails);
 
+  function handleSessionSelection(element) {
+    const selectedSessions = document.querySelectorAll('.selected-session');
+    selectedSessions.forEach((session) => {
+      session.classList.remove('selected-session');
+    });
+    element.classList.add('selected-session');
+  }

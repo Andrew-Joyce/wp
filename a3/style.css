@@ -634,6 +634,10 @@ fieldset {
   color: #fff;
 }
 
+.selected-session {
+  background-color: #4caf50;
+  color: white;
+}
 
 
 
