@@ -3,7 +3,7 @@ const selectedMovie = urlParams.get('movie');
 let selectedSession = null;
 
 function calculateTotalPrice() {
-  const selectedSession = document.querySelector('input[type="radio"][name="session"]:checked');
+  const selectedSession = document.querySelector('input[type="radio"][name^="session"]:checked');
   if (!selectedSession) {
     document.getElementById('total-price').innerText = '';
     return;
