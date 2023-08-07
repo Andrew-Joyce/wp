@@ -569,4 +569,10 @@ fieldset {
   font-size: 20px;
 }
 
+.contact-info input[type="text"],
+.contact-info input[type="tel"],
+.contact-info input[type="email"] {
+  height: 40px;
+}
+
 
