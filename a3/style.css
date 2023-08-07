@@ -565,5 +565,8 @@ fieldset {
 .submit-button {
   margin-top: 20px; 
 }
+.contact-info label {
+  font-size: 20px;
+}
 
 
