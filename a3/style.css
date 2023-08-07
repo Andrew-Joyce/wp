@@ -604,8 +604,8 @@ fieldset {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
+  background-color: hwb(214 82% 15%);
+  border: 1px solid hwb(214 82% 15%);
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
@@ -613,7 +613,9 @@ fieldset {
 }
 
 .session:hover {
-  background-color: #f0f0f0;
+  background-color: #080808;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .session.selected {
