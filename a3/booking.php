@@ -152,7 +152,6 @@ include 'tools.php';
                 <button class="contact-Button" id="forget-btn" type="button">Forget Me</button>
             </div>
         </fieldset>
->
 
             <button type="submit">Submit</button>
         </form>
