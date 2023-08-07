@@ -564,7 +564,7 @@ fieldset {
 
 .contact-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px; 
   justify-items: start; 
 }
@@ -586,6 +586,7 @@ fieldset {
   width: 100%;
   box-sizing: border-box;
   padding: 3px 5px; 
+  margin: 0;
   text-align: left;
 }
 
