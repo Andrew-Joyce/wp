@@ -574,7 +574,8 @@ fieldset {
 .input-row {
   display: flex;
   align-items: center;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .input-row label {
@@ -592,7 +593,7 @@ fieldset {
 
 @media screen and (min-width: 768px) {
   .input-row label {
-    min-width: 200px;
+    min-width: 200px; 
   }
 }
 
@@ -601,6 +602,7 @@ fieldset {
     min-width: 250px; 
   }
 }
+
 
 
 
