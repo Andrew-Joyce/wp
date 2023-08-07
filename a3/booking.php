@@ -89,7 +89,8 @@ include 'tools.php';
                     <div class="seat standard-seat">
                         <label for="seats[STA]">Standard Adult</label>
                         <input type="number" name="seats[STA]" min="0" value="0" placeholder="Enter quantity" required>
-                        <span class="seat-price">Full Price: $21.50 / Discount: $16.00</span>
+                        <!-- Set the data-full-price attribute here -->
+                        <span class="seat-price" data-full-price="21.50">Full Price: $21.50 / Discount: $16.00</span>
                     </div>
                     <div class="seat concession-seat">
                         <label for="seats[STP]">Concession</label>
@@ -111,7 +112,8 @@ include 'tools.php';
                         <div class="seat standard-seat">
                             <label for="seats[FCA]">First Class Adult</label>
                             <input type="number" name="seats[FCA]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price">Full Price: $31.00 / Discount: $25.00</span>
+                            <!-- Set the data-full-price attribute here -->
+                            <span class="seat-price" data-full-price="31.00">Full Price: $31.00 / Discount: $25.00</span>
                         </div>
                         <div class="seat concession-seat">
                             <label for="seats[FCP]">First Class Concession</label>
