@@ -601,6 +601,7 @@ fieldset {
   flex: 0 0 300px;
   height: 40px; 
   margin: 5px; 
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center; 
