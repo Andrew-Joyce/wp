@@ -147,8 +147,8 @@ include 'tools.php';
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div>
-                    <button class="contact-Button" id="remember-btn" type="button">Remember Me</button>
-                    <button class="contact-Button" id="forget-btn" type="button">Forget Me</button>
+                    <button class="contact-Button" id="remember-btn">Remember Me</button>
+                    <button class="contact-Button" id="forget-btn">Forget Me</button>
                 </div>
             </fieldset>
 
