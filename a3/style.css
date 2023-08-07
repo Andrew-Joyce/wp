@@ -566,9 +566,15 @@ fieldset {
   margin-top: 20px; 
 }
 
-.contact-info {
+.contact-info label,
+.contact-info input[type="text"],
+.contact-info input[type="tel"],
+.contact-info input[type="email"] {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+}
+
+.contact-info {
   display: flex;
   flex-wrap: wrap;
 }
@@ -609,6 +615,7 @@ fieldset {
     max-width: 33.3333%;
   }
 }
+
 
 
 
