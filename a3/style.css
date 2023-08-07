@@ -597,25 +597,21 @@ fieldset {
   gap: 10px;
 }
 
-.session {
-  flex: 0 0 300px;
-  height: 40px; 
-  margin: 5px; 
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
+.session,
+.contact-Button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  height: 40px;
   padding: 10px 40px;
   background-color: hwb(214 82% 15%);
   border: 1px solid hwb(214 82% 15%);
   color: black;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s, box-shadow 0.3s; 
+  transition: background-color 0.3s, box-shadow 0.3s;
   margin-right: 20px;
 }
+
 
 .session:hover {
   background-color: #080808;
