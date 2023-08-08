@@ -170,6 +170,3 @@ include 'tools.php';
 </body>
 
 </html>
-
-
-    
