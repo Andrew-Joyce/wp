@@ -512,13 +512,13 @@ label {
   text-align: left;
 }
 
-.contact-Button, .session-selection {
+.session-selection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.contact-Button, .session {
+.session, .contact-Button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
@@ -534,26 +534,26 @@ label {
   margin-right: 20px;
 }
 
-.contact-Button, .session:hover {
+.session:hover, .contact-Button:hover {
   background-color: #080808;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 @media screen and (max-width: 1024px) { 
-  .session {
+  .session, .contact-Button {
       width: 32%; 
   }
 }
 
 @media screen and (max-width: 768px) { 
-  .session {
+  .session, .contact-Button {
       width: 48%; 
   }
 }
 
 @media screen and (max-width: 480px) { 
-  .session {
+  .session, .contact-Button {
       width: 100%; 
   }
 }
