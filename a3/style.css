@@ -606,12 +606,19 @@ fieldset {
   width: 400px;
   padding: 10px 40px;
   margin-bottom: 20px;
-  background-color: black;
+  background-color: hwb(214 82% 15%);
+  border: 1px solid hwb(214 82% 15%);
   color: white;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
   margin-right: 20px;
+}
+
+.session:hover {
+  background-color: #080808;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 @media screen and (max-width: 1024px) { 
