@@ -117,7 +117,6 @@ main {
 footer {
   text-align: center;
   padding: 1em 20px;
-  padding: 1em 0;
   background: black;
   color: #ffffff;
 }
@@ -138,6 +137,7 @@ footer {
   color: #ffffff;
   text-decoration: none;
 }
+
 
 .movie-container {
   display: flex;
