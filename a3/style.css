@@ -605,6 +605,9 @@ label {
   }
 }
 
+.seats-container, .seat label, .seat input, .seat .seat-price {
+  font-family: 'Poppins', sans-serif;
+}
 
 
 
