@@ -79,10 +79,6 @@ include 'tools.php';
                 </div>
             </fieldset>
             <?php } ?>
-            <div class="button-container">
-                <button class="session">Session</button>
-                <button class="contact-Button">Contact</button>
-            </div>
             </fieldset>
 
         <fieldset>
