@@ -596,66 +596,35 @@ fieldset {
 .session-selection {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 10px;
-}
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
 }
 
-.session,
-.contact-Button {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  height: 60px;
-  width: 100%;
-  padding: 10px 40px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: hwb(214 82% 15%);
-  border: 1px solid hwb(214 82% 15%);
-  color: black;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  margin-right: 0;
+.session {
+  flex: 1 0 auto;
+  margin: 5px;
+  min-width: 150px; 
+  height: 50px; 
+  text-align: center;
 }
 
-.session:hover {
-  background-color: #080808;
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-}
-
-.session.selected {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.selected-session {
-  background-color: #4caf50;
-  color: white;
-}
-
-@media (min-width: 768px) { 
-  .button-container {
-    flex-direction: row;
-  }
-
-  .session,
-  .contact-Button {
-    width: 50vw;
-    margin-right: 20px;
-  }
-
-  .contact-Button {
-    margin-right: 0; 
+@media screen and (max-width: 1024px) { 
+  .session {
+      width: 32%; 
   }
 }
+
+@media screen and (max-width: 768px) { 
+  .session {
+      width: 48%; 
+  }
+}
+
+@media screen and (max-width: 480px) { 
+  .session {
+      width: 100%; 
+  }
+}
+
 
 
 

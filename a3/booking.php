@@ -78,12 +78,6 @@ include 'tools.php';
                     </div>
                 </div>
             </fieldset>
-            <?php } ?>
-            <div class="button-container">
-                <button class="session">Session</button>
-                <button class="contact-Button">Contact</button>
-            </div>
-            </fieldset>
 
         <fieldset>
             <legend>Select Standard Seats</legend>
