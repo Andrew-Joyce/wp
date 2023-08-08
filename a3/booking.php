@@ -84,8 +84,6 @@ include 'tools.php';
                 <button class="contact-Button">Contact</button>
             </div>
             </fieldset>
-        <?php } ?>
-
 
         <fieldset>
             <legend>Select Standard Seats</legend>
