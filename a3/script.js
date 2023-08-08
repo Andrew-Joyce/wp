@@ -152,12 +152,15 @@ document.getElementById('forget-btn').addEventListener('click', function () {
   saveCustomerDetails();
 });
 
-document.addEventListener('DOMContentLoaded', populateCustomerDetails);
-
-  function handleSessionSelection(element) {
-    const selectedSessions = document.querySelectorAll('.selected-session');
-    selectedSessions.forEach((session) => {
-      session.classList.remove('selected-session');
+document.addEventListener('DOMContentLoaded', function() {
+  const sessions = document.querySelectorAll('.session');
+  sessions.forEach(function(session) {
+    session.addEventListener('click', function() {
+      
+      sessions.forEach(s => s.classList.remove('selected'));
+      
+      this.classList.add('selected');
     });
-    element.classList.add('selected-session');
-  }
+  });
+});
+
