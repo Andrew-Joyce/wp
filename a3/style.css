@@ -563,11 +563,6 @@ label {
   }
 }
 
-.submit-button-selection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 .submit-button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
@@ -575,45 +570,40 @@ label {
   width: 400px;
   padding: 10px 40px;
   margin-bottom: 20px;
-  background-color: black;
+  background-color: black; 
   border: 1px solid black;
-  color: white;
+  color: white; 
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, font-weight 0.3s; 
   margin-right: 20px;
 }
 
 .submit-button:hover {
-  background-color: #1201f8;
+  background-color: blue; 
+  color: white;
+  font-weight: bold; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-fieldset {
-  margin-bottom: 20px; 
-}
-
-.submit-button {
-  margin-top: 20px; 
-}
-
 @media screen and (max-width: 1024px) { 
-  .session, .contact-Button {
+  .submit-button {
       width: 32%; 
   }
 }
 
 @media screen and (max-width: 768px) { 
-  .session, .contact-Button {
+  .submit-button {
       width: 48%; 
   }
 }
 
 @media screen and (max-width: 480px) { 
-  .session, .contact-Button {
+  .submit-button {
       width: 100%; 
   }
 }
+
 
 
 
