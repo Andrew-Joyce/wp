@@ -563,6 +563,11 @@ label {
   }
 }
 
+.submit-button-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .submit-button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
