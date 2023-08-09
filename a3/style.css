@@ -602,29 +602,44 @@ label {
   }
 }
 
-.seats-container, .seat label, .seat input, .seat .seat-price {
+.seats-container {
   display: flex;
-  flex-direction: column;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  text-align: center;
 }
 
-@media screen and (max-width: 1024px) { 
+.seat {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-bottom: 10px; 
+
+}
+
+.seat label {
+  flex: 1; 
+  text-align: left; 
+  margin-right: 10px; 
+}
+
+.seat input {
+  flex: 1; 
+}
+
+@media screen and (max-width: 1024px) {
   .submit-button {
-      width: 32%; 
+      width: 32%;
   }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
   .submit-button {
-      width: 48%; 
+      width: 48%;
   }
 }
 
-@media screen and (max-width: 480px) { 
+@media screen and (max-width: 480px) {
   .submit-button {
-      width: 100%; 
+      width: 100%;
   }
 }
 
