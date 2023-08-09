@@ -3,6 +3,8 @@ session_start();
 include 'tools.php';
 ?>
 
+<script src="script.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,6 @@ include 'tools.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
-    <script src="script.js"></script>
 
 </head>
 
