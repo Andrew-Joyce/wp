@@ -621,7 +621,7 @@ label {
 }
 
 @media screen and (max-width: 768px) { 
-.submit-button {
+.seat input {
     width: 48%; 
 }
 
@@ -631,7 +631,7 @@ label {
 }
 
 @media screen and (max-width: 480px) { 
-.submit-button {
+.seat input{
     width: 100%; 
 }
 
