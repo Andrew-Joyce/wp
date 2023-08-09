@@ -608,15 +608,21 @@ label {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .seat input {
-      width: 70%; 
+@media screen and (max-width: 1024px) { 
+  .submit-button {
+      width: 32%; 
   }
 }
 
-@media screen and (max-width: 480px) {
-  .seat input {
-      width: 90%;
+@media screen and (max-width: 768px) { 
+  .submit-button {
+      width: 48%; 
+  }
+}
+
+@media screen and (max-width: 480px) { 
+  .submit-button {
+      width: 100%; 
   }
 }
 
