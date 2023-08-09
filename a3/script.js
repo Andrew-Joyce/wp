@@ -180,15 +180,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const sessionButtons = document.querySelectorAll('.session');
 
-function handleSessionSelection(event) {
-    sessionButtons.forEach(button => {
-        button.style.backgroundColor = '';
-    });
-
-    event.target.style.backgroundColor = 'blue';
-}
-
 sessionButtons.forEach(button => {
-    button.addEventListener('click', handleSessionSelection);
+    button.addEventListener('click', () => {
+        sessionButtons.forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        
+        button.classList.add('selected');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sessions = document.querySelectorAll('.session');
+  sessions.forEach(function(session) {
+      session.addEventListener('click', function() {
+          sessions.forEach(s => s.classList.remove('selected'));
+          this.classList.add('selected');
+      });
+  });
 });
 
