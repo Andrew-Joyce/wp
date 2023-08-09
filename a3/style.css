@@ -531,6 +531,7 @@ label {
 
 .session.selected {
   background-color: blue;
+  color: white;
 }
 
 
