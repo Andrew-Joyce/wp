@@ -96,6 +96,20 @@ nav a {
   height: auto;
 }
 
+
+@media screen and (max-width: 768px) {
+  .responsive-image {
+    max-width: 80px; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .responsive-image {
+    max-width: 60px; 
+  }
+}
+
+
 nav a::before {
   content: '';
   position: absolute;
