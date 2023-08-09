@@ -15,3 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const sessionButtons = document.querySelectorAll('.session');
+
+sessionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        sessionButtons.forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        
+        button.classList.add('selected');
+    });
+});
