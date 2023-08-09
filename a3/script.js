@@ -1,6 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
 const selectedMovie = urlParams.get('movie');
-let selectedSession = null;
 
 function calculateTotalPrice() {
   const selectedSession = document.querySelector('input[type="radio"][name^="session"]:checked');
