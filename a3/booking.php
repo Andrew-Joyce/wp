@@ -65,9 +65,7 @@ if ($selectedMovieDetails) {
                     <h3>Select Session</h3>
                     <div class="session-selection">
                         <?php foreach ($screenings as $day => $screening) { ?>
-                            <button type="button" class="session" data-session="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
-                                <?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)
-                            </button>
+                            <button type="button" class="session" data-session="some-session-value">Session Button</button>
                         <?php } ?>
                     </div>
                 </div>

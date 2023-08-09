@@ -190,6 +190,7 @@ sessionButtons.forEach(button => {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
   const sessions = document.querySelectorAll('.session');
   
@@ -197,9 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
       session.addEventListener('click', function() {
           sessions.forEach(s => s.classList.remove('selected'));
           this.classList.add('selected');
-          
-          const selectedSession = this.getAttribute('data-session');
-          console.log('Selected session:', selectedSession);
       });
   });
 });
+
