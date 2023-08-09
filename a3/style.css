@@ -632,7 +632,7 @@ label {
 
 @media screen and (max-width: 480px) { 
 .seat input{
-    width: 100%; 
+    width: 50%; 
 }
 
 .seat input[type="number"] {
