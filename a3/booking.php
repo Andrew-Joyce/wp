@@ -40,24 +40,28 @@ if ($selectedMovieDetails) {
 
     <main>
     <form method="POST" action="submit.php" id="booking-form" onsubmit="return validateForm()">
-        <?php foreach ($moviesObject as $movieCode => $movieDetails) {
-            $screenings = $movieDetails['screenings'];
+        <?php
+
+        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+        if ($selectedMovieDetails) {
+            $screenings = $selectedMovieDetails['screenings'];
         ?>
-            <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
-                <legend class="movie-title"><?php echo $movieDetails['title']; ?></legend>
-                <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
+            <fieldset id="fieldset-session-<?php echo $selectedMovieCode; ?>">
+                <legend class="movie-title"><?php echo $selectedMovieDetails['title']; ?></legend>
+                <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>" style="display: block;">
                     <div class="trailer">
                         <div class="responsive-video">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($movieDetails['trailer'], strrpos($movieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($selectedMovieDetails['trailer'], strrpos($selectedMovieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="synopsis">
-                        <p><?php echo $movieDetails['summary']; ?></p>
-                        <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
-                        <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
-                        <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
+                        <p><?php echo $selectedMovieDetails['summary']; ?></p>
+                        <p><strong>Starring</strong> - <?php echo isset($selectedMovieDetails['cast']) ? $selectedMovieDetails['cast'] : 'N/A'; ?></p>
+                        <p><strong>Screening Times:</strong> <?php echo $selectedMovieDetails['screening-summary']; ?></p>
+                        <p>For more information, visit <a href="<?php echo $selectedMovieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                     </div>
-                    <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
+                    <div class="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>">
                         <h3>Select Session</h3>
                         <div class="session-selection">
                             <?php foreach ($screenings as $day => $screening) { ?>
