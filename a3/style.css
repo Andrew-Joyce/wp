@@ -486,7 +486,7 @@ label {
   padding: 3px 5px;
   margin-right: 5px;
   text-align: left;
-  grid-column: 1; 
+  grid-column: 1;
 }
 
 .contact-info input[type="text"],
@@ -501,28 +501,30 @@ label {
   margin: 0;
   text-align: left;
   grid-column: 2; 
+  grid-row: span 1; 
 }
 
 @media screen and (max-width: 768px) {
   .contact-info {
     max-width: 80%;
     padding: 15px;
+    gap: 5px; 
   }
 
   .contact-info input[type="text"],
   .contact-info input[type="tel"],
   .contact-info input[type="email"] {
-    width: 80%; 
+    width: 80%;
   }
   
+
   .contact-info label,
   .contact-info input[type="text"],
   .contact-info input[type="tel"],
   .contact-info input[type="email"] {
-    margin-bottom: 5px;
+    margin-bottom: 3px; 
   }
 }
-
 
 .session-selection {
   display: flex;
