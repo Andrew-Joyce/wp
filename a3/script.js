@@ -192,11 +192,14 @@ sessionButtons.forEach(button => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const sessions = document.querySelectorAll('.session');
+  
   sessions.forEach(function(session) {
       session.addEventListener('click', function() {
           sessions.forEach(s => s.classList.remove('selected'));
           this.classList.add('selected');
+          
+          const selectedSession = this.getAttribute('data-session');
+          console.log('Selected session:', selectedSession);
       });
   });
 });
-

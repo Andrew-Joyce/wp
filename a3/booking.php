@@ -62,15 +62,15 @@ if ($selectedMovieDetails) {
                         <p>For more information, visit <a href="<?php echo $selectedMovieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                     </div>
                     <div class="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>">
-                        <h3>Select Session</h3>
-                        <div class="session-selection">
-                            <?php foreach ($screenings as $day => $screening) { ?>
-                                <button type="button" class="session" data-value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
-                                    <?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)
-                                </button>
-                            <?php } ?>
-                        </div>
+                    <h3>Select Session</h3>
+                    <div class="session-selection">
+                        <?php foreach ($screenings as $day => $screening) { ?>
+                            <button type="button" class="session" data-session="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
+                                <?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)
+                            </button>
+                        <?php } ?>
                     </div>
+                </div>
                 </div>
             </fieldset>
         <?php } ?>
