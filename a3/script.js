@@ -178,3 +178,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const sessionButtons = document.querySelectorAll('.session');
+
+function handleSessionSelection(event) {
+    sessionButtons.forEach(button => {
+        button.style.backgroundColor = '';
+    });
+
+    event.target.style.backgroundColor = 'blue';
+}
+
+sessionButtons.forEach(button => {
+    button.addEventListener('click', handleSessionSelection);
+});
+
