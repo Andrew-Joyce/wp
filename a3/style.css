@@ -603,9 +603,29 @@ label {
 }
 
 .seats-container, .seat label, .seat input, .seat .seat-price {
+  display: flex;
+  flex-direction: column;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) { 
+  .submit-button {
+      width: 32%; 
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .submit-button {
+      width: 48%; 
+  }
+}
+
+@media screen and (max-width: 480px) { 
+  .submit-button {
+      width: 100%; 
+  }
 }
 
 
