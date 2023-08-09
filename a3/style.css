@@ -614,8 +614,10 @@ label {
 }
 
 .seat input[type="number"] {
-    width: 32%; 
-}
+  width: 70px; 
+  height: 24px; 
+  font-size: 14px; 
+  padding: 2px; 
 }
 
 @media screen and (max-width: 768px) { 
