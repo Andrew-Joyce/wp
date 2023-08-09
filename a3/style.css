@@ -608,40 +608,6 @@ label {
   text-align: center;
 }
 
-.seats-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 10px;
-
-}
-
-
-.seat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-}
-
-
-@media screen and (max-width: 1024px) {
-  .submit-button {
-      width: 32%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .submit-button {
-      width: 48%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .submit-button {
-      width: 100%;
-  }
-}
 
 
 
