@@ -460,6 +460,21 @@ label {
   font-size: 40px;
   margin-bottom: 10px;
 }
+.movie-details h2 {
+  font-size: 24px; /
+}
+
+@media screen and (max-width: 768px) {
+  .movie-details h2 {
+    font-size: 20px; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .movie-details h2 {
+    font-size: 18px; 
+  }
+}
 
 .movie-details .synopsis p,
 .movie-details .synopsis strong {
@@ -639,28 +654,3 @@ label {
     width: 100%;
 }
 }
-
-fieldset legend {
-  font-size: 24px; 
-}
-
-@media screen and (max-width: 768px) {
-  fieldset legend {
-    font-size: 20px; 
-}
-
-@media screen and (max-width: 480px) {
-  fieldset legend {
-    font-size: 18px; 
-  }
-}
-
-
-
-
-
-
-
-
-
-
