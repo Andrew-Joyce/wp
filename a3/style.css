@@ -91,6 +91,11 @@ nav a {
   }
 }
 
+.responsive-image {
+  max-width: 100px; 
+  height: auto;
+}
+
 nav a::before {
   content: '';
   position: absolute;
