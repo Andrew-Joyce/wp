@@ -609,31 +609,34 @@ label {
 }
 
 @media screen and (max-width: 1024px) { 
-  .submit-button {
-      width: 32%; 
-  }
+.submit-button {
+    width: 32%; 
+}
+
+.seat input[type="number"] {
+    width: 32%; 
+}
 }
 
 @media screen and (max-width: 768px) { 
-  .submit-button {
-      width: 48%; 
-  }
+.submit-button {
+    width: 48%; 
+}
+
+.seat input[type="number"] {
+    width: 48%; 
+}
 }
 
 @media screen and (max-width: 480px) { 
-  .submit-button {
-      width: 100%; 
-  }
+.submit-button {
+    width: 100%; 
 }
 
-input[type="number"] {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  text-align: center;
+.seat input[type="number"] {
+    width: 100%;
 }
-
-
-
+}
 
 
 
