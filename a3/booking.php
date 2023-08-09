@@ -12,24 +12,8 @@ include 'tools.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedMovie = urlParams.get('movie');
+    <script src="script.js"></script>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-            sessionFieldsets.forEach((fieldset) => {
-                fieldset.style.display = 'none';
-            });
-
-            if (selectedMovie) {
-                const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-                if (selectedFieldset) {
-                    selectedFieldset.style.display = 'block';
-                }
-            }
-        });
-    </script>
 </head>
 
 <body>
