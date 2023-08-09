@@ -512,12 +512,6 @@ label {
     max-width: 80%;
     padding: 15px;
   }
-
-  .contact-info input[type="text"],
-  .contact-info input[type="tel"],
-  .contact-info input[type="email"] {
-    width: 80%;
-  }
 }
 
 .session-selection {
