@@ -1,6 +1,10 @@
 <?php
 session_start();
 include 'tools.php';
+$selectedMovieCode = $_GET['movie'];
+
+$selectedMovieDetails = $moviesObject[$selectedMovieCode];
+$selectedMovieScreenings = $selectedMovieDetails['screenings'];
 ?>
 
 <script src="script.js"></script>
