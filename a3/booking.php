@@ -1,10 +1,14 @@
 <?php
 session_start();
 include 'tools.php';
+
 $selectedMovieCode = $_GET['movie'];
 
-$selectedMovieDetails = $moviesObject[$selectedMovieCode];
-$selectedMovieScreenings = $selectedMovieDetails['screenings'];
+$selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+if ($selectedMovieDetails) {
+    $screenings = $selectedMovieDetails['screenings'];
+}
 ?>
 
 <script src="script.js"></script>
@@ -40,7 +44,8 @@ $selectedMovieScreenings = $selectedMovieDetails['screenings'];
             $screenings = $movieDetails['screenings'];
         ?>
             <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
-            <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;"></div>
+                <legend class="movie-title"><?php echo $movieDetails['title']; ?></legend>
+                <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;">
                     <div class="trailer">
                         <div class="responsive-video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($movieDetails['trailer'], strrpos($movieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -53,7 +58,6 @@ $selectedMovieScreenings = $selectedMovieDetails['screenings'];
                         <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                     </div>
                 </div>
-                <legend class="movie-title"><?php echo $movieDetails['title']; ?></legend>
                 <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
                     <h3>Select Session</h3>
                     <div class="session-selection">
@@ -65,8 +69,7 @@ $selectedMovieScreenings = $selectedMovieDetails['screenings'];
                     </div>
                 </div>
             </fieldset>
-            <?php } ?>
-            </fieldset>
+        <?php } ?>
 
         <fieldset>
             <legend>Select Standard Seats</legend>
