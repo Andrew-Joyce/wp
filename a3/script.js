@@ -97,13 +97,6 @@ function validateForm() {
   }
 
   return true;
-}
-const bookingForm = document.getElementById('booking-form');
-bookingForm.addEventListener('submit', (event) => {
-  if (!validateForm()) {
-    event.preventDefault();
-  }
-});
 
 function saveCustomerDetails() {
   const nameInput = document.getElementById('name').value;
@@ -152,16 +145,56 @@ document.getElementById('forget-btn').addEventListener('click', function () {
   saveCustomerDetails();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const sessions = document.querySelectorAll('.session');
-  sessions.forEach(function(session) {
-    session.addEventListener('click', function() {
-      
-      sessions.forEach(s => s.classList.remove('selected'));
-      
-      this.classList.add('selected');
+document.addEventListener('DOMContentLoaded', () => {
+    const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+    sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
     });
-  });
+
+    if (selectedMovie) {
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+            selectedFieldset.style.display = 'block';
+        }
+    }
+});
+
+const bookingForm = document.getElementById('booking-form');
+bookingForm.addEventListener('submit', (event) => {
+  if (!validateForm()) {
+    event.preventDefault();
+  }
+});
+
+
+function populateCustomerDetails() {
+  const storedName = localStorage.getItem('customerName');
+  const storedMobile = localStorage.getItem('customerMobile');
+  const storedEmail = localStorage.getItem('customerEmail');
+
+  if (storedName) {
+    document.getElementById('name').value = storedName;
+  }
+  if (storedMobile) {
+    document.getElementById('mobile').value = storedMobile;
+  }
+  if (storedEmail) {
+    document.getElementById('email').value = storedEmail;
+  }
+}
+
+document.getElementById('booking-form').addEventListener('submit', saveCustomerDetails);
+
+document.getElementById('remember-btn').addEventListener('click', function () {
+  const rememberCheckbox = document.getElementById('remember');
+  rememberCheckbox.checked = true;
+  saveCustomerDetails();
+});
+
+document.getElementById('forget-btn').addEventListener('click', function () {
+  const rememberCheckbox = document.getElementById('remember');
+  rememberCheckbox.checked = false;
+  saveCustomerDetails();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -200,5 +233,3 @@ document.addEventListener('DOMContentLoaded', function() {
           this.classList.add('selected');
       });
   });
-});
-
