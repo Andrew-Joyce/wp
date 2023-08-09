@@ -12,6 +12,8 @@ $selectedMovieScreenings = $selectedMovieDetails['screenings'];
 <!DOCTYPE html>
 <html lang="en">
 
+<?php foreach ($selectedMovieScreenings as $day => $screening) { ?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
