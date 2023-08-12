@@ -89,8 +89,8 @@ document.getElementById('forget-btn').addEventListener('click', function(event) 
     localStorage.removeItem('customer-mobile');
 
     document.getElementById('remember-btn').classList.add('unselected');
-    document.getElementById('remember-btn').classList.remove('rfselected');
-    document.getElementById('forget-btn').classList.add('rfselected');
+    document.getElementById('remember-btn').classList.remove('selected');
+    document.getElementById('forget-btn').classList.add('selected');
     document.getElementById('forget-btn').classList.remove('unselected');
 });
 
@@ -104,12 +104,20 @@ function populateFieldsFromLocalStorage() {
     if (mobile) document.getElementById('mobile').value = mobile;
 
     if (name) {
-        document.getElementById('remember-btn').classList.add('rfselected');
+        document.getElementById('remember-btn').classList.add('selected');
         document.getElementById('remember-btn').classList.remove('unselected');
+        document.getElementById('forget-btn').classList.add('unselected');
+        document.getElementById('forget-btn').classList.remove('selected');
+    } else {
+        document.getElementById('remember-btn').classList.add('unselected');
+        document.getElementById('remember-btn').classList.remove('selected');
+        document.getElementById('forget-btn').classList.add('selected');
+        document.getElementById('forget-btn').classList.remove('unselected');
     }
 }
 
 document.addEventListener('DOMContentLoaded', populateFieldsFromLocalStorage);
+
 
 
     
