@@ -63,5 +63,48 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
+document.getElementById('remember-btn').addEventListener('click', function() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value;
+
+    localStorage.setItem('customer-name', name);
+    localStorage.setItem('customer-email', email);
+    localStorage.setItem('customer-mobile', mobile);
+
+    document.getElementById('remember-btn').classList.add('selected');
+    document.getElementById('remember-btn').classList.remove('unselected');
+    document.getElementById('forget-btn').classList.add('unselected');
+    document.getElementById('forget-btn').classList.remove('selected');
+});
+
+document.getElementById('forget-btn').addEventListener('click', function() {
+    localStorage.removeItem('customer-name');
+    localStorage.removeItem('customer-email');
+    localStorage.removeItem('customer-mobile');
+
+    document.getElementById('remember-btn').classList.add('unselected');
+    document.getElementById('remember-btn').classList.remove('selected');
+    document.getElementById('forget-btn').classList.add('selected');
+    document.getElementById('forget-btn').classList.remove('unselected');
+});
+
+function populateFieldsFromLocalStorage() {
+    const name = localStorage.getItem('customer-name');
+    const email = localStorage.getItem('customer-email');
+    const mobile = localStorage.getItem('customer-mobile');
+
+    if (name) document.getElementById('name').value = name;
+    if (email) document.getElementById('email').value = email;
+    if (mobile) document.getElementById('mobile').value = mobile;
+
+    if (name) {
+        document.getElementById('remember-btn').classList.add('selected');
+        document.getElementById('remember-btn').classList.remove('unselected');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', populateFieldsFromLocalStorage);
+
 
     
