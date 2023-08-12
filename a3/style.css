@@ -659,7 +659,7 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-.selected {
+.rfselected {
   background-color: blue;
   color: white;
 }
