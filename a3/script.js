@@ -63,61 +63,53 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
-document.getElementById('remember-btn').addEventListener('click', function(event) {
-    event.preventDefault();
+function rememberMe() {
+    var name = document.getElementById('name').value;
+    var mobile = document.getElementById('mobile').value;
+    var email = document.getElementById('email').value;
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const mobile = document.getElementById('mobile').value;
+    localStorage.setItem('name', name);
+    localStorage.setItem('mobile', mobile);
+    localStorage.setItem('email', email);
+}
 
-    localStorage.setItem('customer-name', name);
-    localStorage.setItem('customer-email', email);
-    localStorage.setItem('customer-mobile', mobile);
+function forgetMe() {
+    localStorage.removeItem('name');
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('email');
+}
 
-    document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
-    document.getElementById('forget-btn').classList.add('inactive');
-    document.getElementById('forget-btn').classList.remove('active');
-});
+function retrieveDetails() {
+    var name = localStorage.getItem('name');
+    var mobile = localStorage.getItem('mobile');
+    var email = localStorage.getItem('email');
 
-
-document.getElementById('forget-btn').addEventListener('click', function(event) {
-    event.preventDefault();
-
-    localStorage.removeItem('customer-name');
-    localStorage.removeItem('customer-email');
-    localStorage.removeItem('customer-mobile');
-
-    document.getElementById('remember-btn').classList.add('inactive');
-    document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
-});
-
-function populateFieldsFromLocalStorage() {
-    const name = localStorage.getItem('customer-name');
-    const email = localStorage.getItem('customer-email');
-    const mobile = localStorage.getItem('customer-mobile');
-
-    if (name) document.getElementById('name').value = name;
-    if (email) document.getElementById('email').value = email;
-    if (mobile) document.getElementById('mobile').value = mobile;
-
-    if (name) {
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
-        document.getElementById('forget-btn').classList.add('inactive');
-        document.getElementById('forget-btn').classList.remove('active');
-    } else {
-        document.getElementById('remember-btn').classList.add('inactive');
-        document.getElementById('remember-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('active');
-        document.getElementById('forget-btn').classList.remove('inactive');
+    if (name && mobile && email) {
+        document.getElementById('name').value = name;
+        document.getElementById('mobile').value = mobile;
+        document.getElementById('email').value = email;
+        document.getElementById('remember-btn').classList.add('selected');
+        document.getElementById('forget-btn').classList.remove('selected');
     }
 }
 
-document.addEventListener('DOMContentLoaded', populateFieldsFromLocalStorage);
+function toggleButtons() {
+    document.getElementById('remember-btn').addEventListener('click', function() {
+        rememberMe();
+        this.classList.toggle('selected');
+        document.getElementById('forget-btn').classList.remove('selected');
+    });
 
+    document.getElementById('forget-btn').addEventListener('click', function() {
+        forgetMe();
+        this.classList.toggle('selected');
+        document.getElementById('remember-btn').classList.remove('selected');
+    });
+}
 
+window.onload = function() {
+    retrieveDetails();
+    toggleButtons();
+}
 
     
