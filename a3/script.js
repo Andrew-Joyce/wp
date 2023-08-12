@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const sessionButtons = document.querySelectorAll('.session');
 
 sessionButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => { 
         sessionButtons.forEach(btn => {
             btn.classList.remove('selected');
         });
         
-        Event.target.classList.add('selected');
+        event.target.classList.add('selected');
     });
 });
+
