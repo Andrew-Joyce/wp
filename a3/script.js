@@ -15,16 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-const sessionButtons = document.querySelectorAll('.session');
+document.addEventListener('DOMContentLoaded', function () {
+    var sessions = document.querySelectorAll('.session');
 
-sessionButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        console.log("Button clicked");
-        
-        sessionButtons.forEach(btn => {
-            btn.classList.remove('selected');
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
         });
-        
-        event.target.classList.add('selected');
     });
 });
