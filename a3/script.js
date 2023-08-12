@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const sessionButtons = document.querySelectorAll('.session');
 
 sessionButtons.forEach(button => {
-    button.addEventListener('click', (event) => { 
+    button.addEventListener('click', (event) => {
+        console.log("Button clicked");
+        
         sessionButtons.forEach(btn => {
             btn.classList.remove('selected');
         });
@@ -26,4 +28,3 @@ sessionButtons.forEach(button => {
         event.target.classList.add('selected');
     });
 });
-
