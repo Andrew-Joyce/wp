@@ -659,10 +659,16 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-.active{
+.contact-Button.selected {
   background-color: blue;
   color: white;
 }
+
+.contact-Button.unselected {
+  background-color: white;
+  color: black;
+}
+
 
 
 
