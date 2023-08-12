@@ -98,12 +98,14 @@ function toggleButtons() {
         rememberMe();
         this.classList.toggle('selected');
         document.getElementById('forget-btn').classList.remove('selected');
+        console.log('Remember clicked, classes:', this.classList);
     });
 
     document.getElementById('forget-btn').addEventListener('click', function() {
         forgetMe();
         this.classList.toggle('selected');
         document.getElementById('remember-btn').classList.remove('selected');
+        console.log('Forget clicked, classes:', this.classList); 
     });
 }
 
