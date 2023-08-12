@@ -23,6 +23,6 @@ sessionButtons.forEach(button => {
             btn.classList.remove('selected');
         });
         
-        event.target.classList.add('selected');
+        Event.target.classList.add('selected');
     });
 });
