@@ -28,3 +28,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    const ticketInputs = document.querySelectorAll('input[type="number"]');
+
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        ticketInputs.forEach(input => {
+            let quantity = parseInt(input.value);
+            let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+            let selectedSession = document.querySelector('.session-selected');
+            let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
+            let price = isDiscounted ? fullPrice * 0.75 : fullPrice;
+            totalPrice += price * quantity;
+        });
+        document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+    }
+
+    ticketInputs.forEach(input => {
+        input.addEventListener('input', updateTotalPrice);
+    });
+
+    const sessionButtons = document.querySelectorAll('.session');
+    sessionButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            sessionButtons.forEach(btn => btn.classList.remove('session-selected'));
+            event.currentTarget.classList.add('session-selected');
+            updateTotalPrice();
+        });
+    });
+
+    updateTotalPrice();
+});
+
+    
