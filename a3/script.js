@@ -63,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
-document.getElementById('remember-btn').addEventListener('click', function() {
+document.getElementById('remember-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const mobile = document.getElementById('mobile').value;
@@ -78,7 +80,10 @@ document.getElementById('remember-btn').addEventListener('click', function() {
     document.getElementById('forget-btn').classList.remove('selected');
 });
 
-document.getElementById('forget-btn').addEventListener('click', function() {
+
+document.getElementById('forget-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+
     localStorage.removeItem('customer-name');
     localStorage.removeItem('customer-email');
     localStorage.removeItem('customer-mobile');
