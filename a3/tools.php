@@ -85,7 +85,7 @@ $moviesObject = [
         'screenings' => [
             'MON' => [
                 'time' => '12pm',
-                'rate' => 'regular'
+                'rate' => 'reg'
             ],
             'TUE' => [
                 'time' => '12pm',

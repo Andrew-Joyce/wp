@@ -38,9 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
         ticketInputs.forEach(input => {
             let quantity = parseInt(input.value);
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
             let selectedSession = document.querySelector('.selected'); 
             let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-            let price = isDiscounted ? fullPrice * 0.75 : fullPrice;
+            let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
         document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
@@ -61,5 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updateTotalPrice();
 });
+
 
     
