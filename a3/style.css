@@ -507,7 +507,7 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-Button {
+.session, .contact-Button, .unselected  {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
@@ -662,11 +662,6 @@ fieldset .movie-title {
 .selected {
   background-color: blue;
   color: white;
-}
-
-.unselected {
-  background-color: initial;
-  color: initial;
 }
 
 
