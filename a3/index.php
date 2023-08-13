@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 
-<script src="navigation.js"></script>
+<script src="script.js"></script>
 
 
 
