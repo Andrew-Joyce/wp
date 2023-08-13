@@ -117,34 +117,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-const navigationLinks = document.querySelectorAll('#navbar a');
-
-const sections = document.querySelectorAll('section');
-
-const observerOptions = {
-  rootMargin: '-50% 0px -50% 0px' 
-
-const sectionObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navigationLinks.forEach(link => link.classList.remove('current'));
-
-      const currentSectionId = entry.target.id;
-
-      const currentNavLink = document.querySelector(`#navbar a[href="#${currentSectionId}"]`);
-      
-      currentNavLink.classList.add('current');
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll("#navbar a");
+    const sections = document.querySelectorAll("section");
+  
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= 100 && rect.bottom >= 100
+      );
     }
+  
+    function updateNavLinks() {
+      sections.forEach((section, index) => {
+        if (isElementInViewport(section)) {
+          navLinks.forEach(navLink => {
+            navLink.classList.remove("highlight");
+          });
+          navLinks[index].classList.add("highlight");
+        }
+      });
+    }
+  
+    updateNavLinks();
+  
+    window.addEventListener("scroll", updateNavLinks);
   });
-}, observerOptions);
-
-sections.forEach(section => {
-  sectionObserver.observe(section);
-});
-
-
   
-  
-  
-  
-    

@@ -670,3 +670,6 @@ fieldset .movie-title {
   color: #ff9900;
   font-weight: bold;
 }
+.highlight {
+  color: blue;
+}
