@@ -123,23 +123,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
+        const isInViewport = rect.top <= 100 && rect.bottom >= 100;
+        console.log(`Element ${el.id} in viewport: ${isInViewport}`); 
+        return isInViewport;
     }
 
     function updateNavLinks() {
         sections.forEach((section, index) => {
             if (isElementInViewport(section)) {
+                console.log(`Section ${section.id} is in the viewport. Updating nav links...`); 
                 navLinks.forEach(navLink => {
                     navLink.classList.remove("active");
                 });
                 navLinks[index].classList.add("active");
+                console.log(`NavLink ${index} has been set to active`); 
             }
         });
     }
 
+    console.log("Initial update of nav links");
     updateNavLinks();
 
     window.addEventListener("scroll", updateNavLinks);
 });
+
 
 
