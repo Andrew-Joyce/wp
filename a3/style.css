@@ -530,10 +530,10 @@ label {
 }
 
 .session.selected {
-  background-color: blue !important;
-  color: white !important;
-  padding: 10px 40px !important;
-  width: 400px !important;
+  background-color: blue;
+  color: white ;
+  padding: 10px 40px ;
+  width: 400px ;
 }
 
 
