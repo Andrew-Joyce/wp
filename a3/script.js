@@ -44,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
-        document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+        if (window.location.pathname.endsWith('booking.php')) {
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+          }          
     }
 
     ticketInputs.forEach(input => {
