@@ -62,12 +62,28 @@ header {
 
 nav {
   position: fixed;
-  top: 300px; 
+  top: 0; 
   left: 0;
   width: 100%;
   background: #222;
   z-index: 100;
 }
+
+@media (max-width: 1024px) {
+  nav {
+    top: 100px; 
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+    top: 0;
+    bottom: auto;
+    height: auto;
+  }
+}
+
 
 main {
   padding: 300px;
