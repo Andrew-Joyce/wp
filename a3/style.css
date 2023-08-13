@@ -57,9 +57,10 @@ header {
 }
 
 nav {
-  position:sticky;
-  top:0px;
+  display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0px;
   background: #222;
 }
 
