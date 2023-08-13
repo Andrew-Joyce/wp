@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (window.location.pathname.endsWith('booking.php')) {
         document.getElementById('remember-btn').addEventListener('click', function(event) {
-            rememberMe(event); // Added this line
+            rememberMe(event); 
         });
         document.getElementById('forget-btn').addEventListener('click', function(event) {
             forgetMe(event);
@@ -121,15 +121,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.addEventListener("scroll", function() {
-    let sections = document.querySelectorAll("#now-showing, #seats-&-prices, #about-us");
+    let sections = document.querySelectorAll("#now-showing, #seats-prices, #about-us");
     let navLinks = document.querySelectorAll(".nav-link");
-  
+
     sections.forEach((section, index) => {
-      let rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        navLinks.forEach(link => link.style.color = "");
-        navLinks[index].style.color = "blue"; 
-      }
+        let rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            navLinks.forEach(link => link.style.color = "");
+            navLinks[index].style.color = "blue";
+        }
     });
-  });
+});
+
+
   

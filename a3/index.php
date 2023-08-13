@@ -20,7 +20,7 @@
   </header>
     <nav id="navbar">
       <a class="nav-link" href="#now-showing">Now Showing</a>
-      <a class="nav-link" href="#seats-&-prices">Seats & Prices</a>
+      <a class="nav-link" href="#seats-prices">Seats & Prices</a>
       <a class="nav-link" href="#about-us">About Us</a>
     </nav>
 
@@ -106,7 +106,7 @@
     </div>
 </section>
 
-<section id="seats-&-prices"></section>
+<section id="seats-prices"></section>
   <h2>Seats & Pricing</h2>
 
   <div class="seats-container">
