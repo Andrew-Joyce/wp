@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function rememberMe() {
+function rememberMe(event) {
     event.preventDefault();
-
+  
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
@@ -75,23 +75,23 @@ function rememberMe() {
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('email', email);
   
-    document.getElementById('remember-btn').classList.add('selected');
-    document.getElementById('remember-btn').classList.remove('unselected');
-    document.getElementById('forget-btn').classList.remove('selected');
-    document.getElementById('forget-btn').classList.add('unselected');
+    document.getElementById('remember-btn').classList.add('active');
+    document.getElementById('remember-btn').classList.remove('inactive');
+    document.getElementById('forget-btn').classList.remove('active');
+    document.getElementById('forget-btn').classList.add('inactive');
   }
   
-  function forgetMe() {
+  function forgetMe(event) {
     event.preventDefault();
-
+  
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
   
-    document.getElementById('remember-btn').classList.remove('selected');
-    document.getElementById('remember-btn').classList.add('unselected');
-    document.getElementById('forget-btn').classList.add('selected');
-    document.getElementById('forget-btn').classList.remove('unselected');
+    document.getElementById('remember-btn').classList.remove('active');
+    document.getElementById('remember-btn').classList.add('inactive');
+    document.getElementById('forget-btn').classList.add('active');
+    document.getElementById('forget-btn').classList.remove('inactive');
   }
   
   document.addEventListener("DOMContentLoaded", function() {
@@ -103,8 +103,9 @@ function rememberMe() {
       document.getElementById('mobile').value = localStorage.getItem('mobile');
       document.getElementById('email').value = localStorage.getItem('email');
   
-      document.getElementById('remember-btn').classList.add('selected');
+      document.getElementById('remember-btn').classList.add('active');
     }
   });
+  
   
     

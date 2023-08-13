@@ -659,12 +659,12 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-.selected {
+.button.active {
   background-color: blue;
   color: white;
 }
 
-.unselected {
+.button.inactive {
   color: inherit;
 }
 
