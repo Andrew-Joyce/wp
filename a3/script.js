@@ -120,11 +120,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-sections.forEach((section, index) => {
-    let rect = section.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+window.addEventListener("scroll", function() {
+    let sections = document.querySelectorAll("#now-showing, #seats-prices, #about-us");
+    let navLinks = document.querySelectorAll(".nav-link");
+  
+    sections.forEach((section, index) => {
+      let rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
         navLinks.forEach(link => link.style.color = "");
-        navLinks[index].style.color = "blue";
-    }
-});
-
+        navLinks[index].style.color = "blue"; 
+      }
+    });
+  });
+  
