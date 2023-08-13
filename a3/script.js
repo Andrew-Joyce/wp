@@ -117,6 +117,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+const navigationLinks = document.querySelectorAll('#navbar a');
+
+const sections = document.querySelectorAll('section');
+
+const observerOptions = {
+  rootMargin: '-50% 0px -50% 0px' 
+
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navigationLinks.forEach(link => link.classList.remove('current'));
+
+      const currentSectionId = entry.target.id;
+
+      const currentNavLink = document.querySelector(`#navbar a[href="#${currentSectionId}"]`);
+      
+      currentNavLink.classList.add('current');
+    }
+  });
+}, observerOptions);
+
+sections.forEach(section => {
+  sectionObserver.observe(section);
+});
+
 
   
   
