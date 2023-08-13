@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function rememberMe(event) {
-    event.preventDefault(); 
-  
+    event.preventDefault();
+    
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
@@ -82,7 +82,7 @@ function rememberMe(event) {
   }
   
   function forgetMe(event) {
-    event.preventDefault(); 
+    event.preventDefault();
   
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
@@ -109,6 +109,7 @@ function rememberMe(event) {
       document.getElementById('forget-btn').classList.add('inactive');
     }
   });
+  
   
   
   
