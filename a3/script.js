@@ -63,55 +63,44 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
-function rememberMe() {
-    var name = document.getElementById('name').value;
-    var mobile = document.getElementById('mobile').value;
-    var email = document.getElementById('email').value;
 
+function rememberMe() {
+    const name = document.getElementById('name').value;
+    const mobile = document.getElementById('mobile').value;
+    const email = document.getElementById('email').value;
+  
     localStorage.setItem('name', name);
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('email', email);
-}
-
-function forgetMe() {
+  
+    document.getElementById('remember-btn').classList.add('selected');
+    document.getElementById('remember-btn').classList.remove('unselected');
+    document.getElementById('forget-btn').classList.remove('selected');
+    document.getElementById('forget-btn').classList.add('unselected');
+  }
+  
+  function forgetMe() {
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
-}
-
-function retrieveDetails() {
-    var name = localStorage.getItem('name');
-    var mobile = localStorage.getItem('mobile');
-    var email = localStorage.getItem('email');
-
-    if (name && mobile && email) {
-        document.getElementById('name').value = name;
-        document.getElementById('mobile').value = mobile;
-        document.getElementById('email').value = email;
-        document.getElementById('remember-btn').classList.add('selected');
-        document.getElementById('forget-btn').classList.remove('selected');
+  
+    document.getElementById('remember-btn').classList.remove('selected');
+    document.getElementById('remember-btn').classList.add('unselected');
+    document.getElementById('forget-btn').classList.add('selected');
+    document.getElementById('forget-btn').classList.remove('unselected');
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('remember-btn').addEventListener('click', rememberMe);
+    document.getElementById('forget-btn').addEventListener('click', forgetMe);
+  
+    if (localStorage.getItem('name')) {
+      document.getElementById('name').value = localStorage.getItem('name');
+      document.getElementById('mobile').value = localStorage.getItem('mobile');
+      document.getElementById('email').value = localStorage.getItem('email');
+  
+      document.getElementById('remember-btn').classList.add('selected');
     }
-}
-
-function toggleButtons() {
-    document.getElementById('remember-btn').addEventListener('click', function() {
-        rememberMe();
-        this.classList.toggle('selected');
-        document.getElementById('forget-btn').classList.remove('selected');
-        console.log('Remember clicked, classes:', this.classList);
-    });
-
-    document.getElementById('forget-btn').addEventListener('click', function() {
-        forgetMe();
-        this.classList.toggle('selected');
-        document.getElementById('remember-btn').classList.remove('selected');
-        console.log('Forget clicked, classes:', this.classList); 
-    });
-}
-
-window.onload = function() {
-    retrieveDetails();
-    toggleButtons();
-}
-
+  });
+  
     
