@@ -1,4 +1,4 @@
-let urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 const selectedMovie = urlParams.get('movie');
 
 document.addEventListener('DOMContentLoaded', () => {

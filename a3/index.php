@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
 
-<script src="script.js"></script>
-
-
 
   <head>
     <meta charset="utf-8">
@@ -11,7 +8,8 @@
     <title>Lunardo Home Page</title>
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script src="script.js"></script>
+    <script src='../wireframe.js'></script>
+    <script src="script .js"></script>
   </head>
   <body>
   <header style="text-align: center;">
