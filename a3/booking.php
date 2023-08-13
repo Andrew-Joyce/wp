@@ -125,7 +125,7 @@ if ($selectedMovieDetails) {
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
         </fieldset>
-        <fieldset>
+    <fieldset>
     <legend>Contact Information:</legend>
         <div class="contact-info">
             <label for="name">Full Name:</label>
@@ -142,6 +142,7 @@ if ($selectedMovieDetails) {
             <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
+
 
             <button type="submit" class="submit-button">Submit</button>
 
