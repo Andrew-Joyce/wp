@@ -122,11 +122,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 sections.forEach((section, index) => {
     let rect = section.getBoundingClientRect();
-    console.log('rect.top:', rect.top);
-    console.log('window.innerHeight:', window.innerHeight);
-    if (rect.top <= window.innerHeight / 2 && rect.top >= -window.innerHeight / 2) {
-        console.log('Adding class to index:', index);
-        navLinks.forEach(link => link.classList.remove("active-nav-link"));
-        navLinks[index].classList.add("active-nav-link");
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        navLinks.forEach(link => link.style.color = "");
+        navLinks[index].style.color = "blue";
     }
 });
+
