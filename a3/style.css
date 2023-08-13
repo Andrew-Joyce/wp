@@ -10,22 +10,14 @@ body {
   background-color: #f5f5f5;
 }
 
-.header-container {
-  position: relative;
-}
-
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: black;
-  color: #fff;
   text-align: center;
   padding: 0.5em 0;
   font-family: 'Oswald', sans-serif;
   font-size: 3vw;
-  z-index: 100;
+  background-color: black;
+  color: #fff;
+  animation: rainbow 1s infinite linear, flicker 1s infinite alternate;
 }
 
 @keyframes rainbow {
@@ -65,49 +57,9 @@ header {
 }
 
 nav {
-  position: relative;
-  top: 300px;
-  left: 0;
-  width: 100%;
-  background: #222;
-  z-index: 100;
   display: flex;
-  justify-content: space-between;
-}
-
-@media (max-width: 1024px) {
-  nav {
-    top: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    position: relative;
-    top: 0;
-    bottom: auto;
-    height: auto;
-  }
-}
-
-
-main {
-  padding: 20px;
-  margin-top: 120px;
-  overflow-y: scroll;
-  height: calc(100vh - 120px);
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 20px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 20px 5px;
-  }
+  justify-content: center;
+  background: #222;
 }
 
 nav a {
@@ -120,6 +72,7 @@ nav a {
   border: none;
   border-radius: 4px;
   transition: background 0.3s;
+  position: relative;
   overflow: hidden;
   flex-grow: 1;
   font-family: 'Oswald', sans-serif;
@@ -178,21 +131,6 @@ nav a:hover::before {
 
 main {
   padding: 20px;
-  margin-top: 120px; 
-  overflow-y: scroll;
-  height: calc(100vh - 120px); 
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 20px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 20px 5px;
-  }
 }
 
 footer {
