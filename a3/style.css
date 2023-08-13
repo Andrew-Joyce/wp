@@ -63,7 +63,7 @@ header {
 
 nav {
   position: fixed;
-  top: calc(3vw + 300px);
+  top: 100px; 
   left: 0;
   width: 100%;
   display: flex;
