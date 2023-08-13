@@ -62,7 +62,7 @@ header {
 
 nav {
   position: fixed;
-  top: calc(100% - 300px); 
+  top: calc(100% - 200px); 
   left: 0;
   width: 100%;
   background: #222;
