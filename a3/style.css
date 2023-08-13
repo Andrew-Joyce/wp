@@ -62,12 +62,38 @@ header {
 
 nav {
   position: fixed;
-  top: 300px;
-  display: flex; 
+  top: calc(100% - 50px); 
   left: 0;
   width: 100%;
   background: #222;
   z-index: 100;
+}
+
+@media (max-width: 768px) {
+  nav {
+    top: auto; 
+    bottom: 0; 
+    height: 50px;
+  }
+}
+
+main {
+  padding: 20px;
+  margin-top: 120px; 
+  overflow-y: scroll;
+  height: calc(100vh - 120px); 
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 20px 5px;
+  }
 }
 
 nav a {
