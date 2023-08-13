@@ -18,14 +18,15 @@
         <h1 style="display: inline;">Lunardo Cinema</h1>
     </div>
   </header>
-    <nav id="navbar">
-      <a class="nav-link" href="#now-showing">Now Showing</a>
-      <a class="nav-link" href="#seats-prices">Seats & Prices</a>
-      <a class="nav-link" href="#about-us">About Us</a>
-    </nav>
+  <nav id="navbar">
+    <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
+    <a class="nav-link nav-section" href="#seats-prices">Seats & Prices</a>
+    <a class="nav-link nav-section" href="#about-us">About Us</a>
+  </nav>
+
     
     <main>
-      <section id="now-showing"></section>
+    <article id="now-showing">
         <h2>Now Showing</h2>
         <div class="movie-container">
             <!-- Movie 1 -->
@@ -103,9 +104,10 @@
                 </div>
             </div>
         </div>
-      </section>
+      </article>
+      
 
-      <section id="seats-prices"></section>
+      <article id="seats-prices">
         <h2>Seats & Pricing</h2>
 
         <div class="seats-container">
@@ -193,10 +195,11 @@
             <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats">
           </div>
         </div>
-      </section>
+      </article>
+      
 
 
-      <section id="about-us"></section>
+      <article id="about-us">
         <div class="about-container">
           <div class="about-text">
             <h2>About Us</h2>
@@ -225,10 +228,10 @@
             <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
             <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
         </div>
-      </section>
+      </article>
 
     </main>
-    
+
         <footer>
           <div class="contact-info">
               <h3>Contact Us</h3>

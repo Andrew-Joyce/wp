@@ -120,16 +120,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-window.addEventListener("scroll", function() {
-    let sections = document.querySelectorAll("#now-showing, #seats-prices, #about-us");
-    let navLinks = document.querySelectorAll(".nav-link");
-  
-    sections.forEach((section, index) => {
-      let rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        navLinks.forEach(link => link.style.color = "");
-        navLinks[index].style.color = "blue"; 
-      }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('article'); 
+    const navLinks = document.querySelectorAll('.nav-section');
+    
+    window.addEventListener('scroll', function () {
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        
+        const threshold = rect.height * 0.5;
+        
+        if (rect.top <= threshold && rect.bottom >= threshold) {
+
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            navLink.style.color = 'black'; 
+          });
+          
+          navLinks[index].classList.add('active');
+          navLinks[index].style.color = 'blue';
+        }
+      });
     });
   });
+  
+  
   
