@@ -59,6 +59,7 @@ header {
 nav {
   position:sticky;
   top:0px;
+  justify-content: space-between;
   background: #222;
 }
 
