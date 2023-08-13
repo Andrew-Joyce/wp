@@ -119,33 +119,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
 window.addEventListener("scroll", function() {
-    let sections = document.querySelectorAll('.section');
-    let navLinks = document.querySelectorAll('.nav-link');
-
-    function isElementInViewport(el) {
-        let rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    function updateNavLinks() {
-        let foundActive = false;
-        sections.forEach((section, index) => {
-            if (!foundActive && isElementInViewport(section)) {
-                navLinks.forEach(navLink => {
-                    navLink.classList.remove("active");
-                });
-                navLinks[index].classList.add("active");
-                foundActive = true;
-            }
-        });
-    }
-
-    updateNavLinks();
-});
-
+    let sections = document.querySelectorAll("#now-showing, #seats-&-prices, #about-us");
+    let navLinks = document.querySelectorAll(".nav-link");
+  
+    sections.forEach((section, index) => {
+      let rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        navLinks.forEach(link => link.style.color = "");
+        navLinks[index].style.color = "blue"; 
+      }
+    });
+  });
+  
