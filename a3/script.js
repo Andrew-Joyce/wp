@@ -123,13 +123,22 @@ document.addEventListener("DOMContentLoaded", function() {
 window.addEventListener("scroll", function() {
     let sections = document.querySelectorAll("#now-showing, #seats-prices, #about-us");
     let navLinks = document.querySelectorAll(".nav-link");
-  
+
+    let activeSectionIndex = -1;
     sections.forEach((section, index) => {
-      let rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        navLinks.forEach(link => link.style.color = "");
-        navLinks[index].style.color = "blue"; 
-      }
+        let rect = section.getBoundingClientRect();
+        let sectionTop = rect.top + window.scrollY;
+
+        if (sectionTop <= window.innerHeight) {
+            activeSectionIndex = index;
+        }
     });
-  });
-  
+
+    navLinks.forEach((link, index) => {
+        if (index === activeSectionIndex) {
+            link.style.color = "blue";
+        } else {
+            link.style.color = "";
+        }
+    });
+});
