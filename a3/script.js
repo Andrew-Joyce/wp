@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           navLinks.forEach(navLink => {
             navLink.classList.remove('active');
-            navLink.style.color = 'black'; 
+            navLink.style.color = 'white'; 
           });
           
           navLinks[index].classList.add('active');
