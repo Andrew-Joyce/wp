@@ -127,11 +127,12 @@ window.addEventListener("scroll", function() {
     sections.forEach((section, index) => {
         let rect = section.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            navLinks.forEach(link => link.style.color = "");
-            navLinks[index].style.color = "blue";
+            navLinks.forEach(link => link.classList.remove("active-link"));
+            navLinks[index].classList.add("active-link");
         }
     });
 });
+
 
 
   
