@@ -131,3 +131,4 @@ window.addEventListener("scroll", function() {
         navLinks[index].classList.add("active-nav-link");
     }
 });
+});
