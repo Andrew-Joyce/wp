@@ -137,13 +137,14 @@ function updateNavLinks() {
   let foundActive = false;
   sections.forEach((section, index) => {
     if (!foundActive && isElementInViewport(section)) {
-      console.log(`Section ${section.id} is in the viewport. Updating nav links...`);
       navLinks.forEach(navLink => {
         navLink.classList.remove("active");
       });
       navLinks[index].classList.add("active");
-      console.log(`NavLink ${index} has been set to active`);
       foundActive = true;
     }
   });
 }
+
+window.addEventListener('scroll', updateNavLinks);
+

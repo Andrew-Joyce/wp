@@ -661,7 +661,6 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-.active {
-  background-color: blue;
-  color: white;
+.nav-link.active {
+  color: blue;
 }

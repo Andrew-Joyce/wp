@@ -26,7 +26,7 @@
 
     
     <main>
-    <section id="now-showing">
+    <section id="now-showing"></section>
     <h2>Now Showing</h2>
     <div class="movie-container">
         <!-- Movie 1 -->
@@ -106,7 +106,7 @@
     </div>
 </section>
 
-<section id="seats-&-prices">
+<section id="seats-&-prices"></section>
   <h2>Seats & Pricing</h2>
 
   <div class="seats-container">
@@ -197,7 +197,7 @@
 </section>
 
 
-<section id="about-us">
+<section id="about-us"></section>
   <div class="about-container">
     <div class="about-text">
       <h2>About Us</h2>
