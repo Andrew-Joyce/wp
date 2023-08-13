@@ -659,15 +659,14 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-.contact-Button.selected {
-  background-color: blue;
-  color: white;
+.selected {
+  color: blue;
 }
 
-.contact-Button.unselected {
-  background-color: white;
-  color: black;
+.unselected {
+  color: inherit;
 }
+
 
 
 
