@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function rememberMe() {
+    event.preventDefault();
+
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
@@ -80,6 +82,8 @@ function rememberMe() {
   }
   
   function forgetMe() {
+    event.preventDefault();
+
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
