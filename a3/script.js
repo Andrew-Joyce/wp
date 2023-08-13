@@ -124,27 +124,28 @@ window.addEventListener("scroll", function() {
     let navLinks = document.querySelectorAll('.nav-link');
 
     function isElementInViewport(el) {
-    let rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+        let rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
     function updateNavLinks() {
-    let foundActive = false;
-    sections.forEach((section, index) => {
-        if (!foundActive && isElementInViewport(section)) {
-        navLinks.forEach(navLink => {
-            navLink.classList.remove("active");
+        let foundActive = false;
+        sections.forEach((section, index) => {
+            if (!foundActive && isElementInViewport(section)) {
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove("active");
+                });
+                navLinks[index].classList.add("active");
+                foundActive = true;
+            }
         });
-        navLinks[index].classList.add("active");
-        foundActive = true;
-        }
-    });
     }
 
-    window.addEventListener('scroll', updateNavLinks);
+    updateNavLinks();
+});
 

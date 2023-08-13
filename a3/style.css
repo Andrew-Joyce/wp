@@ -664,3 +664,7 @@ fieldset .movie-title {
 .nav-link.active {
   color: blue;
 }
+
+.section {
+  height: 100vh; 
+}
