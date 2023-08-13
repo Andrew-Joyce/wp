@@ -79,9 +79,9 @@ function rememberMe(event) {
     document.getElementById('remember-btn').classList.remove('inactive');
     document.getElementById('forget-btn').classList.remove('active');
     document.getElementById('forget-btn').classList.add('inactive');
-  }
-  
-  function forgetMe(event) {
+}
+
+function forgetMe(event) {
     event.preventDefault();
   
     localStorage.removeItem('name');
@@ -92,23 +92,24 @@ function rememberMe(event) {
     document.getElementById('remember-btn').classList.add('inactive');
     document.getElementById('forget-btn').classList.add('active');
     document.getElementById('forget-btn').classList.remove('inactive');
-  }
-  
-  document.addEventListener("DOMContentLoaded", function() {
+}
+
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('remember-btn').addEventListener('click', rememberMe);
     document.getElementById('forget-btn').addEventListener('click', forgetMe);
   
     if (localStorage.getItem('name')) {
-      document.getElementById('name').value = localStorage.getItem('name');
-      document.getElementById('mobile').value = localStorage.getItem('mobile');
-      document.getElementById('email').value = localStorage.getItem('email');
+        document.getElementById('name').value = localStorage.getItem('name');
+        document.getElementById('mobile').value = localStorage.getItem('mobile');
+        document.getElementById('email').value = localStorage.getItem('email');
   
-      document.getElementById('remember-btn').classList.add('active');
-      document.getElementById('remember-btn').classList.remove('inactive');
-      document.getElementById('forget-btn').classList.remove('active');
-      document.getElementById('forget-btn').classList.add('inactive');
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
     }
-  });
+});
+
   
   
   
