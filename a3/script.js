@@ -129,7 +129,7 @@ window.addEventListener("scroll", function() {
         let rect = section.getBoundingClientRect();
         let sectionTop = rect.top + window.scrollY;
 
-        if (sectionTop <= window.innerHeight) {
+        if (sectionTop <= window.innerHeight && sectionTop > 0) {
             activeSectionIndex = index;
         }
     });
@@ -142,3 +142,4 @@ window.addEventListener("scroll", function() {
         }
     });
 });
+
