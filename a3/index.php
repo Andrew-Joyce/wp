@@ -26,83 +26,83 @@
     
     <main>
     <section id="now-showing"></section>
-    <h2>Now Showing</h2>
-    <div class="movie-container">
-        <!-- Movie 1 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
-                <div>
-                    <h3>Indiana Jones and the Dial of Destiny</h3>
-                    <p>Rating: PG</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller.</p>
-                <ul>
-                    <li>Mon - Tue: 9pm</li>
-                    <li>Wed - Fri: 9pm</li>
-                    <li>Sat - Sun: 6pm</li>
-                </ul>
-                <a href="booking.php?movie=ACT">Book Now</a>
-            </div>
-        </div>
-        <!-- Movie 2 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/barbie-poster.png" alt="Barbie">
-                <div>
-                    <h3>Barbie</h3>
-                    <p>Rating: G</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
-                <ul>
-                    <li>Wed - Fri: 12pm</li>
-                    <li>Sat - Sun: 3pm</li>
-                </ul>
-                <a href="booking.php?movie=RMC">Book Now</a>
-            </div>
-        </div>
-        <!-- Movie 3 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
-                <div>
-                    <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
-                    <p>Rating: PG-13</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate.</p>
-                <ul>
-                    <li>Mon - Tue: 12pm</li>
-                    <li>Wed - Fri: 6pm</li>
-                    <li>Sat - Sun: 12pm</li>
-                </ul>
-                <a href="booking.php?movie=ANM">Book Now</a>
-            </div>
-        </div>
-        <!-- Movie 4 -->
-        <div class="movie-card" tabindex="0">
-            <div class="movie-front">
-                <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
-                <div>
-                    <h3>Oppenheimer</h3>
-                    <p>Rating: R</p>
-                </div>
-            </div>
-            <div class="movie-back">
-                <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
-                <ul>
-                    <li>Mon - Tue: 6pm</li>
-                    <li>Sat - Sun: 9pm</li>
-                </ul>
-                <a href="booking.php?movie=DRM">Book Now</a>
-            </div>
-        </div>
-    </div>
+      <h2>Now Showing</h2>
+      <div class="movie-container">
+          <!-- Movie 1 -->
+          <div class="movie-card" tabindex="0">
+              <div class="movie-front">
+                  <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
+                  <div>
+                      <h3>Indiana Jones and the Dial of Destiny</h3>
+                      <p>Rating: PG</p>
+                  </div>
+              </div>
+              <div class="movie-back">
+                  <p>Daredevil archaeologist Indiana Jones races against time to retrieve a legendary dial that can change the course of history. Accompanied by his goddaughter, he soon finds himself squaring off against Jürgen Voller.</p>
+                  <ul>
+                      <li>Mon - Tue: 9pm</li>
+                      <li>Wed - Fri: 9pm</li>
+                      <li>Sat - Sun: 6pm</li>
+                  </ul>
+                  <a href="booking.php?movie=ACT">Book Now</a>
+              </div>
+          </div>
+          <!-- Movie 2 -->
+          <div class="movie-card" tabindex="0">
+              <div class="movie-front">
+                  <img src="../../media/barbie-poster.png" alt="Barbie">
+                  <div>
+                      <h3>Barbie</h3>
+                      <p>Rating: G</p>
+                  </div>
+              </div>
+              <div class="movie-back">
+                  <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.</p>
+                  <ul>
+                      <li>Wed - Fri: 12pm</li>
+                      <li>Sat - Sun: 3pm</li>
+                  </ul>
+                  <a href="booking.php?movie=RMC">Book Now</a>
+              </div>
+          </div>
+          <!-- Movie 3 -->
+          <div class="movie-card" tabindex="0">
+              <div class="movie-front">
+                  <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
+                  <div>
+                      <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
+                      <p>Rating: PG-13</p>
+                  </div>
+              </div>
+              <div class="movie-back">
+                  <p>After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers. Their new friend, April O'Neil, helps them take on a mysterious crime syndicate.</p>
+                  <ul>
+                      <li>Mon - Tue: 12pm</li>
+                      <li>Wed - Fri: 6pm</li>
+                      <li>Sat - Sun: 12pm</li>
+                  </ul>
+                  <a href="booking.php?movie=ANM">Book Now</a>
+              </div>
+          </div>
+          <!-- Movie 4 -->
+          <div class="movie-card" tabindex="0">
+              <div class="movie-front">
+                  <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
+                  <div>
+                      <h3>Oppenheimer</h3>
+                      <p>Rating: R</p>
+                  </div>
+              </div>
+              <div class="movie-back">
+                  <p>The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
+                  <ul>
+                      <li>Mon - Tue: 6pm</li>
+                      <li>Sat - Sun: 9pm</li>
+                  </ul>
+                  <a href="booking.php?movie=DRM">Book Now</a>
+              </div>
+          </div>
+      </div>
     </section>
 
     <section id="seats-prices"></section>
