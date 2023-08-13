@@ -64,9 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function rememberMe(event) {
-    event.preventDefault();
-  
+function rememberMe() {
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
@@ -81,9 +79,7 @@ function rememberMe(event) {
     document.getElementById('forget-btn').classList.add('inactive');
   }
   
-  function forgetMe(event) {
-    event.preventDefault();
-  
+  function forgetMe() {
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
@@ -104,6 +100,9 @@ function rememberMe(event) {
       document.getElementById('email').value = localStorage.getItem('email');
   
       document.getElementById('remember-btn').classList.add('active');
+      document.getElementById('remember-btn').classList.remove('inactive');
+      document.getElementById('forget-btn').classList.remove('active');
+      document.getElementById('forget-btn').classList.add('inactive');
     }
   });
   
