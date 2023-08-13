@@ -65,7 +65,7 @@ header {
 }
 
 nav {
-  position: fixed;
+  position: relative;
   top: 300px;
   left: 0;
   width: 100%;
@@ -88,12 +88,8 @@ nav {
     bottom: auto;
     height: auto;
   }
-
-nav {
-  position: relative;
-  top: 0;
- 
 }
+
 
 main {
   padding: 20px;
