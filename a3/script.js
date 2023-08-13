@@ -117,23 +117,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    console.log('Top:', rect.top, 'Bottom:', rect.bottom);
-    return (
-        rect.top <= 100 && rect.bottom >= 100
-    );
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
 
-function updateNavLinks() {
-    console.log('Updating nav links...');
-    sections.forEach((section, index) => {
-        if (isElementInViewport(section)) {
-            console.log('Highlighting section:', index);
-            navLinks.forEach(navLink => {
-                navLink.classList.remove("highlight");
-            });
-            navLinks[index].classList.add("highlight");
-        }
-    });
-}
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+    }
+
+    function updateNavLinks() {
+        sections.forEach((section, index) => {
+            if (isElementInViewport(section)) {
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove("active");
+                });
+                navLinks[index].classList.add("active");
+            }
+        });
+    }
+
+    updateNavLinks();
+
+    window.addEventListener("scroll", updateNavLinks);
+});
+

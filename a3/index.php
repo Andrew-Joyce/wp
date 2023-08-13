@@ -21,10 +21,11 @@
     </div>
   </header>
     <nav id="navbar">
-        <a href="#now-showing">Now Showing</a>
-        <a href="#seats-&-prices">Seats & Prices</a>
-        <a href="#about-us">About Us</a>
+      <a class="nav-link" href="#now-showing">Now Showing</a>
+      <a class="nav-link" href="#seats-&-prices">Seats & Prices</a>
+      <a class="nav-link" href="#about-us">About Us</a>
     </nav>
+
     
     <main>
     <section id="now-showing">
