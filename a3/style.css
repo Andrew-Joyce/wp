@@ -167,6 +167,13 @@ footer {
   text-decoration: none;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 300px;
+}
+
 
 .movie-container {
   display: flex;
