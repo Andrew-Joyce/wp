@@ -659,22 +659,9 @@ fieldset .movie-title {
   font-weight: bold;
 }
 
-button:focus {
-  outline: none;
+.session.active,
+.contact-Button.active {
   background-color: blue;
   color: white;
 }
 
-.session:focus,
-.contact-Button:focus,
-.inactive:focus {
-  background-color: blue;
-  color: white;
-}
-
-.session:active,
-.contact-Button:active,
-.inactive:active {
-  background-color: blue;
-  color: white;
-}
