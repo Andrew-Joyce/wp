@@ -62,6 +62,7 @@ nav {
   position: sticky;
   top: 0px;
   background: #222;
+  z-index: 1000;
 }
 
 nav a {
@@ -175,6 +176,7 @@ footer {
   height: auto;
   position: relative;
   padding-bottom: 650px;
+  z-index: 1;
 }
 
 .movie-card:focus .movie-front {
