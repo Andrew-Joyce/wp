@@ -11,6 +11,7 @@ body {
 }
 
 header {
+  position: fixed;
   text-align: center;
   padding: 0.5em 0;
   font-family: 'Oswald', sans-serif;
@@ -63,6 +64,7 @@ nav {
 }
 
 nav a {
+  position: fixed;
   display: inline-block;
   color: #fff;
   padding: 15px 20px;
