@@ -104,143 +104,143 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<section id="seats-prices"></section>
-  <h2>Seats & Pricing</h2>
+    <section id="seats-prices"></section>
+      <h2>Seats & Pricing</h2>
 
-  <div class="seats-container">
-    <div class="seats-text">
-      <h3>Standard Seats</h3>
-      <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience. With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema. Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts. Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
+      <div class="seats-container">
+        <div class="seats-text">
+          <h3>Standard Seats</h3>
+          <p>Our cinema offers comfortable and spacious standard seats, designed to provide you with the perfect balance of relaxation and enjoyment during your movie experience. With generous legroom and ergonomic designs, our standard seats ensure that you can sit back, unwind, and immerse yourself in the magic of cinema. Whether you're watching the latest blockbuster or a timeless classic, our standard seats guarantee a comfortable and enjoyable viewing experience for all movie enthusiasts. Sit back, relax, and let our standard seats enhance your cinematic journey.</p>
 
-      <table>
-        <caption>Seat Prices</caption>
-        <thead>
-          <tr>
-            <th>Seat Type</th>
-            <th>Seat Code</th>
-            <th>Discounted Prices</th>
-            <th>Normal Prices</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Standard Adult</td>
-            <td>STA</td>
-            <td>16.00</td>
-            <td>21.50</td>
-          </tr>
-          <tr>
-            <td>Standard Concession</td>
-            <td>STP</td>
-            <td>14.50</td>
-            <td>19.00</td>
-          </tr>
-          <tr>
-            <td>Standard Child</td>
-            <td>STC</td>
-            <td>13.00</td>
-            <td>17.50</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="seats-image">
-      <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats">
-    </div>
-  </div>
-
-  <div class="seats-container">
-    <div class="seats-text">
-      <h3>Gold Class Seats</h3>
-      <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience. Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
-
-      <table>
-        <caption>Seat Prices</caption>
-        <thead>
-          <tr>
-            <th>Seat Type</th>
-            <th>Seat Code</th>
-            <th>Discounted Prices</th>
-            <th>Normal Prices</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>First Class Adult</td>
-            <td>FCA</td>
-            <td>25.00</td>
-            <td>31.00</td>
-          </tr>
-          <tr>
-            <td>First Class Concession</td>
-            <td>FCP</td>
-            <td>23.50</td>
-            <td>28.00</td>
-          </tr>
-          <tr>
-            <td>First Class Child</td>
-            <td>FCC</td>
-            <td>22.00</td>
-            <td>25.00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="seats-image">
-      <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats">
-    </div>
-  </div>
-</section>
-
-
-<section id="about-us"></section>
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
-      <h3>A Fresh New Look</h3>
-      <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
-        <div class="about-image">
-            <img src="../../media/Capri.png" alt="Cinema Image">
-        </div>
-      <h3>World-Class Projection and Sound Systems</h3>
-        <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
-
-        <div style="display: flex; justify-content: center; gap: 20px;">
-        <a href="https://professional.dolby.com/cinema/">
-            <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:300px;height:100px;border:0;">
-        </a>
-
-        <a href="https://professional.dolby.com/cinema/dolby-atmos">
-            <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:300px;height:100px;border:0;">
-        </a>
+          <table>
+            <caption>Seat Prices</caption>
+            <thead>
+              <tr>
+                <th>Seat Type</th>
+                <th>Seat Code</th>
+                <th>Discounted Prices</th>
+                <th>Normal Prices</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Standard Adult</td>
+                <td>STA</td>
+                <td>16.00</td>
+                <td>21.50</td>
+              </tr>
+              <tr>
+                <td>Standard Concession</td>
+                <td>STP</td>
+                <td>14.50</td>
+                <td>19.00</td>
+              </tr>
+              <tr>
+                <td>Standard Child</td>
+                <td>STC</td>
+                <td>13.00</td>
+                <td>17.50</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-      <h3>Serving the Local Community</h3>
-      <p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
-      <h3>Sustainable and Eco-Friendly</h3>
-      <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
-      <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
-  </div>
-</section>
+        <div class="seats-image">
+          <img src="../../media/Profern-Standard-Twin.png" alt="Standard Seats">
+        </div>
+      </div>
 
-    </main>
-    <footer>
-       <div class="contact-info">
-          <h3>Contact Us</h3>
-          <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
-          <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
-    </div>
-       <div>&copy;<script>
-          document.write(new Date().getFullYear());
-         </script>Andrew Joyce, student number - S3876520. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
-         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
-   </footer>
-  </body>
+      <div class="seats-container">
+        <div class="seats-text">
+          <h3>Gold Class Seats</h3>
+          <p>Experience luxury and indulgence with our Gold Class seats. With plush leather upholstery and spacious seating arrangements, our Gold Class seats provide a premium movie-watching experience. Immerse yourself in comfort as you enjoy the latest films with the utmost convenience. Our Gold Class theaters offer table service, ensuring that you can savor gourmet food and beverages while you watch your favorite movies.</p>
+
+          <table>
+            <caption>Seat Prices</caption>
+            <thead>
+              <tr>
+                <th>Seat Type</th>
+                <th>Seat Code</th>
+                <th>Discounted Prices</th>
+                <th>Normal Prices</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First Class Adult</td>
+                <td>FCA</td>
+                <td>25.00</td>
+                <td>31.00</td>
+              </tr>
+              <tr>
+                <td>First Class Concession</td>
+                <td>FCP</td>
+                <td>23.50</td>
+                <td>28.00</td>
+              </tr>
+              <tr>
+                <td>First Class Child</td>
+                <td>FCC</td>
+                <td>22.00</td>
+                <td>25.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="seats-image">
+          <img src="../../media/Profern-Verona-Twin.png" alt="Gold Class Seats">
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about-us"></section>
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>Welcome to our cinema! Nestled in the heart of our beautiful town in Australia, our cinema has been a cornerstone of the community for many years. We are ecstatic to reopen our doors after extensive improvements and renovations that have transformed our cinema into a state-of-the-art movie destination.</p>
+          <h3>A Fresh New Look</h3>
+          <p>Our renovations encompass a complete overhaul of the interiors with a contemporary aesthetic that still pays homage to the rich history of our cinema. From the moment you step in, you’ll be welcomed by a stylish and comfortable ambiance that sets the stage for an unforgettable movie-going experience.</p>
+            <div class="about-image">
+                <img src="../../media/Capri.png" alt="Cinema Image">
+            </div>
+          <h3>World-Class Projection and Sound Systems</h3>
+            <p>Our commitment to delivering the ultimate movie experience is evident in our technological upgrades. The installation of 3D Dolby Vision projection ensures every frame is razor-sharp with colors that are more vibrant. Accompanying the stunning visuals is our Dolby Atmos sound system. Whether it’s the subtlest of dialogues or the most explosive action scenes, Dolby Atmos encapsulates you in a multi-dimensional sound experience that is unparalleled.</p>
+
+            <div style="display: flex; justify-content: center; gap: 20px;">
+            <a href="https://professional.dolby.com/cinema/">
+                <img src="../../media/DolbyV.png" alt="Dolby Vision" style="width:300px;height:100px;border:0;">
+            </a>
+
+            <a href="https://professional.dolby.com/cinema/dolby-atmos">
+                <img src="../../media/DolbyA.png" alt="Dolby Atmos" style="width:300px;height:100px;border:0;">
+            </a>
+            </div>
+
+          <h3>Serving the Local Community</h3>
+          <p>As a cinema deeply rooted in our community, we strive to be more than just a movie theatre. We aim to be a hub for culture and entertainment. We will be hosting a series of community events, special screenings, and thematic nights that celebrate the diversity and spirit of our town.</p>
+          <h3>Sustainable and Eco-Friendly</h3>
+          <p>In line with our commitment to the environment, our renovations also include eco-friendly initiatives. Our energy-efficient lighting and optimized HVAC systems not only enhance your experience but also minimize our carbon footprint. Our commitment to sustainability also extends to using locally sourced concessions, and we are actively engaging in recycling programs.</p>
+          <p>We eagerly welcome both our loyal patrons and new guests to join us in experiencing the new chapter of our cinema. With our top-of-the-line amenities and community-driven approach, we promise an unmatched movie experience that will keep you coming back for more.</p>
+      </div>
+    </section>
+
+        </main>
+        <footer>
+          <div class="contact-info">
+              <h3>Contact Us</h3>
+              <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+              <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+        </div>
+          <div>&copy;<script>
+              document.write(new Date().getFullYear());
+            </script>Andrew Joyce, student number - S3876520. Last modified <?= date ("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+            <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+            <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
+      </footer>
+    </body>
 </html>
