@@ -97,8 +97,13 @@ function forgetMe(event) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('remember-btn').addEventListener('click', rememberMe);
-    document.getElementById('forget-btn').addEventListener('click', forgetMe);
+    document.getElementById('remember-btn').addEventListener('click', function(event) {
+        rememberMe(event);
+    });
+
+    document.getElementById('forget-btn').addEventListener('click', function(event) {
+        forgetMe(event);
+    });
   
     if (localStorage.getItem('name')) {
         document.getElementById('name').value = localStorage.getItem('name');
@@ -111,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('forget-btn').classList.add('inactive');
     }
 });
+
 
   
   
