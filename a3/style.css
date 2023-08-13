@@ -1,26 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-header, footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-header {
-  top: 0;
-}
-
-footer {
-  bottom: 0;
-}
-
-main {
-  margin-top: 100px; 
-  margin-bottom: 100px; 
-}
-
 
 body {
   font-family: 'Poppins', sans-serif;
