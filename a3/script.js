@@ -112,10 +112,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (window.location.pathname.endsWith('booking.php')) {
         document.getElementById('remember-btn').addEventListener('click', function(event) {
+            rememberMe(event); // Added this line
         });
         document.getElementById('forget-btn').addEventListener('click', function(event) {
-        forgetMe(event);
-    });
+            forgetMe(event);
+        });
+    }
 });
 
 let sections = document.querySelectorAll('.section');
