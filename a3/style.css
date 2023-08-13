@@ -661,6 +661,7 @@ fieldset .movie-title {
 
 .selected {
   background-color: blue;
+  color: white;
 }
 
 .unselected {
