@@ -19,9 +19,9 @@
     </div>
   </header>
     <nav id="navbar">
-    <a class="nav-link" href="#now-showing">Now Showing</a>
-    <a class="nav-link" href="#seats-prices">Seats & Prices</a>
-    <a class="nav-link" href="#about-us">About Us</a>
+      <a class="nav-link" href="#now-showing">Now Showing</a>
+      <a class="nav-link" href="#seats-prices">Seats & Prices</a>
+      <a class="nav-link" href="#about-us">About Us</a>
     </nav>
     
     <main>
