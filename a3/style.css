@@ -665,11 +665,3 @@ fieldset .movie-title {
   background-color: blue;
   color: white;
 }
-
-#navbar a.current {
-  color: #ff9900;
-  font-weight: bold;
-}
-.nav-link.active {
-  color: blue;
-}
