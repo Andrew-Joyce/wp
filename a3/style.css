@@ -78,7 +78,7 @@ nav {
 }
 
 main {
-  padding: 20px;
+  padding: 300px;
   margin-top: 120px; 
   overflow-y: scroll;
   height: calc(100vh - 120px); 
