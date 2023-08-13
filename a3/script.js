@@ -142,3 +142,33 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", updateNavLinks);
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
+
+    function isElementInViewport(el) {
+        try {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+        } catch (error) {
+            console.error("Error in isElementInViewport:", error);
+            return false;
+        }
+    }
+
+    function updateNavLinks() {
+        sections.forEach((section, index) => {
+            if (isElementInViewport(section)) {
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove("active");
+                });
+                navLinks[index].classList.add("active");
+            }
+        });
+    }
+
+    updateNavLinks();
+
+    window.addEventListener("scroll", updateNavLinks);
+});
+
