@@ -126,10 +126,12 @@ window.addEventListener("scroll", function() {
   
     sections.forEach((section, index) => {
       let rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      let sectionTopPadding = rect.top + window.scrollY + parseInt(getComputedStyle(section).paddingTop);
+      if (sectionTopPadding <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
         navLinks.forEach(link => link.style.color = "");
         navLinks[index].style.color = "blue"; 
       }
     });
-  });
+});
+
   
