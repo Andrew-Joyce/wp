@@ -533,7 +533,9 @@ label {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-.session.selected {
+.session.selected, 
+.contact-Button.active:active,
+.contact-Button.active:focus  {
   background-color: blue;
   color: white ;
   padding: 10px 40px ;
@@ -666,3 +668,4 @@ fieldset .movie-title {
 .active-nav-link {
   color: blue;
 }
+
