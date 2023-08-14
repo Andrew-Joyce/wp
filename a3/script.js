@@ -78,11 +78,8 @@ function rememberMe(event) {
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('email', email);
   
-    console.log("Adding 'active' class to Remember button");
     document.getElementById('remember-btn').classList.add('active');
     document.getElementById('remember-btn').classList.remove('inactive');
-    
-    console.log("Removing 'active' class from Forget button");
     document.getElementById('forget-btn').classList.remove('active');
     document.getElementById('forget-btn').classList.add('inactive');
 }
@@ -95,11 +92,8 @@ function forgetMe(event) {
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
   
-    console.log("Removing 'active' class from Remember button");
     document.getElementById('remember-btn').classList.remove('active');
     document.getElementById('remember-btn').classList.add('inactive');
-    
-    console.log("Adding 'active' class to Forget button");
     document.getElementById('forget-btn').classList.add('active');
     document.getElementById('forget-btn').classList.remove('inactive');
 }
@@ -110,11 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('mobile').value = localStorage.getItem('mobile');
         document.getElementById('email').value = localStorage.getItem('email');
   
-        console.log("Adding 'active' class to Remember button");
         document.getElementById('remember-btn').classList.add('active');
         document.getElementById('remember-btn').classList.remove('inactive');
-        
-        console.log("Removing 'active' class from Forget button");
         document.getElementById('forget-btn').classList.remove('active');
         document.getElementById('forget-btn').classList.add('inactive');
     }
@@ -128,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
