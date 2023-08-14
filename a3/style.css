@@ -666,3 +666,9 @@ fieldset .movie-title {
 .active-nav-link {
   color: blue;
 }
+
+.contact-Button.active:active,
+.contact-Button.active:focus {
+  background-color: blue; 
+  color: white; 
+}
