@@ -570,7 +570,7 @@ label {
   margin-bottom: 20px;
   background-color: black; 
   border: 1px solid black;
-  color: greenyellow; 
+  color: white; 
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s, font-weight 0.3s; 
@@ -579,7 +579,7 @@ label {
 }
 
 .submit-button:hover {
-  background-color: blue; 
+  background-color: greenyellow; 
   color: white;
   font-weight: bold; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
