@@ -533,9 +533,7 @@ label {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-.session.selected, 
-.contact-Button.active:active,
-.contact-Button.active:focus  {
+.session.selected {
   background-color: blue;
   color: white ;
   padding: 10px 40px ;
