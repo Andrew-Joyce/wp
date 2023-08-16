@@ -150,16 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (button.classList.contains('active')) {
       button.style.color = 'blue';
     } else {
-      button.style.color = 'initial'; 
+      button.style.color = 'initial';
     }
   }
   
-  document.getElementById('remember-btn').addEventListener('click', function () {
-    toggleButton(this);
-  });
-  
-  document.getElementById('forget-btn').addEventListener('click', function () {
-    toggleButton(this);
-  });
   
  
