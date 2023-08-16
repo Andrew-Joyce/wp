@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        
         const threshold = rect.height * 0.5;
         
         if (rect.top <= threshold && rect.bottom >= threshold) {
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (button.classList.contains('active')) {
       button.style.color = 'blue';
     } else {
-      button.style.color = 'blue'; 
+      button.style.color = 'initial'; 
     }
   }
   
@@ -162,4 +161,5 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('forget-btn').addEventListener('click', function () {
     toggleButton(this);
   });
+  
  
