@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   function toggleButton(button) {
+    console.log('Button clicked'); 
     button.classList.toggle('active');
     button.classList.toggle('inactive');
   
