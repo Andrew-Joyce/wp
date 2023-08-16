@@ -126,14 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-section');
     
     window.addEventListener('scroll', function () {
-
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
         
         const threshold = rect.height * 0.5;
         
         if (rect.top <= threshold && rect.bottom >= threshold) {
-
           navLinks.forEach(navLink => {
             navLink.classList.remove('active');
             navLink.style.color = 'white'; 
@@ -145,6 +143,26 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+  
+  function toggleButton(button) {
+    button.classList.toggle('active');
+    button.classList.toggle('inactive');
+  
+    if (button.classList.contains('active')) {
+      button.style.color = 'blue';
+    } else {
+      button.style.color = 'initial'; 
+    }
+  }
+  
+  document.getElementById('remember-btn').addEventListener('click', function () {
+    toggleButton(this);
+  });
+  
+  document.getElementById('forget-btn').addEventListener('click', function () {
+    toggleButton(this);
+  });
+  
   
   
   
