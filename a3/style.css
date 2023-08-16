@@ -570,7 +570,7 @@ label {
   margin-bottom: 20px;
   background-color: black; 
   border: 1px solid black;
-  color: white; 
+  color: greenyellow; 
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s, font-weight 0.3s; 
