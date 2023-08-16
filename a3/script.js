@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        
         const threshold = rect.height * 0.5;
         
         if (rect.top <= threshold && rect.bottom >= threshold) {
@@ -155,13 +154,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   
-  document.getElementById('remember-btn').addEventListener('click', function () {
+  const rememberButton = document.getElementById('remember-btn');
+  const forgetButton = document.getElementById('forget-btn');
+  
+  rememberButton.addEventListener('click', function () {
     toggleButton(this);
   });
   
-  document.getElementById('forget-btn').addEventListener('click', function () {
+  forgetButton.addEventListener('click', function () {
     toggleButton(this);
   });
+  
   
   
   
