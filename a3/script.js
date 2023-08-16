@@ -149,9 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
   
     if (button.classList.contains('active')) {
       button.style.color = 'blue';
-    } else {
-      button.style.color = 'initial'; 
-    }
   }
   
   const rememberButton = document.getElementById('remember-btn');
@@ -164,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
   forgetButton.addEventListener('click', function () {
     toggleButton(this);
   });
-  
+}
   
   
   
