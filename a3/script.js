@@ -88,10 +88,10 @@ function toggleButton(button) {
     button.classList.toggle('inactive');
 
     if (button.classList.contains('active')) {
-        button.style.color = 'blue';
+        button.style.backgroundColor = 'blue';
     } else {
-        button.style.color = 'initial';
-    }
+        button.style.backgroundColor = 'initial';
+    }   
 
     return false;
 }
