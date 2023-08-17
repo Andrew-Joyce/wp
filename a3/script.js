@@ -1,161 +1,156 @@
+const urlParams = new URLSearchParams(window.location.search);
+const selectedMovie = urlParams.get('movie');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+    sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+    });
+
+    if (selectedMovie) {
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+            selectedFieldset.style.display = 'block';
+        }
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('article');
-    const navLinks = document.querySelectorAll('.nav-section');
-    const sessions = document.querySelectorAll('.session');
+    var sessions = document.querySelectorAll('.session');
+
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
+        });
+    });
+});
+
+    
+document.addEventListener("DOMContentLoaded", function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
-    const rememberBtn = document.getElementById('remember-btn');
-    const forgetBtn = document.getElementById('forget-btn');
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
 
-    window.addEventListener('scroll', function () {
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            const threshold = rect.height * 0.5;
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        ticketInputs.forEach(input => {
+            let quantity = parseInt(input.value);
+            let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
+            let selectedSession = document.querySelector('.selected'); 
+            let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
+            let price = isDiscounted ? discountPrice : fullPrice;
+            totalPrice += price * quantity;
+        });
+        if (window.location.pathname.endsWith('booking.php')) {
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+          }          
+    }
 
-            if (rect.top <= threshold && rect.bottom >= threshold) {
-                navLinks.forEach(navLink => {
-                    navLink.classList.remove('active');
-                    navLink.style.color = 'white';
-                });
+    ticketInputs.forEach(input => {
+        input.addEventListener('input', updateTotalPrice);
+    });
 
-                navLinks[index].classList.add('active');
-                navLinks[index].style.color = 'blue';
-            }
+    const sessionButtons = document.querySelectorAll('.session');
+    sessionButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            sessionButtons.forEach(btn => btn.classList.remove('selected'));
+            event.currentTarget.classList.add('selected'); 
+            updateTotalPrice();
         });
     });
 
-    function rememberMe(event) {
-        event.preventDefault();
+    updateTotalPrice();
+});
 
-        const name = nameInput.value;
-        const mobile = mobileInput.value;
-        const email = emailInput.value;
 
-        localStorage.setItem('name', name);
-        localStorage.setItem('mobile', mobile);
-        localStorage.setItem('email', email);
-
-        toggleButton(rememberBtn);
-        toggleButton(forgetBtn);
-    }
-
-    function forgetMe(event) {
-        event.preventDefault();
-
-        localStorage.removeItem('name');
-        localStorage.removeItem('mobile');
-        localStorage.removeItem('email');
-
-        toggleButton(forgetBtn);
-        toggleButton(rememberBtn);
-    }
-
-    if (rememberBtn && forgetBtn) {
-        rememberBtn.addEventListener('click', rememberMe);
-        forgetBtn.addEventListener('click', forgetMe);
-
-        if (localStorage.getItem('name')) {
-            nameInput.value = localStorage.getItem('name');
-            mobileInput.value = localStorage.getItem('mobile');
-            emailInput.value = localStorage.getItem('email');
-
-            rememberBtn.classList.add('active');
-            rememberBtn.classList.remove('inactive');
-            forgetBtn.classList.remove('active');
-            forgetBtn.classList.add('inactive');
-        }
-    }
-
-    rememberBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        const name = nameInput.value;
-        const mobile = mobileInput.value;
-        const email = emailInput.value;
-
-        localStorage.setItem('name', name);
-        localStorage.setItem('mobile', mobile);
-        localStorage.setItem('email', email);
-
-        toggleButton(rememberBtn);
-        toggleButton(forgetBtn);
-    });
-
-    forgetBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        localStorage.removeItem('name');
-        localStorage.removeItem('mobile');
-        localStorage.removeItem('email');
-
-        toggleButton(forgetBtn);
-        toggleButton(rememberBtn);
-    });
-
-    function toggleButton(button) {
-        var otherButton;
-
-        if (button.id === 'remember-btn') {
-            otherButton = document.getElementById('forget-btn');
-        } else {
-            otherButton = document.getElementById('remember-btn');
-        }
-
-        button.classList.add('active');
-        button.classList.remove('inactive');
-
-        otherButton.classList.remove('active');
-        otherButton.classList.add('inactive');
-
-        return false;
-    }
-
-function updateTotalPrice() {
-    let totalPrice = 0;
-    ticketInputs.forEach(input => {
-        let quantity = parseInt(input.value);
-        let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-        let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
-        let selectedSession = document.querySelector('.selected'); 
-        let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-        let price = isDiscounted ? discountPrice : fullPrice;
-        totalPrice += price * quantity;
-    });
-    if (window.location.pathname.endsWith('booking.php')) {
-        document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-    }          
+function rememberMe(event) {
+    console.log("Remember Me clicked");
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const mobile = document.getElementById('mobile').value;
+    const email = document.getElementById('email').value;
+  
+    localStorage.setItem('name', name);
+    localStorage.setItem('mobile', mobile);
+    localStorage.setItem('email', email);
+  
+    document.getElementById('remember-btn').classList.add('active');
+    document.getElementById('remember-btn').classList.remove('inactive');
+    document.getElementById('forget-btn').classList.remove('active');
+    document.getElementById('forget-btn').classList.add('inactive');
 }
 
-ticketInputs.forEach(input => {
-    input.addEventListener('input', updateTotalPrice);
-});
+function forgetMe(event) {
+    console.log("Forget Me clicked");
+    event.preventDefault();
+  
+    localStorage.removeItem('name');
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('email');
+  
+    document.getElementById('remember-btn').classList.remove('active');
+    document.getElementById('remember-btn').classList.add('inactive');
+    document.getElementById('forget-btn').classList.add('active');
+    document.getElementById('forget-btn').classList.remove('inactive');
+}
 
-const sessionButtons = document.querySelectorAll('.session');
-sessionButtons.forEach(button => {
-    button.addEventListener('click', event => {
-        sessionButtons.forEach(btn => btn.classList.remove('selected'));
-        event.currentTarget.classList.add('selected'); 
-        updateTotalPrice();
-    });
-});
-sessions.forEach(session => {
-    session.addEventListener('click', function (e) {
-        sessions.forEach(innerSession => {
-            innerSession.classList.remove('selected');
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem('name')) {
+        document.getElementById('name').value = localStorage.getItem('name');
+        document.getElementById('mobile').value = localStorage.getItem('mobile');
+        document.getElementById('email').value = localStorage.getItem('email');
+  
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
+    }
+
+    if (window.location.pathname.endsWith('booking.php')) {
+        document.getElementById('remember-btn').addEventListener('click', function(event) {
+            rememberMe(event); 
         });
+        document.getElementById('forget-btn').addEventListener('click', function(event) {
+            forgetMe(event);
+        });
+    }
+});
 
-        e.currentTarget.classList.add('selected');
-        updateTotalPrice();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('article'); 
+    const navLinks = document.querySelectorAll('.nav-section');
+    
+    window.addEventListener('scroll', function () {
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const threshold = rect.height * 0.5;
+        
+        if (rect.top <= threshold && rect.bottom >= threshold) {
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            navLink.style.color = 'white'; 
+          });
+          
+          navLinks[index].classList.add('active');
+          navLinks[index].style.color = 'blue';
+        }
+      });
     });
-});
-
-ticketInputs.forEach(input => {
-    input.addEventListener('input', updateTotalPrice);
-});
-
-updateTotalPrice();
+  });
   
+  function toggleButton(button) {
+    button.classList.toggle('active');
+    button.classList.toggle('inactive');
   
- 
+    if (button.classList.contains('active')) {
+      button.style.color = 'blue';
+    } else {
+      button.style.color = 'initial'; 
+    }
+    return false; 
+  }
