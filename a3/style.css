@@ -664,7 +664,8 @@ fieldset .movie-title {
 }
 
 .active-nav-link {
-  color: blue;
+  background-color: blue; 
+  color: white; 
 }
 
 .contact-Button.active:active,
