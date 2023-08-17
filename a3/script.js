@@ -84,21 +84,22 @@ function forgetMe(event) {
 }
 
 function toggleButton(button) {
-    button.classList.toggle('active');
-    button.classList.toggle('inactive');
+    var otherButton;
 
-    if (button.classList.contains('active')) {
-        button.style.backgroundColor = 'blue';
-        button.style.color = 'white';
+    if (button.id === 'remember-btn') {
+        otherButton = document.getElementById('forget-btn');
     } else {
-        button.style.backgroundColor = 'initial';
-        button.style.color = 'initial'; 
+        otherButton = document.getElementById('remember-btn');
     }
+
+    button.classList.add('active');
+    button.classList.remove('inactive');
+
+    otherButton.classList.remove('active');
+    otherButton.classList.add('inactive');
 
     return false;
 }
-
-
 
 function updateTotalPrice() {
     let totalPrice = 0;
