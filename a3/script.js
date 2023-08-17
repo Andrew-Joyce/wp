@@ -144,21 +144,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   function toggleButton(button) {
-    console.log('toggleButton called'); 
-  
     button.classList.toggle('active');
     button.classList.toggle('inactive');
-  
+
     if (button.classList.contains('active')) {
-      console.log('Button is active'); 
-      button.style.color = 'blue';
+        button.style.color = 'blue';
     } else {
-      console.log('Button is inactive'); 
-      button.style.color = 'initial'; 
+        button.style.color = 'initial';
     }
-    return false; 
-  }
-  
+
+    return false;
+}
   
   
  
