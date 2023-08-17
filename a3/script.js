@@ -84,18 +84,27 @@ function forgetMe(event) {
 }
 
 function toggleButton(button) {
-    button.classList.toggle('active');
-    button.classList.toggle('inactive');
-
-    if (button.classList.contains('active')) {
+    function toggleButton(button) {
+        var otherButton;
+    
+        if (button.id === 'remember-btn') {
+            otherButton = document.getElementById('forget-btn');
+        } else {
+            otherButton = document.getElementById('remember-btn');
+        }
+    
+        button.classList.add('active');
+        button.classList.remove('inactive');
+    
+        otherButton.classList.remove('active');
+        otherButton.classList.add('inactive');
+    
         button.style.backgroundColor = 'blue';
-    } else {
-        button.style.backgroundColor = 'initial';
-    }   
-
-    return false;
-}
-
+        otherButton.style.backgroundColor = 'initial';
+    
+        return false;
+    }
+    
 
 function updateTotalPrice() {
     let totalPrice = 0;
