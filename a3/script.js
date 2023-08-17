@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
     const rememberBtn = document.getElementById('remember-btn');
     const forgetBtn = document.getElementById('forget-btn');
+    const nameInput = document.getElementById('name');
+    const mobileInput = document.getElementById('mobile');
+    const emailInput = document.getElementById('email');
 
     window.addEventListener('scroll', function () {
         sections.forEach((section, index) => {
@@ -43,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
         forgetBtn.addEventListener('click', forgetMe);
 
         if (localStorage.getItem('name')) {
-            document.getElementById('name').value = localStorage.getItem('name');
-            document.getElementById('mobile').value = localStorage.getItem('mobile');
-            document.getElementById('email').value = localStorage.getItem('email');
+            nameInput.value = localStorage.getItem('name');
+            mobileInput.value = localStorage.getItem('mobile');
+            emailInput.value = localStorage.getItem('email');
 
             rememberBtn.classList.add('active');
             rememberBtn.classList.remove('inactive');
@@ -53,16 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
             forgetBtn.classList.add('inactive');
         }
     }
-
-    updateTotalPrice();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const rememberBtn = document.getElementById('remember-btn');
-    const forgetBtn = document.getElementById('forget-btn');
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
 
     rememberBtn.addEventListener('click', function (event) {
         event.preventDefault();
@@ -90,16 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleButton(rememberBtn);
     });
 
-    if (localStorage.getItem('name')) {
-        nameInput.value = localStorage.getItem('name');
-        mobileInput.value = localStorage.getItem('mobile');
-        emailInput.value = localStorage.getItem('email');
-
-        rememberBtn.classList.add('active');
-        rememberBtn.classList.remove('inactive');
-        forgetBtn.classList.remove('active');
-        forgetBtn.classList.add('inactive');
-    }
+    updateTotalPrice();
 });
 
 function toggleButton(button) {
