@@ -57,31 +57,50 @@ document.addEventListener('DOMContentLoaded', function () {
     updateTotalPrice();
 });
 
-function rememberMe(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const rememberBtn = document.getElementById('remember-btn');
+    const forgetBtn = document.getElementById('forget-btn');
+    const nameInput = document.getElementById('name');
+    const mobileInput = document.getElementById('mobile');
+    const emailInput = document.getElementById('email');
 
-    const name = document.getElementById('name').value;
-    const mobile = document.getElementById('mobile').value;
-    const email = document.getElementById('email').value;
+    rememberBtn.addEventListener('click', function (event) {
+        event.preventDefault();
 
-    localStorage.setItem('name', name);
-    localStorage.setItem('mobile', mobile);
-    localStorage.setItem('email', email);
+        const name = nameInput.value;
+        const mobile = mobileInput.value;
+        const email = emailInput.value;
 
-    toggleButton(rememberBtn);
-    toggleButton(forgetBtn);
-}
+        localStorage.setItem('name', name);
+        localStorage.setItem('mobile', mobile);
+        localStorage.setItem('email', email);
 
-function forgetMe(event) {
-    event.preventDefault();
+        toggleButton(rememberBtn);
+        toggleButton(forgetBtn);
+    });
 
-    localStorage.removeItem('name');
-    localStorage.removeItem('mobile');
-    localStorage.removeItem('email');
+    forgetBtn.addEventListener('click', function (event) {
+        event.preventDefault();
 
-    toggleButton(forgetBtn);
-    toggleButton(rememberBtn);
-}
+        localStorage.removeItem('name');
+        localStorage.removeItem('mobile');
+        localStorage.removeItem('email');
+
+        toggleButton(forgetBtn);
+        toggleButton(rememberBtn);
+    });
+
+    if (localStorage.getItem('name')) {
+        nameInput.value = localStorage.getItem('name');
+        mobileInput.value = localStorage.getItem('mobile');
+        emailInput.value = localStorage.getItem('email');
+
+        rememberBtn.classList.add('active');
+        rememberBtn.classList.remove('inactive');
+        forgetBtn.classList.remove('active');
+        forgetBtn.classList.add('inactive');
+    }
+});
 
 function toggleButton(button) {
     var otherButton;
