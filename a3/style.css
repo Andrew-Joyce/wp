@@ -511,7 +511,7 @@ label {
   justify-content: space-around;
 }
 
-.session: .contact-Button {
+.session, .contact-Button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
@@ -577,7 +577,7 @@ label {
 }
 
 .submit-button:hover {
-  background-color: greenyellow; 
+  background-color: blue; 
   color: white;
   font-weight: bold; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
@@ -666,4 +666,9 @@ fieldset .movie-title {
 .active-nav-link {
   color: blue;
 }
+
+.contact-Button.active:active,
+.contact-Button.active:focus {
+  background-color: blue; 
+  color: white; 
 }
