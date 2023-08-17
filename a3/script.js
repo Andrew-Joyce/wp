@@ -26,20 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    sessions.forEach(session => {
-        session.addEventListener('click', function (e) {
-            sessions.forEach(innerSession => {
-                innerSession.classList.remove('selected');
-            });
+    function rememberMe(event) {
+        event.preventDefault();
 
-            e.currentTarget.classList.add('selected');
-            updateTotalPrice();
-        });
-    });
+        const name = nameInput.value;
+        const mobile = mobileInput.value;
+        const email = emailInput.value;
 
-    ticketInputs.forEach(input => {
-        input.addEventListener('input', updateTotalPrice);
-    });
+        localStorage.setItem('name', name);
+        localStorage.setItem('mobile', mobile);
+        localStorage.setItem('email', email);
+
+        toggleButton(rememberBtn);
+        toggleButton(forgetBtn);
+    }
+
+    function forgetMe(event) {
+        event.preventDefault();
+
+        localStorage.removeItem('name');
+        localStorage.removeItem('mobile');
+        localStorage.removeItem('email');
+
+        toggleButton(forgetBtn);
+        toggleButton(rememberBtn);
+    }
 
     if (rememberBtn && forgetBtn) {
         rememberBtn.addEventListener('click', rememberMe);
@@ -83,26 +94,23 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleButton(rememberBtn);
     });
 
-    updateTotalPrice();
-});
+    function toggleButton(button) {
+        var otherButton;
 
-function toggleButton(button) {
-    var otherButton;
+        if (button.id === 'remember-btn') {
+            otherButton = document.getElementById('forget-btn');
+        } else {
+            otherButton = document.getElementById('remember-btn');
+        }
 
-    if (button.id === 'remember-btn') {
-        otherButton = document.getElementById('forget-btn');
-    } else {
-        otherButton = document.getElementById('remember-btn');
+        button.classList.add('active');
+        button.classList.remove('inactive');
+
+        otherButton.classList.remove('active');
+        otherButton.classList.add('inactive');
+
+        return false;
     }
-
-    button.classList.add('active');
-    button.classList.remove('inactive');
-
-    otherButton.classList.remove('active');
-    otherButton.classList.add('inactive');
-
-    return false;
-}
 
 function updateTotalPrice() {
     let totalPrice = 0;
@@ -131,6 +139,20 @@ sessionButtons.forEach(button => {
         event.currentTarget.classList.add('selected'); 
         updateTotalPrice();
     });
+});
+sessions.forEach(session => {
+    session.addEventListener('click', function (e) {
+        sessions.forEach(innerSession => {
+            innerSession.classList.remove('selected');
+        });
+
+        e.currentTarget.classList.add('selected');
+        updateTotalPrice();
+    });
+});
+
+ticketInputs.forEach(input => {
+    input.addEventListener('input', updateTotalPrice);
 });
 
 updateTotalPrice();
