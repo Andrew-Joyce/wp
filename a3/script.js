@@ -106,6 +106,7 @@ function toggleButton(button) {
     }
     
 
+
 function updateTotalPrice() {
     let totalPrice = 0;
     ticketInputs.forEach(input => {
