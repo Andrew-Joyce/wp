@@ -89,12 +89,15 @@ function toggleButton(button) {
 
     if (button.classList.contains('active')) {
         button.style.backgroundColor = 'blue';
+        button.style.color = 'white';
     } else {
         button.style.backgroundColor = 'initial';
-    }   
+        button.style.color = 'initial'; 
+    }
 
     return false;
 }
+
 
 
 function updateTotalPrice() {
