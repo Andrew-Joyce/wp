@@ -103,6 +103,7 @@ function toggleButton(button) {
         otherButton.style.backgroundColor = 'initial';
     
         return false;
+        
     }
     
 
