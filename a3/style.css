@@ -175,7 +175,7 @@ footer {
   max-width: 450px;
   height: auto;
   position: relative;
-  padding-bottom: 650px;
+  padding-bottom: 100%;
   z-index: 1;
 }
 
