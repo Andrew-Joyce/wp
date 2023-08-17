@@ -155,7 +155,7 @@ if ($selectedMovieDetails) {
             <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
             <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
         </div>
-        <div>&copy;<script>
+        <div>
                 document.write(new Date().getFullYear());
             </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
