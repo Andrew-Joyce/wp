@@ -66,67 +66,58 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function storeCustomerDetails(name, email, mobile) {
-    const customerDetails = {
-        name: name,
-        email: email,
-        mobile: mobile,
-    };
-    localStorage.setItem('customerDetails', JSON.stringify(customerDetails));
-}
+function rememberMe(event) {
+    event.preventDefault();
 
-function getStoredCustomerDetails() {
-    const storedCustomerDetails = localStorage.getItem('customerDetails');
-    if (storedCustomerDetails) {
-        return JSON.parse(storedCustomerDetails);
-    }
-    return null;
-}
-
-function removeStoredCustomerDetails() {
-    localStorage.removeItem('customerDetails');
-}
-
-function updateFormWithStoredDetails() {
-    const storedDetails = getStoredCustomerDetails();
-    if (storedDetails) {
-        document.getElementById('name').value = storedDetails.name;
-        document.getElementById('email').value = storedDetails.email;
-        document.getElementById('mobile').value = storedDetails.mobile;
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('forget-btn').classList.remove('active');
-    } else {
-        document.getElementById('remember-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('active');
-    }
-}
-
-function toggleButton(button) {
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
     const mobile = document.getElementById('mobile').value;
+    const email = document.getElementById('email').value;
 
-    if (button.id === 'remember-btn') {
-        storeCustomerDetails(name, email, mobile);
-    } else {
-        removeStoredCustomerDetails();
+    localStorage.setItem('name', name);
+    localStorage.setItem('mobile', mobile);
+    localStorage.setItem('email', email);
+
+    document.getElementById('remember-btn').classList.add('active');
+    document.getElementById('remember-btn').classList.remove('inactive');
+    document.getElementById('forget-btn').classList.remove('active');
+    document.getElementById('forget-btn').classList.add('inactive');
+}
+
+function forgetMe(event) {
+    event.preventDefault();
+
+    localStorage.removeItem('name');
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('email');
+
+    document.getElementById('name').value = '';
+    document.getElementById('mobile').value = '';
+    document.getElementById('email').value = '';
+
+    document.getElementById('remember-btn').classList.remove('active');
+    document.getElementById('remember-btn').classList.add('inactive');
+    document.getElementById('forget-btn').classList.add('active');
+    document.getElementById('forget-btn').classList.remove('inactive');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nameInput = document.getElementById('name');
+    const mobileInput = document.getElementById('mobile');
+    const emailInput = document.getElementById('email');
+
+    if (localStorage.getItem('name')) {
+        nameInput.value = localStorage.getItem('name');
+        mobileInput.value = localStorage.getItem('mobile');
+        emailInput.value = localStorage.getItem('email');
+
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
     }
 
-    updateFormWithStoredDetails();
-}
+    document.getElementById('remember-btn').addEventListener('click', rememberMe);
+    document.getElementById('forget-btn').addEventListener('click', forgetMe);
+});
 
-function initializeForm() {
-    updateFormWithStoredDetails();
-}
-
-window.onload = function() {
-    document.getElementById('remember-btn').addEventListener('click', function() {
-        toggleButton(this);
-    });
-    document.getElementById('forget-btn').addEventListener('click', function() {
-        toggleButton(this);
-    });
-
-    initialieForm();
-};
 
