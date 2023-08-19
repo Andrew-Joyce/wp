@@ -3,7 +3,7 @@ const selectedMovie = urlParams.get('movie');
 
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('article'); 
-    const navLinks = document.querySelectorAll('.nav-section');
+    const navLinks = document.querySelectorAll('.nav-link'); 
     
     window.addEventListener('scroll', function () {
       sections.forEach((section, index) => {
