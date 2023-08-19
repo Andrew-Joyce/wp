@@ -73,11 +73,6 @@ function rememberMe(event) {
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
 
-    console.log('Remember Me clicked');
-    console.log('Name:', name);
-    console.log('Mobile:', mobile);
-    console.log('Email:', email);
-
     localStorage.setItem('name', name);
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('email', email);
@@ -90,8 +85,6 @@ function rememberMe(event) {
 
 function forgetMe(event) {
     event.preventDefault();
-
-    console.log('Forget Me clicked');
 
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
@@ -112,51 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileInput = document.getElementById('mobile');
     const emailInput = document.getElementById('email');
 
-    console.log('DOMContentLoaded event fired');
-
     if (localStorage.getItem('name')) {
         nameInput.value = localStorage.getItem('name');
         mobileInput.value = localStorage.getItem('mobile');
         emailInput.value = localStorage.getItem('email');
 
-        console.log('Data loaded from localStorage');
-        
         document.getElementById('remember-btn').classList.add('active');
         document.getElementById('remember-btn').classList.remove('inactive');
         document.getElementById('forget-btn').classList.remove('active');
         document.getElementById('forget-btn').classList.add('inactive');
     }
-
-    document.getElementById('remember-btn').addEventListener('click', rememberMe);
-    document.getElementById('forget-btn').addEventListener('click', forgetMe);
-});
-
-  const navLinks = document.querySelectorAll('.nav-link');
-  const targetArticle = document.querySelector('#now-showing');
-
-  function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function updateActiveNavLink() {
-    if (isElementInViewport(targetArticle)) {
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === '#now-showing') {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-  }
-
-  window.addEventListener('scroll', updateActiveNavLink);
-
-  updateActiveNavLink();
-
