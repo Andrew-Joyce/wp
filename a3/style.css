@@ -538,7 +538,7 @@ label {
   background-color: hwb(214 82% 15%);
   border: 1px solid hwb(214 82% 15%);
   color: black;
-  cursor: not-allowed;
+  cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
   margin-right: 20px;
@@ -553,6 +553,7 @@ label {
 .session.selected, .contact-button.active {
   background-color: blue;
   color: white ;
+  cursor: pointer;
   padding: 10px 40px ;
   width: 400px ;
 }
