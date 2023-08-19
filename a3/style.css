@@ -15,7 +15,7 @@ header {
   padding: 0.5em 0;
   font-family: 'Oswald', sans-serif;
   font-size: 3vw;
-  background-color: black;
+  background-color: red;
   color: #fff;
   animation: rainbow 1s infinite linear, flicker 1s infinite alternate;
 }
