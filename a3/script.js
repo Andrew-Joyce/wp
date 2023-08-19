@@ -8,20 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        const threshold = rect.height * 0.5;
         
         if (rect.top <= threshold && rect.bottom >= threshold) {
           navLinks.forEach(navLink => {
             navLink.classList.remove('active');
-            navLink.style.color = 'white'; 
           });
           
           navLinks[index].classList.add('active');
-          navLinks[index].style.color = 'blue';
         }
       });
     });
   });
+  
 
 document.addEventListener('DOMContentLoaded', () => {
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
