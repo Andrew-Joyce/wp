@@ -501,23 +501,17 @@ label {
   justify-items: start; 
 }
 
-.input-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.label-name, .label-mobile, .label-email {
+.contact-info label {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 3px 5px; 
-  margin: 0;
+  padding: 3px 5px;
+  margin-right: 5px;
   text-align: left;
 }
 
-.input-name, .input-mobile, .input-email {
+.contact-info input[type="text"],
+.contact-info input[type="tel"],
+.contact-info input[type="email"] {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 40px;
@@ -534,7 +528,7 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-Button, .contact-button.inactive  {
+.session, .contact-Button .contact-button.inactive  {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
