@@ -528,7 +528,7 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-button.inactive  {
+.session, .contact-Button, .contact-button.inactive  {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
@@ -679,6 +679,10 @@ fieldset .movie-title {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: bold;
+}
+
+button:focus {
+  outline: none;
 }
 
 }
