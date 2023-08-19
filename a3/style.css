@@ -551,7 +551,7 @@ label {
 }
 
 .session.selected{
-  background-color: blue;
+  background-color: red;
   color: white ;
   padding: 10px 40px ;
   width: 400px ;
