@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
-        const threshold = rect.height * 0.5;
         
         if (rect.top <= threshold && rect.bottom >= threshold) {
           navLinks.forEach(navLink => {
