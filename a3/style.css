@@ -693,4 +693,7 @@ button:focus {
   position: relative;
 }
 
+nav a.active {
+  color: blue;
+
 }
