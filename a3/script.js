@@ -131,5 +131,32 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('forget-btn').addEventListener('click', forgetMe);
 });
 
+  const navLinks = document.querySelectorAll('.nav-link');
+  const targetArticle = document.querySelector('#now-showing');
 
+  function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function updateActiveNavLink() {
+    if (isElementInViewport(targetArticle)) {
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === '#now-showing') {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink);
+
+  updateActiveNavLink();
 

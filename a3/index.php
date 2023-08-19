@@ -22,7 +22,8 @@
     <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
     <a class="nav-link nav-section" href="#seats-prices">Seats & Prices</a>
     <a class="nav-link nav-section" href="#about-us">About Us</a>
-  </nav>
+  </nav>v
+
 
     
     <main>
