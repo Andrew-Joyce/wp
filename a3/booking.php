@@ -1,4 +1,6 @@
 <?php
+<html lang='en'>
+
 session_start();
 include 'tools.php';
 
@@ -20,7 +22,7 @@ if ($selectedMovieDetails) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     <title>Booking Form</title>
 </head>
 
