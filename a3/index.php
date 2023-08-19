@@ -22,8 +22,7 @@
     <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
     <a class="nav-link nav-section" href="#seats-prices">Seats & Prices</a>
     <a class="nav-link nav-section" href="#about-us">About Us</a>
-  </nav>v
-
+  </nav>
 
     
     <main>
@@ -247,20 +246,4 @@
             <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
       </footer>
     </body>
-    <div id="debug-module">
-        <h2>Debug Module</h2>
-        <div>
-            <h3>Request Data</h3>
-            <pre><?php print_r($_GET); ?></pre>
-            <pre><?php print_r($_POST); ?></pre>
-            </div>
-        <div>
-            <h3>Session Data</h3>
-            <pre><?php print_r($_SESSION); ?></pre>
-            </div>
-        <div>
-            <h3>Page Code</h3>
-            <pre><?php echo htmlentities(file_get_contents(__FILE__)); ?></pre>
-        </div>
-    </div>  
 </html>
