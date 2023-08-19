@@ -65,59 +65,50 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
+function toggleButton(button) {
+    const nameInput = document.getElementById("name");
+    const mobileInput = document.getElementById("mobile");
+    const emailInput = document.getElementById("email");
+    
+    if (button.id === "remember-btn") {
+        localStorage.setItem("customerName", nameInput.value);
+        localStorage.setItem("customerMobile", mobileInput.value);
+        localStorage.setItem("customerEmail", emailInput.value);
+    } else if (button.id === "forget-btn") {
+        localStorage.removeItem("customerName");
+        localStorage.removeItem("customerMobile");
+        localStorage.removeItem("customerEmail");
+        
 
-function rememberMe(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const mobile = document.getElementById('mobile').value;
-    const email = document.getElementById('email').value;
-
-    localStorage.setItem('name', name);
-    localStorage.setItem('mobile', mobile);
-    localStorage.setItem('email', email);
-
-    document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
-    document.getElementById('forget-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('inactive');
-}
-
-function forgetMe(event) {
-    event.preventDefault();
-
-    localStorage.removeItem('name');
-    localStorage.removeItem('mobile');
-    localStorage.removeItem('email');
-
-    document.getElementById('name').value = '';
-    document.getElementById('mobile').value = '';
-    document.getElementById('email').value = '';
-
-    document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('remember-btn').classList.add('inactive');
-    document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
-
-    if (localStorage.getItem('name')) {
-        nameInput.value = localStorage.getItem('name');
-        mobileInput.value = localStorage.getItem('mobile');
-        emailInput.value = localStorage.getItem('email');
-
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
-        document.getElementById('forget-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('inactive');
+        nameInput.value = "";
+        mobileInput.value = "";
+        emailInput.value = "";
     }
+    
+    button.classList.toggle("active");
+    button.classList.toggle("inactive");
+}
 
-    document.getElementById('remember-btn').addEventListener('click', rememberMe);
-    document.getElementById('forget-btn').addEventListener('click', forgetMe);
-});
+function populateFormFromLocalStorage() {
+    const nameInput = document.getElementById("name");
+    const mobileInput = document.getElementById("mobile");
+    const emailInput = document.getElementById("email");
+    
+    const storedName = localStorage.getItem("customerName");
+    const storedMobile = localStorage.getItem("customerMobile");
+    const storedEmail = localStorage.getItem("customerEmail");
+    
+    if (storedName && storedMobile && storedEmail) {
+        nameInput.value = storedName;
+        mobileInput.value = storedMobile;
+        emailInput.value = storedEmail;
+        
+        const rememberButton = document.getElementById("remember-btn");
+        rememberButton.classList.add("active");
+        rememberButton.classList.remove("inactive");
+    }
+}
+
+window.onload = populateFormFromLocalStorage;
 
 
