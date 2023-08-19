@@ -125,9 +125,9 @@ if ($selectedMovieDetails) {
         <fieldset>
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
-        </fieldset>
+    </fieldset>
     <fieldset>
-    <legend>Contact Information:</legend>
+        <legend>Contact Information:</legend>
         <div class="contact-info">
             <label for="name">Full Name:</label>
             <input type="text" name="name" id="name" required>
