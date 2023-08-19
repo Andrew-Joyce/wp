@@ -528,7 +528,7 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-Button.active  {
+.session, .contact-Button.inactive  {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
