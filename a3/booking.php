@@ -1,5 +1,4 @@
 <?php
-<html lang='en'>
 
 session_start();
 include 'tools.php';
