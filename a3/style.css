@@ -15,7 +15,7 @@ header {
   padding: 0.5em 0;
   font-family: 'Oswald', sans-serif;
   font-size: 3vw;
-  background-color: red;
+  background-color: black;
   color: #fff;
   animation: rainbow 1s infinite linear, flicker 1s infinite alternate;
 }
@@ -551,7 +551,7 @@ label {
 }
 
 .session.selected{
-  background-color: red;
+  background-color: blue;
   color: white ;
   padding: 10px 40px ;
   width: 400px ;
@@ -594,7 +594,7 @@ label {
 }
 
 .submit-button:hover {
-  background-color: red; 
+  background-color: blue; 
   color: white;
   font-weight: bold; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
