@@ -127,6 +127,6 @@ window.onload = function() {
         toggleButton(this);
     });
 
-    initializeForm();
+    initialieForm();
 };
 
