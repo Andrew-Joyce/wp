@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if ($totalPrice <= 0.01) {
+    if ($totalPrice < 0.01) {
         $errors['seats'] = "Error with seats: No seats selected";
     }
 
