@@ -227,5 +227,10 @@ function validateForm() {
     }
   });
 
+  if (totalTicketQuantity === 0) {
+    isValid = false;
+    alert('Please select at least one ticket.');
+  }
+  
   return isValid;
 }
