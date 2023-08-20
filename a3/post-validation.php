@@ -43,10 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if ($totalSeatsSelected === 0) {
-        $errors['seats'] = "No seats selected";
-    }
-
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
     } else {
