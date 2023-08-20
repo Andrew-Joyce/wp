@@ -100,6 +100,22 @@ document.addEventListener('DOMContentLoaded', function() {
       const mobileInput = document.getElementById('mobile');
       const emailInput = document.getElementById('email');
 
+      // Populate fields with localStorage data if it exists
+      if (localStorage.getItem('name')) {
+          nameInput.value = localStorage.getItem('name');
+      }
+      if (localStorage.getItem('mobile')) {
+          mobileInput.value = localStorage.getItem('mobile');
+      }
+      if (localStorage.getItem('email')) {
+          emailInput.value = localStorage.getItem('email');
+          
+          rememberBtn.classList.add('active');
+          rememberBtn.classList.remove('inactive');
+          forgetBtn.classList.remove('active');
+          forgetBtn.classList.add('inactive');
+      }
+
       function rememberMe(event) {
           event.preventDefault();
 
@@ -128,25 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
           mobileInput.value = '';
           emailInput.value = '';
 
-          rememberBtn.classList.remove('active');
-          rememberBtn.classList.add('inactive');
           forgetBtn.classList.add('active');
           forgetBtn.classList.remove('inactive');
+          rememberBtn.classList.remove('active');
+          rememberBtn.classList.add('inactive');
       }
 
       rememberBtn.addEventListener('click', rememberMe);
       forgetBtn.addEventListener('click', forgetMe);
-
-      if (localStorage.getItem('name')) {
-          nameInput.value = localStorage.getItem('name');
-          mobileInput.value = localStorage.getItem('mobile');
-          emailInput.value = localStorage.getItem('email');
-          
-          rememberBtn.classList.add('active');
-          rememberBtn.classList.remove('inactive');
-          forgetBtn.classList.remove('active');
-          forgetBtn.classList.add('inactive');
-      }
   }
 });
 
