@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('booking-form');
   console.log('Booking Form:', bookingForm);
   
-});
-
-  
   const navLinks = document.querySelectorAll('#navbar a');
   const sections = document.querySelectorAll('main > div');
 
