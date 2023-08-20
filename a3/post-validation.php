@@ -10,12 +10,6 @@ function isValidMobile($mobile) {
     return preg_match("/^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/", $mobile);
 }
 
-function isValidIntegerInRange($value, $min, $max) {
-    return filter_var($value, FILTER_VALIDATE_INT, array(
-        'options' => array('min_range' => $min, 'max_range' => $max)
-    ));
-}
-
 $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,16 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC]'
     ];
 
-    $totalPrice = 0.00;
+    $anySeatSelected = false;
 
     foreach ($seatTypes as $seatType) {
         $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
         if ($seatQuantity > 0) {
-            $totalPrice += calculateSeatPrice($seatType) * $seatQuantity;
+            $anySeatSelected = true;
+            break;
         }
     }
 
-    if ($totalPrice < 0.01) {
+    if (!$anySeatSelected) {
         $errors['seats'] = "Error with seats: No seats selected";
     }
 
@@ -55,15 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors['movie'] = "Selected movie details not found!";
         }
     }
-
-    if (count($errors) === 0) {
-
-       }
-    }
-
-    if (empty($_POST['session'])) {
-        $errors['session'] = "No session selected";
-    }    
 
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
@@ -87,6 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     header("Location: submit.php");
     exit();
+}
 ?>
-
 
