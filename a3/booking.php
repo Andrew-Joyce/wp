@@ -73,7 +73,7 @@ if(isset($_GET['movie'])) {
 
         if ($selectedMovieDetails) {
         ?>
-            <form id="booking-form" action="submit_booking.php" method="post" onsubmit="return validateForm()">
+            <form id="booking-form" action="submit_booking.php" method="post">
             <fieldset id="fieldset-session-<?php echo $selectedMovieCode; ?>">
                 <legend class="movie-title"><?php echo $selectedMovieDetails['title']; ?></legend>
                 <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>" style="display: block;">
