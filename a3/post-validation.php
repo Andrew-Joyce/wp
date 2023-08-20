@@ -56,6 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    if (count($errors) === 0) {
+
+       }
+    }
+
     if (empty($_POST['session'])) {
         $errors['session'] = "No session selected";
     }    
