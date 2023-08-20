@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $totalSeatsSelected = 0;
 
     foreach ($seatTypes as $seatType => $errorMessage) {
-        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
-            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
+        if (isset($_POST[$seatType]) && $_POST[$seatType] > 1) {
+            if (!isValidIntegerInRange($_POST[$seatType], 1, 10)) {
                 $errors[$seatType] = $errorMessage;
             } else {
                 $totalSeatsSelected += $_POST[$seatType];
