@@ -112,19 +112,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <fieldset>
             <legend>Select Standard Seats</legend>
             <div id="standard-seats">
-                <div class="seats-container">
                     <div class="seat standard-seat">
                         <label for="seats[STA]">Standard Adult</label>
-                        <input type="number" name="seats[STA]" min="0" value="0" placeholder="Enter quantity" required>
+                        <select name="seats[STA]">
+                            <?php for ($i = 0; $i <= 10; $i++) { ?>
+                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                            <?php } ?>
+                        </select>
                         <span class="seat-price" data-full-price="21.50">Full Price: $21.50 / Discount: $16.00</span>
                     </div>
                     <div class="seat concession-seat">
                         <label for="seats[STP]">Concession</label>
+                        <select name="seats[STP]">
+                            <?php for ($i = 0; $i <= 10; $i++) { ?>
+                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                            <?php } ?>
                         <input type="number" name="seats[STP]" min="0" value="0" placeholder="Enter quantity" required>
                         <span class="seat-price" data-full-price="19.50">Full Price: $19.50 / Discount: $14.00</span> 
                     </div>
                     <div class="seat child-seat">
                         <label for="seats[STC]">Child</label>
+                            <select name="seats[STC]">
+                            <?php for ($i = 0; $i <= 10; $i++) { ?>
+                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                            <?php } ?>
                         <input type="number" name="seats[STC]" min="0" value="0" placeholder="Enter quantity" required>
                         <span class="seat-price" data-full-price="17.50">Full Price: $17.50 / Discount: $12.00</span> 
                     </div>
