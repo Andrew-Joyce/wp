@@ -47,6 +47,21 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 
+    window.addEventListener('scroll', function() {
+        for (var a = 0; a < articles.length; a++) {
+            var arTop = articles[a].offsetTop;
+            var arBot = arTop + articles[a].offsetHeight;
+            
+            if (window.scrollY >= arTop && window.scrollY < arBot) {
+                navlinks[a].classList.add('current');
+            } else {
+                navlinks[a].classList.remove('current');
+            }
+        }
+    });
+});
+
+
   window.addEventListener('scroll', function() {
       for (var a = 0; a < articles.length; a++) {
           var arTop = articles[a].offsetTop;
