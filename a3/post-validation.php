@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['seats'] = "No seats selected"; 
     }
 
+
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
     } else {
@@ -84,11 +85,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-
+    
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
-    } else {
-        header("Location: submit.php");
+        header("Location: booking.php");
         exit();
-        }
+    }
+    
+    header("Location: submit.php");
+    exit();
 }
+?>
