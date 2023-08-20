@@ -18,9 +18,6 @@ function isValidIntegerInRange($value, $min, $max) {
 
 $errors = array();
 
-
-$errors = array();
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
     $name = trim($_POST['name']);
@@ -29,32 +26,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $selectedSession = isset($_POST['session']) ? $_POST['session'] : '';
 
     $seatTypes = [
-        'seats[STA]' => 'Invalid quantity for standard seats',
-        'seats[STP]' => 'Invalid quantity for concession seats',
-        'seats[STC]' => 'Invalid quantity for child seats',
-        'seats[FCA]' => 'Invalid quantity for first class adult seats',
-        'seats[FCP]' => 'Invalid quantity for first class concession seats',
-        'seats[FCC]' => 'Invalid quantity for first class child seats'
+        'seats[STA]',
+        'seats[STP]',
+        'seats[STC]',
+        'seats[FCA]',
+        'seats[FCP]',
+        'seats[FCC]'
     ];
 
     $totalSeatsSelected = 0;
-    $atLeastOneSeatSelected = false;
 
-    foreach ($seatTypes as $seatType => $errorMessage) {
-        if (isset($_POST[$seatType])) {
-            $seatQuantity = $_POST[$seatType];
-            if ($seatQuantity > 0) {
-                $atLeastOneSeatSelected = true;
-                if (!isValidIntegerInRange($seatQuantity, 1, 10)) {
-                    $errors[$seatType] = $errorMessage;
-                } else {
-                    $totalSeatsSelected += $seatQuantity;
-                }
-            }
+    foreach ($seatTypes as $seatType) {
+        $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
+        if ($seatQuantity > 0) {
+            $totalSeatsSelected += $seatQuantity;
         }
     }
 
-    if (!$atLeastOneSeatSelected) {
+    if ($totalSeatsSelected === 0) {
         $errors['seats'] = "No seats selected";
     }
 
@@ -83,14 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($selectedSession) || $selectedSession === '') {
         $errors['session'] = "No session selected";
-    }
-    
-    foreach ($seatTypes as $seatType => $errorMessage) {
-        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
-            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
-                $errors[$seatType] = $errorMessage;
-            }
-        }
     }
     
     if (!empty($errors)) {
