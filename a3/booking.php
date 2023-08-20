@@ -143,6 +143,7 @@ if(isset($_GET['movie'])) {
                     </div>
                 </div>
             </div>
+        </div>
         </fieldset>
 
         <fieldset>

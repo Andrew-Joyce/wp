@@ -32,6 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC]' => 'Invalid quantity for first class child seats'
     ];
 
+    $totalSelectedSeats = 0; 
+
+    foreach($seatTypes as $seatType => $errorMessage) {
+        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
+            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
+                $errors[$seatType] = $errorMessage;
+            }
+            $totalSelectedSeats += $_POST[$seatType]; 
+        }
+    }
+
+    if ($totalSelectedSeats === 0) {
+        $errors['seats'] = "At least one seat must be selected";
+    }
+
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
     }
@@ -40,14 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if (!isValidEmail($email)) {
         $errors['email'] = "Invalid email format";
-    }
-
-    foreach($seatTypes as $seatType => $errorMessage) {
-        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
-            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
-                $errors[$seatType] = $errorMessage;
-            }
-        }
     }
 
     if (empty($errors)) {
@@ -59,4 +66,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $_SESSION['errors'] = $errors;
 header("Location: booking.php");
 exit();
-?>
+
