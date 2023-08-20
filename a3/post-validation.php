@@ -57,22 +57,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    foreach($seatTypes as $seatType => $errorMessage) {
+    if (empty($selectedSession) || $selectedSession === '') {
+        $errors['session'] = "No session selected";
+    }
+    
+    foreach ($seatTypes as $seatType => $errorMessage) {
         if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
             if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
                 $errors[$seatType] = $errorMessage;
             }
         }
     }
-
-    if (empty($errors)) {
-        header("Location: submit.php");
+    
+    if (!empty($errors)) {
+        $_SESSION['errors'] = $errors;
+        header("Location: booking.php");
         exit();
     }
-} 
-
-$_SESSION['errors'] = $errors;
-header("Location: booking.php");
-exit();
+    
+    header("Location: submit.php");
+    exit();
 ?>
 
