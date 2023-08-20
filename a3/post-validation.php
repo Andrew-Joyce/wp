@@ -86,8 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!empty($errors)) {
-    $_SESSION['errors'] = $errors;
+        $_SESSION['errors'] = $errors;
     } else {
-    header("Location: submit.php");
-    exit();
-    }
+        header("Location: submit.php");
+        exit();
+        }
+}
