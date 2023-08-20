@@ -12,8 +12,6 @@ if ($selectedMovieDetails) {
 }
 ?>
 
-<script src="script.js"></script>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +20,7 @@ if ($selectedMovieDetails) {
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     <script src='../wireframe.js'></script>
+    <script src="script.js"></script>
     <title>Booking Form</title>
 </head>
 
