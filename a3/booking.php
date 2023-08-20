@@ -6,13 +6,31 @@ $selectedMovieDetails = null;
 $screenings = null;
 $error = null;
 
-if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
-    echo '<div class="error-messages">';
-    foreach ($_SESSION['errors'] as $field => $error) {
-        echo "<p>Error with $field: $error</p>";
+if (isset($_GET['movie'])) {
+    $selectedMovieCode = $_GET['movie'];
+
+    echo "Selected Movie Code: $selectedMovieCode";
+
+    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+    if (!$selectedMovieDetails) {
+        $error = "Selected movie details not found!";
+    } else {
+        $screenings = $selectedMovieDetails['screenings'];
     }
-    echo '</div>';
-    unset($_SESSION['errors']);
+} else {
+    $error = "No movie selected!";
+}
+
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include 'post-validation.php';
+
+    if (isset($_POST['movie'])) {
+        $selectedMovieCode = $_POST['movie'];
+        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+    }
 }
 ?>
 
