@@ -34,6 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC]' => 'Invalid quantity for first class child seats'
     ];
 
+    $totalSeatsSelected = 0;
+
+    foreach ($seatTypes as $seatType => $errorMessage) {
+        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
+            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
+                $errors[$seatType] = $errorMessage;
+            } else {
+                $totalSeatsSelected += $_POST[$seatType];
+            }
+        }
+    }
+
+    if ($totalSeatsSelected === 0) {
+        $errors['seats'] = "No seats selected"; 
+    }
+
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
     } else {

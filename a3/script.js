@@ -221,9 +221,9 @@ function validateForm() {
 
   ticketInputs.forEach(input => {
     const quantity = parseInt(input.value);
-    if (isNaN(quantity) || quantity < 0 || quantity > 10) {
+    if (isNaN(quantity) || quantity < 1 || quantity > 10) {
       isValid = false;
-      alert('Invalid ticket quantity. Please enter a value between 0 and 10.');
+      alert('Invalid ticket quantity. Please enter a value between 1 and 10.');
     }
   });
 
@@ -231,6 +231,6 @@ function validateForm() {
     isValid = false;
     alert('Please select at least one ticket.');
   }
-  
+
   return isValid;
 }
