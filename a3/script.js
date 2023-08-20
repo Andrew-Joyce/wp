@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded event fired'); 
 
   const urlParams = new URLSearchParams(window.location.search);
   const selectedMovie = urlParams.get('movie');
-  console.log('Selected Movie:', selectedMovie);
   
   const bookingForm = document.getElementById('booking-form');
-  console.log('Booking Form:', bookingForm);
   
   const navLinks = document.querySelectorAll('#navbar a');
   const sections = document.querySelectorAll('main > div');
