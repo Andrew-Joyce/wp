@@ -128,6 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php } ?>
                         <span class="seat-price" data-full-price="19.50">Full Price: $19.50 / Discount: $14.00</span> 
+                    </div>    
                     <div class="seat child-seat">
                         <label for="seats[STC]">Child</label>
                             <select name="seats[STC]">
