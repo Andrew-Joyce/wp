@@ -16,12 +16,12 @@ if (isset($_GET['movie'])) {
         $screenings = $selectedMovieDetails['screenings'];
     } else {
         $_SESSION['errors']['movie'] = "Selected movie details not found!";
-        header('Location: index.php');
+        header('Location: booking.php');
         exit();
     }
 } else {
     $_SESSION['errors']['movie'] = "No movie selected!";
-    header('Location: index.php'); 
+    header('Location: booking.php'); 
     exit();
 }
 
