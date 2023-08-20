@@ -170,3 +170,28 @@ document.getElementById('booking-form').addEventListener('submit', function(even
     });
 });
 
+
+function validateForm() {
+
+}
+
+document.getElementById('booking-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  if (validateForm()) {
+      fetch('submit.php', {
+          method: 'POST',
+          body: new FormData(document.getElementById('booking-form'))
+      })
+      .then(response => response.text())
+      .then(data => {
+          console.log('Form submission response:', data);
+      })
+      .catch(error => {
+          console.error('Form submission error:', error);
+      });
+  } else {
+      console.log('Form is not valid');
+  }
+});
+
