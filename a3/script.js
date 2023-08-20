@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
 
+  console.log("Before defining bookingForm:", document.getElementById('booking-form'));
+  const bookingForm = document.getElementById('booking-form');
+  console.log("After defining bookingForm:", bookingForm);
+
   navLinks.forEach(link => {
     link.addEventListener('click', function(event) {
       navLinks.forEach(navLink => navLink.classList.remove('current'));
