@@ -94,62 +94,64 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.endsWith('booking.php')) {
-    const rememberCheckbox = document.getElementById('remember-checkbox');
-    const rememberBtn = document.getElementById('remember-btn');
-    const forgetBtn = document.getElementById('forget-btn');
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
+      const rememberCheckbox = document.getElementById('remember-checkbox');
+      const rememberBtn = document.getElementById('remember-btn');
+      const forgetBtn = document.getElementById('forget-btn');
+      const nameInput = document.getElementById('name');
+      const mobileInput = document.getElementById('mobile');
+      const emailInput = document.getElementById('email');
 
-  function rememberMe(event) {
-      event.preventDefault();
+      function rememberMe(event) {
+          event.preventDefault();
 
-      const name = nameInput.value;
-      const mobile = mobileInput.value;
-      const email = emailInput.value;
+          const name = nameInput.value;
+          const mobile = mobileInput.value;
+          const email = emailInput.value;
 
-      localStorage.setItem('name', name);
-      localStorage.setItem('mobile', mobile);
-      localStorage.setItem('email', email);
+          localStorage.setItem('name', name);
+          localStorage.setItem('mobile', mobile);
+          localStorage.setItem('email', email);
 
-      rememberBtn.classList.add('active');
-      rememberBtn.classList.remove('inactive');
-      forgetBtn.classList.remove('active');
-      forgetBtn.classList.add('inactive');
-  }
-
-  function forgetMe(event) {
-      event.preventDefault();
-
-      localStorage.removeItem('name');
-      localStorage.removeItem('mobile');
-      localStorage.removeItem('email');
-
-      nameInput.value = '';
-      mobileInput.value = '';
-      emailInput.value = '';
-
-      rememberBtn.classList.remove('active');
-      rememberBtn.classList.add('inactive');
-      forgetBtn.classList.add('active');
-      forgetBtn.classList.remove('inactive');
-  }
-
-  rememberCheckbox.addEventListener('change', function() {
-      if (rememberCheckbox.checked) {
-          rememberMe(event);
-      } else {
-          forgetMe(event);
+          rememberBtn.classList.add('active');
+          rememberBtn.classList.remove('inactive');
+          forgetBtn.classList.remove('active');
+          forgetBtn.classList.add('inactive');
       }
-  });
 
-  if (localStorage.getItem('name')) {
-      nameInput.value = localStorage.getItem('name');
-      mobileInput.value = localStorage.getItem('mobile');
-      emailInput.value = localStorage.getItem('email');
-      rememberBtn.classList.add('active');
-      rememberBtn.classList.remove('inactive');
-      forgetBtn.classList.remove('active');
-      forgetBtn.classList.add('inactive');
+      function forgetMe(event) {
+          event.preventDefault();
+
+          localStorage.removeItem('name');
+          localStorage.removeItem('mobile');
+          localStorage.removeItem('email');
+
+          nameInput.value = '';
+          mobileInput.value = '';
+          emailInput.value = '';
+
+          rememberBtn.classList.remove('active');
+          rememberBtn.classList.add('inactive');
+          forgetBtn.classList.add('active');
+          forgetBtn.classList.remove('inactive');
+      }
+
+      rememberCheckbox.addEventListener('change', function() {
+          if (rememberCheckbox.checked) {
+              rememberMe(event);
+          } else {
+              forgetMe(event);
+          }
+      });
+
+      if (localStorage.getItem('name')) {
+          nameInput.value = localStorage.getItem('name');
+          mobileInput.value = localStorage.getItem('mobile');
+          emailInput.value = localStorage.getItem('email');
+          rememberBtn.classList.add('active');
+          rememberBtn.classList.remove('inactive');
+          forgetBtn.classList.remove('active');
+          forgetBtn.classList.add('inactive');
+      }
   }
 });
+
