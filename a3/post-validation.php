@@ -20,10 +20,10 @@ $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
-    $selectedSession = isset($_POST['selected-session']) ? $_POST['selected-session'] : '';
     $name = trim($_POST['name']);
     $mobile = trim($_POST['mobile']);
     $email = trim($_POST['email']);
+    $selectedSession = isset($_POST['session']) ? $_POST['session'] : ''; // Include this line
 
     $seatTypes = [
         'seats[STA]' => 'Invalid quantity for standard seats',
@@ -75,3 +75,4 @@ $_SESSION['errors'] = $errors;
 header("Location: booking.php");
 exit();
 ?>
+
