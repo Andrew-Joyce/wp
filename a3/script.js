@@ -60,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       e.currentTarget.classList.add('selected');
+      const selectedSession = day + '-' + time + '-' + rate;
+
+      document.querySelector('.session.selected').setAttribute('data-session', selectedSession);
+      document.querySelector('.session.selected').classList.remove('selected');
+      e.currentTarget.classList.add('selected');
+      
     });
   });
 
