@@ -235,9 +235,3 @@ function validateForm() {
 
   return isValid;
 }
-
-ticketInputs.forEach(input => {
-  input.addEventListener('input', function() {
-      console.log(`Seat type: ${input.name}, Quantity: ${input.value}`);
-  });
-});
