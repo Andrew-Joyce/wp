@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('main > div');
 
   const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-  const ticketInputs = document.querySelectorAll('input[type="number"]');
+  const ticketInputs = document.querySelectorAll('input[name^="seats["]');
   const sessionButtons = document.querySelectorAll('.session');
 
   const rememberBtn = document.getElementById('remember-btn');
@@ -74,24 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateTotalPrice() {
     let totalPrice = 0;
-    ticketSelects.forEach(select => {
-        let quantity = parseInt(select.value);
-        let fullPrice = parseFloat(select.nextElementSibling.getAttribute('data-full-price') || 0);
-        let discountPrice = parseFloat(select.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
-        let selectedSession = document.querySelector('.selected'); 
-        let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-        let price = isDiscounted ? discountPrice : fullPrice;
-        totalPrice += price * quantity;
+    ticketInputs.forEach(input => {
+      let quantity = parseInt(input.value);
+      let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+      let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
+      let selectedSession = document.querySelector('.selected'); 
+      let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
+      let price = isDiscounted ? discountPrice : fullPrice;
+      totalPrice += price * quantity;
     });
 
     if (window.location.pathname.endsWith('booking.php')) {
-        document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+      document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
     }
-}
+  }
 
-ticketSelects.forEach(select => {
-    select.addEventListener('input', updateTotalPrice);
-});
+  ticketInputs.forEach(input => {
+    input.addEventListener('input', updateTotalPrice);
+  });
 
 sessionButtons.forEach(session => {
     session.addEventListener('click', function(e) {
