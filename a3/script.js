@@ -136,14 +136,20 @@ function rememberMe(event) {
         mobileInput.value = localStorage.getItem('mobile');
         emailInput.value = localStorage.getItem('email');
 
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
-        document.getElementById('forget-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('inactive');
-    }
+        const rememberBtn = document.getElementById('remember-btn');
+        const forgetBtn = document.getElementById('forget-btn');
 
-    document.getElementById('remember-btn').addEventListener('click', rememberMe);
-    document.getElementById('forget-btn').addEventListener('click', forgetMe);
+        if (rememberBtn && forgetBtn) {
+            rememberBtn.classList.add('active');
+            rememberBtn.classList.remove('inactive');
+            forgetBtn.classList.remove('active');
+            forgetBtn.classList.add('inactive');
+            
+            rememberBtn.addEventListener('click', rememberMe);
+            forgetBtn.addEventListener('click', forgetMe);
+        }
+    }
 });
+
 
   
