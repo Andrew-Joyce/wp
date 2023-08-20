@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         header("Location: submit.php");
         exit();
-}
+    }   
 
 $_SESSION['errors'] = $errors;
 header("Location: booking.php");
