@@ -234,3 +234,12 @@ function validateForm() {
 
   return isValid;
 }
+
+ticketInputs.forEach(input => {
+  input.addEventListener('input', function() {
+      const seatType = input.name; 
+      const quantity = parseInt(input.value);
+      console.log(`Seat Type: ${seatType}, Quantity: ${quantity}`);
+      updateTotalPrice(); 
+  });
+});
