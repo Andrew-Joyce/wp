@@ -127,7 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php for ($i = 0; $i <= 10; $i++) { ?>
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php } ?>
-                        <input type="number" name="seats[STP]" min="0" value="0" placeholder="Enter quantity" required>
                         <span class="seat-price" data-full-price="19.50">Full Price: $19.50 / Discount: $14.00</span> 
                     </div>
                     <div class="seat child-seat">
@@ -136,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php for ($i = 0; $i <= 10; $i++) { ?>
                                 <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php } ?>
-                        <input type="number" name="seats[STC]" min="0" value="0" placeholder="Enter quantity" required>
                         <span class="seat-price" data-full-price="17.50">Full Price: $17.50 / Discount: $12.00</span> 
                     </div>
                 </div>
