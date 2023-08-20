@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const selectedMovie = urlParams.get('movie');
+  console.log("Selected Movie:", selectedMovie);
+  
   const navLinks = document.querySelectorAll('#navbar a');
   const sections = document.querySelectorAll('main > div');
 
@@ -13,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nameInput = document.getElementById('name');
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
-
-  console.log("Before defining bookingForm:", document.getElementById('booking-form'));
-  const bookingForm = document.getElementById('booking-form');
-  console.log("After defining bookingForm:", bookingForm);
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(event) {
@@ -59,19 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sessionButtons.forEach(session => {
     session.addEventListener('click', function(e) {
-        sessionButtons.forEach(innerSession => {
-            innerSession.classList.remove('selected');
-        });
+      sessionButtons.forEach(innerSession => {
+          innerSession.classList.remove('selected');
+      });
 
-        const selectedSession = e.currentTarget.getAttribute('data-session');
-        document.getElementById('selected-session-input').value = selectedSession;
+      const selectedSession = e.currentTarget.getAttribute('data-session');
+      document.getElementById('selected-session-input').value = selectedSession;
 
-        e.currentTarget.classList.add('selected');
+      e.currentTarget.classList.add('selected');
 
-        updateTotalPrice();
+      updateTotalPrice();
     });
-});
-
+  });
 
   function updateTotalPrice() {
     let totalPrice = 0;
@@ -96,21 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sessionButtons.forEach(session => {
     session.addEventListener('click', function(e) {
-        sessionButtons.forEach(innerSession => {
-            innerSession.classList.remove('selected');
-        });
+      sessionButtons.forEach(innerSession => {
+          innerSession.classList.remove('selected');
+      });
 
-        const day = e.currentTarget.getAttribute('data-day');
-        const time = e.currentTarget.getAttribute('data-time');
-        const rate = e.currentTarget.getAttribute('data-rate');
-        const selectedSession = day + '-' + time + '-' + rate;
-        document.getElementById('selected-session-input').value = selectedSession;
+      const day = e.currentTarget.getAttribute('data-day');
+      const time = e.currentTarget.getAttribute('data-time');
+      const rate = e.currentTarget.getAttribute('data-rate');
+      const selectedSession = day + '-' + time + '-' + rate;
+      document.getElementById('selected-session-input').value = selectedSession;
 
-        e.currentTarget.classList.add('selected');
+      e.currentTarget.classList.add('selected');
 
-        updateTotalPrice();
+      updateTotalPrice();
     });
-});
+  });
 
   updateTotalPrice();
 
@@ -184,48 +181,48 @@ bookingForm.addEventListener('submit', function(event) {
 });
 
 function validateForm() {
-const movieInput = document.getElementById('movie');
-const sessionButtons = document.querySelectorAll('.session.selected');
-const nameInput = document.getElementById('name');
-const mobileInput = document.getElementById('mobile');
-const emailInput = document.getElementById('email');
+  const movieInput = document.getElementById('movie');
+  const sessionButtons = document.querySelectorAll('.session.selected');
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+  const emailInput = document.getElementById('email');
 
-let isValid = true;
+  let isValid = true;
 
-if (!movieInput.value) {
-isValid = false;
-alert('Please select a movie.');
-}
-
-if (sessionButtons.length === 0) {
-isValid = false;
-alert('Please select a session.');
-}
-
-if (!nameInput.value.trim()) {
-isValid = false;
-alert('Please enter your name.');
-}
-
-const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-if (!mobilePattern.test(mobileInput.value)) {
-isValid = false;
-alert('Invalid mobile number format.');
-}
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!emailPattern.test(emailInput.value)) {
-isValid = false;
-alert('Invalid email format.');
-}
-
-ticketInputs.forEach(input => {
-  const quantity = parseInt(input.value);
-  if (isNaN(quantity) || quantity < 0 || quantity > 10) {
+  if (!movieInput.value) {
     isValid = false;
-    alert('Invalid ticket quantity. Please enter a value between 0 and 10.');
+    alert('Please select a movie.');
   }
-});
 
-return isValid;
+  if (sessionButtons.length === 0) {
+    isValid = false;
+    alert('Please select a session.');
+  }
+
+  if (!nameInput.value.trim()) {
+    isValid = false;
+    alert('Please enter your name.');
+  }
+
+  const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+  if (!mobilePattern.test(mobileInput.value)) {
+    isValid = false;
+    alert('Invalid mobile number format.');
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailInput.value)) {
+    isValid = false;
+    alert('Invalid email format.');
+  }
+
+  ticketInputs.forEach(input => {
+    const quantity = parseInt(input.value);
+    if (isNaN(quantity) || quantity < 0 || quantity > 10) {
+      isValid = false;
+      alert('Invalid ticket quantity. Please enter a value between 0 and 10.');
+    }
+  });
+
+  return isValid;
 }
