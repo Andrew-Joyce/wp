@@ -73,45 +73,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function updateTotalPrice() {
-    let totalPrice = 0;
-    ticketInputs.forEach(input => {
-      let quantity = parseInt(input.value);
-      let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-      let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
-      let selectedSession = document.querySelector('.selected'); 
-      let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-      let price = isDiscounted ? discountPrice : fullPrice;
-      totalPrice += price * quantity;
-    });
+    const standardAdultQty = parseInt($("input[name='seats[STA]']").val());
+    const standardConcessionQty = parseInt($("input[name='seats[STP]']").val());
+    const standardChildQty = parseInt($("input[name='seats[STC]']").val());
 
-    if (window.location.pathname.endsWith('booking.php')) {
-      document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-    }
+    const standardTotalPrice = (standardAdultQty * 21.50) + (standardConcessionQty * 19.50) + (standardChildQty * 17.50);
+
+    const goldAdultQty = parseInt($("input[name='seats[FCA]']").val());
+    const goldConcessionQty = parseInt($("input[name='seats[FCP]']").val());
+    const goldChildQty = parseInt($("input[name='seats[FCC]']").val());
+
+    const goldTotalPrice = (goldAdultQty * 31.00) + (goldConcessionQty * 28.00) + (goldChildQty * 25.00);
+
+    const grandTotalPrice = standardTotalPrice + goldTotalPrice;
+
+    $("#total-price").text("Total Price: $" + grandTotalPrice.toFixed(2));
   }
 
-  ticketInputs.forEach(input => {
-    input.addEventListener('input', updateTotalPrice);
-  });
+  $("input[type='number']").on("input", updateTotalPrice);
 
-  sessionButtons.forEach(session => {
-    session.addEventListener('click', function(e) {
-      sessionButtons.forEach(innerSession => {
-          innerSession.classList.remove('selected');
-      });
-
-      const day = e.currentTarget.getAttribute('data-day');
-      const time = e.currentTarget.getAttribute('data-time');
-      const rate = e.currentTarget.getAttribute('data-rate');
-      const selectedSession = day + '-' + time + '-' + rate;
-      document.getElementById('selected-session-input').value = selectedSession;
-
-      e.currentTarget.classList.add('selected');
-
-      updateTotalPrice();
-    });
-  });
-
-  updateTotalPrice();
+  if (window.location.pathname.endsWith('booking.php')) {
+  
 
   if (window.location.pathname.endsWith('booking.php')) {
 
@@ -173,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     rememberBtn.addEventListener('click', rememberMe);
     forgetBtn.addEventListener('click', forgetMe);
   }
-});
 
 const bookingForm = document.getElementById('booking-form');
 bookingForm.addEventListener('submit', function(event) {
@@ -237,6 +218,8 @@ function validateForm() {
 
 ticketInputs.forEach(input => {
   input.addEventListener('input', function() {
-      console.log(`Seat type: ${input.name}, Quantity: ${input.value}`);
+    console.log(`Seat type: ${input.name}, Quantity: ${input.value}`);
   });
+});
+
 });
