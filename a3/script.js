@@ -59,26 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-  sessionFieldsets.forEach((fieldset) => {
-      fieldset.style.display = 'none';
+sessions.forEach(function(session) {
+  session.addEventListener('click', function(e) {
+    sessions.forEach(function(innerSession) {
+      innerSession.classList.remove('selected');
+    });
+    e.currentTarget.classList.add('selected');
+    updateTotalPrice();
   });
-
-  if (selectedMovie) {
-      const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-      if (selectedFieldset) {
-          selectedFieldset.style.display = 'block';
-      }
-  }
-
-  sessions.forEach(function(session) {
-      session.addEventListener('click', function(e) {
-          sessions.forEach(function(innerSession) {
-              innerSession.classList.remove('selected');
-          });
-          e.currentTarget.classList.add('selected');
-          updateTotalPrice();
-      });
-  });
+});
 
   function updateTotalPrice() {
       let totalPrice = 0;
@@ -135,22 +124,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (rememberButton) {
-      rememberButton.addEventListener('click', rememberMe);
+    rememberButton.addEventListener('click', rememberMe);
   }
 
   if (forgetButton) {
-      forgetButton.addEventListener('click', forgetMe);
+    forgetButton.addEventListener('click', forgetMe);
   }
 
   if (nameInput && mobileInput && emailInput) {
-      if (localStorage.getItem('name')) {
-          nameInput.value = localStorage.getItem('name');
-          mobileInput.value = localStorage.getItem('mobile');
-          emailInput.value = localStorage.getItem('email');
+    if (localStorage.getItem('name')) {
+      nameInput.value = localStorage.getItem('name');
+      mobileInput.value = localStorage.getItem('mobile');
+      emailInput.value = localStorage.getItem('email');
 
-          rememberButton.classList.add('active');
-          rememberButton.classList.remove('inactive');
-          forgetButton.classList.remove('active');
-          forgetButton.classList.add('inactive');
-      }
+      rememberButton.classList.add('active');
+      rememberButton.classList.remove('inactive');
+      forgetButton.classList.remove('active');
+      forgetButton.classList.add('inactive');
+    }
   }
+});
