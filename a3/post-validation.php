@@ -32,14 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC]' => 'Invalid quantity for first class child seats'
     ];
 
-    $totalSelectedSeats = 0; 
+    $totalSelectedSeats = 0;
 
     foreach($seatTypes as $seatType => $errorMessage) {
         if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
             if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
                 $errors[$seatType] = $errorMessage;
             }
-            $totalSelectedSeats += $_POST[$seatType]; 
+            $totalSelectedSeats += $_POST[$seatType];
         }
     }
 
@@ -66,4 +66,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $_SESSION['errors'] = $errors;
 header("Location: booking.php");
 exit();
-
+?>
