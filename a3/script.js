@@ -2,27 +2,50 @@ const urlParams = new URLSearchParams(window.location.search);
 const selectedMovie = urlParams.get('movie');
 
 window.addEventListener('DOMContentLoaded', function() {
-  var navlinks = document.getElementsByTagName('nav')[0].getElementsByTagName('a');
-  var articles = document.getElementsByTagName('main')[0].getElementsByTagName('article');
+    var navlinks = document.getElementsByTagName('nav')[0].getElementsByTagName('a');
+    var articles = document.getElementsByTagName('main')[0].getElementsByTagName('article');
 
-  for (var a = 0; a < articles.length; a++) {
-      navlinks[a].addEventListener('click', function(event) {
-          event.preventDefault(); 
-          var targetArticleId = this.getAttribute('href'); 
-          var targetArticle = document.querySelector(targetArticleId); 
-          var offsetTop = targetArticle.offsetTop; 
+    for (var a = 0; a < articles.length; a++) {
+        navlinks[a].addEventListener('click', function(event) {
+            event.preventDefault(); 
+            var targetArticleId = this.getAttribute('href'); 
+            var targetArticle = document.querySelector(targetArticleId); 
+            var offsetTop = targetArticle.offsetTop; 
 
-          window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-          });
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
 
-          for (var i = 0; i < navlinks.length; i++) {
-              navlinks[i].classList.remove('current');
-          }
-          this.classList.add('current');
-      });
-  }
+            for (var i = 0; i < navlinks.length; i++) {
+                navlinks[i].classList.remove('current');
+            }
+            this.classList.add('current');
+
+            for (var i = 0; i < navlinks.length; i++) {
+                if (navlinks[i].classList.contains('current')) {
+                    navlinks[i].classList.add('active');
+                } else {
+                    navlinks[i].classList.remove('active');
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', function() {
+        for (var a = 0; a < articles.length; a++) {
+            var arTop = articles[a].offsetTop;
+            var arBot = arTop + articles[a].offsetHeight;
+            
+            if (window.scrollY >= arTop && window.scrollY < arBot) {
+                navlinks[a].classList.add('current');
+            } else {
+                navlinks[a].classList.remove('current');
+            }
+        }
+    });
+});
+
 
   window.addEventListener('scroll', function() {
       for (var a = 0; a < articles.length; a++) {
