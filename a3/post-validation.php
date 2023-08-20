@@ -34,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $totalSelectedSeats = 0;
 
-    foreach($seatTypes as $seatType => $errorMessage) {
+    foreach ($seatTypes as $seatType => $errorMessage) {
         if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
             if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
                 $errors[$seatType] = $errorMessage;
             }
-            $totalSelectedSeats += $_POST[$seatType];
+            $totalSelectedSeats += intval($_POST[$seatType]);
         }
     }
 
@@ -58,12 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
+        unset($_SESSION['errors']); 
         header("Location: submit.php");
         exit();
-    }   
+    } else {
+        $_SESSION['errors'] = $errors; 
+        header("Location: booking.php");
+        exit();
+    }
 }
-
-$_SESSION['errors'] = $errors;
-header("Location: booking.php");
-exit();
 ?>
