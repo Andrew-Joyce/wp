@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (!empty($errors)) {
         $_SESSION['errors'] = $errors;
-        header("Location: booking.php");
+        header("Location: booking.php?movie=$movieCode");
         exit();
     }
     
