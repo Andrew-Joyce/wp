@@ -45,7 +45,7 @@
                     <li>Wed - Fri: 9pm</li>
                     <li>Sat - Sun: 6pm</li>
                 </ul>
-                <a href="booking.php?movie=ACT">Book Now</a>
+                <a href="booking.php?movie=<?php echo $selectedMovieCode; ?>">Book Now</a>
             </div>
         </div>
         <!-- Movie 2 -->

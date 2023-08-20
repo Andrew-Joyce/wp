@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $mobile = trim($_POST['mobile']);
     $email = trim($_POST['email']);
-    $selectedSession = isset($_POST['session']) ? $_POST['session'] : ''; // Include this line
+    $selectedSession = isset($_POST['session']) ? $_POST['session'] : '';
 
     $seatTypes = [
         'seats[STA]' => 'Invalid quantity for standard seats',
