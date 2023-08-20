@@ -34,7 +34,7 @@
                 <div class="movie-front">
                     <img src="../../media/indiana-jones-poster.png" alt="Indiana Jones and the Dial of Destiny">
                     <div>
-                      <h3><?php echo $selectedMovieDetails['title']; ?></h3>
+                        <h3>Indiana Jones and the Dial of Destiny</h3>
                         <p>Rating: PG</p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="movie-front">
                     <img src="../../media/barbie-poster.png" alt="Barbie">
                     <div>
-                        <h3><?php echo $selectedMovieDetails['title']; ?></h3>
+                        <h3>Barbie</h3>
                         <p>Rating: G</p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="movie-front">
                     <img src="../../media/ninja-turtles-poster.png" alt="Teenage Mutant Ninja Turtles: Mutant Mayhem">
                     <div>
-                      <h3><?php echo $selectedMovieDetails['title']; ?></h3>
+                        <h3>Teenage Mutant Ninja Turtles: Mutant Mayhem</h3>
                         <p>Rating: PG-13</p>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 <div class="movie-front">
                     <img src="../../media/oppenheimer-poster.png" alt="Oppenheimer">
                     <div>
-                      <h3><?php echo $selectedMovieDetails['title']; ?></h3>
+                        <h3>Oppenheimer</h3>
                         <p>Rating: R</p>
                     </div>
                 </div>
