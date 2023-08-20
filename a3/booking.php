@@ -5,25 +5,15 @@ include 'tools.php';
 $selectedMovieDetails = null;
 $screenings = null;
 
-if (isset($_GET['movie'])) {
-    $selectedMovieCode = $_GET['movie'];
-
-    echo "Selected Movie Code: $selectedMovieCode";
-
-    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
-
-    if ($selectedMovieDetails) {
-        $screenings = $selectedMovieDetails['screenings'];
-    } else {
-        $_SESSION['errors']['movie'] = "Selected movie details not found!";
-        header('Location: booking.php');
-        exit();
+if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+    echo '<div class="error-messages">';
+    foreach ($_SESSION['errors'] as $field => $error) {
+        echo "<p>Error with $field: $error</p>";
     }
-} else {
-    $_SESSION['errors']['movie'] = "No movie selected!";
-    header('Location: booking.php'); 
-    exit();
+    unset($_SESSION['errors']);
+    echo '</div>';
 }
+?>
 
 ?>
 
