@@ -135,7 +135,9 @@ function rememberMe(event) {
         nameInput.value = localStorage.getItem('name');
         mobileInput.value = localStorage.getItem('mobile');
         emailInput.value = localStorage.getItem('email');
-
+    }
+    
+    if (window.location.pathname.endsWith('booking.php')) {
         const rememberBtn = document.getElementById('remember-btn');
         const forgetBtn = document.getElementById('forget-btn');
 
@@ -150,6 +152,7 @@ function rememberMe(event) {
         }
     }
 });
+
 
 
   
