@@ -59,9 +59,6 @@ window.addEventListener('DOMContentLoaded', function() {
           }
       }
   });
-});
-
-  
 
 document.addEventListener('DOMContentLoaded', () => {
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
