@@ -93,12 +93,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const rememberCheckbox = document.getElementById('remember-checkbox');
-  const rememberBtn = document.getElementById('remember-btn');
-  const forgetBtn = document.getElementById('forget-btn');
-  const nameInput = document.getElementById('name');
-  const mobileInput = document.getElementById('mobile');
-  const emailInput = document.getElementById('email');
+  if (window.location.pathname.endsWith('booking.php')) {
+    const rememberCheckbox = document.getElementById('remember-checkbox');
+    const rememberBtn = document.getElementById('remember-btn');
+    const forgetBtn = document.getElementById('forget-btn');
+    const nameInput = document.getElementById('name');
+    const mobileInput = document.getElementById('mobile');
+    const emailInput = document.getElementById('email');
 
   function rememberMe(event) {
       event.preventDefault();
