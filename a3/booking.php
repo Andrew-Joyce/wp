@@ -172,9 +172,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
-        <div>
-            <button id="remember-btn" class="contact-button active">Remember Me</button>
-            <button id="forget-btn" class="contact-button inactive">Forget Me</button>
+        <div class="radio-buttons">
+            <input type="radio" id="remember" name="remember" value="yes">
+            <label for="remember" class="btn">Remember Me</label>
+            
+            <input type="radio" id="forget" name="remember" value="no">
+            <label for="forget" class="btn">Forget Me</label>
         </div>
     </fieldset>
 

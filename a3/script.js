@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const ticketInputs = document.querySelectorAll('input[type="number"]');
   const sessionButtons = document.querySelectorAll('.session');
 
-  const rememberBtn = document.getElementById('remember-btn');
-  const forgetBtn = document.getElementById('forget-btn');
   const nameInput = document.getElementById('name');
-  const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
+  const mobileInput = document.getElementById('mobile');
+  const rememberRadio = document.getElementById('remember');
+  const forgetRadio = document.getElementById('forget');
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(event) {
@@ -137,43 +137,47 @@ document.addEventListener('DOMContentLoaded', () => {
       forgetBtn.classList.add('inactive');
     }
 
-    function rememberMe(event) {
-      event.preventDefault();
-
-      const name = nameInput.value;
-      const mobile = mobileInput.value;
-      const email = emailInput.value;
-
-      localStorage.setItem('name', name);
-      localStorage.setItem('mobile', mobile);
-      localStorage.setItem('email', email);
-
-      rememberBtn.classList.add('active');
-      rememberBtn.classList.remove('inactive');
-      forgetBtn.classList.remove('active');
-      forgetBtn.classList.add('inactive');
-    }
-
-    function forgetMe(event) {
-      event.preventDefault();
-
-      localStorage.removeItem('name');
-      localStorage.removeItem('mobile');
-      localStorage.removeItem('email');
-
-      nameInput.value = '';
-      mobileInput.value = '';
-      emailInput.value = '';
-
-      forgetBtn.classList.add('active');
-      forgetBtn.classList.remove('inactive');
-      rememberBtn.classList.remove('active');
-      rememberBtn.classList.add('inactive');
-    }
-
-    rememberBtn.addEventListener('click', rememberMe);
-    forgetBtn.addEventListener('click', forgetMe);
+    function setCustomerDetailsFromLocalStorage() {
+      const storedName = localStorage.getItem('customerName');
+      const storedEmail = localStorage.getItem('customerEmail');
+      const storedMobile = localStorage.getItem('customerMobile');
+      
+      if (storedName && storedEmail && storedMobile) {
+          nameInput.value = storedName;
+          emailInput.value = storedEmail;
+          mobileInput.value = storedMobile;
+          rememberRadio.checked = true;
+      } else {
+          forgetRadio.checked = true;
+      }
   }
+  
+  function saveCustomerDetailsToLocalStorage() {
+      localStorage.setItem('customerName', nameInput.value);
+      localStorage.setItem('customerEmail', emailInput.value);
+      localStorage.setItem('customerMobile', mobileInput.value);
+  }
+  
+  function removeCustomerDetailsFromLocalStorage() {
+      localStorage.removeItem('customerName');
+      localStorage.removeItem('customerEmail');
+      localStorage.removeItem('customerMobile');
+  }
+  
+  rememberRadio.addEventListener('change', function() {
+      if (rememberRadio.checked) {
+          saveCustomerDetailsToLocalStorage();
+      }
+  });
+  
+  forgetRadio.addEventListener('change', function() {
+      if (forgetRadio.checked) {
+          removeCustomerDetailsFromLocalStorage();
+      }
+  });
+  
+  setCustomerDetailsFromLocalStorage();
+  
 });
 
 const bookingForm = document.getElementById('booking-form');
