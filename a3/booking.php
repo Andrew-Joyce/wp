@@ -46,24 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-
-<?php
-
-    if (!empty($errors)) {
-        echo '<div class="error-messages">';
-        foreach ($errors as $field => $error) {
-            echo "<p>Error with $field: $error</p>";
-        }
-        echo '</div>';
-    }
-
-    if ($selectedMovieDetails) {
-        echo '<h2>' . $selectedMovieDetails['title'] . '</h2>';
-    } else {
-        echo 'Selected movie details not found!';
-    }
-    ?>
-
+    
     <header style="text-align: center;">
         <div style="display: flex; justify-content: center; align-items: center;">
             <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
@@ -194,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button id="forget-btn" class="contact-button inactive">Forget Me</button>
         </div>
     </fieldset>
-            <input type="hidden" name="movie" value="<?php echo htmlspecialchars($selectedMovieCode); ?>">
+
             <button type="submit" class="submit-button">Submit</button>
 
         </form>

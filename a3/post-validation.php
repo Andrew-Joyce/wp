@@ -84,14 +84,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-    
+
     if (!empty($errors)) {
-        $_SESSION['errors'] = $errors;
-        header("Location: booking.php");
-        exit();
-    }
-    
+    $_SESSION['errors'] = $errors;
+    } else {
     header("Location: submit.php");
     exit();
-}
+    }
+
 ?>
