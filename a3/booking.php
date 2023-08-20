@@ -69,7 +69,7 @@ if (isset($_GET['movie'])) {
     ?>
     <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
          <input type="hidden" name="session" id="selected-session-input" value="">
-         <input type="hidden" name="movie" value="RMC">
+         <input type="hidden" name="movie" value="<?php echo htmlspecialchars($_GET['movie']); ?>">
 
         
     <?php
