@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include 'tools.php';
 
@@ -19,11 +18,12 @@ if(isset($_GET['movie'])) {
         exit();
     }
 } else {
-
     $_SESSION['errors']['movie'] = "No movie selected!";
     header('Location: index.php'); 
     exit();
 }
+?>
+
 
 ?>
 
