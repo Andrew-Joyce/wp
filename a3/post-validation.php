@@ -2,6 +2,8 @@
 session_start();
 include 'tools.php';
 
+var_dump($_POST);
+
 function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
