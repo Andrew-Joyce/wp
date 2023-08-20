@@ -63,8 +63,9 @@ if(isset($_GET['movie'])) {
         unset($_SESSION['errors']);
         echo '</div>';
     }
-    
+    ?>
     <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
+
     <?php
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
