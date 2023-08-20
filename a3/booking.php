@@ -19,6 +19,7 @@ if(isset($_GET['movie'])) {
         exit();
     }
 } else {
+
     $_SESSION['errors']['movie'] = "No movie selected!";
     header('Location: index.php'); 
     exit();
@@ -62,13 +63,12 @@ if(isset($_GET['movie'])) {
         unset($_SESSION['errors']);
         echo '</div>';
     }
-    ?>
+    
     <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
-
+    <?php
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
         if ($selectedMovieDetails) {
-            $screenings = $selectedMovieDetails['screenings'];
         ?>
             <fieldset id="fieldset-session-<?php echo $selectedMovieCode; ?>">
                 <legend class="movie-title"><?php echo $selectedMovieDetails['title']; ?></legend>
