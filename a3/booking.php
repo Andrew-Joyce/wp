@@ -1,7 +1,16 @@
-<?php
 session_start();
 include 'tools.php';
+
+$selectedMovieCode = $_GET['movie'];
+
+$selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+if ($selectedMovieDetails) {
+    $screenings = $selectedMovieDetails['screenings'];
+}
 ?>
+
+<script src="script.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,24 +21,6 @@ include 'tools.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedMovie = urlParams.get('movie');
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-            sessionFieldsets.forEach((fieldset) => {
-                fieldset.style.display = 'none';
-            });
-
-            if (selectedMovie) {
-                const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-                if (selectedFieldset) {
-                    selectedFieldset.style.display = 'block';
-                }
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -48,37 +39,40 @@ include 'tools.php';
 
     <main>
     <form method="POST" action="submit.php" id="booking-form" onsubmit="return validateForm()">
-        <?php foreach ($moviesObject as $movieCode => $movieDetails) {
-            $screenings = $movieDetails['screenings'];
+        <?php
+
+        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+        if ($selectedMovieDetails) {
+            $screenings = $selectedMovieDetails['screenings'];
         ?>
-            <fieldset id="fieldset-session-<?php echo $movieCode; ?>">
-            <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>" style="display: block;"></div>
+            <fieldset id="fieldset-session-<?php echo $selectedMovieCode; ?>">
+                <legend class="movie-title"><?php echo $selectedMovieDetails['title']; ?></legend>
+                <div class="movie-details" id="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>" style="display: block;">
                     <div class="trailer">
                         <div class="responsive-video">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($movieDetails['trailer'], strrpos($movieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo substr($selectedMovieDetails['trailer'], strrpos($selectedMovieDetails['trailer'], '/') + 1); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="synopsis">
-                        <p><?php echo $movieDetails['summary']; ?></p>
-                        <p><strong>Starring</strong> - <?php echo isset($movieDetails['cast']) ? $movieDetails['cast'] : 'N/A'; ?></p>
-                        <p><strong>Screening Times:</strong> <?php echo $movieDetails['screening-summary']; ?></p>
-                        <p>For more information, visit <a href="<?php echo $movieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
+                        <p><?php echo $selectedMovieDetails['summary']; ?></p>
+                        <p><strong>Starring</strong> - <?php echo isset($selectedMovieDetails['cast']) ? $selectedMovieDetails['cast'] : 'N/A'; ?></p>
+                        <p><strong>Screening Times:</strong> <?php echo $selectedMovieDetails['screening-summary']; ?></p>
+                        <p>For more information, visit <a href="<?php echo $selectedMovieDetails['imdb']; ?>" target="_blank">IMDb</a>.</p>
                     </div>
-                </div>
-                <legend class="movie-title"><?php echo $movieDetails['title']; ?></legend>
-                <div class="<?php echo strtolower(str_replace(' ', '-', $movieDetails['title'])); ?>">
+                    <div class="<?php echo strtolower(str_replace(' ', '-', $selectedMovieDetails['title'])); ?>">
                     <h3>Select Session</h3>
                     <div class="session-selection">
                         <?php foreach ($screenings as $day => $screening) { ?>
-                            <button type="button" class="session" data-value="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
+                            <button type="button" class="session" data-session="<?php echo $day . '-' . $screening['time'] . '-' . $screening['rate']; ?>">
                                 <?php echo $day; ?> - <?php echo $screening['time']; ?> (<?php echo $screening['rate']; ?>)
                             </button>
                         <?php } ?>
                     </div>
                 </div>
+                </div>
             </fieldset>
-            <?php } ?>
-            </fieldset>
+        <?php } ?>
 
         <fieldset>
             <legend>Select Standard Seats</legend>
@@ -87,18 +81,17 @@ include 'tools.php';
                     <div class="seat standard-seat">
                         <label for="seats[STA]">Standard Adult</label>
                         <input type="number" name="seats[STA]" min="0" value="0" placeholder="Enter quantity" required>
-                        <!-- Set the data-full-price attribute here -->
                         <span class="seat-price" data-full-price="21.50">Full Price: $21.50 / Discount: $16.00</span>
                     </div>
                     <div class="seat concession-seat">
                         <label for="seats[STP]">Concession</label>
                         <input type="number" name="seats[STP]" min="0" value="0" placeholder="Enter quantity" required>
-                        <span class="seat-price">Full Price: $19.50 / Discount: $14.00</span>
+                        <span class="seat-price" data-full-price="19.50">Full Price: $19.50 / Discount: $14.00</span> 
                     </div>
                     <div class="seat child-seat">
                         <label for="seats[STC]">Child</label>
                         <input type="number" name="seats[STC]" min="0" value="0" placeholder="Enter quantity" required>
-                        <span class="seat-price">Full Price: $17.50 / Discount: $12.00</span>
+                        <span class="seat-price" data-full-price="17.50">Full Price: $17.50 / Discount: $12.00</span> 
                     </div>
                 </div>
             </div>
@@ -110,18 +103,17 @@ include 'tools.php';
                         <div class="seat standard-seat">
                             <label for="seats[FCA]">First Class Adult</label>
                             <input type="number" name="seats[FCA]" min="0" value="0" placeholder="Enter quantity" required>
-                            <!-- Set the data-full-price attribute here -->
                             <span class="seat-price" data-full-price="31.00">Full Price: $31.00 / Discount: $25.00</span>
                         </div>
                         <div class="seat concession-seat">
                             <label for="seats[FCP]">First Class Concession</label>
                             <input type="number" name="seats[FCP]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price">Full Price: $28.00 / Discount: $23.50</span>
+                            <span class="seat-price" data-full-price="28.00">Full Price: $28.00 / Discount: $23.50</span> 
                         </div>
                         <div class="seat child-seat">
                             <label for="seats[FCC]">First Class Child</label>
                             <input type="number" name="seats[FCC]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price">Full Price: $25.00 / Discount: $22.00</span>
+                            <span class="seat-price" data-full-price="25.00">Full Price: $25.00 / Discount: $22.00</span> 
                         </div>
                     </div>
                 </div>
@@ -145,8 +137,8 @@ include 'tools.php';
             <input type="email" name="email" id="email" required>
         </div>
         <div>
-            <button class="contact-Button" id="remember-btn">Remember Me</button>
-            <button class="contact-Button" id="forget-btn">Forget Me</button>
+            <button id="remember-btn" class="contact-Button inactive" onclick="rememberMe()">Remember Me</button>
+            <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe()">Forget Me</button>
         </div>
     </fieldset>
 
@@ -169,5 +161,3 @@ include 'tools.php';
         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
 </body>
-
-</html>
