@@ -58,20 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionButtons.forEach(innerSession => {
         innerSession.classList.remove('selected');
       });
-
+  
       const day = e.currentTarget.getAttribute('data-day');
       const time = e.currentTarget.getAttribute('data-time');
       const rate = e.currentTarget.getAttribute('data-rate');
-      
-      const selectedSession = day + '-' + time + '-' + rate;
-
-      document.querySelector('.session.selected').setAttribute('data-session', selectedSession);
-      document.querySelector('.session.selected').classList.remove('selected');
+  
+      const selectedSessionElement = document.querySelector('.session.selected');
+      if (selectedSessionElement) {
+        const selectedSession = day + '-' + time + '-' + rate;
+        selectedSessionElement.setAttribute('data-session', selectedSession);
+        selectedSessionElement.classList.remove('selected');
+      }
+  
       e.currentTarget.classList.add('selected');
-
+  
       updateTotalPrice();
     });
   });
+  
 
   function updateTotalPrice() {
     let totalPrice = 0;
