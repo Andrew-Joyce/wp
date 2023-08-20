@@ -314,6 +314,12 @@ p {
   height: auto;
 }
 
+@media (max-width: 767px) {
+  .seats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 label, select, .seat-price {
   font-family: "Poppins", sans-serif;
   font-size: 18px;

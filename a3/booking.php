@@ -142,52 +142,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
 
-            <div id="gold-class-seats">
-                <legend>Gold Class Seats</legend>
-                <div id="seats-&-prices">
-                    <div class="seats-container">
-                        <div class="seat standard-seat">
-                            <label for="seats[FCA]">First Class Adult</label>
-                            <input type="number" name="seats[FCA]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price" data-full-price="31.00">Full Price: $31.00 / Discount: $25.00</span>
-                        </div>
-                        <div class="seat concession-seat">
-                            <label for="seats[FCP]">First Class Concession</label>
-                            <input type="number" name="seats[FCP]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price" data-full-price="28.00">Full Price: $28.00 / Discount: $23.50</span> 
-                        </div>
-                        <div class="seat child-seat">
-                            <label for="seats[FCC]">First Class Child</label>
-                            <input type="number" name="seats[FCC]" min="0" value="0" placeholder="Enter quantity" required>
-                            <span class="seat-price" data-full-price="25.00">Full Price: $25.00 / Discount: $22.00</span> 
-                        </div>
-                    </div>
+            <legend>Select Gold Class Seats</legend>
+            <div id="gold-class-seats" class="seat-container">
+                <div class="seat standard-seat">
+                    <label for="seats[FCA]">First Class Adult</label>
+                    <select name="seats[FCA]">
+                        <?php for ($i = 0; $i <= 10; $i++) { ?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php } ?>
+                    </select>
+                    <span class="seat-price" data-full-price="31.00">Full Price: $31.00 / Discount: $25.00</span>
+                </div>
+                <div class="seat concession-seat">
+                    <label for="seats[FCP]">First Class Concession</label>
+                    <select name="seats[FCP]">
+                        <?php for ($i = 0; $i <= 10; $i++) { ?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php } ?>
+                    </select>
+                    <span class="seat-price" data-full-price="28.00">Full Price: $28.00 / Discount: $23.50</span>
+                </div>
+                <div class="seat child-seat">
+                    <label for="seats[FCC]">First Class Child</label>
+                    <select name="seats[FCC]">
+                        <?php for ($i = 0; $i <= 10; $i++) { ?>
+                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                        <?php } ?>
+                    </select>
+                    <span class="seat-price" data-full-price="25.00">Full Price: $25.00 / Discount: $22.00</span>
                 </div>
             </div>
-        </div>
         </fieldset>
 
         <fieldset>
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
         </fieldset>
-    <fieldset>
-        <legend>Contact Information:</legend>
-        <div class="contact-info">
-            <label for="name">Full Name:</label>
-            <input type="text" name="name" id="name" required>
 
-            <label for="mobile">Mobile Number:</label>
-            <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
+        <fieldset>
+            <legend>Contact Information:</legend>
+            <div class="contact-info">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-        <div>
-            <button id="remember-btn" class="contact-button active">Remember Me</button>
-            <button id="forget-btn" class="contact-button inactive">Forget Me</button>
-        </div>
-    </fieldset>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <button id="remember-btn" class="contact-button active">Remember Me</button>
+                <button id="forget-btn" class="contact-button inactive">Forget Me</button>
+            </div>
+        </fieldset>
 
             <button type="submit" class="submit-button">Submit</button>
 
