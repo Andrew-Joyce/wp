@@ -1,7 +1,32 @@
 <?php
 session_start();
 include 'tools.php';
-include 'post-validation.php';
+
+$selectedMovieDetails = null;
+$screenings = null;
+$error = null;
+
+if (isset($_GET['movie'])) {
+    $selectedMovieCode = $_GET['movie'];
+
+    echo "Selected Movie Code: $selectedMovieCode";
+
+    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+    if (!$selectedMovieDetails) {
+        $error = "Selected movie details not found!";
+    } else {
+        $screenings = $selectedMovieDetails['screenings'];
+    }
+} else {
+    $error = "No movie selected!";
+}
+
+$errors = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include 'post-validation.php';
+}
 ?>
 
 <!DOCTYPE html>
