@@ -693,6 +693,7 @@ button:focus {
   position: relative;
 }
 
-.nav-link.active {
-  color: blue !important;
+#navbar a.current {
+  color: blue;
+  font-weight: bold;
 }
