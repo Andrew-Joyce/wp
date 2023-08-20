@@ -26,6 +26,11 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include 'post-validation.php';
+
+    if (isset($_POST['movie'])) {
+        $selectedMovieCode = $_POST['movie'];
+        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+    }
 }
 ?>
 
