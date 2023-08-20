@@ -82,12 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
       let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
       let price = isDiscounted ? discountPrice : fullPrice;
       totalPrice += price * quantity;
+  
+      console.log('Input changed:', quantity, price, totalPrice);
     });
-
+  
     if (window.location.pathname.endsWith('booking.php')) {
       document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
     }
   }
+  
 
   ticketInputs.forEach(input => {
     input.addEventListener('input', updateTotalPrice);
