@@ -2,6 +2,10 @@
 session_start();
 include 'tools.php';
 
+$selectedMovieDetails = null;
+$screenings = null;
+$error = null;
+
 if (isset($_GET['movie'])) {
     $selectedMovieCode = $_GET['movie'];
 
@@ -9,19 +13,14 @@ if (isset($_GET['movie'])) {
 
     $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
-    if ($selectedMovieDetails) {
-        $screenings = $selectedMovieDetails['screenings'];
+    if (!$selectedMovieDetails) {
+        $error = "Selected movie details not found!";
     } else {
-        $_SESSION['errors']['movie'] = "Selected movie details not found!";
-        header('Location: index.php');
-        exit();
+        $screenings = $selectedMovieDetails['screenings'];
     }
 } else {
-    $_SESSION['errors']['movie'] = "No movie selected!";
-    header('Location: index.php'); 
-    exit();
+    $error = "No movie selected!";
 }
-
 ?>
 
 <!DOCTYPE html>
