@@ -65,7 +65,8 @@ if(isset($_GET['movie'])) {
     }
     ?>
     <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
-
+        <input type="hidden" name="movie" value="<?php echo $selectedMovieCode; ?>">
+        
     <?php
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
