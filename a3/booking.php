@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <fieldset>
             <legend>Select Standard Seats</legend>
-            <div id="standard-seats">
+            <div id="standard-seats" class="seat-container">
                 <div class="seat standard-seat">
                     <label for="seats[STA]">Standard Adult</label>
                     <select name="seats[STA]">

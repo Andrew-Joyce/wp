@@ -284,10 +284,10 @@ p {
   justify-content: space-between;
 }
 
-.seats-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+.seat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .seat {
@@ -298,6 +298,9 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: calc(33.33% - 20px); 
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .seat-price {
@@ -311,10 +314,9 @@ p {
   height: auto;
 }
 
-@media (max-width: 767px) {
-  .seats-container {
-    grid-template-columns: 1fr;
-  }
+label, select, .seat-price {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 
 section {
