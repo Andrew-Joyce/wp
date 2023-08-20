@@ -314,9 +314,13 @@ p {
   height: auto;
 }
 
-@media (max-width: 767px) {
-  .seats-container {
-    grid-template-columns: 1fr;
+@media (min-width: 769px) {
+  .seat-container {
+      display: flex;
+      justify-content: space-between; 
+  }
+  .seat {
+      width: calc(33.33% - 20px); 
   }
 }
 
