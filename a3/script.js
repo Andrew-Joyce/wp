@@ -130,19 +130,20 @@ function rememberMe(event) {
     const nameInput = document.getElementById('name');
     const mobileInput = document.getElementById('mobile');
     const emailInput = document.getElementById('email');
-  
+
     if (localStorage.getItem('name')) {
-      nameInput.value = localStorage.getItem('name');
-      mobileInput.value = localStorage.getItem('mobile');
-      emailInput.value = localStorage.getItem('email');
-  
-      document.getElementById('remember-btn').classList.add('active');
-      document.getElementById('remember-btn').classList.remove('inactive');
-      document.getElementById('forget-btn').classList.remove('active');
-      document.getElementById('forget-btn').classList.add('inactive');
+        nameInput.value = localStorage.getItem('name');
+        mobileInput.value = localStorage.getItem('mobile');
+        emailInput.value = localStorage.getItem('email');
+
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
     }
-  });
-  
-  document.getElementById('remember-btn').addEventListener('click', rememberMe);
-  document.getElementById('forget-btn').addEventListener('click', forgetMe);
+
+    document.getElementById('remember-btn').addEventListener('click', rememberMe);
+    document.getElementById('forget-btn').addEventListener('click', forgetMe);
+});
+
   
