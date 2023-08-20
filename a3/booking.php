@@ -3,13 +3,27 @@
 session_start();
 include 'tools.php';
 
-$selectedMovieCode = $_GET['movie'];
+$selectedMovieDetails = null;
+$screenings = null;
 
-$selectedMovieDetails = getMovieDetails($selectedMovieCode);
+if(isset($_GET['movie'])) {
+    $selectedMovieCode = $_GET['movie'];
 
-if ($selectedMovieDetails) {
-    $screenings = $selectedMovieDetails['screenings'];
+    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
+
+    if ($selectedMovieDetails) {
+        $screenings = $selectedMovieDetails['screenings'];
+    } else {
+        $_SESSION['errors']['movie'] = "Selected movie details not found!";
+        header('Location: index.php');
+        exit();
+    }
+} else {
+    $_SESSION['errors']['movie'] = "No movie selected!";
+    header('Location: index.php'); 
+    exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +53,17 @@ if ($selectedMovieDetails) {
     </nav>
 
     <main>
-    <form method="POST" action="submit.php" id="booking-form" onsubmit="return validateForm()">
-        <?php
+    <?php
+    if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+        echo '<div class="error-messages">';
+        foreach ($_SESSION['errors'] as $field => $error) {
+            echo "<p>Error with $field: $error</p>";
+        }
+        unset($_SESSION['errors']);
+        echo '</div>';
+    }
+    ?>
+    <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
 
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 

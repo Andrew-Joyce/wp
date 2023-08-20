@@ -697,4 +697,13 @@ button:focus {
   color: blue;
   font-weight: bold;
 }
+
+.error-messages {
+  background-color: #ffdddd;  
+  border: 1px solid #f44336; 
+  color: #f44336;            
+  margin: 10px 0;            
+  padding: 15px;            
+}
+
 }
