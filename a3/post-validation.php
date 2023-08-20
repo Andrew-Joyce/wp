@@ -50,6 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    $selectedSession = isset($_POST['selected-session']) ? $_POST['selected-session'] : '';
+    if (empty($selectedSession)) {
+        $errors['session'] = "No session selected";
+    }
+
     if (empty($errors)) {
         header("Location: submit.php");
         exit();
@@ -60,4 +65,5 @@ $_SESSION['errors'] = $errors;
 header("Location: booking.php");
 exit();
 ?>
+
 
