@@ -185,6 +185,7 @@ bookingForm.addEventListener('submit', function(event) {
 function validateForm() {
   const movieInput = document.getElementById('movie');
   const sessionButtons = document.querySelectorAll('.session.selected');
+  const ticketInputs = document.querySelectorAll('[name^="seats["]');
   const nameInput = document.getElementById('name');
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
