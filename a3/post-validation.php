@@ -17,18 +17,20 @@ function isValidIntegerInRange($value, $min, $max) {
 }
 
 $errors = array();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $mobile = trim($_POST['mobile']);
     $email = trim($_POST['email']);
 
-    $standardSeats = $_POST['seats']['STA'];
-    $concessionSeats = $_POST['seats']['STP'];
-    $childSeats = $_POST['seats']['STC'];
-
-    $firstClassAdultSeats = $_POST['seats']['FCA'];
-    $firstClassConcessionSeats = $_POST['seats']['FCP'];
-    $firstClassChildSeats = $_POST['seats']['FCC'];
+    $seatTypes = [
+        'seats[STA]' => 'Invalid quantity for standard seats',
+        'seats[STP]' => 'Invalid quantity for concession seats',
+        'seats[STC]' => 'Invalid quantity for child seats',
+        'seats[FCA]' => 'Invalid quantity for first class adult seats',
+        'seats[FCP]' => 'Invalid quantity for first class concession seats',
+        'seats[FCC]' => 'Invalid quantity for first class child seats'
+    ];
 
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
@@ -40,24 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    if (!isValidIntegerInRange($standardSeats, 0, 10)) {
-        $errors['standard_seats'] = "Invalid quantity for standard seats";
-    }
-    if (!isValidIntegerInRange($concessionSeats, 0, 10)) {
-        $errors['concession_seats'] = "Invalid quantity for concession seats";
-    }
-    if (!isValidIntegerInRange($childSeats, 0, 10)) {
-        $errors['child_seats'] = "Invalid quantity for child seats";
-    }
-
-    if (!isValidIntegerInRange($firstClassAdultSeats, 0, 10)) {
-        $errors['first_class_adult_seats'] = "Invalid quantity for first class adult seats";
-    }
-    if (!isValidIntegerInRange($firstClassConcessionSeats, 0, 10)) {
-        $errors['first_class_concession_seats'] = "Invalid quantity for first class concession seats";
-    }
-    if (!isValidIntegerInRange($firstClassChildSeats, 0, 10)) {
-        $errors['first_class_child_seats'] = "Invalid quantity for first class child seats";
+    foreach($seatTypes as $seatType => $errorMessage) {
+        if (isset($_POST[$seatType]) && $_POST[$seatType] > 0) {
+            if (!isValidIntegerInRange($_POST[$seatType], 0, 10)) {
+                $errors[$seatType] = $errorMessage;
+            }
+        }
     }
 
     if (empty($errors)) {
