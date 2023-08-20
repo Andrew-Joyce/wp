@@ -5,8 +5,10 @@ include 'tools.php';
 $selectedMovieDetails = null;
 $screenings = null;
 
-if(isset($_GET['movie'])) {
+if (isset($_GET['movie'])) {
     $selectedMovieCode = $_GET['movie'];
+
+    echo "Selected Movie Code: $selectedMovieCode";
 
     $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
@@ -22,6 +24,7 @@ if(isset($_GET['movie'])) {
     header('Location: index.php'); 
     exit();
 }
+
 ?>
 
 
