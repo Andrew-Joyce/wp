@@ -92,80 +92,63 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function rememberMe(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const mobile = document.getElementById('mobile').value;
-  const email = document.getElementById('email').value;
-
-  localStorage.setItem('name', name);
-  localStorage.setItem('mobile', mobile);
-  localStorage.setItem('email', email);
-
-  document.getElementById('remember-btn').classList.add('active');
-  document.getElementById('remember-btn').classList.remove('inactive');
-  document.getElementById('forget-btn').classList.remove('active');
-  document.getElementById('forget-btn').classList.add('inactive');
-}
-
-function forgetMe(event) {
-  event.preventDefault();
-
-  localStorage.removeItem('name');
-  localStorage.removeItem('mobile');
-  localStorage.removeItem('email');
-
-  document.getElementById('name').value = '';
-  document.getElementById('mobile').value = '';
-  document.getElementById('email').value = '';
-
-  document.getElementById('remember-btn').classList.remove('active');
-  document.getElementById('remember-btn').classList.add('inactive');
-  document.getElementById('forget-btn').classList.add('active');
-  document.getElementById('forget-btn').classList.remove('inactive');
-}
-
 document.addEventListener('DOMContentLoaded', function() {
+  const rememberCheckbox = document.getElementById('remember-checkbox');
+  const rememberBtn = document.getElementById('remember-btn');
+  const forgetBtn = document.getElementById('forget-btn');
   const nameInput = document.getElementById('name');
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
+
+  function rememberMe(event) {
+      event.preventDefault();
+
+      const name = nameInput.value;
+      const mobile = mobileInput.value;
+      const email = emailInput.value;
+
+      localStorage.setItem('name', name);
+      localStorage.setItem('mobile', mobile);
+      localStorage.setItem('email', email);
+
+      rememberBtn.classList.add('active');
+      rememberBtn.classList.remove('inactive');
+      forgetBtn.classList.remove('active');
+      forgetBtn.classList.add('inactive');
+  }
+
+  function forgetMe(event) {
+      event.preventDefault();
+
+      localStorage.removeItem('name');
+      localStorage.removeItem('mobile');
+      localStorage.removeItem('email');
+
+      nameInput.value = '';
+      mobileInput.value = '';
+      emailInput.value = '';
+
+      rememberBtn.classList.remove('active');
+      rememberBtn.classList.add('inactive');
+      forgetBtn.classList.add('active');
+      forgetBtn.classList.remove('inactive');
+  }
+
+  rememberCheckbox.addEventListener('change', function() {
+      if (rememberCheckbox.checked) {
+          rememberMe(event);
+      } else {
+          forgetMe(event);
+      }
+  });
 
   if (localStorage.getItem('name')) {
       nameInput.value = localStorage.getItem('name');
       mobileInput.value = localStorage.getItem('mobile');
       emailInput.value = localStorage.getItem('email');
+      rememberBtn.classList.add('active');
+      rememberBtn.classList.remove('inactive');
+      forgetBtn.classList.remove('active');
+      forgetBtn.classList.add('inactive');
   }
-  
-  if (window.location.pathname.endsWith('booking.php')) {
-      const rememberBtn = document.getElementById('remember-btn');
-      const forgetBtn = document.getElementById('forget-btn');
-
-      if (rememberBtn && forgetBtn) {
-          rememberBtn.classList.add('active');
-          rememberBtn.classList.remove('inactive');
-          forgetBtn.classList.remove('active');
-          forgetBtn.classList.add('inactive');
-          
-          rememberBtn.addEventListener('click', rememberMe);
-          forgetBtn.addEventListener('click', forgetMe);
-      }
-  }
-});
-
-document.getElementById('booking-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    fetch('submit.php', {
-        method: 'POST',
-        body: new FormData(document.getElementById('booking-form'))
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Form submission response:', data);
-
-    })
-    .catch(error => {
-        console.error('Form submission error:', error);
-    });
 });
