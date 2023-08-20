@@ -237,9 +237,9 @@ function validateForm() {
 
 ticketInputs.forEach(input => {
   input.addEventListener('input', function() {
-      const seatType = input.name; 
-      const quantity = parseInt(input.value);
-      console.log(`Seat Type: ${seatType}, Quantity: ${quantity}`);
+      const inputName = input.name;
+      const inputValue = parseFloat(input.value);
+      console.log(`Input Name: ${inputName}, Value: ${inputValue}`);
       updateTotalPrice(); 
   });
 });
