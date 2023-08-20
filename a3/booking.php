@@ -2,9 +2,6 @@
 session_start();
 include 'tools.php';
 
-$selectedMovieCode = isset($_GET['movie']) ? $_GET['movie'] : '';
-$selectedMovieDetails = getMovieDetails($selectedMovieCode);
-
 $selectedMovieDetails = null;
 $screenings = null;
 $error = null;
