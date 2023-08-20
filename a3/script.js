@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('main > div');
 
   const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-  const ticketInputs = document.querySelectorAll('input[name^="seats["]');
+  const ticketInputs = document.querySelectorAll('input[type="number"]');
   const sessionButtons = document.querySelectorAll('.session');
 
   const rememberBtn = document.getElementById('remember-btn');
@@ -82,39 +82,36 @@ document.addEventListener('DOMContentLoaded', () => {
       let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
       let price = isDiscounted ? discountPrice : fullPrice;
       totalPrice += price * quantity;
-  
-      console.log('Input changed:', quantity, price, totalPrice);
     });
-  
+
     if (window.location.pathname.endsWith('booking.php')) {
       document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
     }
   }
-  
 
   ticketInputs.forEach(input => {
     input.addEventListener('input', updateTotalPrice);
   });
 
-sessionButtons.forEach(session => {
+  sessionButtons.forEach(session => {
     session.addEventListener('click', function(e) {
-        sessionButtons.forEach(innerSession => {
-            innerSession.classList.remove('selected');
-        });
+      sessionButtons.forEach(innerSession => {
+          innerSession.classList.remove('selected');
+      });
 
-        const day = e.currentTarget.getAttribute('data-day');
-        const time = e.currentTarget.getAttribute('data-time');
-        const rate = e.currentTarget.getAttribute('data-rate');
-        const selectedSession = day + '-' + time + '-' + rate;
-        document.getElementById('selected-session-input').value = selectedSession;
+      const day = e.currentTarget.getAttribute('data-day');
+      const time = e.currentTarget.getAttribute('data-time');
+      const rate = e.currentTarget.getAttribute('data-rate');
+      const selectedSession = day + '-' + time + '-' + rate;
+      document.getElementById('selected-session-input').value = selectedSession;
 
-        e.currentTarget.classList.add('selected');
+      e.currentTarget.classList.add('selected');
 
-        updateTotalPrice();
+      updateTotalPrice();
     });
-});
+  });
 
-updateTotalPrice();
+  updateTotalPrice();
 
   if (window.location.pathname.endsWith('booking.php')) {
 
@@ -226,7 +223,7 @@ function validateForm() {
     const quantity = parseInt(input.value);
     if (isNaN(quantity) || quantity < 1 || quantity > 10) {
       isValid = false;
-      alert('Invalid ticket quantity. Please enter a value between 1 and 10.');
+      alert('Invalid ticket quantity. Please enter a value between 1and 10.');
     }
   });
 
