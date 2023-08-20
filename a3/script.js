@@ -145,23 +145,33 @@ function rememberMe(event) {
     document.getElementById('forget-btn').classList.remove('inactive');
   }
   
-  document.addEventListener('DOMContentLoaded', function() {
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
+  const rememberButton = document.getElementById('remember-btn');
+  const forgetButton = document.getElementById('forget-btn');
   
-    if (localStorage.getItem('name')) {
-      nameInput.value = localStorage.getItem('name');
-      mobileInput.value = localStorage.getItem('mobile');
-      emailInput.value = localStorage.getItem('email');
-  
-      document.getElementById('remember-btn').classList.add('active');
-      document.getElementById('remember-btn').classList.remove('inactive');
-      document.getElementById('forget-btn').classList.remove('active');
-      document.getElementById('forget-btn').classList.add('inactive');
-    }
-  });
-  
-  document.getElementById('remember-btn').addEventListener('click', rememberMe);
-  document.getElementById('forget-btn').addEventListener('click', forgetMe);
-  
+  if (rememberButton) {
+      rememberButton.addEventListener('click', rememberMe);
+  }
+
+  if (forgetButton) {
+      forgetButton.addEventListener('click', forgetMe);
+  }
+
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+  const emailInput = document.getElementById('email');
+
+  if (nameInput && mobileInput && emailInput) {
+      if (localStorage.getItem('name')) {
+          nameInput.value = localStorage.getItem('name');
+          mobileInput.value = localStorage.getItem('mobile');
+          emailInput.value = localStorage.getItem('email');
+
+          if (rememberButton && forgetButton) {
+              rememberButton.classList.add('active');
+              rememberButton.classList.remove('inactive');
+              forgetButton.classList.remove('active');
+              forgetButton.classList.add('inactive');
+          }
+      }
+  }
+});
