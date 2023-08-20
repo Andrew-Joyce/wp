@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-const bookingForm = document.getElementById('bookingForm');
+const bookingForm = document.getElementById('booking-form');
 bookingForm.addEventListener('submit', function(event) {
   if (!validateForm()) {
     event.preventDefault();
