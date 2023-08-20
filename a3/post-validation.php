@@ -18,6 +18,9 @@ function isValidIntegerInRange($value, $min, $max) {
 
 $errors = array();
 
+
+$errors = array();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
     $name = trim($_POST['name']);
@@ -35,21 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     $totalSeatsSelected = 0;
+    $atLeastOneSeatSelected = false;
 
     foreach ($seatTypes as $seatType => $errorMessage) {
-        if (isset($_POST[$seatType]) && $_POST[$seatType] > 1) {
-            if (!isValidIntegerInRange($_POST[$seatType], 1, 10)) {
-                $errors[$seatType] = $errorMessage;
-            } else {
-                $totalSeatsSelected += $_POST[$seatType];
+        if (isset($_POST[$seatType])) {
+            $seatQuantity = $_POST[$seatType];
+            if ($seatQuantity > 0) {
+                $atLeastOneSeatSelected = true;
+                if (!isValidIntegerInRange($seatQuantity, 1, 10)) {
+                    $errors[$seatType] = $errorMessage;
+                } else {
+                    $totalSeatsSelected += $seatQuantity;
+                }
             }
         }
     }
 
-    if ($totalSeatsSelected === 0) {
-        $errors['seats'] = "No seats selected"; 
+    if (!$atLeastOneSeatSelected) {
+        $errors['seats'] = "No seats selected";
     }
-
 
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
@@ -91,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: booking.php?movie=$movieCode");
         exit();
     }
-    
+
     header("Location: submit.php");
     exit();
 }
