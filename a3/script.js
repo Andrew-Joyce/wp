@@ -12,46 +12,52 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
 
-
   for (var a = 0; a < articles.length; a++) {
-      navlinks[a].addEventListener('click', function(event) {
-          event.preventDefault();
-          var targetArticleId = this.getAttribute('href');
-          var targetArticle = document.querySelector(targetArticleId);
-          var offsetTop = targetArticle.offsetTop;
+    navlinks[a].addEventListener('click', function(event) {
+      event.preventDefault();
+      var targetArticleId = this.getAttribute('href');
+      var targetArticle = document.querySelector(targetArticleId);
+      var offsetTop = targetArticle.offsetTop;
 
-          window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-          });
-
-          for (var i = 0; i < navlinks.length; i++) {
-              navlinks[i].classList.remove('current');
-          }
-          this.classList.add('current');
-
-          for (var i = 0; i < navlinks.length; i++) {
-              if (navlinks[i].classList.contains('current')) {
-                  navlinks[i].classList.add('active');
-              } else {
-                  navlinks[i].classList.remove('active');
-              }
-          }
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
       });
+
+      for (var i = 0; i < navlinks.length; i++) {
+        navlinks[i].classList.remove('current');
+        navlinks[i].classList.remove('active');
+      }
+
+      this.classList.add('current');
+      this.classList.add('active'); 
+
+      this.style.color = 'blue';
+
+      for (var i = 0; i < navlinks.length; i++) {
+        if (navlinks[i].classList.contains('current')) {
+          navlinks[i].classList.add('active');
+        } else {
+          navlinks[i].classList.remove('active');
+        }
+      }
+    });
   }
 
   window.addEventListener('scroll', function() {
-      for (var a = 0; a < articles.length; a++) {
-          var arTop = articles[a].offsetTop;
-          var arBot = arTop + articles[a].offsetHeight;
+    for (var a = 0; a < articles.length; a++) {
+      var arTop = articles[a].offsetTop;
+      var arBot = arTop + articles[a].offsetHeight;
 
-          if (window.scrollY >= arTop && window.scrollY < arBot) {
-              navlinks[a].classList.add('current');
-          } else {
-              navlinks[a].classList.remove('current');
-          }
+      if (window.scrollY >= arTop && window.scrollY < arBot) {
+        navlinks[a].classList.add('current');
+      } else {
+        navlinks[a].classList.remove('current');
       }
+    }
   });
+});
+
 
   sessionFieldsets.forEach((fieldset) => {
       fieldset.style.display = 'none';
