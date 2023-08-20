@@ -14,18 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileInput = document.getElementById('mobile');
   const emailInput = document.getElementById('email');
 
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const targetId = entry.target.getAttribute('id');
-        const correspondingNavLink = document.querySelector(`#navbar a[href="#${targetId}"]`);
-
-        navLinks.forEach(navLink => navLink.classList.remove('current'));
-        correspondingNavLink.classList.add('current');
-      }
-    });
-  }, { threshold: 0.5 });
-
   navLinks.forEach(link => {
     link.addEventListener('click', function(event) {
       navLinks.forEach(navLink => navLink.classList.remove('current'));
@@ -34,7 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   sections.forEach(section => {
-    sectionObserver.observe(section);
+    if (window.location.pathname.endsWith('index.php')) {
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const targetId = entry.target.getAttribute('id');
+            const correspondingNavLink = document.querySelector(`#navbar a[href="#${targetId}"]`);
+
+            navLinks.forEach(navLink => navLink.classList.remove('current'));
+
+            if (correspondingNavLink) {
+              correspondingNavLink.classList.add('current');
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sectionObserver.observe(section);
+    }
   });
 
   sessionFieldsets.forEach((fieldset) => {
@@ -90,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTotalPrice();
 
   if (window.location.pathname.endsWith('booking.php')) {
+
     const rememberBtn = document.getElementById('remember-btn');
     const forgetBtn = document.getElementById('forget-btn');
     const nameInput = document.getElementById('name');
