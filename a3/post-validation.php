@@ -35,12 +35,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     $totalSeatsSelected = 0;
+    $atLeastOneSeatSelected = false;
 
     foreach ($seatTypes as $seatType) {
         $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
         if ($seatQuantity > 0) {
+            $atLeastOneSeatSelected = true;
             $totalSeatsSelected += $seatQuantity;
         }
+    }
+
+    if (!$atLeastOneSeatSelected) {
+        $errors['seats'] = "No seats selected";
+    }
+
+    // Check if all seat quantities are equal to 0
+    $allSeatsZero = true;
+    foreach ($seatTypes as $seatType) {
+        $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
+        if ($seatQuantity > 0) {
+            $allSeatsZero = false;
+            break;
+        }
+    }
+
+    if ($allSeatsZero) {
+        $errors['seats'] = "No seats selected";
     }
 
     if (empty($movieCode)) {
@@ -80,3 +100,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
+
