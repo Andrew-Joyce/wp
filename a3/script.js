@@ -97,13 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
     input.addEventListener('input', updateTotalPrice);
   });
 
-  sessionButtons.forEach(button => {
-    button.addEventListener('click', event => {
-      sessionButtons.forEach(btn => btn.classList.remove('selected'));
-      event.currentTarget.classList.add('selected'); 
-      updateTotalPrice();
+  sessionButtons.forEach(session => {
+    session.addEventListener('click', function(e) {
+        sessionButtons.forEach(innerSession => {
+            innerSession.classList.remove('selected');
+        });
+
+        const day = e.currentTarget.getAttribute('data-day');
+        const time = e.currentTarget.getAttribute('data-time');
+        const rate = e.currentTarget.getAttribute('data-rate');
+        const selectedSession = day + '-' + time + '-' + rate;
+        document.getElementById('selected-session-input').value = selectedSession;
+
+        e.currentTarget.classList.add('selected');
+
+        updateTotalPrice();
     });
-  });
+});
 
   updateTotalPrice();
 

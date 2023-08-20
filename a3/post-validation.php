@@ -43,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if (empty($selectedSession)) {
+    if (empty($_POST['session'])) {
         $errors['session'] = "No session selected";
-    }
+    }    
 
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
