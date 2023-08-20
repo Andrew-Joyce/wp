@@ -27,7 +27,6 @@ if ($selectedMovieDetails) {
     <header style="text-align: center;">
         <div style="display: flex; justify-content: center; align-items: center;">
             <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
-            <script src="script.js"></script>
             <h1 style="display: inline;">Lunardo Cinema</h1>
         </div>
     </header>
@@ -163,6 +162,7 @@ if ($selectedMovieDetails) {
         <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>         
 
     </footer>
+    <script src="script.js"></script>
 
 </body>
 <div id="debug-module">
