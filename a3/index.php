@@ -63,7 +63,7 @@
                     <li>Wed - Fri: 12pm</li>
                     <li>Sat - Sun: 3pm</li>
                 </ul>
-                <a href="booking.php?movie=RMC">Book Now</a>
+                <a href="booking.php?movie=<?php echo $selectedMovieCode; ?>">Book Now</a>
             </div>
         </div>
         <!-- Movie 3 -->
@@ -82,7 +82,7 @@
                     <li>Wed - Fri: 6pm</li>
                     <li>Sat - Sun: 12pm</li>
                 </ul>
-                <a href="booking.php?movie=ANM">Book Now</a>
+                <a href="booking.php?movie=<?php echo $selectedMovieCode; ?>">Book Now</a>
             </div>
         </div>
         <!-- Movie 4 -->
@@ -100,7 +100,7 @@
                     <li>Mon - Tue: 6pm</li>
                     <li>Sat - Sun: 9pm</li>
                 </ul>
-                <a href="booking.php?movie=DRM">Book Now</a>
+                <a href="booking.php?movie=<?php echo $selectedMovieCode; ?>">Book Now</a>
             </div>
         </div>
     </div>
