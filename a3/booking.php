@@ -1,27 +1,7 @@
 <?php
 session_start();
 include 'tools.php';
-
-$selectedMovieDetails = null;
-$screenings = null;
-$error = null;
-
-if (isset($_GET['movie'])) {
-    $selectedMovieCode = $_GET['movie'];
-
-    echo "Selected Movie Code: $selectedMovieCode";
-
-    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
-
-    if (!$selectedMovieDetails) {
-        $error = "Selected movie details not found!";
-    } else {
-        $screenings = $selectedMovieDetails['screenings'];
-    }
-} else {
-    $error = "No movie selected!";
-}
-?>
+include 'post-validation.php';
 
 <!DOCTYPE html>
 <html lang="en">
