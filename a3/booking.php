@@ -149,7 +149,7 @@ if(isset($_GET['movie'])) {
         <fieldset>
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
-    </fieldset>
+        </fieldset>
     <fieldset>
         <legend>Contact Information:</legend>
         <div class="contact-info">
@@ -171,6 +171,12 @@ if(isset($_GET['movie'])) {
             <button type="submit" class="submit-button">Submit</button>
 
         </form>
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="errorText"></div>
+            </div>
+        </div>
     </main>
 
     <footer>
