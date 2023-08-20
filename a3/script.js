@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.endsWith('booking.php')) {
-      const rememberCheckbox = document.getElementById('remember-checkbox');
       const rememberBtn = document.getElementById('remember-btn');
       const forgetBtn = document.getElementById('forget-btn');
       const nameInput = document.getElementById('name');
@@ -135,18 +134,14 @@ document.addEventListener('DOMContentLoaded', function() {
           forgetBtn.classList.remove('inactive');
       }
 
-      rememberCheckbox.addEventListener('change', function() {
-          if (rememberCheckbox.checked) {
-              rememberMe(event);
-          } else {
-              forgetMe(event);
-          }
-      });
+      rememberBtn.addEventListener('click', rememberMe);
+      forgetBtn.addEventListener('click', forgetMe);
 
       if (localStorage.getItem('name')) {
           nameInput.value = localStorage.getItem('name');
           mobileInput.value = localStorage.getItem('mobile');
           emailInput.value = localStorage.getItem('email');
+          
           rememberBtn.classList.add('active');
           rememberBtn.classList.remove('inactive');
           forgetBtn.classList.remove('active');
