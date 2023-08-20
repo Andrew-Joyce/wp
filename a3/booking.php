@@ -2,6 +2,7 @@
 session_start();
 include 'tools.php';
 include 'post-validation.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
