@@ -93,66 +93,62 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function rememberMe(event) {
-    event.preventDefault();
-  
-    const name = document.getElementById('name').value;
-    const mobile = document.getElementById('mobile').value;
-    const email = document.getElementById('email').value;
-  
-    localStorage.setItem('name', name);
-    localStorage.setItem('mobile', mobile);
-    localStorage.setItem('email', email);
-  
-    document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
-    document.getElementById('forget-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('inactive');
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const mobile = document.getElementById('mobile').value;
+  const email = document.getElementById('email').value;
+
+  localStorage.setItem('name', name);
+  localStorage.setItem('mobile', mobile);
+  localStorage.setItem('email', email);
+
+  document.getElementById('remember-btn').classList.add('active');
+  document.getElementById('remember-btn').classList.remove('inactive');
+  document.getElementById('forget-btn').classList.remove('active');
+  document.getElementById('forget-btn').classList.add('inactive');
+}
+
+function forgetMe(event) {
+  event.preventDefault();
+
+  localStorage.removeItem('name');
+  localStorage.removeItem('mobile');
+  localStorage.removeItem('email');
+
+  document.getElementById('name').value = '';
+  document.getElementById('mobile').value = '';
+  document.getElementById('email').value = '';
+
+  document.getElementById('remember-btn').classList.remove('active');
+  document.getElementById('remember-btn').classList.add('inactive');
+  document.getElementById('forget-btn').classList.add('active');
+  document.getElementById('forget-btn').classList.remove('inactive');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const nameInput = document.getElementById('name');
+  const mobileInput = document.getElementById('mobile');
+  const emailInput = document.getElementById('email');
+
+  if (localStorage.getItem('name')) {
+      nameInput.value = localStorage.getItem('name');
+      mobileInput.value = localStorage.getItem('mobile');
+      emailInput.value = localStorage.getItem('email');
   }
   
-  function forgetMe(event) {
-    event.preventDefault();
-  
-    localStorage.removeItem('name');
-    localStorage.removeItem('mobile');
-    localStorage.removeItem('email');
-  
-    document.getElementById('name').value = '';
-    document.getElementById('mobile').value = '';
-    document.getElementById('email').value = '';
-  
-    document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('remember-btn').classList.add('inactive');
-    document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
+  if (window.location.pathname.endsWith('booking.php')) {
+      const rememberBtn = document.getElementById('remember-btn');
+      const forgetBtn = document.getElementById('forget-btn');
+
+      if (rememberBtn && forgetBtn) {
+          rememberBtn.classList.add('active');
+          rememberBtn.classList.remove('inactive');
+          forgetBtn.classList.remove('active');
+          forgetBtn.classList.add('inactive');
+          
+          rememberBtn.addEventListener('click', rememberMe);
+          forgetBtn.addEventListener('click', forgetMe);
+      }
   }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const nameInput = document.getElementById('name');
-    const mobileInput = document.getElementById('mobile');
-    const emailInput = document.getElementById('email');
-
-    if (localStorage.getItem('name')) {
-        nameInput.value = localStorage.getItem('name');
-        mobileInput.value = localStorage.getItem('mobile');
-        emailInput.value = localStorage.getItem('email');
-    }
-    
-    if (window.location.pathname.endsWith('booking.php')) {
-        const rememberBtn = document.getElementById('remember-btn');
-        const forgetBtn = document.getElementById('forget-btn');
-
-        if (rememberBtn && forgetBtn) {
-            rememberBtn.classList.add('active');
-            rememberBtn.classList.remove('inactive');
-            forgetBtn.classList.remove('active');
-            forgetBtn.classList.add('inactive');
-            
-            rememberBtn.addEventListener('click', rememberMe);
-            forgetBtn.addEventListener('click', forgetMe);
-        }
-    }
 });
-
-
-
-  
