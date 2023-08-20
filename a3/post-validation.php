@@ -19,6 +19,8 @@ function isValidIntegerInRange($value, $min, $max) {
 $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
+    $selectedSession = isset($_POST['selected-session']) ? $_POST['selected-session'] : '';
     $name = trim($_POST['name']);
     $mobile = trim($_POST['mobile']);
     $email = trim($_POST['email']);
@@ -31,6 +33,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCP]' => 'Invalid quantity for first class concession seats',
         'seats[FCC]' => 'Invalid quantity for first class child seats'
     ];
+
+    if (empty($movieCode)) {
+        $errors['movie'] = "No movie selected!";
+    } else {
+        $selectedMovieDetails = getMovieDetails($movieCode);
+        if (!$selectedMovieDetails) {
+            $errors['movie'] = "Selected movie details not found!";
+        }
+    }
+
+    if (empty($selectedSession)) {
+        $errors['session'] = "No session selected";
+    }
 
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
@@ -50,11 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    $selectedSession = isset($_POST['selected-session']) ? $_POST['selected-session'] : '';
-    if (empty($selectedSession)) {
-        $errors['session'] = "No session selected";
-    }
-
     if (empty($errors)) {
         header("Location: submit.php");
         exit();
@@ -65,5 +75,3 @@ $_SESSION['errors'] = $errors;
 header("Location: booking.php");
 exit();
 ?>
-
-
