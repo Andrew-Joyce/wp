@@ -47,6 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['seats'] = "At least one seat must be selected";
     }
 
+    if (empty($_POST['selected-session'])) {
+        $errors['movie'] = "No movie selected!";
+    }
+
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
     }
