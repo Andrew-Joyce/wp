@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       }
                   }
               });
-          }, { threshold: 0.5 });
+          }, { threshold: 0 });
           sectionObserver.observe(section);
       }
   });
