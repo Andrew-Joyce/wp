@@ -34,20 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC]'
     ];
 
-    $atLeastOneSeatSelected = false;
     $totalPrice = 0.00;
 
     foreach ($seatTypes as $seatType) {
         $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
         if ($seatQuantity > 0) {
-            $atLeastOneSeatSelected = true;
             $totalPrice += calculateSeatPrice($seatType) * $seatQuantity;
         }
     }
 
-    if (!$atLeastOneSeatSelected) {
-        $errors['seats'] = "No seats selected";
-    } elseif ($totalPrice <= 0.01) {
+    if ($totalPrice <= 0.01) {
         $errors['seats'] = "Error with seats: No seats selected";
     }
 
