@@ -2,8 +2,6 @@
 session_start();
 include 'tools.php';
 
-var_dump($_POST);
-
 function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
@@ -67,14 +65,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['session'] = "No session selected";
     }
     
-    if (!empty($errors)) {
+    if (empty($errors)) {
+        $totalPrice = calculateTotalPrice($_POST['seats']);
+
+        $_SESSION['booking_data'] = array(
+            'movie_code' => $movieCode,
+            'name' => $name,
+            'mobile' => $mobile,
+            'email' => $email,
+            'session' => $selectedSession,
+            'seat_quantities' => $_POST['seats'],
+            'total_price' => $totalPrice
+        );
+
+        header("Location: submit.php");
+        exit();
+    } else {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
     }
-
-    header("Location: submit.php");
-    exit();
 }
 ?>
 
