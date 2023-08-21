@@ -237,19 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return isValid;
 }
 
-bookingForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    
-    const isValid = validateForm();
-    
-    if (isValid) {
-        setTimeout(function () {
-            bookingForm.submit();
-        }, 10000);
-    }
-});
-
-
 function selectSession(sessionData) {
     console.log("Selected session:", sessionData);
     document.getElementById('selectedSession').value = JSON.stringify(sessionData);
