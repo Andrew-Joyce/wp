@@ -39,7 +39,7 @@ if ($selectedMovieDetails) {
     </nav>
 
     <main>
-    <form method="POST" action="submit.php" id="booking-form" onsubmit="return validateForm()">
+    <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <?php
 
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
