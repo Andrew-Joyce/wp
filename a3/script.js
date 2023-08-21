@@ -237,14 +237,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name$="-dis"]');
+    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+    var anyHiddenSeatSelected = false; 
+    
     hiddenSeatInputs.forEach(input => {
-        var seatType = input.name;
-        var seatQuantity = parseInt(input.value, 10);
-
-        if (seatQuantity > 0) {
+        var quantity = parseInt(input.value, 10);
+        if (quantity > 0) {
+            anyHiddenSeatSelected = true;
         }
     });
+    
+    if (!anyHiddenSeatSelected) {
+        console.log('Error with hidden seats: No hidden seats selected');
+        isValid = false;
+    }
     
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
