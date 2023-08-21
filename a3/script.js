@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
-  function validateForm() {
+function validateForm() {
     var nameInput = document.getElementById('name');
     var mobileInput = document.getElementById('mobile');
     var emailInput = document.getElementById('email');
@@ -236,11 +236,18 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         }
     });
-    
-    if (!anyHiddenSeatSelected) {
-        console.log('Error with hidden seats: No hidden seats selected');
-        isValid = false;
-    }
+
+    // Interaction with hidden seat inputs
+    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+    hiddenSeatInputs.forEach(input => {
+        var seatType = input.name;
+        var seatQuantity = parseInt(input.value, 10);
+
+        if (seatQuantity > 0) {
+            // Perform interaction/validation specific to hidden seat inputs if needed
+            // For example, you could update the error messages or additional validations here
+        }
+    });
     
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
