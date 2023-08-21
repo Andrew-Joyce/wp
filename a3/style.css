@@ -534,8 +534,7 @@ label {
 }
 
 .session.selected, 
-.contact-Button.active:active,
-.contact-Button.active:focus  {
+.contact-Button.active:active {
   background-color: blue;
   color: white ;
   padding: 10px 40px ;
