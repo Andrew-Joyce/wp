@@ -128,7 +128,6 @@ if ($selectedMovieDetails) {
     <fieldset>
     <legend>Contact Information:</legend>
         <div class="contact-info">
-        <div class="contact-info">
             <label for="name">Full Name:</label>
             <input type="text" name="name" id="name" pattern="^[a-zA-ZÀ-ÿ\s'.-]{2,30}$" required>
 
