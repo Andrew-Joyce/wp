@@ -195,7 +195,19 @@ function validateForm() {
         return false;
     }
     
-    window.location.href = 'post-validation.php?movie=' + movieCode;
-    
-    return true;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'post-validation.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            window.location.href = 'post-validation.php?movie=' + movieCode;
+        }
+    };
+
+    var formData = new FormData(document.getElementById('booking-form'));
+    xhr.send(formData);
+
+
+    return false;
 }
