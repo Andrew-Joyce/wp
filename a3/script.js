@@ -145,12 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-
-function toggleRemember() {
-    var toggleButton = document.getElementById("toggle-btn");
-    toggleButton.classList.toggle("active");
-    toggleButton.classList.toggle("inactive");
-  }
   
   
   
