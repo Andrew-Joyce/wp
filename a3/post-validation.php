@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-        if (empty($movieCode)) {
+    if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
     } else {
         $selectedMovieDetails = getMovieDetails($movieCode);
@@ -53,30 +53,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['seats'] = "Error with seats: No seats selected";
     }
 
-    if (empty($movieCode)) {
-        $errors['movie'] = "No movie selected!";
-    } else {
-        $selectedMovieDetails = getMovieDetails($movieCode);
-        if (!$selectedMovieDetails) {
-            $errors['movie'] = "Selected movie details not found!";
-        }
-    }
-
     if ($selectedMovieDetails && $selectedSession) {
+        $daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
         $selectedDay = explode('-', $selectedSession)[0];
-        if (!isset($selectedMovieDetails['screenings'][$selectedDay])) {
+
+        if (!in_array($selectedDay, $daysOfWeek)) {
+            $errors['session'] = "Invalid selected day.";
+        } elseif (!isset($selectedMovieDetails['screenings'][$selectedDay])) {
             $errors['session'] = "The selected movie is not playing on the selected day.";
         }
     } else {
         $errors['session'] = "No session selected";
-    }
-
-    if ($selectedSession) {
-        $daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-        $selectedDay = explode('-', $selectedSession)[0];
-        if (!in_array($selectedDay, $daysOfWeek)) {
-            $errors['session'] = "Invalid selected day.";
-        }
     }
 
     if (empty($name)) {
@@ -108,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
-        print_r($errors);
     }
 }
 ?>

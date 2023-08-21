@@ -46,6 +46,8 @@ unset($_SESSION['errors']);
     <main>
         <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
+        <input type="hidden" name="session" value="" id="selected-session-input">
+        
         <?php if (!empty($errors)) { ?>
             <div class="error-messages">
                 <ul>
@@ -158,7 +160,7 @@ unset($_SESSION['errors']);
             <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
-    
+
             <input type="hidden" name="selectedSession" id="selectedSession">
             <input type="hidden" name="selectedSeats" id="selectedSeats">
 

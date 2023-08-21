@@ -69,10 +69,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const sessionButtons = document.querySelectorAll('.session');
     sessionButtons.forEach(button => {
-        button.addEventListener('click', event => {
+        button.addEventListener('click', function() {
+            sessionButtons.forEach(btn => btn.classList.remove('error'));
+            
             sessionButtons.forEach(btn => btn.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
-            updateTotalPrice();
+            button.classList.add('selected');
+            
+            const selectedSessionValue = button.getAttribute('data-session');
+            document.getElementById('selected-session-input').value = selectedSessionValue;
         });
     });
 
