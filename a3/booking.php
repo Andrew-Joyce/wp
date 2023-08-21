@@ -4,6 +4,8 @@ include 'tools.php';
 
 $selectedMovieCode = $_GET['movie'];
 
+$movieCode = substr($selectedMovieCode, -3);
+
 $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
 if ($selectedMovieDetails) {
@@ -39,8 +41,8 @@ if ($selectedMovieDetails) {
     </nav>
 
     <main>
-    <form method="POST" action="post-validation.php?movie=<?php echo $selectedMovieCode; ?>" id="booking-form" onsubmit="return validateForm()"></form>
-
+    <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">    
+        <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <?php
 
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
