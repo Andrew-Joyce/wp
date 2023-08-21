@@ -245,5 +245,18 @@
             <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
             <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
       </footer>
+
+      <div id="debug-module">
+        <h2>Debug Information</h2>
+        <h3>Request Data:</h3>
+        <pre><?php echo json_encode($_GET, JSON_PRETTY_PRINT); ?></pre>
+        <pre><?php echo json_encode($_POST, JSON_PRETTY_PRINT); ?></pre>
+        
+        <h3>Session Contents:</h3>
+        <pre><?php echo json_encode($_SESSION, JSON_PRETTY_PRINT); ?></pre>
+        
+        <h3>Page Code:</h3>
+        <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
+      </div>
     </body>
 </html>
