@@ -1,22 +1,31 @@
-$(document).ready(function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const selectedMovie = urlParams.get('movie');
+const urlParams = new URLSearchParams(window.location.search);
+const selectedMovie = urlParams.get('movie');
 
-    $('fieldset[id^="fieldset-session"]').hide();
+document.addEventListener('DOMContentLoaded', () => {
+    const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+    sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+    });
 
     if (selectedMovie) {
-        const selectedFieldset = $(`#fieldset-session-${selectedMovie}`);
-        if (selectedFieldset.length) {
-            selectedFieldset.show();
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+            selectedFieldset.style.display = 'block';
         }
     }
+});
 
-    $(".session").click(function () {
-        var sessionData = $(this).data("session");
-        $("#selected-session").val(sessionData);
+document.addEventListener('DOMContentLoaded', function () {
+    var sessions = document.querySelectorAll('.session');
 
-        $(".session").removeClass('selected');
-        $(this).addClass('selected');
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
+        });
     });
 });
 
@@ -239,5 +248,20 @@ bookingForm.addEventListener("submit", function (event) {
         }, 10000);
     }
 });
+
+
+function selectSession(sessionData) {
+    console.log("Selected session:", sessionData);
+    document.getElementById('selectedSession').value = JSON.stringify(sessionData);
+}
+
+function selectSeat(seatType, quantity) {
+    console.log("Selected seat:", seatType, "Quantity:", quantity);
+    const selectedSeats = {
+        seatType: seatType,
+        quantity: quantity
+    };
+    document.getElementById('selectedSeats').value = JSON.stringify(selectedSeats);
+}
 
 

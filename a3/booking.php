@@ -158,7 +158,9 @@ unset($_SESSION['errors']);
             <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
-
+    
+            <input type="hidden" name="selectedSession" id="selectedSession">
+            <input type="hidden" name="selectedSeats" id="selectedSeats">
 
             <button type="submit" class="submit-button">Submit</button>
 
