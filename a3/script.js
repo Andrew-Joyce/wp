@@ -237,18 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     
-    var hiddenSeatTypes = ['seats[STA-dis]', 'seats[STP-dis]', 'seats[STC-dis]', 'seats[FCA-dis]', 'seats[FCP-dis]', 'seats[FCC-dis]'];
-    var anyHiddenSeatSelected = false;
-    
-    for (var i = 0; i < hiddenSeatTypes.length; i++) {
-        var input = document.querySelector('input[type="hidden"][name="' + hiddenSeatTypes[i] + '"]');
-        var quantity = parseInt(input.value, 10);
-        if (quantity > 0) {
-            anyHiddenSeatSelected = true;
-            break; 
-        }
-    }
-    
     if (!anyHiddenSeatSelected) {
         console.log('Error with hidden seats: No hidden seats selected');
         isValid = false;
