@@ -145,69 +145,14 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-function validateForm() {
-    var nameInput = document.getElementById('name');
-    var mobileInput = document.getElementById('mobile');
-    var emailInput = document.getElementById('email');
-    var sessionButtons = document.querySelectorAll('.session');
-    var seatInputs = document.querySelectorAll('input[name^="seats["]');
-    
-    nameInput.classList.remove('error');
-    mobileInput.classList.remove('error');
-    emailInput.classList.remove('error');
-    sessionButtons.forEach(button => button.classList.remove('error'));
-    seatInputs.forEach(input => input.classList.remove('error'));
-    
-    var isValid = true;
-    
-    if (nameInput.value.trim() === '') {
-        nameInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-    if (!mobilePattern.test(mobileInput.value)) {
-        mobileInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value)) {
-        emailInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var selectedSession = document.querySelector('.session.selected');
-    if (!selectedSession) {
-        sessionButtons.forEach(button => button.classList.add('error'));
-        isValid = false;
-    }
-    
-    seatInputs.forEach(input => {
-        var quantity = parseInt(input.value, 10);
-        if (quantity < 0) {
-            input.classList.add('error');
-            isValid = false;
-        }
-    });
-    
-    if (!isValid) {
-        return false;
-    }
-    
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'post-validation.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            window.location.href = 'post-validation.php?movie=' + movieCode;
-        }
-    };
-
-    var formData = new FormData(document.getElementById('booking-form'));
-    xhr.send(formData);
-
-
-    return false;
-}
+  const bookingForm = document.getElementById("booking-form");
+  bookingForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      
+      const isValid = validateForm();
+      
+      if (isValid) {
+          bookingForm.submit();
+      }
+  });
