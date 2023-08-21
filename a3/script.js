@@ -32,34 +32,54 @@ document.addEventListener('DOMContentLoaded', function () {
     
 document.addEventListener("DOMContentLoaded", function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
-
+    
     function updateTotalPrice() {
         let totalPrice = 0;
+        let totalSeatsSelected = 0;
+        
         ticketInputs.forEach(input => {
             let quantity = parseInt(input.value);
+            let maxQuantity = parseInt(input.getAttribute('max'));
+            
+            totalSeatsSelected += quantity;
+            
+            if (quantity > maxQuantity) {
+                input.value = maxQuantity;
+                quantity = maxQuantity;
+            }
+            
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
-            let selectedSession = document.querySelector('.selected'); 
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
+            let selectedSession = document.querySelector('.selected');
             let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
+
         if (window.location.pathname.endsWith('booking.php')) {
             document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-          }          
+        }
     }
-
+    
     ticketInputs.forEach(input => {
         input.addEventListener('input', updateTotalPrice);
     });
-
+    
     const sessionButtons = document.querySelectorAll('.session');
     sessionButtons.forEach(button => {
         button.addEventListener('click', event => {
             sessionButtons.forEach(btn => btn.classList.remove('selected'));
-            event.currentTarget.classList.add('selected'); 
+            event.currentTarget.classList.add('selected');
             updateTotalPrice();
         });
+    });
+    
+    const form = document.querySelector('form');
+    form.addEventListener('submit', event => {
+        if (totalSeatsSelected > 10) {
+            event.preventDefault();
+            alert("You can select a maximum of 10 seats across all seat types.");
+        }
     });
 
     updateTotalPrice();
