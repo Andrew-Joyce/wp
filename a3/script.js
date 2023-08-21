@@ -66,36 +66,28 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-function rememberMe(event) {
+function rememberMe() {
     console.log("Remember Me clicked");
-    event.preventDefault();
-    
     const name = document.getElementById('name').value;
     const mobile = document.getElementById('mobile').value;
     const email = document.getElementById('email').value;
-  
+
     localStorage.setItem('name', name);
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('email', email);
-  
+
     document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
     document.getElementById('forget-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('inactive');
 }
 
-function forgetMe(event) {
+function forgetMe() {
     console.log("Forget Me clicked");
-    event.preventDefault();
-  
     localStorage.removeItem('name');
     localStorage.removeItem('mobile');
     localStorage.removeItem('email');
-  
+
     document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('remember-btn').classList.add('inactive');
     document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -103,20 +95,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('name').value = localStorage.getItem('name');
         document.getElementById('mobile').value = localStorage.getItem('mobile');
         document.getElementById('email').value = localStorage.getItem('email');
-  
+
         document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
         document.getElementById('forget-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('inactive');
     }
 
     if (window.location.pathname.endsWith('booking.php')) {
-        document.getElementById('remember-btn').addEventListener('click', function(event) {
-            rememberMe(event); 
-        });
-        document.getElementById('forget-btn').addEventListener('click', function(event) {
-            forgetMe(event);
-        });
+        document.getElementById('remember-btn').addEventListener('click', rememberMe);
+        document.getElementById('forget-btn').addEventListener('click', forgetMe);
     }
 });
 
