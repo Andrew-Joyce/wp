@@ -61,7 +61,7 @@ $moviesObject = [
             ],
             'FRI' => [
                 'time' => '12pm',
-                'rate' => 'dis
+                'rate' => 'dis'
             ],
             'SAT' => [
                 'time' => '3pm',
