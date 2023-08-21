@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($selectedMovieDetails && $selectedSession) {
-        $daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+        $daysOfWeek = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
         $selectedDay = explode('-', $selectedSession)[0];
 
         if (!in_array($selectedDay, $daysOfWeek)) {
