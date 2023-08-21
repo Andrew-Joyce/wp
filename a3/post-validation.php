@@ -101,12 +101,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'seat_quantities' => $_POST['seats'],
             'total_price' => $totalPrice
         );
-
-        header("Location: submit.php");
+        header("Location: booking.php?movie=$movieCode")
         exit();
     } else {
         $_SESSION['errors'] = $errors;
-        header("Location: booking.php?movie=$movieCode");
+        header("Location: submit.php");
         exit();
     }
 }
