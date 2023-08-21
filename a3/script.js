@@ -236,23 +236,19 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         }
     });
+
+    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+    hiddenSeatInputs.forEach(input => {
+        var seatType = input.name;
+        var seatQuantity = parseInt(input.value, 10);
+
+        if (seatQuantity > 0) {
+        }
+    });
     
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
 }
 
-function selectSession(sessionData) {
-    console.log("Selected session:", sessionData);
-    document.getElementById('selectedSession').value = JSON.stringify(sessionData);
-}
-
-function selectSeat(seatType, quantity) {
-    console.log("Selected seat:", seatType, "Quantity:", quantity);
-    const selectedSeats = {
-        seatType: seatType,
-        quantity: quantity
-    };
-    document.getElementById('selectedSeats').value = JSON.stringify(selectedSeats);
-}
 
 
