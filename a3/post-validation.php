@@ -33,8 +33,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($seatTypes as $seatType) {
         $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
         if ($seatQuantity > 0) {
+            if (!is_numeric($seatQuantity) || $seatQuantity < 1 || $seatQuantity > 10) {
+                $errors[$seatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
+            }
             $anySeatSelected = true;
-            break;
+        }
+    }
+
+    if (empty($movieCode)) {
+        $errors['movie'] = "No movie selected!";
+    } else {
+        $selectedMovieDetails = getMovieDetails($movieCode);
+        if (!$selectedMovieDetails) {
+            $errors['movie'] = "Selected movie code is invalid!";
         }
     }
 
@@ -51,6 +62,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    if ($selectedMovieDetails && $selectedSession) {
+        $selectedDay = explode('-', $selectedSession)[0];
+        if (!isset($selectedMovieDetails['screenings'][$selectedDay])) {
+            $errors['session'] = "The selected movie is not playing on the selected day.";
+        }
+    } else {
+        $errors['session'] = "No session selected";
+    }
+
+    if ($selectedSession) {
+        $daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+        $selectedDay = explode('-', $selectedSession)[0];
+        if (!in_array($selectedDay, $daysOfWeek)) {
+            $errors['session'] = "Invalid selected day.";
+        }
+    }
+
     if (empty($name)) {
         $errors['name'] = "Name can't be blank";
     }
@@ -61,10 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    if (empty($selectedSession) || $selectedSession === '') {
-        $errors['session'] = "No session selected";
-    }
-    
     if (empty($errors)) {
         $totalPrice = calculateTotalPrice($_POST['seats']);
 
@@ -87,4 +111,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-

@@ -53,15 +53,15 @@ $moviesObject = [
         'screenings' => [
             'WED' => [
                 'time' => '12pm',
-                'rate' => 'reg'
+                'rate' => 'dis'
             ],
             'THU' => [
                 'time' => '12pm',
-                'rate' => 'reg'
+                'rate' => 'dis'
             ],
             'FRI' => [
                 'time' => '12pm',
-                'rate' => 'reg'
+                'rate' => 'dis
             ],
             'SAT' => [
                 'time' => '3pm',
@@ -85,11 +85,11 @@ $moviesObject = [
         'screenings' => [
             'MON' => [
                 'time' => '12pm',
-                'rate' => 'reg'
+                'rate' => 'dis'
             ],
             'TUE' => [
                 'time' => '12pm',
-                'rate' => 'reg'
+                'rate' => 'dis'
             ],
             'WED' => [
                 'time' => '6pm',
@@ -125,7 +125,7 @@ $moviesObject = [
         'screenings' => [
             'MON' => [
                 'time' => '6pm',
-                'rate' => 'reg'
+                'rate' => 'dis'
             ],
             'TUE' => [
                 'time' => '6pm',
