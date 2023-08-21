@@ -679,4 +679,11 @@ fieldset .movie-title {
   z-index: 9999;
 }
 
+#error-message {
+  color: red;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 }

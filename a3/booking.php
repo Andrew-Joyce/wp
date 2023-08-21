@@ -130,6 +130,7 @@ unset($_SESSION['errors']);
         <fieldset>
                 <legend>Total Price</legend>
                 <div id="total-price">Total Price: $0</div>
+                <div id="error-message"></div>
         </fieldset>
     <fieldset>
     <legend>Contact Information:</legend>
