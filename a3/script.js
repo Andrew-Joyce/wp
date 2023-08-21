@@ -195,9 +195,6 @@ function validateForm() {
         return false;
     }
     
-    var urlParams = new URLSearchParams(window.location.search);
-    var movieCode = urlParams.get('movie');
-    
     window.location.href = 'post-validation.php?movie=' + movieCode;
     
     return true;
