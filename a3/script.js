@@ -146,13 +146,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const bookingForm = document.getElementById("booking-form");
-  bookingForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      
-      const isValid = validateForm();
-      
-      if (isValid) {
-          bookingForm.submit();
-      }
+  document.addEventListener("DOMContentLoaded", function () {
+    const bookingForm = document.getElementById("booking-form");
+    bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const isValid = validateForm();
+        
+        if (isValid) {
+            bookingForm.submit();
+        }
+    });
   });
