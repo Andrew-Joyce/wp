@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
-    var anyHiddenSeatSelected = false; 
+    var anyHiddenSeatSelected = false;
     
     hiddenSeatInputs.forEach(input => {
         var quantity = parseInt(input.value, 10);
@@ -251,7 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Error with hidden seats: No hidden seats selected');
         isValid = false;
     }
-    
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
 }
