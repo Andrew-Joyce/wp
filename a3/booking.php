@@ -11,6 +11,9 @@ $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 if ($selectedMovieDetails) {
     $screenings = $selectedMovieDetails['screenings'];
 }
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
+
+unset($_SESSION['errors']);
 ?>
 
 <script src="script.js"></script>
