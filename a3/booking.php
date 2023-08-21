@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'tools.php';
-include 'post-validation.php'
+include 'post-validation.php';
 
 $selectedMovieCode = $_GET['movie'];
 
