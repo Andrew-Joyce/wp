@@ -2,55 +2,32 @@
 session_start();
 include 'tools.php';
 
-$selectedMovieDetails = null;
-$screenings = null;
-$error = null;
+$selectedMovieCode = $_GET['movie'];
 
-if (isset($_GET['movie'])) {
-    $selectedMovieCode = $_GET['movie'];
+$selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
-    echo "Selected Movie Code: $selectedMovieCode";
-
-    $selectedMovieDetails = getMovieDetails($selectedMovieCode);
-
-    if (!$selectedMovieDetails) {
-        $error = "Selected movie details not found!";
-    } else {
-        $screenings = $selectedMovieDetails['screenings'];
-    }
-} else {
-    $error = "No movie selected!";
-}
-
-$errors = [];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include 'post-validation.php';
-
-    if (isset($_POST['movie'])) {
-        $selectedMovieCode = $_POST['movie'];
-        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
-    }
+if ($selectedMovieDetails) {
+    $screenings = $selectedMovieDetails['screenings'];
 }
 ?>
+
+<script src="script.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
-    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
-    <script src='../wireframe.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Booking Form</title>
 </head>
 
 <body>
-    
     <header style="text-align: center;">
         <div style="display: flex; justify-content: center; align-items: center;">
             <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
-
             <h1 style="display: inline;">Lunardo Cinema</h1>
         </div>
     </header>
@@ -62,24 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </nav>
 
     <main>
-    <?php
-    if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
-        echo '<div class="error-messages">';
-        foreach ($_SESSION['errors'] as $field => $error) {
-            echo "<p>Error with $field: $error</p>";
-        }
-        unset($_SESSION['errors']);
-        echo '</div>';
-    }
-    ?>
-    <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
-         <input type="hidden" name="session" id="selected-session-input" value="">
-         <input type="hidden" name="movie" value="<?php echo htmlspecialchars($_GET['movie']); ?>">
+    <form method="POST" action="submit.php" id="booking-form" onsubmit="return validateForm()">
+        <?php
 
-        
-    <?php
+        $selectedMovieDetails = getMovieDetails($selectedMovieCode);
 
         if ($selectedMovieDetails) {
+            $screenings = $selectedMovieDetails['screenings'];
         ?>
             <fieldset id="fieldset-session-<?php echo $selectedMovieCode; ?>">
                 <legend class="movie-title"><?php echo $selectedMovieDetails['title']; ?></legend>
@@ -153,7 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
             </div>
-        </div>
         </fieldset>
 
         <fieldset>
@@ -161,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div id="total-price">Total Price: $0</div>
         </fieldset>
     <fieldset>
-        <legend>Contact Information:</legend>
+    <legend>Contact Information:</legend>
         <div class="contact-info">
             <label for="name">Full Name:</label>
             <input type="text" name="name" id="name" required>
@@ -172,24 +137,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
-        <div class="radio-buttons">
-            <input type="radio" id="remember" name="remember" value="yes">
-            <label for="remember" class="btn">Remember Me</label>
-            
-            <input type="radio" id="forget" name="remember" value="no">
-            <label for="forget" class="btn">Forget Me</label>
+        <div>
+            <button id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
+            <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
+
 
             <button type="submit" class="submit-button">Submit</button>
 
         </form>
-        <div id="errorModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="errorText"></div>
-            </div>
-        </div>
     </main>
 
     <footer>
@@ -199,34 +156,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
             <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
         </div>
-        <div>
         <div>&copy;<script>
                 document.write(new Date().getFullYear());
             </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
         <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
-        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>         
-
+        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
     </footer>
-    <script src="script.js"></script>
-
 </body>
-<div id="debug-module">
-        <h2>Debug Module</h2>
-        <div>
-            <h3>Request Data</h3>
-            <pre><?php print_r($_GET); ?></pre>
-            <pre><?php print_r($_POST); ?></pre>
-            </div>
-        <div>
-            <h3>Session Data</h3>
-            <pre><?php print_r($_SESSION); ?></pre>
-            </div>
-        <div>
-            <h3>Page Code</h3>
-            <pre><?php echo htmlentities(file_get_contents(__FILE__)); ?></pre>
-        </div>
-    </div>  
+
 </html>
-
-
-    

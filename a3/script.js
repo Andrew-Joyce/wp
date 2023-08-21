@@ -1,201 +1,150 @@
+const urlParams = new URLSearchParams(window.location.search);
+const selectedMovie = urlParams.get('movie');
+
 document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const selectedMovie = urlParams.get('movie');
-  const bookingForm = document.getElementById('booking-form');
-  const navLinks = document.querySelectorAll('#navbar a');
-  const sections = document.querySelectorAll('main > div');
-  const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-  const ticketInputs = document.querySelectorAll('input[type="number"]');
-  const sessionButtons = document.querySelectorAll('.session');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const mobileInput = document.getElementById('mobile');
-  const rememberRadio = document.getElementById('remember');
-  const forgetRadio = document.getElementById('forget');
+    const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
+    sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+    });
 
-  navLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-          navLinks.forEach(navLink => navLink.classList.remove('current'));
-          link.classList.add('current');
-      });
-  });
-
-  sections.forEach(section => {
-      if (window.location.pathname.endsWith('index.php')) {
-          const sectionObserver = new IntersectionObserver(entries => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      const targetId = entry.target.getAttribute('id');
-                      const correspondingNavLink = document.querySelector(`#navbar a[href="#${targetId}"]`);
-                      navLinks.forEach(navLink => navLink.classList.remove('current'));
-                      if (correspondingNavLink) {
-                          correspondingNavLink.classList.add('current');
-                      }
-                  }
-              });
-          }, { threshold: 0 });
-          sectionObserver.observe(section);
-      }
-  });
-
-  sessionFieldsets.forEach((fieldset) => {
-      fieldset.style.display = 'none';
-  });
-
-  if (selectedMovie) {
-      const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-      if (selectedFieldset) {
-          selectedFieldset.style.display = 'block';
-      }
-  }
-
-  sessionButtons.forEach(session => {
-      session.addEventListener('click', function(e) {
-          sessionButtons.forEach(innerSession => {
-              innerSession.classList.remove('selected');
-          });
-          const selectedSession = e.currentTarget.getAttribute('data-session');
-          document.getElementById('selected-session-input').value = selectedSession;
-          e.currentTarget.classList.add('selected');
-          updateTotalPrice();
-      });
-  });
-
-  function updateTotalPrice() {
-      let totalPrice = 0;
-      ticketInputs.forEach(input => {
-          let quantity = parseInt(input.value);
-          let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-          let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
-          let selectedSession = document.querySelector('.selected');
-          let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-          let price = isDiscounted ? discountPrice : fullPrice;
-          totalPrice += price * quantity;
-      });
-
-      if (window.location.pathname.endsWith('booking.php')) {
-          document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-      }
-  }
-
-  ticketInputs.forEach(input => {
-      input.addEventListener('input', updateTotalPrice);
-  });
-
-  updateTotalPrice();
-
-  if (window.location.pathname.endsWith('booking.php')) {
-      const rememberBtn = document.getElementById('remember-btn');
-      const forgetBtn = document.getElementById('forget-btn');
-
-      if (localStorage.getItem('name')) {
-          nameInput.value = localStorage.getItem('name');
-      }
-      if (localStorage.getItem('mobile')) {
-          mobileInput.value = localStorage.getItem('mobile');
-      }
-      if (localStorage.getItem('email')) {
-          emailInput.value = localStorage.getItem('email');
-          rememberBtn.classList.add('active');
-          rememberBtn.classList.remove('inactive');
-          forgetBtn.classList.remove('active');
-          forgetBtn.classList.add('inactive');
-      }
-
-      function setCustomerDetailsFromLocalStorage() {
-          const storedName = localStorage.getItem('customerName');
-          const storedEmail = localStorage.getItem('customerEmail');
-          const storedMobile = localStorage.getItem('customerMobile');
-
-          if (storedName && storedEmail && storedMobile) {
-              nameInput.value = storedName;
-              emailInput.value = storedEmail;
-              mobileInput.value = storedMobile;
-              rememberRadio.checked = true;
-          } else {
-              forgetRadio.checked = true;
-          }
-      }
-
-      function saveCustomerDetailsToLocalStorage() {
-          localStorage.setItem('customerName', nameInput.value);
-          localStorage.setItem('customerEmail', emailInput.value);
-          localStorage.setItem('customerMobile', mobileInput.value);
-      }
-
-      function removeCustomerDetailsFromLocalStorage() {
-          localStorage.removeItem('customerName');
-          localStorage.removeItem('customerEmail');
-          localStorage.removeItem('customerMobile');
-      }
-
-      rememberRadio.addEventListener('change', function() {
-          if (rememberRadio.checked) {
-              saveCustomerDetailsToLocalStorage();
-          }
-      });
-
-      forgetRadio.addEventListener('change', function() {
-          if (forgetRadio.checked) {
-              removeCustomerDetailsFromLocalStorage();
-          }
-      });
-
-      setCustomerDetailsFromLocalStorage();
-
-      bookingForm.addEventListener('submit', function(event) {
-          if (!validateForm()) {
-              event.preventDefault();
-          }
-      });
-
-      function validateForm() {
-          const movieInput = document.getElementById('movie');
-          const sessionButtons = document.querySelectorAll('.session.selected');
-          const ticketInputs = document.querySelectorAll('[name^="seats["]');
-          let isValid = true;
-
-          if (!movieInput.value) {
-              isValid = false;
-              alert('Please select a movie.');
-          }
-
-          if (sessionButtons.length === 0) {
-              isValid = false;
-              alert('Please select a session.');
-          }
-
-          if (!nameInput.value.trim()) {
-              isValid = false;
-              alert('Please enter your name.');
-          }
-
-          const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-          if (!mobilePattern.test(mobileInput.value)) {
-              isValid = false;
-              alert('Invalid mobile number format.');
-          }
-
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailPattern.test(emailInput.value)) {
-              isValid = false;
-              alert('Invalid email format.');
-          }
-
-          ticketInputs.forEach(input => {
-              const quantity = parseInt(input.value);
-              if (isNaN(quantity) || quantity < 1 || quantity > 10) {
-                  isValid = false;
-                  alert('Invalid ticket quantity. Please enter a value between 1 and 10.');
-              }
-          });
-
-          if (totalTicketQuantity === 0) {
-              isValid = false;
-              alert('Please select at least one ticket.');
-          }
-
-          return isValid;
-      }
-  }
+    if (selectedMovie) {
+        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
+        if (selectedFieldset) {
+            selectedFieldset.style.display = 'block';
+        }
+    }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sessions = document.querySelectorAll('.session');
+
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
+        });
+    });
+});
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    const ticketInputs = document.querySelectorAll('input[type="number"]');
+
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        ticketInputs.forEach(input => {
+            let quantity = parseInt(input.value);
+            let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
+            let selectedSession = document.querySelector('.selected'); 
+            let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
+            let price = isDiscounted ? discountPrice : fullPrice;
+            totalPrice += price * quantity;
+        });
+        if (window.location.pathname.endsWith('booking.php')) {
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+          }          
+    }
+
+    ticketInputs.forEach(input => {
+        input.addEventListener('input', updateTotalPrice);
+    });
+
+    const sessionButtons = document.querySelectorAll('.session');
+    sessionButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            sessionButtons.forEach(btn => btn.classList.remove('selected'));
+            event.currentTarget.classList.add('selected'); 
+            updateTotalPrice();
+        });
+    });
+
+    updateTotalPrice();
+});
+
+
+function rememberMe(event) {
+    console.log("Remember Me clicked");
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const mobile = document.getElementById('mobile').value;
+    const email = document.getElementById('email').value;
+  
+    localStorage.setItem('name', name);
+    localStorage.setItem('mobile', mobile);
+    localStorage.setItem('email', email);
+  
+    document.getElementById('remember-btn').classList.add('active');
+    document.getElementById('remember-btn').classList.remove('inactive');
+    document.getElementById('forget-btn').classList.remove('active');
+    document.getElementById('forget-btn').classList.add('inactive');
+}
+
+function forgetMe(event) {
+    console.log("Forget Me clicked");
+    event.preventDefault();
+  
+    localStorage.removeItem('name');
+    localStorage.removeItem('mobile');
+    localStorage.removeItem('email');
+  
+    document.getElementById('remember-btn').classList.remove('active');
+    document.getElementById('remember-btn').classList.add('inactive');
+    document.getElementById('forget-btn').classList.add('active');
+    document.getElementById('forget-btn').classList.remove('inactive');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem('name')) {
+        document.getElementById('name').value = localStorage.getItem('name');
+        document.getElementById('mobile').value = localStorage.getItem('mobile');
+        document.getElementById('email').value = localStorage.getItem('email');
+  
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
+    }
+
+    if (window.location.pathname.endsWith('booking.php')) {
+        document.getElementById('remember-btn').addEventListener('click', function(event) {
+            rememberMe(event); 
+        });
+        document.getElementById('forget-btn').addEventListener('click', function(event) {
+            forgetMe(event);
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('article'); 
+    const navLinks = document.querySelectorAll('.nav-section');
+    
+    window.addEventListener('scroll', function () {
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        
+        const threshold = rect.height * 0.5;
+        
+        if (rect.top <= threshold && rect.bottom >= threshold) {
+
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            navLink.style.color = 'white'; 
+          });
+          
+          navLinks[index].classList.add('active');
+          navLinks[index].style.color = 'blue';
+        }
+      });
+    });
+  });
+  
+  
+  
