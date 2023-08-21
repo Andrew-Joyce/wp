@@ -511,7 +511,7 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-Button {
+.session, .contact-Button, .contact-Button.active:active {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
@@ -534,8 +534,7 @@ label {
 }
 
 .session.selected, 
-.contact-Button.active:active,
-.contact-Button.active:focus  {
+.contact-Button.active:active {
   background-color: blue;
   color: white ;
   padding: 10px 40px ;
