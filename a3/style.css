@@ -527,7 +527,7 @@ label {
   margin-right: 20px;
 }
 
-.session:hover, .contact-Button:hover {
+.session:hover, {
   background-color: #080808;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
@@ -661,7 +661,7 @@ fieldset .movie-title {
 
 #total-price {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 18px;gi
   font-weight: bold;
 }
 
