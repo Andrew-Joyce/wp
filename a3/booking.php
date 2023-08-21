@@ -138,8 +138,8 @@ if ($selectedMovieDetails) {
             <input type="email" name="email" id="email" required>
         </div>
         <div>
-            <button type="button" id="remember-btn" class="contact-Button active" onclick="rememberMe()">Remember Me</button>
-            <button type="button" id="forget-btn" class="contact-Button inactive" onclick="forgetMe()">Forget Me</button>
+            <button type="button" id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
+            <button type="button" id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
 
