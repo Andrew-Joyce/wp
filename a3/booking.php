@@ -47,12 +47,12 @@ unset($_SESSION['errors']);
         <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <input type="hidden" name="session" value="" id="selected-session-input">
-        <input type="hidden" name="seats[STA]" value="0">
-        <input type="hidden" name="seats[STP]" value="0">
-        <input type="hidden" name="seats[STC]" value="0">
-        <input type="hidden" name="seats[FCA]" value="0">
-        <input type="hidden" name="seats[FCP]" value="0">
-        <input type="hidden" name="seats[FCC]" value="0">
+        <input type="hidden" name="seats[STA-dis]" value="0">
+        <input type="hidden" name="seats[STP-dis]" value="0">
+        <input type="hidden" name="seats[STC-dis]" value="0">
+        <input type="hidden" name="seats[FCA-dis]" value="0">
+        <input type="hidden" name="seats[FCP-dis]" value="0">
+        <input type="hidden" name="seats[FCC-dis]" value="0">
 
         <?php if (!empty($errors)) { ?>
             <div class="error-messages">

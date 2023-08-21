@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name$="-dis"]');
     hiddenSeatInputs.forEach(input => {
         var seatType = input.name;
         var seatQuantity = parseInt(input.value, 10);
