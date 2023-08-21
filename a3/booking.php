@@ -15,7 +15,7 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
 
 unset($_SESSION['errors']);
 ?>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
 
 <!DOCTYPE html>
