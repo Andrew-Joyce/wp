@@ -46,6 +46,15 @@ unset($_SESSION['errors']);
     <main>
         <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
+        <?php if (!empty($errors)) { ?>
+            <div class="error-messages">
+                <ul>
+                    <?php foreach ($errors as $error) { ?>
+                        <li><?php echo $error; ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
         <?php
 
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);

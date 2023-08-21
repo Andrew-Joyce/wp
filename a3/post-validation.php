@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if (empty($movieCode)) {
+        if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
     } else {
         $selectedMovieDetails = getMovieDetails($movieCode);
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $totalPrice = calculateTotalPrice($_POST['seats']);
-    
+
         $_SESSION['booking_data'] = array(
             'movie_code' => $movieCode,
             'name' => $name,
@@ -101,11 +101,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'seat_quantities' => $_POST['seats'],
             'total_price' => $totalPrice
         );
-        header("Location: booking.php?movie=$movieCode");
+
+        header("Location: submit.php");
         exit();
     } else {
         $_SESSION['errors'] = $errors;
-        header("Location: submit.php");
+        header("Location: booking.php?movie=$movieCode");
         exit();
+        print_r($errors);
     }
 }
+?>
