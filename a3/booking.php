@@ -129,19 +129,17 @@ if ($selectedMovieDetails) {
     <legend>Contact Information:</legend>
         <div class="contact-info">
             <label for="name">Full Name:</label>
-            <input type="text" name="name" id="name" pattern="^[a-zA-ZÀ-ÿ\s'.-]{2,30}$" required>
+            <input type="text" name="name" id="name" required>
+
             <label for="mobile">Mobile Number:</label>
             <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
+
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
         <div>
-            <label for="remember-btn">
-                <button id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
-            </label>
-            <label for="forget-btn">
-                <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
-            </label>
+            <button id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
+            <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
     </fieldset>
 
