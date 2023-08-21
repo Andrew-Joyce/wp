@@ -130,10 +130,8 @@ if ($selectedMovieDetails) {
         <div class="contact-info">
             <label for="name">Full Name:</label>
             <input type="text" name="name" id="name" pattern="^[a-zA-ZÀ-ÿ\s'.-]{2,30}$" required>
-
             <label for="mobile">Mobile Number:</label>
             <input type="tel" name="mobile" id="mobile" required pattern="^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$" placeholder="Enter 10-digit mobile number">
-
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
