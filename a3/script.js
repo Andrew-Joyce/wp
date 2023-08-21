@@ -103,28 +103,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('name').value = localStorage.getItem('name');
         document.getElementById('mobile').value = localStorage.getItem('mobile');
         document.getElementById('email').value = localStorage.getItem('email');
-    }
-
-    const rememberBtn = document.getElementById('remember-btn');
-    const forgetBtn = document.getElementById('forget-btn');
-
-    if (localStorage.getItem('name')) {
-        rememberBtn.classList.add('active');
-        rememberBtn.classList.remove('inactive');
-        forgetBtn.classList.remove('active');
-        forgetBtn.classList.add('inactive');
-    } else {
-        rememberBtn.classList.remove('active');
-        rememberBtn.classList.add('inactive');
-        forgetBtn.classList.add('active');
-        forgetBtn.classList.remove('inactive');
+  
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
     }
 
     if (window.location.pathname.endsWith('booking.php')) {
-        rememberBtn.addEventListener('click', function(event) {
+        document.getElementById('remember-btn').addEventListener('click', function(event) {
             rememberMe(event); 
         });
-        forgetBtn.addEventListener('click', function(event) {
+        document.getElementById('forget-btn').addEventListener('click', function(event) {
             forgetMe(event);
         });
     }
@@ -155,6 +145,3 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-  
-  
-  
