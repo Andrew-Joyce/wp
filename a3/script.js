@@ -15,12 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-$(".session").click(function () {
-    var sessionData = $(this).data("session");
-    $("#selected-session").val(sessionData);
-    
-    $(".session").removeClass('selected');
-    $(this).addClass('selected');
+document.addEventListener('DOMContentLoaded', function () {
+    var sessions = document.querySelectorAll('.session');
+
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
+        });
+    });
 });
 
     
