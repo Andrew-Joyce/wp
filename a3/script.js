@@ -237,3 +237,16 @@ document.addEventListener('DOMContentLoaded', function () {
     return isValid;
 }
 
+bookingForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    
+    const isValid = validateForm();
+    
+    if (isValid) {
+        setTimeout(function () {
+            bookingForm.submit();
+        }, 10000);
+    }
+});
+
+
