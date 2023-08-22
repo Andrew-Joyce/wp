@@ -29,16 +29,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+    
+document.addEventListener("DOMContentLoaded", function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
 
     function updateTotalPrice() {
         let totalPrice = 0;
+        let totalSeatsSelected = 0;
+
         ticketInputs.forEach(input => {
             let quantity = parseInt(input.value);
+            let maxQuantity = parseInt(input.getAttribute('max'));
+
+            totalSeatsSelected += quantity;
+
+            if (quantity > maxQuantity) {
+                input.value = maxQuantity;
+                quantity = maxQuantity;
+            }
+
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]); 
-            let selectedSession = document.querySelector('.selected'); 
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
+            let selectedSession = document.querySelector('.selected');
             let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
@@ -47,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.location.pathname.endsWith('booking.php')) {
             document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
         }
+
+        return totalSeatsSelected;
     }
 
     ticketInputs.forEach(input => {
@@ -55,11 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const sessionButtons = document.querySelectorAll('.session');
     sessionButtons.forEach(button => {
-        button.addEventListener('click', event => {
+        button.addEventListener('click', function() {
+            sessionButtons.forEach(btn => btn.classList.remove('error'));
+            
             sessionButtons.forEach(btn => btn.classList.remove('selected'));
-            event.currentTarget.classList.add('selected'); 
-            updateTotalPrice();
+            button.classList.add('selected');
+            
+            const selectedSessionValue = button.getAttribute('data-session');
+            document.getElementById('selected-session-input').value = selectedSessionValue;
         });
+    });
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', event => {
+        const totalSeatsSelected = updateTotalPrice();
+        if (totalSeatsSelected > 10) {
+            event.preventDefault();
+            alert("You can select a maximum of 10 seats across all seat types.");
+        }
     });
 
     updateTotalPrice();
@@ -97,7 +124,7 @@ function forgetMe(event) {
     document.getElementById('forget-btn').classList.remove('inactive');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('name')) {
         document.getElementById('name').value = localStorage.getItem('name');
         document.getElementById('mobile').value = localStorage.getItem('mobile');
@@ -119,36 +146,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('article'); 
     const navLinks = document.querySelectorAll('.nav-section');
     
     window.addEventListener('scroll', function () {
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            const threshold = rect.height * 0.5;
 
-            if (rect.top <= threshold && rect.bottom >= threshold) {
-                navLinks.forEach(navLink => {
-                    navLink.classList.remove('active');
-                    navLink.style.color = 'white'; 
-                });
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        
+        const threshold = rect.height * 0.5;
+        
+        if (rect.top <= threshold && rect.bottom >= threshold) {
 
-                navLinks[index].classList.add('active');
-                navLinks[index].style.color = 'blue';
-            }
-        });
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            navLink.style.color = 'white'; 
+          });
+          
+          navLinks[index].classList.add('active');
+          navLinks[index].style.color = 'blue';
+        }
+      });
     });
-});
+  });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const bookingForm = document.getElementById("booking-form");
+    bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const isValid = validateForm();
+        
+        if (isValid) {
+            bookingForm.submit();
+        }
+    });
+  });
 function validateForm() {
     var nameInput = document.getElementById('name');
     var mobileInput = document.getElementById('mobile');
     var emailInput = document.getElementById('email');
     var sessionButtons = document.querySelectorAll('.session');
     var seatInputs = document.querySelectorAll('input[name^="seats["]');
-    var selectedSessionInput = document.getElementById('selected-session-input'); // Get the hidden input element
-
+    
     console.log('Starting form validation...');
 
     nameInput.classList.remove('error');
@@ -156,36 +198,36 @@ function validateForm() {
     emailInput.classList.remove('error');
     sessionButtons.forEach(button => button.classList.remove('error'));
     seatInputs.forEach(input => input.classList.remove('error'));
-
+    
     var isValid = true;
-
+    
     if (nameInput.value.trim() === '') {
         console.log('Name is empty.');
         nameInput.classList.add('error');
         isValid = false;
     }
-
+    
     var mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
     if (!mobilePattern.test(mobileInput.value)) {
         console.log('Mobile format is invalid.');
         mobileInput.classList.add('error');
         isValid = false;
     }
-
+    
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.value)) {
         console.log('Email format is invalid.');
         emailInput.classList.add('error');
         isValid = false;
     }
-
-    var selectedSession = selectedSessionInput.value;
+    
+    var selectedSession = document.querySelector('.session.selected');
     if (!selectedSession) {
         console.log('No session selected.');
         sessionButtons.forEach(button => button.classList.add('error'));
         isValid = false;
     }
-
+    
     seatInputs.forEach(input => {
         var quantity = parseInt(input.value, 10);
         if (quantity < 0) {
@@ -195,6 +237,18 @@ function validateForm() {
         }
     });
 
+    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+    hiddenSeatInputs.forEach(input => {
+        var seatType = input.name;
+        var seatQuantity = parseInt(input.value, 10);
+
+        if (seatQuantity > 0) {
+        }
+    });
+    
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
 }
+
+
+
