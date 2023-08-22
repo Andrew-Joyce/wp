@@ -240,6 +240,6 @@ function validateForm() {
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
 }
-
+});
 
 
