@@ -15,8 +15,6 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
 
 unset($_SESSION['errors']);
 ?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -167,9 +165,6 @@ unset($_SESSION['errors']);
         </div>
     </fieldset>
 
-            <input type="hidden" name="selectedSession" id="selectedSession">
-            <input type="hidden" name="selectedSeats" id="selectedSeats">
-
             <button type="submit" class="submit-button">Submit</button>
 
         </form>
@@ -201,6 +196,9 @@ unset($_SESSION['errors']);
         <h3>Page Code:</h3>
         <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
