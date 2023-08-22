@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-    
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
 
     function updateTotalPrice() {
@@ -44,9 +43,10 @@ document.addEventListener("DOMContentLoaded", function() {
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
+
         if (window.location.pathname.endsWith('booking.php')) {
             document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-          }          
+        }
     }
 
     ticketInputs.forEach(input => {
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updateTotalPrice();
 });
-
 
 function rememberMe(event) {
     console.log("Remember Me clicked");
@@ -98,7 +97,7 @@ function forgetMe(event) {
     document.getElementById('forget-btn').classList.remove('inactive');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('name')) {
         document.getElementById('name').value = localStorage.getItem('name');
         document.getElementById('mobile').value = localStorage.getItem('mobile');
@@ -120,31 +119,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('article'); 
     const navLinks = document.querySelectorAll('.nav-section');
     
     window.addEventListener('scroll', function () {
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const threshold = rect.height * 0.5;
 
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        
-        const threshold = rect.height * 0.5;
-        
-        if (rect.top <= threshold && rect.bottom >= threshold) {
+            if (rect.top <= threshold && rect.bottom >= threshold) {
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('active');
+                    navLink.style.color = 'white'; 
+                });
 
-          navLinks.forEach(navLink => {
-            navLink.classList.remove('active');
-            navLink.style.color = 'white'; 
-          });
-          
-          navLinks[index].classList.add('active');
-          navLinks[index].style.color = 'blue';
-        }
-      });
+                navLinks[index].classList.add('active');
+                navLinks[index].style.color = 'blue';
+            }
+        });
     });
-  });
+});
 
 function validateForm() {
     var nameInput = document.getElementById('name');
@@ -177,14 +172,14 @@ function validateForm() {
     }
 
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value)) {
+    if (!emailPattern.test(emailInput.value)) {
         console.log('Email format is invalid.');
         emailInput.classList.add('error');
         isValid = false;
     }
 
     var selectedSession = document.querySelector('.session.selected');
-        if (!selectedSession) {
+    if (!selectedSession) {
         console.log('No session selected.');
         sessionButtons.forEach(button => button.classList.add('error'));
         isValid = false;
@@ -201,96 +196,4 @@ function validateForm() {
 
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
-    }
-
-    if (selectedMovie) {
-        const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
-        if (selectedFieldset) {
-            selectedFieldset.style.display = 'block';
-        }
-    }
-
-    sessions.forEach(function(session) {
-        session.addEventListener('click', function(e) {
-            sessions.forEach(function(innerSession) {
-                innerSession.classList.remove('selected');
-            });
-
-            e.currentTarget.classList.add('selected');
-        });
-    });
-
-    ticketInputs.forEach(input => {
-        input.addEventListener('input', updateTotalPrice);
-    });
-
-    sessionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            sessionButtons.forEach(btn => btn.classList.remove('error'));
-
-            sessionButtons.forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-
-            const selectedSessionValue = button.getAttribute('data-session');
-            document.getElementById('selected-session-input').value = selectedSessionValue;
-        });
-    });
-
-    const form = document.querySelector('form');
-    form.addEventListener('submit', event => {
-        const totalSeatsSelected = updateTotalPrice();
-        if (totalSeatsSelected > 10) {
-            event.preventDefault();
-            alert("You can select a maximum of 10 seats across all seat types.");
-        }
-    });
-
-    if (localStorage.getItem('name')) {
-        document.getElementById('name').value = localStorage.getItem('name');
-        document.getElementById('mobile').value = localStorage.getItem('mobile');
-        document.getElementById('email').value = localStorage.getItem('email');
-
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
-        document.getElementById('forget-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('inactive');
-    }
-
-    if (window.location.pathname.endsWith('booking.php')) {
-        document.getElementById('remember-btn').addEventListener('click', function(event) {
-            rememberMe(event); 
-        });
-        document.getElementById('forget-btn').addEventListener('click', function(event) {
-            forgetMe(event);
-        });
-    }
-
-    window.addEventListener('scroll', function () {
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            const threshold = rect.height * 0.5;
-
-            if (rect.top <= threshold && rect.bottom >= threshold) {
-                navLinks.forEach(navLink => {
-                    navLink.classList.remove('active');
-                    navLink.style.color = 'white'; 
-                });
-
-                navLinks[index].classList.add('active');
-                navLinks[index].style.color = 'blue';
-            }
-        });
-    });
-
-    bookingForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const isValid = validateForm();
-
-        if (isValid) {
-            bookingForm.submit();
-        }
-    });
-
-    updateTotalPrice();
-});
+}
