@@ -92,60 +92,30 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTotalPrice();
 });
 
-function rememberMe(event) {
-    console.log("Remember Me clicked");
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const mobile = document.getElementById('mobile').value;
-    const email = document.getElementById('email').value;
-  
-    localStorage.setItem('name', name);
-    localStorage.setItem('mobile', mobile);
-    localStorage.setItem('email', email);
-  
-    document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
-    document.getElementById('forget-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('inactive');
-}
-
-function forgetMe(event) {
-    console.log("Forget Me clicked");
-    event.preventDefault();
-  
-    localStorage.removeItem('name');
-    localStorage.removeItem('mobile');
-    localStorage.removeItem('email');
-  
-    document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('remember-btn').classList.add('inactive');
-    document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
-}
-
 document.addEventListener("DOMContentLoaded", function() {
+    const rememberToggle = document.getElementById('remember-toggle');
+    const switchText = document.getElementById('switch-text');
+
     if (localStorage.getItem('name')) {
         document.getElementById('name').value = localStorage.getItem('name');
         document.getElementById('mobile').value = localStorage.getItem('mobile');
         document.getElementById('email').value = localStorage.getItem('email');
-  
-        document.getElementById('remember-btn').classList.add('active');
-        document.getElementById('remember-btn').classList.remove('inactive');
-        document.getElementById('forget-btn').classList.remove('active');
-        document.getElementById('forget-btn').classList.add('inactive');
+        rememberToggle.checked = true;
+        switchText.textContent = 'Forget Me';
     }
 
     if (window.location.pathname.endsWith('booking.php')) {
-        document.getElementById('remember-btn').addEventListener('click', function(event) {
-            rememberMe(event); 
-        });
-        document.getElementById('forget-btn').addEventListener('click', function(event) {
-            forgetMe(event);
+        rememberToggle.addEventListener('change', function() {
+            if (rememberToggle.checked) {
+                rememberMe();
+                switchText.textContent = 'Forget Me';
+            } else {
+                forgetMe();
+                switchText.textContent = 'Remember Me';
+            }
         });
     }
 });
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('article'); 
@@ -234,18 +204,6 @@ function validateForm() {
             console.log('Invalid seat quantity: ' + quantity);
             input.classList.add('error');
             isValid = false;
-        }
-    });
-
-    // Interaction with hidden seat inputs
-    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
-    hiddenSeatInputs.forEach(input => {
-        var seatType = input.name;
-        var seatQuantity = parseInt(input.value, 10);
-
-        if (seatQuantity > 0) {
-            // Perform interaction/validation specific to hidden seat inputs if needed
-            // For example, you could update the error messages or additional validations here
         }
     });
     

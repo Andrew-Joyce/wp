@@ -162,9 +162,13 @@ unset($_SESSION['errors']);
             <input type="email" name="email" id="email" required>
         </div>
         <div>
-            <button id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
-            <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
+            <label class="switch">
+                <input type="checkbox" id="remember-toggle">
+                <span class="slider"></span>
+                <span id="switch-text">Remember Me</span>
+            </label>
         </div>
+
     </fieldset>
 
             <input type="hidden" name="selectedSession" id="selectedSession">
