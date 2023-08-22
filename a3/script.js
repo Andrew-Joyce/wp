@@ -71,63 +71,63 @@ document.addEventListener('DOMContentLoaded', function () {
         return totalSeatsSelected;
     }
 
-    function validateForm() {
-        var nameInput = document.getElementById('name');
-        var mobileInput = document.getElementById('mobile');
-        var emailInput = document.getElementById('email');
-        var sessionButtons = document.querySelectorAll('.session');
-        var seatInputs = document.querySelectorAll('input[name^="seats["]');
+function validateForm() {
+    var nameInput = document.getElementById('name');
+    var mobileInput = document.getElementById('mobile');
+    var emailInput = document.getElementById('email');
+    var sessionButtons = document.querySelectorAll('.session');
+    var seatInputs = document.querySelectorAll('input[name^="seats["]');
 
-        console.log('Starting form validation...');
+    console.log('Starting form validation...');
 
-        nameInput.classList.remove('error');
-        mobileInput.classList.remove('error');
-        emailInput.classList.remove('error');
-        sessionButtons.forEach(button => button.classList.remove('error'));
-        seatInputs.forEach(input => input.classList.remove('error'));
+    nameInput.classList.remove('error');
+    mobileInput.classList.remove('error');
+    emailInput.classList.remove('error');
+    sessionButtons.forEach(button => button.classList.remove('error'));
+    seatInputs.forEach(input => input.classList.remove('error'));
 
-        var isValid = true;
+    var isValid = true;
 
-        if (nameInput.value.trim() === '') {
-            console.log('Name is empty.');
-            nameInput.classList.add('error');
-            isValid = false;
-        }
-
-        var mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-        if (!mobilePattern.test(mobileInput.value)) {
-            console.log('Mobile format is invalid.');
-            mobileInput.classList.add('error');
-            isValid = false;
-        }
-
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value)) {
-            console.log('Email format is invalid.');
-            emailInput.classList.add('error');
-            isValid = false;
-        }
-
-        var selectedSession = document.querySelector('.session.selected');
-        if (!selectedSession) {
-            console.log('No session selected.');
-            sessionButtons.forEach(button => button.classList.add('error'));
-            isValid = false;
-        }
-
-        seatInputs.forEach(input => {
-            var quantity = parseInt(input.value, 10);
-            if (quantity < 0) {
-                console.log('Invalid seat quantity: ' + quantity);
-                input.classList.add('error');
-                isValid = false;
-            }
-        });
-
-        console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
-        return isValid;
+    if (nameInput.value.trim() === '') {
+        console.log('Name is empty.');
+        nameInput.classList.add('error');
+        isValid = false;
     }
 
+    var mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+    if (!mobilePattern.test(mobileInput.value)) {
+        console.log('Mobile format is invalid.');
+        mobileInput.classList.add('error');
+        isValid = false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+        console.log('Email format is invalid.');
+        emailInput.classList.add('error');
+        isValid = false;
+    }
+
+    var selectedSession = document.querySelector('.session.selected');
+        if (!selectedSession) {
+        console.log('No session selected.');
+        sessionButtons.forEach(button => button.classList.add('error'));
+        isValid = false;
+    }
+
+    seatInputs.forEach(input => {
+        var quantity = parseInt(input.value, 10);
+        if (quantity < 0) {
+            console.log('Invalid seat quantity: ' + quantity);
+            input.classList.add('error');
+            isValid = false;
+        }
+    });
+
+    console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
+    return isValid;
+    }
+    
     if (selectedMovie) {
         const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
         if (selectedFieldset) {
