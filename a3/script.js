@@ -115,7 +115,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    
+    function rememberMe() {
+        const name = document.getElementById('name').value;
+        const mobile = document.getElementById('mobile').value;
+        const email = document.getElementById('email').value;
+
+        localStorage.setItem('name', name);
+        localStorage.setItem('mobile', mobile);
+        localStorage.setItem('email', email);
+    }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('article'); 
