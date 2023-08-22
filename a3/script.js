@@ -185,6 +185,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
+
+document.addEventListener("DOMContentLoaded", function () {
 function validateForm() {
     var nameInput = document.getElementById('name');
     var mobileInput = document.getElementById('mobile');
@@ -241,4 +243,6 @@ function validateForm() {
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
 }
+
+});
 });
