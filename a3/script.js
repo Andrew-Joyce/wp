@@ -147,6 +147,7 @@ function validateForm() {
     var emailInput = document.getElementById('email');
     var sessionButtons = document.querySelectorAll('.session');
     var seatInputs = document.querySelectorAll('input[name^="seats["]');
+    var selectedSessionInput = document.getElementById('selected-session-input'); // Get the hidden input element
 
     console.log('Starting form validation...');
 
@@ -178,7 +179,7 @@ function validateForm() {
         isValid = false;
     }
 
-    var selectedSession = document.querySelector('.session.selected');
+    var selectedSession = selectedSessionInput.value;
     if (!selectedSession) {
         console.log('No session selected.');
         sessionButtons.forEach(button => button.classList.add('error'));
