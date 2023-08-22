@@ -15,6 +15,8 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
 
 unset($_SESSION['errors']);
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +34,6 @@ unset($_SESSION['errors']);
         <div style="display: flex; justify-content: center; align-items: center;">
             <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
             <h1 style="display: inline;">Lunardo Cinema</h1>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="script.js"></script>
         </div>
     </header>
 
@@ -161,12 +161,10 @@ unset($_SESSION['errors']);
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
-            <label class="switch">
-                <input type="checkbox" id="remember-toggle">
-                <span class="slider"></span>
-            </label>
+        <div>
+            <button id="remember-btn" class="contact-Button active" onclick="rememberMe(event)">Remember Me</button>
+            <button id="forget-btn" class="contact-Button inactive" onclick="forgetMe(event)">Forget Me</button>
         </div>
-
     </fieldset>
 
             <input type="hidden" name="selectedSession" id="selectedSession">
