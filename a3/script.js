@@ -9,6 +9,37 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-section');
     const bookingForm = document.getElementById("booking-form");
 
+
+    function updateTotalPrice() {
+        let totalPrice = 0;
+        let totalSeatsSelected = 0;
+
+        ticketInputs.forEach(input => {
+            let quantity = parseInt(input.value);
+            let maxQuantity = parseInt(input.getAttribute('max'));
+
+            totalSeatsSelected += quantity;
+
+            if (quantity > maxQuantity) {
+                input.value = maxQuantity;
+                quantity = maxQuantity;
+            }
+
+            let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
+            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
+            let selectedSession = document.querySelector('.selected');
+            let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
+            let price = isDiscounted ? discountPrice : fullPrice;
+            totalPrice += price * quantity;
+        });
+
+        if (window.location.pathname.endsWith('booking.php')) {
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+        }
+
+        return totalSeatsSelected;
+    }
+
     function rememberMe(event) {
         console.log("Remember Me clicked");
         event.preventDefault();
@@ -39,36 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('remember-btn').classList.add('inactive');
         document.getElementById('forget-btn').classList.add('active');
         document.getElementById('forget-btn').classList.remove('inactive');
-    }
-
-    function updateTotalPrice() {
-        let totalPrice = 0;
-        let totalSeatsSelected = 0;
-
-        ticketInputs.forEach(input => {
-            let quantity = parseInt(input.value);
-            let maxQuantity = parseInt(input.getAttribute('max'));
-
-            totalSeatsSelected += quantity;
-
-            if (quantity > maxQuantity) {
-                input.value = maxQuantity;
-                quantity = maxQuantity;
-            }
-
-            let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
-            let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
-            let selectedSession = document.querySelector('.selected');
-            let isDiscounted = selectedSession ? selectedSession.getAttribute('data-session').endsWith('-dis') : false;
-            let price = isDiscounted ? discountPrice : fullPrice;
-            totalPrice += price * quantity;
-        });
-
-        if (window.location.pathname.endsWith('booking.php')) {
-            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
-        }
-
-        return totalSeatsSelected;
     }
 
 function validateForm() {
@@ -127,7 +128,7 @@ function validateForm() {
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
     }
-    
+
     if (selectedMovie) {
         const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
         if (selectedFieldset) {
