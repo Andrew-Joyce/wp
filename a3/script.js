@@ -241,10 +241,12 @@ function validateForm() {
     hiddenSeatInputs.forEach(input => {
         var seatType = input.name;
         var seatQuantity = parseInt(input.value, 10);
-
+    
         if (seatQuantity > 0) {
+            console.log(`Seat type ${seatType} has ${seatQuantity} selected.`);
         }
     });
+    
     
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
     return isValid;
