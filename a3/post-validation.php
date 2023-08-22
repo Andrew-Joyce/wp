@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $anySeatSelected = false;
     
     foreach ($seatTypes as $seatType) {
+        var_dump($seatQuantity);
         $seatQuantity = isset($_POST[$seatType]) ? $_POST[$seatType] : 0;
         if ($seatQuantity > 0) {
             if (!is_numeric($seatQuantity) || $seatQuantity < 1 || $seatQuantity > 10) {
@@ -50,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
     
     foreach ($hiddenSeatTypes as $hiddenSeatType) {
+        var_dump($seatQuantity);
         $hiddenSeatQuantity = isset($_POST[$hiddenSeatType]) ? $_POST[$hiddenSeatType] : 0;
         if ($hiddenSeatQuantity > 0) {
             if (!is_numeric($hiddenSeatQuantity) || $hiddenSeatQuantity < 1 || $hiddenSeatQuantity > 10) {
