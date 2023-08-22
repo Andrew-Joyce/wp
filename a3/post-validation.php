@@ -88,6 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'total_price' => $totalPrice
         );
 
+        echo "<script>window.open('display_data.php', '_blank');</script>";
+
         header("Location: submit.php");
         exit();
     } else {
