@@ -47,13 +47,12 @@ unset($_SESSION['errors']);
         <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <input type="hidden" name="session" value="" id="selected-session-input">
-        <input type="hidden" name="seats[STA-dis]" value="0">
-        <input type="hidden" name="seats[STP-dis]" value="0">
-        <input type="hidden" name="seats[STC-dis]" value="0">
-        <input type="hidden" name="seats[FCA-dis]" value="0">
-        <input type="hidden" name="seats[FCP-dis]" value="0">
-        <input type="hidden" name="seats[FCC-dis]" value="0">
-
+        <input type="number" name="seats[STA]" min="0" value="0" placeholder="Enter quantity" required>
+        <input type="number" name="seats[STP]" min="0" value="0" placeholder="Enter quantity" required>
+        <input type="number" name="seats[STC]" min="0" value="0" placeholder="Enter quantity" required>
+        <input type="number" name="seats[FCA]" min="0" value="0" placeholder="Enter quantity" required>
+        <input type="number" name="seats[FCP]" min="0" value="0" placeholder="Enter quantity" required>
+        <input type="number" name="seats[FCC]" min="0" value="0" placeholder="Enter quantity" required>
         <?php if (!empty($errors)) { ?>
             <div class="error-messages">
                 <ul>
@@ -135,7 +134,7 @@ unset($_SESSION['errors']);
                             <span class="seat-price" data-full-price="28.00">Full Price: $28.00 / Discount: $23.50</span> 
                         </div>
                         <div class="seat child-seat">
-                            <label for="seats[FCC-dis]">First Class Child</label>
+                            <label for="seats[FCC-]">First Class Child</label>
                             <input type="number" name="seats[FCC]" min="0" value="0" placeholder="Enter quantity" required>
                             <span class="seat-price" data-full-price="25.00">Full Price: $25.00 / Discount: $22.00</span> 
                         </div>
