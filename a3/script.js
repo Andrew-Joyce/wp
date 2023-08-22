@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     
-
+document.addEventListener("DOMContentLoaded", function() {
     function rememberMe(event) {
         console.log("Remember Me clicked");
         event.preventDefault();
