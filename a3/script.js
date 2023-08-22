@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    const form = document.querySelector('form');
     form.addEventListener('submit', event => {
         const totalSeatsSelected = updateTotalPrice();
         console.log('Selected seat quantities:', totalSeatsSelected);
@@ -89,9 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("You can select a maximum of 10 seats across all seat types.");
         }
     });
-
-    updateTotalPrice();
-});
+    
 
 function rememberMe(event) {
     console.log("Remember Me clicked");
