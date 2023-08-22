@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('forget-btn').classList.add('active');
         document.getElementById('forget-btn').classList.remove('inactive');
     }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('name')) {
@@ -241,5 +242,3 @@ function validateForm() {
     return isValid;
 }
 });
-
-
