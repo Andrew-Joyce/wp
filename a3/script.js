@@ -92,37 +92,37 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 
-function rememberMe(event) {
-    console.log("Remember Me clicked");
-    event.preventDefault();
+    function rememberMe(event) {
+        console.log("Remember Me clicked");
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const mobile = document.getElementById('mobile').value;
+        const email = document.getElementById('email').value;
     
-    const name = document.getElementById('name').value;
-    const mobile = document.getElementById('mobile').value;
-    const email = document.getElementById('email').value;
-  
-    localStorage.setItem('name', name);
-    localStorage.setItem('mobile', mobile);
-    localStorage.setItem('email', email);
-  
-    document.getElementById('remember-btn').classList.add('active');
-    document.getElementById('remember-btn').classList.remove('inactive');
-    document.getElementById('forget-btn').classList.remove('active');
-    document.getElementById('forget-btn').classList.add('inactive');
-}
+        localStorage.setItem('name', name);
+        localStorage.setItem('mobile', mobile);
+        localStorage.setItem('email', email);
+    
+        document.getElementById('remember-btn').classList.add('active');
+        document.getElementById('remember-btn').classList.remove('inactive');
+        document.getElementById('forget-btn').classList.remove('active');
+        document.getElementById('forget-btn').classList.add('inactive');
+    }
 
-function forgetMe(event) {
-    console.log("Forget Me clicked");
-    event.preventDefault();
-  
-    localStorage.removeItem('name');
-    localStorage.removeItem('mobile');
-    localStorage.removeItem('email');
-  
-    document.getElementById('remember-btn').classList.remove('active');
-    document.getElementById('remember-btn').classList.add('inactive');
-    document.getElementById('forget-btn').classList.add('active');
-    document.getElementById('forget-btn').classList.remove('inactive');
-}
+    function forgetMe(event) {
+        console.log("Forget Me clicked");
+        event.preventDefault();
+    
+        localStorage.removeItem('name');
+        localStorage.removeItem('mobile');
+        localStorage.removeItem('email');
+    
+        document.getElementById('remember-btn').classList.remove('active');
+        document.getElementById('remember-btn').classList.add('inactive');
+        document.getElementById('forget-btn').classList.add('active');
+        document.getElementById('forget-btn').classList.remove('inactive');
+    }
 
 document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('name')) {
