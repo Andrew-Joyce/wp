@@ -3,13 +3,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $movie = $_POST["movie"]; 
     $session = $_POST["session"];
 
-    $standardAdultSeats = $_POST["seats"]["STA"];
-    $standardConcessionSeats = $_POST["seats"]["STP"];
-    $standardChildSeats = $_POST["seats"]["STC"];
+    $standardAdultSeats = $_POST["seats"]["STA-dis"];
+    $standardConcessionSeats = $_POST["seats"]["STP-dis"];
+    $standardChildSeats = $_POST["seats"]["STC-dis"];
 
-    $goldClassAdultSeats = $_POST["seats"]["FCA"];
-    $goldClassConcessionSeats = $_POST["seats"]["FCP"];
-    $goldClassChildSeats = $_POST["seats"]["FCC"];
+    $goldClassAdultSeats = $_POST["seats"]["FCA-dis"];
+    $goldClassConcessionSeats = $_POST["seats"]["FCP-dis"];
+    $goldClassChildSeats = $_POST["seats"]["FCC-dis"];
 
     $fullName = $_POST["name"];
     $mobileNumber = $_POST["mobile"];
