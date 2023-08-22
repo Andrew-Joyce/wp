@@ -161,11 +161,9 @@ unset($_SESSION['errors']);
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
         </div>
-        <div>
             <label class="switch">
                 <input type="checkbox" id="remember-toggle">
                 <span class="slider"></span>
-                <span id="switch-text">Remember Me</span>
             </label>
         </div>
 
