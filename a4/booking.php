@@ -43,7 +43,7 @@ unset($_SESSION['errors']);
     </nav>
 
     <main>
-        <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
+        <form method="POST" action="post-validation.php" id="booking-form">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <input type="hidden" name="session" value="" id="selected-session-input">
         <input type="hidden" name="seats[FCC]" min="0">
