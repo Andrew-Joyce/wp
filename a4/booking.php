@@ -51,6 +51,15 @@ unset($_SESSION['errors']);
         <input type="hidden" name="seats[FCA]" min="0" value="0">
         <input type="hidden" name="seats[FCP]" min="0" value="0">
         <input type="hidden" name="seats[FCC]" min="0" value="0">
+        <?php if (!empty($errors)) { ?>
+            <div class="error-messages">
+                <ul>
+                    <?php foreach ($errors as $error) { ?>
+                        <li><?php echo $error; ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
         <?php
 
         $selectedMovieDetails = getMovieDetails($selectedMovieCode);
