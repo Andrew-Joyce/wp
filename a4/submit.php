@@ -57,20 +57,20 @@ unset($_SESSION["booking_data"]);
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>
-                <?php foreach ($bookingData["seats"] as $seatType => $quantity): ?>
+                <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
                     <td><?php echo $seatType; ?></td>
                     <td><?php echo $quantity; ?></td>
-                    <td><?php echo $quantity * $bookingData["seat_prices"][$seatType]; ?></td>
+                    <td><?php echo $quantity * $seatPricesData[$seatType]; ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
                     <td colspan="2">Total</td>
-                    <td><?php echo array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $bookingData["seats"], $bookingData["seat_prices"])); ?></td>
+                    <td><?php echo array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)); ?></td>
                 </tr>
                 <tr>
                     <td colspan="2">GST (10%)</td>
-                    <td><?php echo array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $bookingData["seats"], $bookingData["seat_prices"])) / 11; ?></td>
+                    <td><?php echo array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)) / 11; ?></td>
                 </tr>
             </table>
         </main>
