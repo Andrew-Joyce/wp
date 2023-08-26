@@ -20,11 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $selectedSession = isset($_POST['session']) ? $_POST['session'] : '';
 
     $hiddenSeatTypes = [
+        'seats[STA]',
         'seats[STA-dis]',
+        'seats[STP]',
         'seats[STP-dis]',
+        'seats[STC]',
         'seats[STC-dis]',
+        'seats[FCA]',
         'seats[FCA-dis]',
+        'seats[FCP]',
         'seats[FCP-dis]',
+        'seats[FCC]',
         'seats[FCC-dis]'
     ];
     
