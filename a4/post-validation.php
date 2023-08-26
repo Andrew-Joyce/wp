@@ -19,37 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $selectedSession = isset($_POST['session']) ? $_POST['session'] : '';
 
-    $hiddenSeatTypes = [
-        'seats[STA]',
-        'seats[STA-dis]',
-        'seats[STP]',
-        'seats[STP-dis]',
-        'seats[STC]',
-        'seats[STC-dis]',
-        'seats[FCA]',
-        'seats[FCA-dis]',
-        'seats[FCP]',
-        'seats[FCP-dis]',
-        'seats[FCC]',
-        'seats[FCC-dis]'
     ];
     
     $anySeatSelected = false;
 
-    foreach ($hiddenSeatTypes as $hiddenSeatType) {
-        $hiddenSeatQuantity = isset($_POST[$hiddenSeatType]) ? $_POST[$hiddenSeatType] : 0;
-        if ($hiddenSeatQuantity > 0) {
-            if (!is_numeric($hiddenSeatQuantity) || $hiddenSeatQuantity < 1 || $hiddenSeatQuantity > 10) {
-                $errors[$hiddenSeatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
+    foreach ($_POST['seats'] as $seatType => $seatQuantity) {
+        if ($seatQuantity > 0) {
+            if (!is_numeric($seatQuantity) || $seatQuantity < 1 || $seatQuantity > 10) {
+                $errors[$seatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
             }
             $anySeatSelected = true; 
         }
     }
-    
+
     if (!$anySeatSelected) {
         $errors['seats'] = "Error with seats: No seats selected";
     }
-    
+
 
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
