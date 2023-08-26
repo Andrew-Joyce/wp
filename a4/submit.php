@@ -1,3 +1,4 @@
+<?php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,7 @@
             $email = $_POST["email"];
 
             echo "PHP is working!";
-            
+
             echo "<p><strong>Movie:</strong> $movie</p>";
             echo "<p><strong>Session:</strong> $session</p>";
 
