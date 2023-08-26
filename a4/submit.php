@@ -1,28 +1,42 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $movie = $_POST["movie"];
-    $session = $_POST["session"];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<header style="text-align: center;">
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+            <h1 style="display: inline;">Lunardo Cinema</h1>
+        </div>
+    </header>
+</head>
+<body>
+    <h1>Booking Summary</h1>
 
-    $seats = $_POST["seats"];
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $movie = $_GET["movie"];
+        $session = $_GET["session"];
+        $seats = $_GET["seats"];
+        $name = $_GET["name"];
+        $mobileNumber = $_GET["mobile"];
+        $email = $_GET["email"];
 
-    $fullName = $_POST["name"];
-    $mobileNumber = $_POST["mobile"];
-    $email = $_POST["email"];
+        echo "<p><strong>Movie:</strong> $movie</p>";
+        echo "<p><strong>Session:</strong> $session</p>";
 
-    echo "Movie: " . $movie . "<br>";
-    echo "Session: " . $session . "<br>";
+        echo "<p><strong>Selected Seats:</strong></p>";
+        echo "<ul>";
+        foreach ($seats as $seatType => $quantity) {
+            if (!empty($quantity)) {
+                echo "<li>$seatType: $quantity</li>";
+            }
+        }
+        echo "</ul>";
 
-    echo "Standard Adult Seats: " . $seats["STA"] . "<br>";
-    echo "Standard Concession Seats: " . $seats["STP"] . "<br>";
-    echo "Standard Child Seats: " . $seats["STC"] . "<br>";
+        echo "<p><strong>Full Name:</strong> $name</p>";
+        echo "<p><strong>Mobile Number:</strong> $mobileNumber</p>";
+        echo "<p><strong>Email:</strong> $email</p>";
+    }
+    ?>
 
-    echo "Gold Class Adult Seats: " . $seats["FCA"] . "<br>";
-    echo "Gold Class Concession Seats: " . $seats["FCP"] . "<br>";
-    echo "Gold Class Child Seats: " . $seats["FCC"] . "<br>";
-
-    echo "Full Name: " . $fullName . "<br>";
-    echo "Mobile Number: " . $mobileNumber . "<br>";
-    echo "Email: " . $email . "<br>";
-}
-
-?>
+</body>
+</html>
