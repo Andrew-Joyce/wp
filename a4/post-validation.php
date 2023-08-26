@@ -19,8 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $selectedSession = isset($_POST['session']) ? $_POST['session'] : '';
 
-    ];
-    
     $anySeatSelected = false;
 
     foreach ($_POST['seats'] as $seatType => $seatQuantity) {
@@ -35,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$anySeatSelected) {
         $errors['seats'] = "Error with seats: No seats selected";
     }
-
 
     if (empty($movieCode)) {
         $errors['movie'] = "No movie selected!";
