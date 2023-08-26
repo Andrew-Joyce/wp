@@ -48,6 +48,7 @@ unset($_SESSION['errors']);
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <input type="hidden" name="session" value="" id="selected-session-input">
         <input type="hidden" name="seats[STA-dis]" id="seats-STA-dis">
+        <input type="number" name="seats[STA]" min="0" value="0" placeholder="Enter quantity" required>
         <input type="hidden" name="seats[STP-dis]" id="seats-STP-dis">
         <input type="hidden" name="seats[STC-dis]" id="seats-STC-dis">
         <input type="hidden" name="seats[FCA-dis]" id="seats-FCA-dis">
