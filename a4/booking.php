@@ -187,7 +187,6 @@ unset($_SESSION['errors']);
         <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 
 </body>
