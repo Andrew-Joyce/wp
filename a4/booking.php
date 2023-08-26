@@ -47,12 +47,12 @@ unset($_SESSION['errors']);
         <form method="POST" action="post-validation.php" id="booking-form" onsubmit="return validateForm()">
         <input type="hidden" name="movie" value="<?php echo $movieCode; ?>">
         <input type="hidden" name="session" value="" id="selected-session-input">
-        <input type="hidden" name="seats[STA-dis]" value="0" id="seats-STA-dis">
-        <input type="hidden" name="seats[STP-dis]" value="0" id="seats-STP-dis">
-        <input type="hidden" name="seats[STC-dis]" value="0" id="seats-STC-dis">
-        <input type="hidden" name="seats[FCA-dis]" value="0" id="seats-FCA-dis">
-        <input type="hidden" name="seats[FCP-dis]" value="0" id="seats-FCP-dis">
-        <input type="hidden" name="seats[FCC-dis]" value="0" id="seats-FCC-dis">
+        <input type="hidden" name="seats[STA-dis]" id="seats-STA-dis">
+        <input type="hidden" name="seats[STP-dis]" id="seats-STP-dis">
+        <input type="hidden" name="seats[STC-dis]" id="seats-STC-dis">
+        <input type="hidden" name="seats[FCA-dis]" id="seats-FCA-dis">
+        <input type="hidden" name="seats[FCP-dis]" id="seats-FCP-dis">
+        <input type="hidden" name="seats[FCC-dis]" id="seats-FCC-dis">
         <?php if (!empty($errors)) { ?>
             <div class="error-messages">
                 <ul>
