@@ -33,6 +33,8 @@
             $mobileNumber = $_POST["mobile"];
             $email = $_POST["email"];
 
+            echo "PHP is working!";
+            
             echo "<p><strong>Movie:</strong> $movie</p>";
             echo "<p><strong>Session:</strong> $session</p>";
 
