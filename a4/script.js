@@ -243,7 +243,7 @@ function validateForm() {
         if (seatQuantity > 0) {
             console.log(`Seat type ${seatType} has ${seatQuantity} selected.`);
         }
-    });
+    });     
     
     
     console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
