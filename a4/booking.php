@@ -32,8 +32,6 @@ unset($_SESSION['errors']);
         <div style="display: flex; justify-content: center; align-items: center;">
             <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
             <h1 style="display: inline;">Lunardo Cinema</h1>
-            <script src="script.js"></script>
-
         </div>
     </header>
 
