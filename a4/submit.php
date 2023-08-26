@@ -7,6 +7,8 @@ if (!isset($_SESSION["booking_data"])) {
 }
 
 $bookingData = $_SESSION["booking_data"];
+$seatsData = $bookingData["seats"];
+$seatPricesData = $bookingData["seat_prices"];
 
 unset($_SESSION["booking_data"]);
 ?>
