@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$anySeatSelected) {
-        $errors['seats'] = "Error with seats: No seats selected";
+        $errors['seats'] = "Error with seats: No seats selected2";
     }
 
     if ($selectedMovieDetails && $selectedSession) {

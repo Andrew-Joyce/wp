@@ -172,83 +172,96 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener("DOMContentLoaded", function () {
     const bookingForm = document.getElementById("booking-form");
+
     bookingForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        
+
         const isValid = validateForm();
-        
+
         if (isValid) {
             bookingForm.submit();
         }
     });
-  });
-function validateForm() {
-    var nameInput = document.getElementById('name');
-    var mobileInput = document.getElementById('mobile');
-    var emailInput = document.getElementById('email');
-    var sessionButtons = document.querySelectorAll('.session');
-    var seatInputs = document.querySelectorAll('input[name^="seats["]');
-    
-    console.log('Starting form validation...');
 
-    nameInput.classList.remove('error');
-    mobileInput.classList.remove('error');
-    emailInput.classList.remove('error');
-    sessionButtons.forEach(button => button.classList.remove('error'));
-    seatInputs.forEach(input => input.classList.remove('error'));
-    
-    var isValid = true;
-    
-    if (nameInput.value.trim() === '') {
-        console.log('Name is empty.');
-        nameInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
-    if (!mobilePattern.test(mobileInput.value)) {
-        console.log('Mobile format is invalid.');
-        mobileInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value)) {
-        console.log('Email format is invalid.');
-        emailInput.classList.add('error');
-        isValid = false;
-    }
-    
-    var selectedSession = document.querySelector('.session.selected');
-    if (!selectedSession) {
-        console.log('No session selected.');
-        sessionButtons.forEach(button => button.classList.add('error'));
-        isValid = false;
-    }
-    
-    seatInputs.forEach(input => {
-        var quantity = parseInt(input.value, 10);
-        if (quantity < 0) {
-            console.log('Invalid seat quantity: ' + quantity);
-            input.classList.add('error');
+    function validateForm() {
+        const inputs = {
+            name: document.getElementById('name'),
+            mobile: document.getElementById('mobile'),
+            email: document.getElementById('email'),
+        };
+
+        const patterns = {
+            mobile: /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/,
+            email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        };
+
+        const sessionButtons = document.querySelectorAll('.session');
+        const seatInputs = document.querySelectorAll('input[name^="seats["]');
+
+        console.log('Starting form validation...');
+
+        Object.values(inputs).forEach(input => {
+            input.classList.remove('error');
+        });
+
+        sessionButtons.forEach(button => {
+            button.classList.remove('error');
+        });
+
+        seatInputs.forEach(input => {
+            input.classList.remove('error');
+        });
+
+        let isValid = true;
+
+        if (inputs.name.value.trim() === '') {
+            console.log('Name is empty.');
+            inputs.name.classList.add('error');
             isValid = false;
         }
-    });
 
-    var hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
-    hiddenSeatInputs.forEach(input => {
-        var seatType = input.name;
-        var seatQuantity = parseInt(input.value, 10);
-    
-        if (seatQuantity > 0) {
-            console.log(`Seat type ${seatType} has ${seatQuantity} selected.`);
+        if (!patterns.mobile.test(inputs.mobile.value)) {
+            console.log('Mobile format is invalid.');
+            inputs.mobile.classList.add('error');
+            isValid = false;
         }
-    });     
-    
-    
-    console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
-    return isValid;
-}
+
+        if (!patterns.email.test(inputs.email.value)) {
+            console.log('Email format is invalid.');
+            inputs.email.classList.add('error');
+            isValid = false;
+        }
+
+        const selectedSession = document.querySelector('.session.selected');
+        if (!selectedSession) {
+            console.log('No session selected.');
+            sessionButtons.forEach(button => button.classList.add('error'));
+            isValid = false;
+        }
+
+        seatInputs.forEach(input => {
+            const quantity = parseInt(input.value, 10);
+            if (quantity < 0) {
+                console.log('Invalid seat quantity: ' + quantity);
+                input.classList.add('error');
+                isValid = false;
+            }
+        });
+
+        const hiddenSeatInputs = document.querySelectorAll('input[type="hidden"][name^="seats["]');
+        hiddenSeatInputs.forEach(input => {
+            const seatQuantity = parseInt(input.value, 10);
+
+            if (seatQuantity > 0) {
+                console.log(`Seat type ${input.name} has ${seatQuantity} selected.`);
+            }
+        });
+
+        console.log('Validation result: ' + (isValid ? 'Valid' : 'Invalid'));
+        return isValid;
+    }
+});
+
 
 
 
