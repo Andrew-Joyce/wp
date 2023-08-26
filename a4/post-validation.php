@@ -34,14 +34,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'seats[FCC-dis]'
     ];
     
+    $anySeatSelected = false;
+
     foreach ($hiddenSeatTypes as $hiddenSeatType) {
         $hiddenSeatQuantity = isset($_POST[$hiddenSeatType]) ? $_POST[$hiddenSeatType] : 0;
         if ($hiddenSeatQuantity > 0) {
             if (!is_numeric($hiddenSeatQuantity) || $hiddenSeatQuantity < 1 || $hiddenSeatQuantity > 10) {
                 $errors[$hiddenSeatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
             }
-            $anySeatSelected = true;
+            $anySeatSelected = true; 
         }
+    }
+    
+    if (!$anySeatSelected) {
+        $errors['seats'] = "Error with seats: No seats selected";
     }
     
 
