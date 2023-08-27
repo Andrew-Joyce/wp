@@ -8,8 +8,10 @@ if (!isset($_SESSION["booking_data"])) {
 }
 
 $bookingData = $_SESSION["booking_data"];
-$seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array(); // Check if seats data is set and an array
-$seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); // Check if seat prices data is set and an array
+$seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
+$seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
+$formattedSession = formatSession($bookingData["session"]);
+
 
 unset($_SESSION["booking_data"]);
 ?>
@@ -20,6 +22,7 @@ unset($_SESSION["booking_data"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Receipt</title>
     <style>
         body {
@@ -39,10 +42,12 @@ unset($_SESSION["booking_data"]);
 </head>
 <body>
     <div class="receipt-container">
-        <header>
-            <img src="../../media/Cinema.png" alt="Cinema Logo">
-            <h1>Lunardo Cinema</h1>
-        </header>
+    <header style="text-align: center;">
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+            <h1 style="display: inline;">Lunardo Cinema</h1>
+        </div>
+    </header>
         
         <main>
             <h2>Receipt</h2>
@@ -51,9 +56,9 @@ unset($_SESSION["booking_data"]);
             <p><strong>Email:</strong> <?php echo $bookingData["email"]; ?></p>
             <p><strong>Mobile:</strong> <?php echo $bookingData["mobile"]; ?></p>
 
-            h3>Booking Summary</h3>
+            <h3>Booking Summary</h3>
                 <p><strong>Film:</strong> <?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></p>
-                <p><strong>Session:</strong> <?php echo $bookingData["session"]; ?></p>
+                <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <table>
                 <tr>

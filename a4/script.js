@@ -262,6 +262,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+var formattedSessionElement = document.getElementById("formatted-session");
+if (formattedSessionElement) {
+    formattedSessionElement.textContent = formattedSession;
+}
+
+    function formatSession($session)
+    {
+        $sessionParts = explode('-', $session);
+        $time = $sessionParts[1];
+        $day = $sessionParts[0];
+
+        $formattedDay = ucfirst(strtolower($day));
+        $formattedTime = strtoupper($time);
+
+        $rate = $sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
+
+        return "$formattedTime, $formattedDay ($rate)";
+    }
+
+
 
 
 
