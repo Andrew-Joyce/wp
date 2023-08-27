@@ -154,4 +154,15 @@ function getMovieDetails($movieCode)
     return null;
 }
 
-?>
+function formatSession(session) {
+    var sessionParts = session.split('-');
+    var time = sessionParts[1];
+    var day = sessionParts[0];
+
+    var formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+    var formattedTime = time.toUpperCase();
+
+    var rate = sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
+
+    return formattedTime + ', ' + formattedDay + ' (' + rate + ')';
+}
