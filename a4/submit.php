@@ -50,8 +50,8 @@ unset($_SESSION["booking_data"]);
             <p><strong>Email:</strong> <?php echo $bookingData["email"]; ?></p>
             <p><strong>Mobile:</strong> <?php echo $bookingData["mobile"]; ?></p>
 
-            <h3>Booking Summary</h3>
-                <p><strong>Film:</strong> <?php echo $bookingData["movie_code"]; ?></p>
+            h3>Booking Summary</h3>
+                <p><strong>Film:</strong> <?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></p>
                 <p><strong>Session:</strong> <?php echo $bookingData["session"]; ?></p>
 
             <table>
