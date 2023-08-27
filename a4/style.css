@@ -685,12 +685,6 @@ fieldset .movie-title {
   font-size: 14px;
   margin-top: 5px;
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-}
 
 table th,
 table td {
