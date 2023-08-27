@@ -2,6 +2,36 @@
 session_start();
 include 'tools.php';
 
+function isValidEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+function isValidMobile($mobile) {
+    return preg_match("/^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/", $mobile);
+}
+
+function calculateTotalPrice($seats, $isDiscounted = false) {
+    $seatPrices = array(
+        'STA' => array('full' => 21.50, 'discount' => 16.00),  
+        'STP' => array('full' => 19.50, 'discount' => 14.00),  
+        'STC' => array('full' => 17.50, 'discount' => 12.00),
+        'FCA' => array('full' => 31.00, 'discount' => 25.00), 
+        'FCP' => array('full' => 28.00, 'discount' => 23.50), 
+        'FCC' => array('full' => 25.00, 'discount' => 22.00)  
+    );
+
+    $totalPrice = 0;
+
+    foreach ($seats as $seatType => $seatQuantity) {
+        if (isset($seatPrices[$seatType])) {
+            $seatPrice = $isDiscounted ? $seatPrices[$seatType]['discount'] : $seatPrices[$seatType]['full'];
+            $totalPrice += $seatQuantity * $seatPrice;
+        }
+    }
+
+    return $totalPrice;
+}
+
 $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -65,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $selectedSessionValue = explode('-', $selectedSession);
         $isDiscounted = end($selectedSessionValue) === 'dis';
-        
-        $totalPrice = calculateTotalPrice($_POST['seats'], $isDiscounted);
     
+        $totalPrice = calculateTotalPrice($_POST['seats'], $isDiscounted);
+
         $_SESSION['booking_data'] = array(
             'movie_code' => $movieCode,
             'name' => $name,
@@ -78,16 +108,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'seat_prices' => calculateTotalPrice($_POST['seats']),
             'total_price' => $totalPrice
         );
-    
-        echo '<script>';
-        echo 'window.location.href = "submit.php";';
-        echo '</script>'; 
+
+        header("Location: submit.php");
+        exit();
     } else {
         $_SESSION['errors'] = $errors;
-        echo '<script>';
-        echo 'window.location.href = "booking.php?movie=' . $movieCode . '";'; 
-        echo '</script>';
-    }
-} 
-
+        header("Location: booking.php?movie=$movieCode");
+        exit();
+    }    
+}
 ?>
