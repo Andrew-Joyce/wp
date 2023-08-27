@@ -92,29 +92,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    if (empty($errors)) {
-        $selectedSessionValue = explode('-', $selectedSession);
-        $isDiscounted = end($selectedSessionValue) === 'dis';
-    
-        $totalPrice = calculateTotalPrice($_POST['seats'], $isDiscounted);
+if (empty($errors)) {
+    $selectedSessionValue = explode('-', $selectedSession);
+    $isDiscounted = end($selectedSessionValue) === 'dis';
 
-        $_SESSION['booking_data'] = array(
-            'movie_code' => $movieCode,
-            'name' => $name,
-            'mobile' => $mobile,
-            'email' => $email,
-            'session' => $selectedSession,
-            'seats' => $_POST['seats'],
-            'seat_prices' => calculateTotalPrice($_POST['seats']),
-            'total_price' => $totalPrice
-        );
+    $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
 
-        header("Location: submit.php");
-        exit();
-    } else {
-        $_SESSION['errors'] = $errors;
-        header("Location: booking.php?movie=$movieCode");
-        exit();
-    }    
+    $_SESSION['booking_data'] = array(
+        'movie_code' => $movieCode,
+        'name' => $name,
+        'mobile' => $mobile,
+        'email' => $email,
+        'session' => $selectedSession,
+        'seats' => $_POST['seats'],
+        'seat_prices' => $seatPricesData,
+        'total_price' => array_sum($seatPricesData)
+    );
+
+    header("Location: submit.php");
+    exit();
+} else {
+    $_SESSION['errors'] = $errors;
+    header("Location: booking.php?movie=$movieCode");
+    exit();
+}    
+
 }
 ?>
