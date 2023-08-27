@@ -1,7 +1,20 @@
-const urlParams = new URLSearchParams(window.location.search);
-const selectedMovie = urlParams.get('movie');
+function formatSession(session) {
+    var sessionParts = session.split('-');
+    var time = sessionParts[1];
+    var day = sessionParts[0];
 
-document.addEventListener('DOMContentLoaded', () => {
+    var formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+    var formattedTime = time.toUpperCase();
+
+    var rate = sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
+
+    return formattedTime + ', ' + formattedDay + ' (' + rate + ')';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedMovie = urlParams.get('movie');
+
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
     sessionFieldsets.forEach((fieldset) => {
         fieldset.style.display = 'none';
@@ -13,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedFieldset.style.display = 'block';
         }
     }
-});
 
 document.addEventListener('DOMContentLoaded', function () {
     var sessions = document.querySelectorAll('.session');
@@ -262,26 +274,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function formatSession(session) {
-    var sessionParts = session.split('-');
-    var time = sessionParts[1];
-    var day = sessionParts[0];
-
-    var formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
-    var formattedTime = time.toUpperCase();
-
-    var rate = sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
-
-    return formattedTime + ', ' + formattedDay + ' (' + rate + ')';
-}
-
 var formattedSessionElement = document.getElementById("formatted-session");
 if (formattedSessionElement) {
     var formattedSession = formattedSessionElement.textContent;
     var formattedSessionResult = formatSession(formattedSession);
     formattedSessionElement.textContent = formattedSessionResult;
 }
-
+});
 
 
 
