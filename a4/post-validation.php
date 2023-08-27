@@ -10,27 +10,28 @@ function isValidMobile($mobile) {
     return preg_match("/^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/", $mobile);
 }
 
-function calculateTotalPrice($seats, $isDiscounted = false) {
+function calculateSeatPrices($seats, $isDiscounted = false) {
     $seatPrices = array(
-        'STA' => array('full' => 21.50, 'discount' => 16.00),  
-        'STP' => array('full' => 19.50, 'discount' => 14.00),  
+        'STA' => array('full' => 21.50, 'discount' => 16.00),
+        'STP' => array('full' => 19.50, 'discount' => 14.00),
         'STC' => array('full' => 17.50, 'discount' => 12.00),
-        'FCA' => array('full' => 31.00, 'discount' => 25.00), 
-        'FCP' => array('full' => 28.00, 'discount' => 23.50), 
-        'FCC' => array('full' => 25.00, 'discount' => 22.00)  
+        'FCA' => array('full' => 31.00, 'discount' => 25.00),
+        'FCP' => array('full' => 28.00, 'discount' => 23.50),
+        'FCC' => array('full' => 25.00, 'discount' => 22.00)
     );
 
-    $totalPrice = 0;
+    $seatPricesData = array();
 
     foreach ($seats as $seatType => $seatQuantity) {
         if (isset($seatPrices[$seatType])) {
             $seatPrice = $isDiscounted ? $seatPrices[$seatType]['discount'] : $seatPrices[$seatType]['full'];
-            $totalPrice += $seatQuantity * $seatPrice;
+            $seatPricesData[$seatType] = $seatPrice * $seatQuantity;
         }
     }
 
-    return $totalPrice;
+    return $seatPricesData;
 }
+
 
 $errors = array();
 
@@ -105,8 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email,
             'session' => $selectedSession,
             'seats' => $_POST['seats'],
-            'seat_prices' => calculateTotalPrice($_POST['seats']),
-            'total_price' => $totalPrice
+            'seat_prices' => $seatPricesData,
+            'total_price' => array_sum($seatPricesData)
         );
 
         header("Location: submit.php");
