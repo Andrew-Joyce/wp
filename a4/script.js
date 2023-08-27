@@ -262,25 +262,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-var formattedSessionElement = document.getElementById("formatted-session");
-if (formattedSessionElement) {
-    formattedSessionElement.textContent = formattedSession;
+function formatSession(session) {
+    var sessionParts = session.split('-');
+    var time = sessionParts[1];
+    var day = sessionParts[0];
+
+    var formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+    var formattedTime = time.toUpperCase();
+
+    var rate = sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
+
+    return formattedTime + ', ' + formattedDay + ' (' + rate + ')';
 }
 
-    function formatSession($session)
-    {
-        $sessionParts = explode('-', $session);
-        $time = $sessionParts[1];
-        $day = $sessionParts[0];
-
-        $formattedDay = ucfirst(strtolower($day));
-        $formattedTime = strtoupper($time);
-
-        $rate = $sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
-
-        return "$formattedTime, $formattedDay ($rate)";
-    }
-
+var formattedSessionElement = document.getElementById("formatted-session");
+if (formattedSessionElement) {
+    var formattedSession = formattedSessionElement.textContent;
+    var formattedSessionResult = formatSession(formattedSession);
+    formattedSessionElement.textContent = formattedSessionResult;
+}
 
 
 
