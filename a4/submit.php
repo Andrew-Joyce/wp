@@ -8,12 +8,10 @@ $totalPrice = isset($bookingData['total_price']) ? $bookingData['total_price'] :
 $seatPrices = isset($bookingData['seat_prices']) ? $bookingData['seat_prices'] : array();
 $seats = isset($bookingData['seats']) ? $bookingData['seats'] : array();
 
-$subtotalBySeatType = array();
-
-foreach ($seats as $seatType => $quantity) {
+$subtotalBySeatType = array_map(function ($seatType, $quantity) use ($seatPrices) {
     $seatPrice = isset($seatPrices[$seatType]) ? $seatPrices[$seatType] : 0;
-    $subtotalBySeatType[$seatType] = $quantity * $seatPrice;
-}
+    return $quantity * $seatPrice;
+}, array_keys($seats), $seats);
 
 $gst = $totalPrice * 0.1;
 
