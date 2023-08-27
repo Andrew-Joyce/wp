@@ -36,7 +36,7 @@ unset($_SESSION["booking_data"]);
         </header>
         
         <main>
-            
+
             <h2>Receipt</h2>
             <h3>Customer Details</h3>
             <p><strong>Name:</strong> <?php echo $bookingData["name"]; ?></p>
@@ -57,7 +57,8 @@ unset($_SESSION["booking_data"]);
                 <tr>
                     <td><?php echo $seatType; ?></td>
                     <td><?php echo $quantity; ?></td>
-                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($quantity * $seatPricesData[$seatType], 2) : '0.00'; ?></td>
+                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($seatPricesData[$seatType], 2) : '0.00'; ?></td>
+                    <td><?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)), 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
