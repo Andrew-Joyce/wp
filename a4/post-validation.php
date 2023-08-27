@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         $_SESSION['booking_data'] = $bookingData;
     
-        header("Location: receipt.php");
+        header("Location: submit.php");
         exit();
     } else {
         $_SESSION['errors'] = $errors;
