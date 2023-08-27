@@ -47,7 +47,7 @@ unset($_SESSION["booking_data"]);
             <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <table>
-                <tr>
+            <tr>
                     <th>Seat Type</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
