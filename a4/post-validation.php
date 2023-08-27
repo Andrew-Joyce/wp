@@ -1,6 +1,4 @@
 <?php
-
-<?php
 function convertSeatType($seatType) {
     switch ($seatType) {
         case 'STA':
