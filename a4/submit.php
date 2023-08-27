@@ -62,11 +62,11 @@ unset($_SESSION["booking_data"]);
                 <?php endforeach; ?>
                 <tr>
                     <td colspan="2">Total</td>
-                    <td><?php echo number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr>
                     <td colspan="2">GST (10%)</td>
-                    <td><?php echo number_format($bookingData["total_price"] * 0.10, 2); ?></td> 
+                    <td><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
             </table>
         </main>
 
