@@ -380,16 +380,32 @@ img {
   height: auto;
 }
 
-table, table th,
+table,
+table th,
 table td {
   font-family: 'Poppins', sans-serif;
-  text-align: center;
   font-size: 18px;
+}
+
+table th:nth-child(1), 
+table td:nth-child(1) {
+  text-align: center; 
+}
+
+table th:nth-child(2), 
+table td:nth-child(2) {
+  text-align: center; 
+}
+
+table th:nth-child(3), 
+table td:nth-child(3) {
+  text-align: right; 
 }
 
 table tr:nth-child(2n-1) {
   background-color: #cccccc;
 }
+
 
 fieldset legend {
   font-family: 'Oswald', sans-serif;
