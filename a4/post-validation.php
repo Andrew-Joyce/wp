@@ -112,11 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         header("Location: submit.php");
         exit();
-    }
     } else {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
-    }    
-}
+    }
+    
 ?>
