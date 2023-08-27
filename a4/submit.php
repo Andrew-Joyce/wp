@@ -23,21 +23,6 @@ unset($_SESSION["booking_data"]);
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Receipt</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .receipt-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 <body>
     <div class="receipt-container">
