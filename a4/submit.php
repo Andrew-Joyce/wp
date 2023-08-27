@@ -57,7 +57,7 @@ unset($_SESSION["booking_data"]);
                 <tr>
                     <td><?php echo $seatType; ?></td>
                     <td><?php echo $quantity; ?></td>
-                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($seatPricesData[$seatType], 2) : '0.00'; ?></td>
+                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($quantity * $seatPricesData[$seatType], 2) : '0.00'; ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
