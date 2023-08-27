@@ -22,13 +22,12 @@ function calculateSeatPrices($seats, $isDiscounted = false) {
 
     $seatPricesData = array();
 
-    foreach ($seatsData as $seatType => $quantity) {
+    foreach ($seats as $seatType => $seatQuantity) {
         if (isset($seatPrices[$seatType])) {
             $seatPrice = $isDiscounted ? $seatPrices[$seatType]['discount'] : $seatPrices[$seatType]['full'];
-            $seatPricesData[$seatType] = $seatPrice * $quantity;
+            $seatPricesData[$seatType] = $seatPrice * $seatQuantity;
         }
     }
-    
 
     return $seatPricesData;
 }
