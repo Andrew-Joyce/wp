@@ -36,40 +36,38 @@ unset($_SESSION["booking_data"]);
         </header>
         
         <main>
-            <div class="receipt-container">
-                <div class="receipt-grid">
-                    <strong>Seat Type</strong>
-                </div>
-                <div class="receipt-grid">
-                    <strong>Quantity</strong>
-                </div>
-                <div class="receipt-grid">
-                    <strong>Subtotal</strong>
-                </div>
+            <h2>Receipt</h2>
+            <h3>Customer Details</h3>
+            <p><strong>Name:</strong> <?php echo $bookingData["name"]; ?></p>
+            <p><strong>Email:</strong> <?php echo $bookingData["email"]; ?></p>
+            <p><strong>Mobile:</strong> <?php echo $bookingData["mobile"]; ?></p>
+
+            <h3>Booking Summary</h3>
+            <p><strong>Film:</strong> <?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></p>
+            <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
+
+            <table>
+                <tr>
+                    <th>Seat Type</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
-                    <div class="receipt-grid">
-                        <?php echo $seatType; ?>
-                    </div>
-                    <div class="receipt-grid">
-                        <?php echo $quantity; ?>
-                    </div>
-                    <div class="receipt-grid">
-                        <?php echo isset($seatPricesData[$seatType]) ? number_format($quantity * $seatPricesData[$seatType], 2) : '0.00'; ?>
-                    </div>
+                <tr>
+                    <td><?php echo $seatType; ?></td>
+                    <td><?php echo $quantity; ?></td>
+                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($quantity * $seatPricesData[$seatType], 2) : '0.00'; ?></td>
+                </tr>
                 <?php endforeach; ?>
-                <div class="receipt-grid" style="grid-column: span 2; text-align: right;">
-                    <strong>Total</strong>
-                </div>
-                <div class="receipt-grid">
-                    <?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)), 2); ?>
-                </div>
-                <div class="receipt-grid" style="grid-column: span 2; text-align: right;">
-                    <strong>GST (10%)</strong>
-                </div>
-                <div class="receipt-grid">
-                    <?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)) / 11, 2); ?>
-                </div>
-            </div>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td><?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)), 2); ?></td>
+                </tr>
+                <tr>
+                    <td colspan="2">GST (10%)</td>
+                    <td><?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)) / 11, 2); ?></td>
+                </tr>
+            </table>
         </main>
 
         <footer>
