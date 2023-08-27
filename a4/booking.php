@@ -37,9 +37,9 @@ unset($_SESSION['errors']);
     </header>
 
     <nav id="navbar">
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#now-showing">Now Showing</a>
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#seats-&-prices">Seats & Prices</a>
-        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a3/index.php#about-us">About Us</a>
+        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#now-showing">Now Showing</a>
+        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#seats-&-prices">Seats & Prices</a>
+        <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#about-us">About Us</a>
     </nav>
 
     <main>

@@ -262,6 +262,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+function formatSession(session) {
+    var sessionParts = session.split('-');
+    var time = sessionParts[1];
+    var day = sessionParts[0];
+
+    var formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+    var formattedTime = time.toUpperCase();
+
+    var rate = sessionParts[2] === 'dis' ? 'Discount' : 'Regular';
+
+    return formattedTime + ', ' + formattedDay + ' (' + rate + ')';
+}
+
+var formattedSessionElement = document.getElementById("formatted-session");
+if (formattedSessionElement) {
+    var formattedSession = formattedSessionElement.textContent;
+    var formattedSessionResult = formatSession(formattedSession);
+    formattedSessionElement.textContent = formattedSessionResult;
+}
 
 
 
