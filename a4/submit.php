@@ -10,7 +10,7 @@ if (!isset($_SESSION["booking_data"])) {
 $bookingData = $_SESSION["booking_data"];
 $seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
 $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
-
+$formattedSession = formatSession($bookingData["session"]);
 
 unset($_SESSION["booking_data"]);
 ?>
@@ -41,12 +41,12 @@ unset($_SESSION["booking_data"]);
 </head>
 <body>
     <div class="receipt-container">
-    <header style="text-align: center;">
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
-            <h1 style="display: inline;">Lunardo Cinema</h1>
-        </div>
-    </header>
+        <header style="text-align: center;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+                <h1 style="display: inline;">Lunardo Cinema</h1>
+            </div>
+        </header>
         
         <main>
             <h2>Receipt</h2>
@@ -56,8 +56,8 @@ unset($_SESSION["booking_data"]);
             <p><strong>Mobile:</strong> <?php echo $bookingData["mobile"]; ?></p>
 
             <h3>Booking Summary</h3>
-                <p><strong>Film:</strong> <?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></p>
-                <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
+            <p><strong>Film:</strong> <?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></p>
+            <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <table>
                 <tr>
