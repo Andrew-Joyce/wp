@@ -36,6 +36,7 @@ unset($_SESSION["booking_data"]);
         </header>
         
         <main>
+            
             <h2>Receipt</h2>
             <h3>Customer Details</h3>
             <p><strong>Name:</strong> <?php echo $bookingData["name"]; ?></p>
