@@ -10,7 +10,6 @@ if (!isset($_SESSION["booking_data"])) {
 $bookingData = $_SESSION["booking_data"];
 $seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
 $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
-$formattedSession = formatSession($bookingData["session"]);
 
 
 unset($_SESSION["booking_data"]);
@@ -85,11 +84,31 @@ unset($_SESSION["booking_data"]);
         </main>
 
         <footer>
-            <p>Company Address: 123 Cinema St, City</p>
-            <p>Email: info@lunardocinema.com</p>
-            <p>Phone: 123-456-7890</p>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+            <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+        </div>
+        <div>&copy;<script>
+                document.write(new Date().getFullYear());
+            </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()'>Toggle Wireframe CSS</button></div>
         </footer>
-    </div>
+
+        <div id="debug-module">
+            <h2>Debug Information</h2>
+            <h3>Request Data:</h3>
+            <pre><?php echo json_encode($_GET, JSON_PRETTY_PRINT); ?></pre>
+            <pre><?php echo json_encode($_POST, JSON_PRETTY_PRINT); ?></pre>
+            
+            <h3>Session Contents:</h3>
+            <pre><?php echo json_encode($_SESSION, JSON_PRETTY_PRINT); ?></pre>
+            
+            <h3>Page Code:</h3>
+            <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
+        </div>
 </body>
 </html>
 
