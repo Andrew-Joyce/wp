@@ -686,4 +686,25 @@ fieldset .movie-title {
   margin-top: 5px;
 }
 
+.receipt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+  .receipt-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
 }
