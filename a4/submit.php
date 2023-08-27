@@ -57,12 +57,12 @@ unset($_SESSION["booking_data"]);
                 <tr>
                     <td><?php echo $seatType; ?></td>
                     <td><?php echo $quantity; ?></td>
-                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($quantity * $seatPricesData[$seatType], 2) : '0.00'; ?></td>
+                    <td><?php echo isset($seatPricesData[$seatType]) ? number_format($seatPricesData[$seatType] * $quantity, 2) : '0.00'; ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
                     <td colspan="2">Total</td>
-                    <td><?php echo number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td><?php echo number_format(array_sum(array_map(function($quantity, $price) { return $quantity * $price; }, $seatsData, $seatPricesData)), 2); ?></td>
                 </tr>
                 <tr>
                     <td colspan="2">GST (10%)</td>
