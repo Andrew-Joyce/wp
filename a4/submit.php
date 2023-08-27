@@ -48,9 +48,14 @@ unset($_SESSION["booking_data"]);
 
             <table>
                 <tr>
-                    <th>Seat Type</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <td><?php echo $seatType; ?></td>
+                    <td><?php echo $quantity; ?></td>
+                    <td>
+                        <?php
+                        $subtotal = isset($seatPricesData[$seatType]) ? $quantity * $seatPricesData[$seatType] : 0;
+                        echo $subtotal;
+                        ?>
+                    </td>
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
