@@ -1,22 +1,4 @@
 <?php
-function convertSeatType($seatType) {
-    switch ($seatType) {
-        case 'STA':
-            return 'Standard Adult';
-        case 'STP':
-            return 'Standard Concession';
-        case 'STC':
-            return 'Standard Child';
-        case 'FCA':
-            return 'Gold Class Adult';
-        case 'FCP':
-            return 'Gold Class Concession';
-        case 'FCC':
-            return 'Gold Class Child';
-        default:
-            return $seatType;
-    }
-}
 
 session_start();
 include 'tools.php';
