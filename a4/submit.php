@@ -66,7 +66,7 @@ unset($_SESSION["booking_data"]);
                 </tr>
                 <tr>
                     <td colspan="2">GST (10%)</td>
-                    <td><?php echo number_format(array_sum(array_map(function($seatType, $quantity) use ($seatPricesData) { return $quantity * $seatPricesData[$seatType]; }, array_keys($seatsData), $seatsData)) * 0.10, 2); ?></td>  
+                    <td><?php echo number_format($bookingData["total_price"] * 0.10, 2); ?></td> 
             </table>
         </main>
 
