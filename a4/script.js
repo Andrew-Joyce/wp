@@ -262,7 +262,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+function isValidEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
 
+function isValidMobile(mobile) {
+    const mobilePattern = /^(?:04\d{2}\s?\d{3}\s?\d{3}|04\d{2}\s?\d{6})$/;
+    return mobilePattern.test(mobile);
+}
+
+function calculateTotalPrice(seats, isDiscounted = false) {
+    const seatPrices = {
+        'STA': { 'full': 21.50, 'discount': 16.00 },
+        'STP': { 'full': 19.50, 'discount': 14.00 },
+        'STC': { 'full': 17.50, 'discount': 12.00 },
+        'FCA': { 'full': 31.00, 'discount': 25.00 },
+        'FCP': { 'full': 28.00, 'discount': 23.50 },
+        'FCC': { 'full': 25.00, 'discount': 22.00 }
+    };
+
+    let totalPrice = 0;
+
+    for (const seatType in seats) {
+        if (seats.hasOwnProperty(seatType) && seatPrices.hasOwnProperty(seatType)) {
+            const seatPrice = isDiscounted ? seatPrices[seatType]['discount'] : seatPrices[seatType]['full'];
+            totalPrice += seats[seatType] * seatPrice;
+        }
+    }
+
+    return totalPrice;
+}
 
 
 
