@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isValidEmail($email)) {
         $errors['email'] = "Invalid email format";
     }
-    
+
     if (empty($errors)) {
         $selectedSessionValue = explode('-', $selectedSession);
         $isDiscounted = end($selectedSessionValue) === 'dis';
@@ -88,4 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'window.location.href = "booking.php?movie=' . $movieCode . '";'; 
         echo '</script>';
     }
-    
+} 
+
+?>
