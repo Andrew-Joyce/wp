@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $bookingRow[] = "GST";
         $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
     
-        $file = fopen("booking.txt", "a");
+        $file = fopen("/home/sl0/S3876520/public_html/wp/a4/bookings.txt", "a");
         if ($file) {
             if (fputcsv($file, $bookingRow, "\t")) {
                 fclose($file);
