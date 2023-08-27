@@ -32,6 +32,28 @@ function calculateTotalPrice($seats, $isDiscounted = false) {
     return $totalPrice;
 }
 
+function calculateSeatPrices($seats, $isDiscounted = false) {
+    $seatPrices = array(
+        'STA' => array('full' => 21.50, 'discount' => 16.00),  
+        'STP' => array('full' => 19.50, 'discount' => 14.00),  
+        'STC' => array('full' => 17.50, 'discount' => 12.00),
+        'FCA' => array('full' => 31.00, 'discount' => 25.00), 
+        'FCP' => array('full' => 28.00, 'discount' => 23.50), 
+        'FCC' => array('full' => 25.00, 'discount' => 22.00)  
+    );
+
+    $seatPricesData = array();
+
+    foreach ($seats as $seatType => $seatQuantity) {
+        if (isset($seatPrices[$seatType])) {
+            $seatPrice = $isDiscounted ? $seatPrices[$seatType]['discount'] : $seatPrices[$seatType]['full'];
+            $seatPricesData[$seatType] = $seatPrice * $seatQuantity;
+        }
+    }
+
+    return $seatPricesData;
+}
+
 $errors = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -66,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$anySeatSelected) {
-        $errors['seats'] = "Error with seats: No seats selected2";
+        $errors['seats'] = "Error with seats: No seats selected";
     }
 
     if ($selectedMovieDetails && $selectedSession) {
@@ -92,30 +114,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-if (empty($errors)) {
-    $selectedSessionValue = explode('-', $selectedSession);
-    $isDiscounted = end($selectedSessionValue) === 'dis';
+    if (empty($errors)) {
+        $selectedSessionValue = explode('-', $selectedSession);
+        $isDiscounted = end($selectedSessionValue) === 'dis';
 
-    $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
+        $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
 
-    $_SESSION['booking_data'] = array(
-        'movie_code' => $movieCode,
-        'name' => $name,
-        'mobile' => $mobile,
-        'email' => $email,
-        'session' => $selectedSession,
-        'seats' => $_POST['seats'],
-        'seat_prices' => $seatPricesData,
-        'total_price' => array_sum($seatPricesData)
-    );
+        $_SESSION['booking_data'] = array(
+            'movie_code' => $movieCode,
+            'name' => $name,
+            'mobile' => $mobile,
+            'email' => $email,
+            'session' => $selectedSession,
+            'seats' => $_POST['seats'],
+            'seat_prices' => $seatPricesData,
+            'total_price' => array_sum($seatPricesData)
+        );
 
-    header("Location: submit.php");
-    exit();
-} else {
-    $_SESSION['errors'] = $errors;
-    header("Location: booking.php?movie=$movieCode");
-    exit();
-}    
-
+        header("Location: submit.php");
+        exit();
+    } else {
+        $_SESSION['errors'] = $errors;
+        header("Location: booking.php?movie=$movieCode");
+        exit();
+    }
 }
 ?>
