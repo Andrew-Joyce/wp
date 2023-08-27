@@ -7,8 +7,8 @@ if (!isset($_SESSION["booking_data"])) {
 }
 
 $bookingData = $_SESSION["booking_data"];
-$seatsData = $bookingData["seats"];
-$seatPricesData = $bookingData["seat_prices"];
+$seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array(); // Check if seats data is set and an array
+$seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); // Check if seat prices data is set and an array
 
 unset($_SESSION["booking_data"]);
 ?>
@@ -61,7 +61,7 @@ unset($_SESSION["booking_data"]);
                 <tr>
                     <td><?php echo $seatType; ?></td>
                     <td><?php echo $quantity; ?></td>
-                    <td><?php echo $quantity * $seatPricesData[$seatType]; ?></td>
+                    <td><?php echo isset($seatPricesData[$seatType]) ? $quantity * $seatPricesData[$seatType] : 0; ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
@@ -83,3 +83,4 @@ unset($_SESSION["booking_data"]);
     </div>
 </body>
 </html>
+

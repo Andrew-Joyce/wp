@@ -43,16 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $anySeatSelected = false;
 
-    foreach ($_POST['seats'] as $seatType => $seatQuantity) {
-        if ($seatQuantity > 0) {
-            if (!is_numeric($seatQuantity) || $seatQuantity < 1 || $seatQuantity > 10) {
-                $errors[$seatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
+    if (isset($_POST['seats']) && is_array($_POST['seats'])) {
+        foreach ($_POST['seats'] as $seatType => $seatQuantity) {
+            if ($seatQuantity > 0) {
+                if (!is_numeric($seatQuantity) || $seatQuantity < 1 || $seatQuantity > 10) {
+                    $errors[$seatType] = "Invalid seat quantity. Please select a quantity between 1 and 10.";
+                }
+                $anySeatSelected = true; 
             }
-            $anySeatSelected = true; 
         }
-    }
-
-    if (!$anySeatSelected) {
+    } else {
         $errors['seats'] = "Error with seats: No seats selected";
     }
 
@@ -97,17 +97,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $isDiscounted = end($selectedSessionValue) === 'dis';
     
         $totalPrice = calculateTotalPrice($_POST['seats'], $isDiscounted);
-    
+
         $_SESSION['booking_data'] = array(
             'movie_code' => $movieCode,
             'name' => $name,
             'mobile' => $mobile,
             'email' => $email,
             'session' => $selectedSession,
-            'seat_quantities' => $_POST['seats'],
+            'seats' => $_POST['seats'],
+            'seat_prices' => calculateTotalPrice($_POST['seats']),
             'total_price' => $totalPrice
         );
-    
+
         header("Location: submit.php");
         exit();
     } else {
