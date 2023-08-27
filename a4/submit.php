@@ -2,19 +2,19 @@
 session_start();
 include 'tools.php';
 
-$bookingData = isset($_SESSION['booking_data']) ? $_SESSION['booking_data'] : array();
+if (!isset($_SESSION["booking_data"])) {
+    header("Location: index.php");
+    exit();
+}
 
-$totalPrice = isset($bookingData['total_price']) ? $bookingData['total_price'] : 0;
-$seatPrices = isset($bookingData['seat_prices']) ? $bookingData['seat_prices'] : array();
-$seats = isset($bookingData['seats']) ? $bookingData['seats'] : array();
+$bookingData = $_SESSION["booking_data"];
+$seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
+$seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
+$formattedSession = formatSession($bookingData["session"]);
 
-$subtotalBySeatType = array_map(function ($seatType, $quantity) use ($seatPrices) {
-    $seatPrice = isset($seatPrices[$seatType]) ? $seatPrices[$seatType] : 0;
-    return $quantity * $seatPrice;
-}, array_keys($seats), $seats);
+var_dump($_SESSION["booking_data"]);
 
-$gst = $totalPrice * 0.1;
-
+unset($_SESSION["booking_data"]);
 ?>
 
 <!DOCTYPE html>
