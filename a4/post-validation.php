@@ -96,9 +96,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $selectedSessionValue = explode('-', $selectedSession);
         $isDiscounted = end($selectedSessionValue) === 'dis';
+        
+        $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
     
-        $totalPrice = calculateTotalPrice($_POST['seats'], $isDiscounted);
-
         $_SESSION['booking_data'] = array(
             'movie_code' => $movieCode,
             'name' => $name,
@@ -109,9 +109,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'seat_prices' => $seatPricesData,
             'total_price' => array_sum($seatPricesData)
         );
-
+    
         header("Location: submit.php");
         exit();
+    }
     } else {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
