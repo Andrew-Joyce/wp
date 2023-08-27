@@ -55,7 +55,7 @@ unset($_SESSION["booking_data"]);
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
-                    <td><?php echo $seatType; ?></td>
+                    <td><?php echo convertSeatType($seatType); ?></td>
                     <td><?php echo $quantity; ?></td>
                     <td><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
                 </tr>
