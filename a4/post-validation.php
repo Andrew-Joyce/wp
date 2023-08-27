@@ -133,7 +133,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $bookingRow[] = "GST";
         $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
     
-        $file = fopen("/home/sl0/S3876520/Desktop/bookings.txt", "a");
+        $file = fopen("/Users/andrewjoyce/Desktop/bookings.txt", "a");
+        if ($file === false) {
+            die("Error opening file");
+        }   
         fputcsv($file, $bookingRow, "\t");
         fclose($file);
         
