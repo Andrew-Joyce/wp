@@ -383,6 +383,7 @@ img {
 table, table th,
 table td {
   font-family: 'Poppins', sans-serif;
+  text-align: center;
   font-size: 18px;
 }
 
