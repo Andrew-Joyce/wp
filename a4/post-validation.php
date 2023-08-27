@@ -81,15 +81,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         echo '<script>';
         echo 'window.location.href = "submit.php";';
-        echo '<script src="script.js"></script>';
-
-        exit();
+        echo '</script>'; 
     } else {
         $_SESSION['errors'] = $errors;
         echo '<script>';
         echo 'window.location.href = "booking.php?movie=' . $movieCode . '";'; 
-        echo '<script src="script.js"></script>';
-        exit();
+        echo '</script>';
     }
+    
     ?>
     
