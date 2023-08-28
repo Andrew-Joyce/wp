@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
 
+
         bookingForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -183,8 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 bookingForm.submit();
             }
         });
-    }
-    
+
     function validateForm() {
         const inputs = {
             name: document.getElementById('name'),
