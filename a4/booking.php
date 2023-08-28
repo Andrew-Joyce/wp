@@ -190,6 +190,8 @@ unset($_SESSION['errors']);
         <h3>Page Code:</h3>
         <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
     </div>
+    
+    <script src="script.js"></script>
 
 </body>
 
