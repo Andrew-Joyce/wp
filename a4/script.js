@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const selectedMovie = new URLSearchParams(window.location.search).get('movie');
-
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-    sessionFieldsets.forEach(fieldset => fieldset.style.display = 'none');
+    sessionFieldsets.forEach((fieldset) => {
+        fieldset.style.display = 'none';
+    });
 
     if (selectedMovie) {
         const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
@@ -10,29 +10,41 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedFieldset.style.display = 'block';
         }
     }
+});
 
-    const sessions = document.querySelectorAll('.session');
+document.addEventListener('DOMContentLoaded', function () {
+    var sessions = document.querySelectorAll('.session');
 
-    sessions.forEach(session => {
-        session.addEventListener('click', () => {
-            sessions.forEach(innerSession => innerSession.classList.remove('selected'));
-            session.classList.add('selected');
+    sessions.forEach(function(session) {
+        session.addEventListener('click', function(e) {
+            sessions.forEach(function(innerSession) {
+                innerSession.classList.remove('selected');
+            });
+
+            e.currentTarget.classList.add('selected');
         });
     });
+});
 
+    
+document.addEventListener("DOMContentLoaded", function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
 
     function updateTotalPrice() {
         let totalPrice = 0;
         let totalSeatsSelected = 0;
-    
+
         ticketInputs.forEach(input => {
-            let quantity = parseInt(input.value, 10); 
-            let maxQuantity = parseInt(input.getAttribute('max'), 10); 
-    
+            let quantity = parseInt(input.value);
+            let maxQuantity = parseInt(input.getAttribute('max'));
+
             totalSeatsSelected += quantity;
-            quantity = Math.min(quantity, maxQuantity);
-    
+
+            if (quantity > maxQuantity) {
+                input.value = maxQuantity;
+                quantity = maxQuantity;
+            }
+
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
             let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
             let selectedSession = document.querySelector('.selected');
@@ -40,25 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
-    
+
         if (window.location.pathname.endsWith('booking.php')) {
-            const totalPriceElement = document.getElementById('total-price');
-            if (totalPriceElement) {
-                totalPriceElement.innerText = `Total Price: $${totalPrice.toFixed(2)}`;
-            }
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
         }
-    
+
         return totalSeatsSelected;
     }
 
-    ticketInputs.forEach(input => input.addEventListener('input', updateTotalPrice));
+    ticketInputs.forEach(input => {
+        input.addEventListener('input', updateTotalPrice);
+    });
 
     const sessionButtons = document.querySelectorAll('.session');
     sessionButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            sessionButtons.forEach(btn => btn.classList.remove('error', 'selected'));
+        button.addEventListener('click', function() {
+            sessionButtons.forEach(btn => btn.classList.remove('error'));
+            
+            sessionButtons.forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
-            document.getElementById('selected-session-input').value = button.getAttribute('data-session');
+            
+            const selectedSessionValue = button.getAttribute('data-session');
+            document.getElementById('selected-session-input').value = selectedSessionValue;
         });
     });
 
