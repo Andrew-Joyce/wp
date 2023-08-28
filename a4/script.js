@@ -2,9 +2,7 @@ const selectedMovie = new URLSearchParams(window.location.search).get('movie');
 
 document.addEventListener('DOMContentLoaded', () => {
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-    sessionFieldsets.forEach((fieldset) => {
-        fieldset.style.display = 'none';
-    });
+    sessionFieldsets.forEach(fieldset => fieldset.style.display = 'none');
 
     if (selectedMovie) {
         const selectedFieldset = document.getElementById(`fieldset-session-${selectedMovie}`);
@@ -12,24 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedFieldset.style.display = 'block';
         }
     }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    var sessions = document.querySelectorAll('.session');
+    const sessions = document.querySelectorAll('.session');
 
-    sessions.forEach(function(session) {
-        session.addEventListener('click', function(e) {
-            sessions.forEach(function(innerSession) {
-                innerSession.classList.remove('selected');
-            });
-
-            e.currentTarget.classList.add('selected');
+    sessions.forEach(session => {
+        session.addEventListener('click', () => {
+            sessions.forEach(innerSession => innerSession.classList.remove('selected'));
+            session.classList.add('selected');
         });
     });
-});
 
-    
-document.addEventListener("DOMContentLoaded", function() {
     const ticketInputs = document.querySelectorAll('input[type="number"]');
 
     function updateTotalPrice() {
@@ -41,11 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let maxQuantity = parseInt(input.getAttribute('max'));
 
             totalSeatsSelected += quantity;
-
-            if (quantity > maxQuantity) {
-                input.value = maxQuantity;
-                quantity = maxQuantity;
-            }
+            quantity = Math.min(quantity, maxQuantity);
 
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
             let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
@@ -56,26 +42,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         if (window.location.pathname.endsWith('booking.php')) {
-            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+            document.getElementById('total-price').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
         }
 
         return totalSeatsSelected;
     }
 
-    ticketInputs.forEach(input => {
-        input.addEventListener('input', updateTotalPrice);
-    });
+    ticketInputs.forEach(input => input.addEventListener('input', updateTotalPrice));
 
     const sessionButtons = document.querySelectorAll('.session');
     sessionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            sessionButtons.forEach(btn => btn.classList.remove('error'));
-            
-            sessionButtons.forEach(btn => btn.classList.remove('selected'));
+        button.addEventListener('click', () => {
+            sessionButtons.forEach(btn => btn.classList.remove('error', 'selected'));
             button.classList.add('selected');
-            
-            const selectedSessionValue = button.getAttribute('data-session');
-            document.getElementById('selected-session-input').value = selectedSessionValue;
+            document.getElementById('selected-session-input').value = button.getAttribute('data-session');
         });
     });
 
