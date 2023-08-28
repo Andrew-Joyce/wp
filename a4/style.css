@@ -1,46 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-.page-break {
-  break-after: always;
-  page-break-after: always;
-}
-
-.ticket {
-  border: 1px solid #000;
-  padding: 10px; 
-  margin: 10px 0;
-  background-color: blue;
-  color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  break-inside: avoid;
-
-}
-
-.ticket.gold {
-  background-color: gold;
-  color: black;
-}
-
-.ticket img {
-  width: 100px;
-  margin-right: 10px;
-}
-.ticket h3, .ticket p {
-  margin: 0 0 5px; 
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 header {
@@ -768,5 +734,38 @@ fieldset .movie-title {
 .ticket h3, .ticket p {
   margin: 0 0 5px; 
 }
+.page-break {
+  break-after: always;
+  page-break-after: always;
+}
+
+.ticket {
+  border: 1px solid #000;
+  padding: 10px; 
+  margin: 10px 0;
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  break-inside: avoid;
+
+}
+
+.ticket.gold {
+  background-color: gold;
+  color: black;
+}
+
+.ticket img {
+  width: 100px;
+  margin-right: 10px;
+}
+.ticket h3, .ticket p {
+  margin: 0 0 5px; 
+}
+
 
 }
