@@ -77,6 +77,24 @@ unset($_SESSION["booking_data"]);
             <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
             <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
         </div>
+
+    <div class="page-break"></div>
+
+    <section class="tickets-section">
+    <h2>Your Tickets</h2>
+        <?php foreach ($seatsData as $seatType => $quantity): ?>
+            <?php for ($i = 0; $i < $quantity; $i++): ?>
+                <div class="ticket <?php echo $seatType == "gold" ? "gold" : ""; ?>">
+                    <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
+                    <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
+                    <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
+                    <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
+                    <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                </div>
+            <?php endfor; ?>
+        <?php endforeach; ?>
+    </section>
+
         <div>&copy;<script>
                 document.write(new Date().getFullYear());
             </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>

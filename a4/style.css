@@ -703,4 +703,29 @@ fieldset .movie-title {
   font-size: 14px;
   margin-top: 5px;
 }
+.page-break {
+  break-after: always;
+  page-break-after: always;
+}
+
+.ticket {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  break-inside: avoid;
+}
+
+.ticket.gold {
+  background-color: gold;
+  color: black;
+}
+
+.ticket img {
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+}
+
 }
