@@ -70,6 +70,19 @@ unset($_SESSION["booking_data"]);
             </table>
         </main>
 
+        <section class="tickets-section">
+        <h2>Your Tickets</h2>
+            <?php foreach ($seatsData as $seatType => $quantity): ?>
+                <?php for ($i = 0; $i < $quantity; $i++): ?>
+                    <div class="ticket <?php echo $seatType == "gold" ? "gold" : ""; ?>">
+                        <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
+                        <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
+                        <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
+                        <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
+                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                    </div>
+                <?php endfor; ?>
+            <?php endf
 
 
 
@@ -83,21 +96,7 @@ unset($_SESSION["booking_data"]);
         </div>
 
         <div class="page-break"></div>
-
-        <section class="tickets-section">
-        <h2>Your Tickets</h2>
-            <?php foreach ($seatsData as $seatType => $quantity): ?>
-                <?php for ($i = 0; $i < $quantity; $i++): ?>
-                    <div class="ticket <?php echo $seatType == "gold" ? "gold" : ""; ?>">
-                        <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
-                        <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
-                        <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
-                        <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
-                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
-                    </div>
-                <?php endfor; ?>
-            <?php endforeach; ?>
-        </section>
+        
 
         <div>&copy;<script>
                 document.write(new Date().getFullYear());
