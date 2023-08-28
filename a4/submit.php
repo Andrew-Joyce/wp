@@ -23,7 +23,6 @@ unset($_SESSION["booking_data"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Receipt</title>
 </head>
 <body>
@@ -119,7 +118,6 @@ unset($_SESSION["booking_data"]);
             <h3>Page Code:</h3>
             <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
         </div>
-    <script src="script.js"></script>
 </body>
 </html>
 
