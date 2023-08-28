@@ -170,18 +170,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookingForm = document.getElementById("booking-form");
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
 
-    bookingForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        const isValid = validateForm();
+            const isValid = validateForm();
 
-        if (isValid) {
-            bookingForm.submit();
-        }
-    });
+            if (isValid) {
+                bookingForm.submit();
+            }
+        });
 
     function validateForm() {
         const inputs = {
