@@ -709,12 +709,18 @@ fieldset .movie-title {
 }
 
 .ticket {
+  border: 1px solid #000;
+  padding: 10px; 
+  margin: 10px 0;
   background-color: blue;
   color: white;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
   break-inside: avoid;
+
 }
 
 .ticket.gold {
@@ -724,8 +730,10 @@ fieldset .movie-title {
 
 .ticket img {
   width: 100px;
-  float: left;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+.ticket h3, .ticket p {
+  margin: 0 0 5px; 
 }
 
 }

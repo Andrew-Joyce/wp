@@ -71,6 +71,7 @@ unset($_SESSION["booking_data"]);
         </main>
 
         <section class="tickets-section">
+        <link rel="stylesheet" href="style.css">
         <h2>Your Tickets</h2>
         <?php foreach ($seatsData as $seatType => $quantity): ?>
             <?php for ($i = 0; $i < $quantity; $i++): ?>
