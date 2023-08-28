@@ -1,8 +1,8 @@
-const selectedMovie = new URLSearchParams(window.location.search).get('movie');
-
 document.addEventListener('DOMContentLoaded', () => {
+    const selectedMovie = new URLSearchParams(window.location.search).get('movie');
+
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
-    sessionFieldsets.forEach((fieldset) => {
+    sessionFieldsets.forEach(fieldset => {
         fieldset.style.display = 'none';
     });
 
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     var sessions = document.querySelectorAll('.session');
