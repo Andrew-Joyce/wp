@@ -707,65 +707,25 @@ fieldset .movie-title {
   page-break-after: always;
 }
 
-.ticket {
-  border: 1px solid #000;
-  padding: 10px; 
+.ticket-container {
+  border: 1px solid #ccc;
+  padding: 10px;
   margin: 10px 0;
-  background-color: blue;
-  color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  break-inside: avoid;
-
+  background-color: #f9f9f9;
 }
 
-.ticket.gold {
+.ticket {
+  display: flex;
+}
+
+.gold {
   background-color: gold;
   color: black;
 }
 
-.ticket img {
-  width: 100px;
-  margin-right: 10px;
-}
-.ticket h3, .ticket p {
-  margin: 0 0 5px; 
-}
-.page-break {
-  break-after: always;
-  page-break-after: always;
-}
-
-.ticket {
-  border: 1px solid #000;
-  padding: 10px; 
-  margin: 10px 0;
+.standard {
   background-color: blue;
   color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  break-inside: avoid;
-
 }
-
-.ticket.gold {
-  background-color: gold;
-  color: black;
-}
-
-.ticket img {
-  width: 100px;
-  margin-right: 10px;
-}
-.ticket h3, .ticket p {
-  margin: 0 0 5px; 
-}
-
 
 }
