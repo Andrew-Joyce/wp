@@ -1,3 +1,5 @@
+const selectedMovie = new URLSearchParams(window.location.search).get('movie');
+
 document.addEventListener('DOMContentLoaded', () => {
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
     sessionFieldsets.forEach((fieldset) => {
