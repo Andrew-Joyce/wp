@@ -72,20 +72,17 @@ unset($_SESSION["booking_data"]);
 
         <section class="tickets-section">
         <h2>Your Tickets</h2>
-            <?php foreach ($seatsData as $seatType => $quantity): ?>
-                <?php for ($i = 0; $i < $quantity; $i++): ?>
-                    <div class="ticket <?php echo $seatType == "gold" ? "gold" : ""; ?>">
-                        <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
-                        <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
-                        <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
-                        <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
-                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
-                    </div>
-                <?php endfor; ?>
-            <?php endf
-
-
-
+        <?php foreach ($seatsData as $seatType => $quantity): ?>
+            <?php for ($i = 0; $i < $quantity; $i++): ?>
+                <div class="ticket <?php echo $seatType == "gold" ? "gold" : ""; ?>">
+                    <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
+                    <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
+                    <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
+                    <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
+                    <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                </div>
+            <?php endfor; ?>
+        <?php endforeach; ?>
 
         <footer>
         <div class="contact-info">
@@ -96,7 +93,7 @@ unset($_SESSION["booking_data"]);
         </div>
 
         <div class="page-break"></div>
-        
+
 
         <div>&copy;<script>
                 document.write(new Date().getFullYear());
