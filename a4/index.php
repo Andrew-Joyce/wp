@@ -9,8 +9,6 @@
     <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     <script src='../wireframe.js'></script>
-    <script src="script.js"></script>
-  </head>
   <body>
   <header style="text-align: center;">
     <div style="display: flex; justify-content: center; align-items: center;">
