@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 bookingForm.submit();
             }
         });
-
+    }
+    
     function validateForm() {
         const inputs = {
             name: document.getElementById('name'),
