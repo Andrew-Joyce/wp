@@ -744,8 +744,8 @@ fieldset .movie-title {
 }
 
 .ticket img {
-  max-width: 25px; 
-  max-height: 50px;
+  max-width: 5px; 
+  max-height: 10px;
   display: block;
   margin: 0 auto;
 }
