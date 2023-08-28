@@ -719,19 +719,22 @@ fieldset .movie-title {
   align-items: center;
 }
 
-.ticket-content img {
+.ticket-image img {
   max-width: 25px;
   max-height: 50px;
-  margin-right: 10px; 
+  margin-right: 10px;
+}
+
+.ticket-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .ticket-details {
-  flex: 1; 
+  flex: 1;
 }
 
-.ticket {
-  display: flex;
-}
 
 .gold {
   background-color: gold;
@@ -743,11 +746,5 @@ fieldset .movie-title {
   color: white;
 }
 
-.ticket img {
-  max-width: 5px; 
-  max-height: 10px;
-  display: block;
-  margin: 0 auto;
-}
 
 }
