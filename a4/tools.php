@@ -184,4 +184,15 @@ function convertSeatType($seatType) {
     }
 }
 
+function getPosterPath($movie_code) {
+    $posterPaths = array(
+        "Indiana Jones and the Dial of Destiny" => "../../media/indiana-jones-poster.png",
+        "Barbie" => "../../media/barbie-poster.png",
+        "Teenage Mutant Ninja Turtles: Mutant Mayhem" => "../../media/ninja-turtles-poster.png",
+        "Oppenheimer" => "../../media/oppenheimer-poster.png"
+    );
+
+    return $posterPaths[$movie_code] ?? ''; 
+}
+
 ?>

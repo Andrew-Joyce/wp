@@ -71,18 +71,20 @@ unset($_SESSION["booking_data"]);
         </main>
 
         <section class="tickets-section">
-        <h2>Your Tickets</h2>
-        <?php foreach ($seatsData as $seatType => $quantity): ?>
-            <?php for ($i = 0; $i < $quantity; $i++): ?>
-                <div class="ticket <?= ($seatType == "gold") ? "gold" : ""; ?>">
-                    <img src="../../media/<?php echo $bookingData["movie_code"]; ?>-poster.png" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
-                    <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
-                    <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
-                    <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
-                    <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
-                </div>
-            <?php endfor; ?>
-        <?php endforeach; ?>
+            <h2>Your Tickets</h2>
+            <?php foreach ($seatsData as $seatType => $quantity): ?>
+                <?php for ($i = 0; $i < $quantity; $i++): ?>
+                    <div class="ticket <?= ($seatType == "gold") ? "gold" : ""; ?>">
+                        <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
+                        <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
+                        <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
+                        <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
+                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                    </div>
+                <?php endfor; ?>
+            <?php endforeach; ?>
+        </section>
+
 
         <footer>
         <div class="contact-info">
