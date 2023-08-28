@@ -59,14 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const form = document.querySelector('form');
-    form.addEventListener('submit', event => {
-        const totalSeatsSelected = updateTotalPrice();
-        if (totalSeatsSelected > 10) {
-            event.preventDefault();
-            alert("You can select a maximum of 10 seats across all seat types.");
-        }
-    });
+    const form = document.querySelector('form#booking-form');
+    if (form) {
+        form.addEventListener('submit', event => {
+            const totalSeatsSelected = updateTotalPrice();
+            if (totalSeatsSelected > 10) {
+                event.preventDefault();
+                alert("You can select a maximum of 10 seats across all seat types.");
+            }
+        });
+    }
 
     updateTotalPrice();
 });
