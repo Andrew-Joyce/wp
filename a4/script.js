@@ -151,11 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const bookingForm = document.getElementById("booking-form");
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
 
-    bookingForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
 
         const isValid = validateForm();
 
