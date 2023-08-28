@@ -1,6 +1,4 @@
-const myUniqueUrlParams = new URLSearchParams(window.location.search);
-const selectedMovie = myUniqueUrlParams.get('movie');
-
+const selectedMovie = new URLSearchParams(window.location.search).get('movie');
 
 document.addEventListener('DOMContentLoaded', () => {
     const sessionFieldsets = document.querySelectorAll('fieldset[id^="fieldset-session"]');
