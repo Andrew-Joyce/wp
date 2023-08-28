@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('booking-form');
 
     if (bookingForm) {
@@ -243,3 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return isValid;
     }
 });
+
+
+
+
