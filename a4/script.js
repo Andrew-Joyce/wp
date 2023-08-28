@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTotalPrice() {
         let totalPrice = 0;
         let totalSeatsSelected = 0;
-
+    
         ticketInputs.forEach(input => {
-            let quantity = parseInt(input.value);
-            let maxQuantity = parseInt(input.getAttribute('max'));
-
+            let quantity = parseInt(input.value, 10); 
+            let maxQuantity = parseInt(input.getAttribute('max'), 10); 
+    
             totalSeatsSelected += quantity;
             quantity = Math.min(quantity, maxQuantity);
-
+    
             let fullPrice = parseFloat(input.nextElementSibling.getAttribute('data-full-price') || 0);
             let discountPrice = parseFloat(input.nextElementSibling.innerText.split('/')[1].split('$')[1]);
             let selectedSession = document.querySelector('.selected');
@@ -40,11 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
             let price = isDiscounted ? discountPrice : fullPrice;
             totalPrice += price * quantity;
         });
-
+    
         if (window.location.pathname.endsWith('booking.php')) {
-            document.getElementById('total-price').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+            const totalPriceElement = document.getElementById('total-price');
+            if (totalPriceElement) {
+                totalPriceElement.innerText = `Total Price: $${totalPrice.toFixed(2)}`;
+            }
         }
-
+    
         return totalSeatsSelected;
     }
 
