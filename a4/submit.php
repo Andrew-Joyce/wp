@@ -71,24 +71,27 @@ unset($_SESSION["booking_data"]);
 
         <section class="tickets-section">
             <h2>Your Tickets</h2>
-            <?php foreach ($seatsData as $seatType => $quantity): ?>
-                <?php for ($i = 0; $i < $quantity; $i++): ?>
-                    <div class="ticket-container">
-                        <div class="ticket <?= ($seatType == "gold") ? "gold" : "standard"; ?>">
-                            <div class="ticket-content">
-                                <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
-                                <div class="ticket-details">
-                                    <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
-                                    <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
-                                    <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
-                                    <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+            <div class="ticket-grid">
+                <?php foreach ($seatsData as $seatType => $quantity): ?>
+                    <?php for ($i = 0; $i < $quantity; $i++): ?>
+                        <div class="ticket-container">
+                            <div class="ticket <?= ($seatType == "gold") ? "gold" : "standard"; ?>">
+                                <div class="ticket-content">
+                                    <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
+                                    <div class="ticket-details">
+                                        <h3><?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?></h3>
+                                        <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
+                                        <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
+                                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endfor; ?>
-            <?php endforeach; ?>
+                    <?php endfor; ?>
+                <?php endforeach; ?>
+            </div>
         </section>
+
 
 
         <footer>
