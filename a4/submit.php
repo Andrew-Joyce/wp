@@ -41,8 +41,8 @@ unset($_SESSION["booking_data"]);
         }
 
         .ticket-image img {
-            max-width: 25px;
-            max-height: 50px;
+            max-width: 50px;
+            max-height: 100px;
             margin-right: 10px;
         }
 
