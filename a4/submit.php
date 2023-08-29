@@ -23,6 +23,49 @@ unset($_SESSION["booking_data"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-break {
+            break-after: always;
+            page-break-after: always;
+        }
+
+        .ticket-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ticket-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .ticket-image img {
+            max-width: 25px;
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .ticket-metadata {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ticket-details {
+            flex: 1;
+        }
+
+        .gold {
+            background-color: gold;
+            color: black;
+        }
+
+        .standard {
+            background-color: blue;
+            color: white;
+        }
+    </style>
     <title>Receipt</title>
 </head>
 <body>
