@@ -26,6 +26,14 @@ $formattedSession = formatSession($bookingData["session"]);
             page-break-after: always;
         }
 
+        .table-header {
+        width: 40%;
+        }
+
+        .table-cell {
+            width: 20%;
+        }
+        
         .ticket-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -98,25 +106,27 @@ $formattedSession = formatSession($bookingData["session"]);
 
             <table>
                 <tr>
-                    <th>Seat Type</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <th class="table-header">Seat Type</th>
+                    <th class="table-cell">Quantity</th>
+                    <th class="table-header">Subtotal</th>
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
-                    <td><?php echo convertSeatType($seatType); ?></td>
-                    <td><?php echo $quantity; ?></td>
-                    <td><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
+                    <td class="table-header"><?php echo convertSeatType($seatType); ?></td>
+                    <td class="table-cell"><?php echo $quantity; ?></td>
+                    <td class="table-header"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
-                    <td colspan="2">Total</td>
-                    <td><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td colspan="2" class="table-cell">Total</td>
+                    <td class="table-header"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr>
-                    <td colspan="2">GST (10%)</td>
-                    <td><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
+                    <td colspan="2" class="table-cell">GST (10%)</td>
+                    <td class="table-header"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
+                </tr>
             </table>
+
         </main>
 
         <section class="tickets-section">
