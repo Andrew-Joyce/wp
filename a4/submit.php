@@ -119,7 +119,7 @@ $formattedSession = formatSession($bookingData["session"]);
                         var_dump($seatType);
                         var_dump(strpos($seatType, "Gold Class") !== false);
                         ?>
-                        <div class="ticket <?= (stripos($seatType, "Gold") !== false) ? "gold" : "standard"; ?>">
+                        <div class="ticket <?= in_array($seatType, ['FCA', 'FCP', 'FCC']) ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
                                     <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
@@ -138,7 +138,6 @@ $formattedSession = formatSession($bookingData["session"]);
                 <?php endforeach; ?>
             </div>
         </section>
-
 
         <footer>
         <div class="contact-info">
