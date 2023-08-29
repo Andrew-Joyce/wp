@@ -27,7 +27,7 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-header {
-        width: 40%;
+        width: 100%;
         }
 
         .table-cell {
