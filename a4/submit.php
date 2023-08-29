@@ -37,6 +37,7 @@ $formattedSession = formatSession($bookingData["session"]);
 
         .right-align {
         text-align: right;
+        }
 
         .left-align {
             text-align: left;
@@ -44,7 +45,7 @@ $formattedSession = formatSession($bookingData["session"]);
 
         .bold {
             font-weight: bold;
-         }
+        }
 
         .ticket-grid {
             display: grid;
