@@ -124,11 +124,11 @@ $formattedSession = formatSession($bookingData["session"]);
                     <th class="table-cell">Subtotal</th>
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
-                <tr>
-                    <td class="table-cell left-align"><?php echo convertSeatType($seatType); ?></td>
-                    <td class="table-cell"><?php echo $quantity; ?></td>
-                    <td class="table-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
-                </tr>
+                    <tr>
+                        <td class="table-cell left-align"><?php echo convertSeatType($seatType); ?></td>
+                        <td class="table-cell"><?php echo $quantity; ?></td>
+                        <td class="table-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
+                    </tr>
                 <?php endforeach; ?>
                 <tr class="right-align">
                     <td colspan="2" class="table-cell left-align bold">Total</td>
