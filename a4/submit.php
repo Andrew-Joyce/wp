@@ -131,11 +131,11 @@ $formattedSession = formatSession($bookingData["session"]);
                     </tr>
                 <?php endforeach; ?>
                 <tr class="right-align">
-                    <td colspan="2" class="table-cell left-align bold">Total</td>
+                    <td colspan="2" class="table-cell right-align bold">Total</td>
                     <td class="table-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr class="right-align">
-                    <td colspan="2" class="table-cell left-align bold">GST (10%)</td>
+                    <td colspan="2" class="table-cell right-align bold">GST (10%)</td>
                     <td class="table-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
