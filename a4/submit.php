@@ -31,9 +31,9 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-cell {
-            width: 20%;
+            width: 40%;
         }
-        
+
         .ticket-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
