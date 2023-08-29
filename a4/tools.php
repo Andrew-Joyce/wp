@@ -180,9 +180,14 @@ function convertSeatType($seatType) {
         case 'FCC':
             return 'Gold Class Child';
         default:
-            return $seatType;
+            if (strpos($seatType, 'Gold') !== false) {
+                return 'Gold Class';
+            } else {
+                return 'Unknown Seat Type';
+            }
     }
 }
+
 
 function getPosterPath($movie_code) {
     $posterPaths = array(
