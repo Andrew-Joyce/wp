@@ -27,12 +27,12 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-header {
-            width: 50%;
+            width: 33.33%;
             text-align: center;
         }
 
         .table-cell {
-            width: 50%;
+            width: 33.33%;
         }
 
         .right-align {
@@ -138,7 +138,6 @@ $formattedSession = formatSession($bookingData["session"]);
                     <td class="table-cell"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
-
 
         </main>
 
