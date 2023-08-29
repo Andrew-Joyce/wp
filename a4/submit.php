@@ -125,8 +125,16 @@ $formattedSession = formatSession($bookingData["session"]);
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
                         <?php
+                        $seatNumber = ($i + 1);
+                        if (in_array($seatType, ['FCA', 'FCP', 'FCC'])) {
+                            $seatNumberFormatted = "GC" . $seatNumber;
+                            $ticketClass = "gold";
+                        } else {
+                            $seatNumberFormatted = "S" . $seatNumber;
+                            $ticketClass = "standard";
+                        }
                         ?>
-                        <div class="ticket <?= in_array($seatType, ['FCA', 'FCP', 'FCC']) ? "gold" : "standard"; ?>">
+                        <div class="ticket <?= $ticketClass; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
                                     <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
@@ -136,7 +144,7 @@ $formattedSession = formatSession($bookingData["session"]);
                                     <div class="ticket-metadata">
                                         <p><strong>Seat Type:</strong> <?php echo convertSeatType($seatType); ?></p>
                                         <p><strong>Session:</strong> <?php echo $formattedSession; ?></p>
-                                        <p><strong>Seat Number:</strong> <?php echo ($i + 1); ?></p>
+                                        <p><strong>Seat Number:</strong> <?php echo $seatNumberFormatted; ?></p>
                                     </div>
                                 </div>
                             </div>
