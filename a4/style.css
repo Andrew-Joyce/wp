@@ -579,78 +579,76 @@ label {
   }
 }
 
-.submit-button {
-  height: 60px;
-  width: 400px;
-  margin-bottom: 20px;
-  background-color: black; 
-  border: 1px solid black;
-  color: white; 
-  font-weight: bold;
-  margin-right: 40px;
-  margin-top: 20px; 
-}
-
-.submit-button:hover {
-  background-color: blue; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-}
-
-@media screen and (max-width: 1024px) { 
-  .submit-button {
-    width: 32%; 
-  }
-}
-
-@media screen and (max-width: 768px) { 
-  .submit-button {
-    width: 48%; 
-  }
-}
-
-@media screen and (max-width: 480px) { 
-  .submit-button {
-    width: 100%; 
-  }
-}
-
-.seats-container, .seat label, .seat .seat-price {
+.submit-button, .seats-container, .seat label, .seat .seat-price {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   text-align: center;
 }
 
-@media screen and (max-width: 1024px) { 
 .submit-button {
-    width: 32%; 
+  height: 60px;
+  margin-bottom: 20px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  margin-right: 40px;
+  margin-top: 20px;
 }
 
-
-.seat input[type="number"] {
-  width: 45px; 
-  height: 30px; 
-  font-size: 14px; 
-  padding: 2px; 
+.submit-button:hover {
+  background-color: blue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (max-width: 768px) { 
-.seat input {
-    width: 48%; 
+@media screen and (max-width: 1024px) {
+  .submit-button {
+    width: 32%;
+  }
 }
 
-.seat input[type="number"] {
-    width: 48%; 
-}
-}
-
-@media screen and (max-width: 480px) { 
-.seat input{
-    width: 50%; 
+@media screen and (max-width: 768px) {
+  .submit-button {
+    width: 48%;
+  }
 }
 
-.seat input[type="number"] {
+@media screen and (max-width: 480px) {
+  .submit-button {
     width: 100%;
+  }
 }
+
+.seat input[type="number"] {
+  font-size: 14px;
+  padding: 2px;
+}
+
+@media screen and (max-width: 1024px) {
+  .seat input[type="number"] {
+    width: 45px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .seat input {
+    width: 48%;
+  }
+
+  .seat input[type="number"] {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .seat input {
+    width: 50%;
+  }
+
+  .seat input[type="number"] {
+    width: 100%;
+  }
 }
 
 fieldset .movie-title {
