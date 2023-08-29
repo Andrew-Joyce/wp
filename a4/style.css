@@ -7,17 +7,18 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
+  background-color: #f5f5f5;
 }
 
 header {
-  text-align: center;
-  padding: 0.5em 0;
   font-family: 'Oswald', sans-serif;
   font-size: 3vw;
   background-color: black;
   color: #fff;
+  color: #f2eded;
   animation: rainbow 1s infinite linear, flicker 1s infinite alternate;
 }
+
 
 @keyframes rainbow {
   0% {
@@ -97,7 +98,6 @@ nav a {
   max-width: 100px; 
   height: auto;
 }
-
 
 @media screen and (max-width: 768px) {
   .responsive-image {
@@ -451,6 +451,7 @@ label {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+
 }
 
 .responsive-video {
@@ -684,6 +685,7 @@ fieldset .movie-title {
 .active-nav-link {
   color: blue;
 }
+
 #debug-module {
   position: fixed;
   bottom: 0;
@@ -702,6 +704,7 @@ fieldset .movie-title {
   font-size: 14px;
   margin-top: 5px;
 }
+
 .page-break {
   break-after: always;
   page-break-after: always;
@@ -735,7 +738,6 @@ fieldset .movie-title {
   flex: 1;
 }
 
-
 .gold {
   background-color: gold;
   color: black;
@@ -744,7 +746,4 @@ fieldset .movie-title {
 .standard {
   background-color: blue;
   color: white;
-}
-
-
 }
