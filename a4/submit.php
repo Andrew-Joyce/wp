@@ -118,7 +118,7 @@ $formattedSession = formatSession($bookingData["session"]);
 
             <table>
                 <tr>
-                    <th class="table-header">Seat Type</th>
+                    <th class="table-header left-align">Seat Type</th>
                     <th class="table-cell">Quantity</th>
                     <th class="table-cell">Subtotal</th>
                 </tr>
@@ -138,6 +138,7 @@ $formattedSession = formatSession($bookingData["session"]);
                     <td class="table-cell"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
+
 
         </main>
 
