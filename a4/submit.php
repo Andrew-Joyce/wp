@@ -27,7 +27,7 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-header {
-        width: 100%;
+        width: 40%;
         }
 
         .table-cell {
@@ -108,22 +108,22 @@ $formattedSession = formatSession($bookingData["session"]);
                 <tr>
                     <th class="table-header">Seat Type</th>
                     <th class="table-cell">Quantity</th>
-                    <th class="table-header">Subtotal</th>
+                    <th class="table-cell">Subtotal</th>
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
                     <td class="table-header"><?php echo convertSeatType($seatType); ?></td>
                     <td class="table-cell"><?php echo $quantity; ?></td>
-                    <td class="table-header"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
+                    <td class="table-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
                     <td colspan="2" class="table-cell">Total</td>
-                    <td class="table-header"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td class="table-cell"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="table-cell">GST (10%)</td>
-                    <td class="table-header"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
+                    <td class="table-cell"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
 
