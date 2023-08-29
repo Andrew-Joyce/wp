@@ -134,6 +134,7 @@ $formattedSession = formatSession($bookingData["session"]);
             </div>
         </section>
 
+
         <footer>
         <div class="contact-info">
             <h3>Contact Us</h3>
