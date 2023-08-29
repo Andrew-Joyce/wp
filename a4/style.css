@@ -498,11 +498,14 @@ label {
 .contact-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px; 
-  justify-items: start; 
+  gap: 10px;
+  justify-items: start;
 }
 
-.contact-info label {
+.contact-info label,
+.contact-info input[type="text"],
+.contact-info input[type="tel"],
+.contact-info input[type="email"] {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   padding: 3px 5px;
@@ -513,12 +516,10 @@ label {
 .contact-info input[type="text"],
 .contact-info input[type="tel"],
 .contact-info input[type="email"] {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
   height: 40px;
   width: 100%;
   box-sizing: border-box;
-  padding: 3px 5px; 
+  padding: 3px 5px;
   margin: 0;
   text-align: left;
 }
