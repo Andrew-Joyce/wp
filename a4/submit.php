@@ -12,9 +12,6 @@ $seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $
 $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
 $formattedSession = formatSession($bookingData["session"]);
 
-var_dump($seatType);
-var_dump(strpos($seatType, "Gold Class") !== false);
-
 ?>
 
 <!DOCTYPE html>
@@ -118,6 +115,10 @@ var_dump(strpos($seatType, "Gold Class") !== false);
             <div class="ticket-grid"> 
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
+                        <?php
+                        var_dump($seatType);
+                        var_dump(strpos($seatType, "Gold Class") !== false);
+                        ?>
                         <div class="ticket <?= (stripos($seatType, "Gold") !== false) ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
@@ -137,6 +138,7 @@ var_dump(strpos($seatType, "Gold Class") !== false);
                 <?php endforeach; ?>
             </div>
         </section>
+
 
         <footer>
         <div class="contact-info">
