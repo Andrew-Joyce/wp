@@ -27,12 +27,24 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-header {
-            width: 40%;
+            width: 50%;
+            text-align: center;
         }
 
         .table-cell {
-            width: 40%;
+            width: 50%;
         }
+
+        .right-align {
+        text-align: right;
+
+        .left-align {
+            text-align: left;
+        }
+
+        .bold {
+            font-weight: bold;
+         }
 
         .ticket-grid {
             display: grid;
@@ -112,17 +124,17 @@ $formattedSession = formatSession($bookingData["session"]);
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                 <tr>
-                    <td class="table-header"><?php echo convertSeatType($seatType); ?></td>
+                    <td class="table-cell left-align"><?php echo convertSeatType($seatType); ?></td>
                     <td class="table-cell"><?php echo $quantity; ?></td>
                     <td class="table-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
                 </tr>
                 <?php endforeach; ?>
-                <tr>
-                    <td colspan="2" class="table-cell">Total</td>
+                <tr class="right-align">
+                    <td colspan="2" class="table-cell left-align bold">Total</td>
                     <td class="table-cell"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
-                <tr>
-                    <td colspan="2" class="table-cell">GST (10%)</td>
+                <tr class="right-align">
+                    <td colspan="2" class="table-cell left-align bold">GST (10%)</td>
                     <td class="table-cell"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
