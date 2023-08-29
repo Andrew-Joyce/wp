@@ -116,8 +116,6 @@ $formattedSession = formatSession($bookingData["session"]);
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
                         <?php
-                        var_dump($seatType);
-                        var_dump(in_array($seatType, ['FCA', 'FCP', 'FCC']));
                         ?>
                         <div class="ticket <?= in_array($seatType, ['FCA', 'FCP', 'FCC']) ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
