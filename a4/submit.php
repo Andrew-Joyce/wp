@@ -133,6 +133,7 @@ $formattedSession = formatSession($bookingData["session"]);
                 </tr>
             </table>
 
+
         </main>
 
         <section class="tickets-section">
