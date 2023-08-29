@@ -118,7 +118,7 @@ unset($_SESSION["booking_data"]);
             <div class="ticket-grid"> 
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
-                        <div class="ticket <?= ($seatType == "gold") ? "gold" : "standard"; ?>">
+                        <div class="ticket <?= ($seatType == "Gold") ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
                                     <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
