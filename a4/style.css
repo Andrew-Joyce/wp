@@ -620,31 +620,37 @@ label {
   text-align: center;
 }
 
+@media screen and (max-width: 1024px) { 
+.submit-button {
+    width: 32%; 
+}
+
+
 .seat input[type="number"] {
-  font-size: 14px;
-  padding: 2px;
-  height: 30px;
-  width: 45px;
+  width: 45px; 
+  height: 30px; 
+  font-size: 14px; 
+  padding: 2px; 
 }
 
-@media screen and (max-width: 768px) {
-  .seat input {
-    width: 48%;
-  }
-  
-  .seat input[type="number"] {
-    width: 48%;
-  }
+@media screen and (max-width: 768px) { 
+.seat input {
+    width: 48%; 
 }
 
-@media screen and (max-width: 480px) {
-  .seat input {
-    width: 50%;
-  }
-  
-  .seat input[type="number"] {
+.seat input[type="number"] {
+    width: 48%; 
+}
+}
+
+@media screen and (max-width: 480px) { 
+.seat input{
+    width: 50%; 
+}
+
+.seat input[type="number"] {
     width: 100%;
-  }
+}
 }
 
 fieldset .movie-title {
@@ -655,13 +661,13 @@ fieldset .movie-title {
 
 @media screen and (max-width: 768px) {
   fieldset .movie-title {
-    font-size: 32px;
+    font-size: 32px; 
   }
 }
 
 @media screen and (max-width: 480px) {
   fieldset .movie-title {
-    font-size: 28px;
+    font-size: 28px; 
   }
 }
 
@@ -694,3 +700,45 @@ fieldset .movie-title {
   margin-top: 5px;
 }
 
+.page-break {
+  break-after: always;
+  page-break-after: always;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+.ticket-content {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-image img {
+  max-width: 25px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.ticket-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticket-details {
+  flex: 1;
+}
+
+.gold {
+  background-color: gold;
+  color: black;
+}
+
+.standard {
+  background-color: blue;
+  color: white;
+}
