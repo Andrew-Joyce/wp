@@ -689,7 +689,7 @@ fieldset .movie-title {
 }
 
 #debug-module {
-  position: fixed;
+  position: flex;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -707,9 +707,12 @@ fieldset .movie-title {
   margin-top: 5px;
 }
 
-.page-break {
-  break-after: always;
+.receipt-container {
   page-break-after: always;
+}
+
+.ticket {
+  break-inside: avoid;
 }
 
 .table-header {
