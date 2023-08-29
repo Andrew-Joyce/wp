@@ -260,12 +260,6 @@ p {
   margin-bottom: 10px;
 }
 
-#seats-&-prices {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .seats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -626,21 +620,22 @@ label {
 }
 
 @media screen and (max-width: 1024px) { 
-.submit-button {
+  .submit-button {
     width: 32%; 
-}
+  }
 
-.seat input[type="number"] {
-  width: 45px; 
-  height: 30px; 
-  font-size: 14px; 
-  padding: 2px; 
+  .seat input[type="number"] {
+    width: 45px; 
+    height: 30px; 
+    font-size: 14px; 
+    padding: 2px; 
+  }
 }
 
 @media screen and (max-width: 768px) { 
-.seat input {
+  .seat input {
     width: 48%; 
-}
+  }
 }
 
 .seat input[type="number"] {
@@ -697,12 +692,26 @@ fieldset .movie-title {
   z-index: 9999;
 }
 
+@media screen and (max-width: 767px) {
+  #debug-module {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #debug-module {
+    padding: 2px;
+  }
+}
+
+
 #error-message {
   color: red;
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 18px; 
   margin-top: 5px;
 }
+
 
 .page-break {
   break-after: always;
@@ -768,3 +777,4 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
                                       transparent 50%, rgba(255, 255, 255, 0.2) 50%,
                                       rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
 }
+
