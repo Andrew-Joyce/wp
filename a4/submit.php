@@ -31,7 +31,7 @@ unset($_SESSION["booking_data"]);
 
         .ticket-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 20px;
         }
 
@@ -41,8 +41,8 @@ unset($_SESSION["booking_data"]);
         }
 
         .ticket-image img {
-            max-width: 150px;
-            max-height: 250px;
+            max-width: 200px;
+            max-height: 300px;
             margin-right: 10px;
             margin-left: 10px;
         }
