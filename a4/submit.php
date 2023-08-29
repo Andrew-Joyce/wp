@@ -118,7 +118,7 @@ var_dump(strpos($seatType, "Gold Class") !== false);
             <div class="ticket-grid"> 
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
-                        <div class="ticket <?= ($seatType == "Gold Class") ? "gold" : "standard"; ?>">
+                        <div class="ticket <?= (strpos($seatType, "Gold") === 0) ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
                                     <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
