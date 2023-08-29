@@ -628,37 +628,26 @@ label {
 }
 
 @media screen and (max-width: 1024px) { 
-  .submit-button {
+.submit-button {
     width: 32%; 
-  }
+}
+
+
+.seat input[type="number"] {
+  width: 45px; 
+  height: 30px; 
+  font-size: 14px; 
+  padding: 2px; 
 }
 
 @media screen and (max-width: 768px) { 
-  .seat input {
+.seat input {
     width: 48%; 
-  }
-
-  .seat input[type="number"] {
-    width: 48%; 
-  }
-
-  .submit-button {
-    width: 48%; 
-  }
 }
 
-@media screen and (max-width: 480px) { 
-  .seat input {
-    width: 50%; 
-  }
-
-  .seat input[type="number"] {
-    width: 100%;
-  }
-
-  .submit-button {
-    width: 100%; 
-  }
+.seat input[type="number"] {
+    width: 48%; 
+}
 }
 
 fieldset .movie-title {
