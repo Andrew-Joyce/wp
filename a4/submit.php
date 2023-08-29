@@ -27,11 +27,11 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .table-header {
-        width: 40%;
+            width: 60%;
         }
 
         .table-cell {
-            width: 40%;
+            width: 60%;
         }
 
         .ticket-grid {
