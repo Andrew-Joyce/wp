@@ -530,94 +530,87 @@ label {
   justify-content: space-around;
 }
 
-.session, .contact-Button {
+.session, .contact-Button, .submit-button {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   height: 60px;
-  width: 400px;
   padding: 10px 40px;
-  margin-bottom: 20px;
-  background-color: hwb(214 82% 15%);
-  border: 1px solid hwb(214 82% 15%);
-  color: black;
+  color: white;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s;
-  margin-right: 20px;
-}
-
-.session:hover, .contact-Button:hover {
-  background-color: #080808;
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  transition: background-color 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
 
 .session.selected, 
 .contact-Button.active:active {
   background-color: blue;
-  color: white ;
-  padding: 10px 40px ;
-  width: 400px ;
+  padding: 10px 40px;
+  width: 400px;
 }
 
+.session, .contact-Button {
+  width: 400px;
+  margin-bottom: 20px;
+  background-color: hwb(214 82% 15%);
+  border: 1px solid hwb(214 82% 15%);
+  margin-right: 20px;
+}
+
+.session:hover, .contact-Button:hover {
+  background-color: #080808;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
 
 @media screen and (max-width: 1024px) { 
   .session, .contact-Button {
-      width: 32%; 
+    width: 32%; 
   }
 }
 
 @media screen and (max-width: 768px) { 
   .session, .contact-Button {
-      width: 48%; 
+    width: 48%; 
   }
 }
 
 @media screen and (max-width: 480px) { 
   .session, .contact-Button {
-      width: 100%; 
+    width: 100%; 
   }
 }
 
 .submit-button {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
   height: 60px;
   width: 400px;
-  padding: 10px 40px;
   margin-bottom: 20px;
   background-color: black; 
   border: 1px solid black;
   color: white; 
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s, font-weight 0.3s; 
+  font-weight: bold;
   margin-right: 40px;
   margin-top: 20px; 
 }
 
 .submit-button:hover {
   background-color: blue; 
-  color: white;
-  font-weight: bold; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 @media screen and (max-width: 1024px) { 
   .submit-button {
-      width: 32%; 
+    width: 32%; 
   }
 }
 
 @media screen and (max-width: 768px) { 
   .submit-button {
-      width: 48%; 
+    width: 48%; 
   }
 }
 
 @media screen and (max-width: 480px) { 
   .submit-button {
-      width: 100%; 
+    width: 100%; 
   }
 }
 
@@ -627,37 +620,31 @@ label {
   text-align: center;
 }
 
-@media screen and (max-width: 1024px) { 
-.submit-button {
-    width: 32%; 
-}
-
-
 .seat input[type="number"] {
-  width: 45px; 
-  height: 30px; 
-  font-size: 14px; 
-  padding: 2px; 
+  font-size: 14px;
+  padding: 2px;
+  height: 30px;
+  width: 45px;
 }
 
-@media screen and (max-width: 768px) { 
-.seat input {
-    width: 48%; 
+@media screen and (max-width: 768px) {
+  .seat input {
+    width: 48%;
+  }
+  
+  .seat input[type="number"] {
+    width: 48%;
+  }
 }
 
-.seat input[type="number"] {
-    width: 48%; 
-}
-}
-
-@media screen and (max-width: 480px) { 
-.seat input{
-    width: 50%; 
-}
-
-.seat input[type="number"] {
+@media screen and (max-width: 480px) {
+  .seat input {
+    width: 50%;
+  }
+  
+  .seat input[type="number"] {
     width: 100%;
-}
+  }
 }
 
 fieldset .movie-title {
@@ -668,13 +655,13 @@ fieldset .movie-title {
 
 @media screen and (max-width: 768px) {
   fieldset .movie-title {
-    font-size: 32px; 
+    font-size: 32px;
   }
 }
 
 @media screen and (max-width: 480px) {
   fieldset .movie-title {
-    font-size: 28px; 
+    font-size: 28px;
   }
 }
 
