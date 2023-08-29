@@ -33,14 +33,7 @@ $formattedSession = formatSession($bookingData["session"]);
 
         .table-cell {
             width: 33.33%;
-        }
-
-        .right-align {
-        text-align: right;
-        }
-
-        .left-align {
-            text-align: left;
+            text-align: center;
         }
 
         .bold {
@@ -119,24 +112,24 @@ $formattedSession = formatSession($bookingData["session"]);
 
             <table>
                 <tr>
-                    <th class="table-header left-align">Seat Type</th>
-                    <th class="table-cell">Quantity</th>
-                    <th class="table-cell">Subtotal</th>
+                    <th class="table-header center-align">Seat Type</th>
+                    <th class="table-cell center-align">Quantity</th>
+                    <th class="table-cell center-align">Subtotal</th>
                 </tr>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <tr>
-                        <td class="table-cell left-align"><?php echo convertSeatType($seatType); ?></td>
-                        <td class="table-cell"><?php echo $quantity; ?></td>
-                        <td class="table-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
+                        <td class="table-cell center-align"><?php echo convertSeatType($seatType); ?></td>
+                        <td class="table-cell center-align"><?php echo $quantity; ?></td>
+                        <td class="table-cell center-align"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></td>
                     </tr>
                 <?php endforeach; ?>
                 <tr class="right-align">
-                    <td colspan="2" class="table-cell right-align bold">Total</td>
-                    <td class="table-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td colspan="2" class="table-cell center-align bold">Total</td>
+                    <td class="table-cell center-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr class="right-align">
-                    <td colspan="2" class="table-cell right-align bold">GST (10%)</td>
-                    <td class="table-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
+                    <td colspan="2" class="table-cell center-align bold">GST (10%)</td>
+                    <td class="table-cell center-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
 
