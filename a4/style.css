@@ -6,7 +6,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 header {
@@ -258,6 +258,12 @@ p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 10px;
+}
+
+#seats-&-prices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .seats-container {
@@ -620,36 +626,35 @@ label {
 }
 
 @media screen and (max-width: 1024px) { 
-  .submit-button {
+.submit-button {
     width: 32%; 
-  }
+}
 
-  .seat input[type="number"] {
-    width: 45px; 
-    height: 30px; 
-    font-size: 14px; 
-    padding: 2px; 
-  }
+.seat input[type="number"] {
+  width: 45px; 
+  height: 30px; 
+  font-size: 14px; 
+  padding: 2px; 
 }
 
 @media screen and (max-width: 768px) { 
-  .seat input {
+.seat input {
     width: 48%; 
-  }
 }
 
 .seat input[type="number"] {
     width: 48%; 
+}
 }
 
 @media screen and (max-width: 480px) { 
 .seat input{
     width: 50%; 
 }
-}
 
 .seat input[type="number"] {
     width: 100%;
+}
 }
 
 fieldset .movie-title {
@@ -679,7 +684,6 @@ fieldset .movie-title {
 .active-nav-link {
   color: blue;
 }
-
 #debug-module {
   position: fixed;
   bottom: 0;
@@ -692,15 +696,55 @@ fieldset .movie-title {
   z-index: 9999;
 }
 
-@media screen and (max-width: 767px) {
-  #debug-module {
-    padding: 5px;
-  }
+#error-message {
+  color: red;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.page-break {
+  break-after: always;
+  page-break-after: always;
 }
 
-@media screen and (max-width: 480px) {
-  #debug-module {
-    padding: 2px;
-  }
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
+
+.ticket-content {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-image img {
+  max-width: 25px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.ticket-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticket-details {
+  flex: 1;
+}
+
+
+.gold {
+  background-color: gold;
+  color: black;
+}
+
+.standard {
+  background-color: blue;
+  color: white;
+}
+
+
+}
