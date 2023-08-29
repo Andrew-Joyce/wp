@@ -637,21 +637,22 @@ label {
   .seat input {
     width: 48%; 
   }
-}
 
-.seat input[type="number"] {
+  .seat input[type="number"] {
     width: 48%; 
+  }
 }
 
 @media screen and (max-width: 480px) { 
-.seat input{
+  .seat input {
     width: 50%; 
+  }
+
+  .seat input[type="number"] {
+    width: 100%;
+  }
 }
 
-.seat input[type="number"] {
-    width: 100%;
-}
-}
 
 fieldset .movie-title {
   font-family: 'Oswald', sans-serif;
