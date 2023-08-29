@@ -117,7 +117,7 @@ $formattedSession = formatSession($bookingData["session"]);
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
                         <?php
                         var_dump($seatType);
-                        var_dump(strpos($seatType, "Gold Class") !== false);
+                        var_dump(in_array($seatType, ['FCA', 'FCP', 'FCC']));
                         ?>
                         <div class="ticket <?= in_array($seatType, ['FCA', 'FCP', 'FCC']) ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
