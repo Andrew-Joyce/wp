@@ -93,7 +93,7 @@ $formattedSession = formatSession($bookingData["session"]);
     </style>
 
 
-    <title>Receipt</title>
+<title>Receipt</title>
 </head>
 <body>
     <div class="receipt-container">
@@ -131,11 +131,11 @@ $formattedSession = formatSession($bookingData["session"]);
                 <?php endforeach; ?>
                 <tr class="right-align">
                     <td colspan="2" class="table-cell left-align bold">Total</td>
-                    <td class="table-cell"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
+                    <td class="table-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></td>
                 </tr>
                 <tr class="right-align">
                     <td colspan="2" class="table-cell left-align bold">GST (10%)</td>
-                    <td class="table-cell"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
+                    <td class="table-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></td>
                 </tr>
             </table>
 
