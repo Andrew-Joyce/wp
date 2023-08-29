@@ -11,6 +11,10 @@ $bookingData = $_SESSION["booking_data"];
 $seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
 $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
 $formattedSession = formatSession($bookingData["session"]);
+
+var_dump($seatType);
+var_dump(strpos($seatType, "Gold Class") !== false);
+
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +118,7 @@ $formattedSession = formatSession($bookingData["session"]);
             <div class="ticket-grid"> 
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <?php for ($i = 0; $i < $quantity; $i++): ?>
-                        <div class="ticket <?= (strpos($seatType, "Gold Class") !== false) ? "gold" : "standard"; ?>">
+                        <div class="ticket <?= ($seatType == "Gold Class") ? "gold" : "standard"; ?>">
                             <div class="ticket-content">
                                 <div class="ticket-image">
                                     <img src="<?php echo getPosterPath(getMovieDetails($bookingData["movie_code"])["title"]); ?>" alt="<?php echo getMovieDetails($bookingData["movie_code"])["title"]; ?>">
@@ -133,7 +137,6 @@ $formattedSession = formatSession($bookingData["session"]);
                 <?php endforeach; ?>
             </div>
         </section>
-
 
         <footer>
         <div class="contact-info">
