@@ -55,14 +55,21 @@ $formattedSession = formatSession($bookingData["session"]);
         }
 
         .gold {
-            background-color: gold;
-            color: black;
+        background-color: gold;
+        color: black;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
+                                            transparent 50%, rgba(255, 255, 255, 0.2) 50%,
+                                            rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
         }
 
         .standard {
             background-color: blue;
             color: white;
-        }
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
+                                                transparent 50%, rgba(255, 255, 255, 0.2) 50%,
+                                                rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     </style>
     <title>Receipt</title>
 </head>
