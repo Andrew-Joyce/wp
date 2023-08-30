@@ -180,32 +180,32 @@ if (count($matchedBookings) > 0) {
 
     <footer>
     <?php
-        $bookingsFile = "bookings.txt"";
-        $bookingsData = array();
+    $bookingsFile = "bookings.txt";
+    $bookingsData = array();
 
-        if (file_exists($bookingsFile)) {
-            $fileLines = file($bookingsFile, FILE_IGNORE_NEW_LINES);
-            foreach ($fileLines as $line) {
-                $booking = explode("\t", $line);
-                $bookingsData[] = $booking;
+    if (file_exists($bookingsFile)) {
+        $fileLines = file($bookingsFile, FILE_IGNORE_NEW_LINES);
+        foreach ($fileLines as $line) {
+            $booking = explode("\t", $line);
+            $bookingsData[] = $booking;
+        }
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $matchedBookings = array();
+
+        foreach ($bookingsData as $booking) {
+            if ($booking[2] === $email && $booking[3] === $mobile) {
+                $matchedBookings[] = array(
+                    'movie' => $booking[4],
+                    'session' => $booking[5]
+                );
             }
         }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['email'];
-            $mobile = $_POST['mobile'];
-            $matchedBookings = array();
-
-            foreach ($bookingsData as $booking) {
-                if ($booking[2] === $email && $booking[3] === $mobile) {
-                    $matchedBookings[] = array(
-                        'movie' => $booking[4],
-                        'session' => $booking[5]
-                    );
-                }
-            }
-        }
-     ?>
+    }
+    ?>
 
         <div class="booking-reminder">
             <h3>Retrieve Your Booking</h3>
