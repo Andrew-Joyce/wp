@@ -93,52 +93,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    $errors = array();
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
+    if (empty($errors)) {
+        $selectedSessionValue = explode('-', $selectedSession);
+        $isDiscounted = end($selectedSessionValue) === 'dis';
+    
+        $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
+    
+        $bookingData = array(
+            'movie_code' => $movieCode,
+            'name' => $name,
+            'mobile' => $mobile,
+            'email' => $email,
+            'session' => $selectedSession,
+            'seats' => $_POST['seats'],
+            'seat_prices' => $seatPricesData,
+            'total_price' => array_sum($seatPricesData)
+        );
+    
+        $bookingDate = date('Y-m-d H:i:s');
+        $sessionDetails = formatSession($selectedSession);
         
-        if (empty($errors)) {
-            $bookingRow = array(
-                date('Y-m-d H:i:s'), 
-                $name,
-                $email,
-                $mobile,
-                $movieCode,
-                $selectedDay, 
-                $selectedSession
-            );
+        $bookingRow = array(
+            $bookingDate,
+            $name,
+            $email,
+            $mobile,
+            $movieCode,
+            $sessionDetails
+        );
     
-            foreach ($seatsData as $seatType => $quantity) {
-                $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
-                $bookingRow[] = "# $seatType";
-                $bookingRow[] = "$subtotal";
-            }
-    
-            $bookingRow[] = "Total";
-            $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
-            $bookingRow[] = "GST";
-            $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
-    
-            $file = fopen("bookings.txt", "a");
-            if ($file) {
-                if (fputcsv($file, $bookingRow, "\t")) {
-                    fclose($file);
-                    error_log("File written successfully.");
-                } else {
-                    error_log("Error writing to file.");
-                }
-            } else {
-                error_log("Error opening file.");
-            }
-                
-            $_SESSION['booking_data'] = $bookingData;
-    
-            header("Location: submit.php");
-            exit();
-        } else {
-            $_SESSION['errors'] = $errors;
-            header("Location: booking.php?movie=$movieCode");
-            exit();
+        foreach ($seatsData as $seatType => $quantity) {
+            $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
+            $bookingRow[] = "# $seatType";
+            $bookingRow[] = "$subtotal";
         }
+    
+        $bookingRow[] = "Total";
+        $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
+        $bookingRow[] = "GST";
+        $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
+    
+        $file = fopen("bookings.txt", "a");
+        if ($file) {
+            if (fputcsv($file, $bookingRow, "\t")) {
+                fclose($file);
+                error_log("File written successfully.");
+            } else {
+                error_log("Error writing to file.");
+            }
+        } else {
+            error_log("Error opening file.");
+        }        
+            
+        $_SESSION['booking_data'] = $bookingData;
+    
+        header("Location: submit.php");
+        exit();
+    } else {
+        $_SESSION['errors'] = $errors;
+        header("Location: booking.php?movie=$movieCode");
+        exit();
     }
-    ?>
+}
+?>
