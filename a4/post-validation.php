@@ -94,10 +94,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $errors = array();
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
-    
+        
         if (empty($errors)) {
             $bookingRow = array(
                 date('Y-m-d H:i:s'), 
