@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'total_price' => array_sum($seatPricesData)
         );
     
-        $bookingDate = date('Y-m-d H:i:s');
+        $bookingDate = $now;
         $sessionDetails = formatSession($selectedSession);
         
         $bookingRow = array(
@@ -121,21 +121,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $movieCode,
             $sessionDetails
         );
-    
+        
         foreach ($seatsData as $seatType => $quantity) {
             $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
             $bookingRow[] = "# $seatType";
             $bookingRow[] = "$subtotal";
         }
-    
+        
         $bookingRow[] = "Total";
         $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
         $bookingRow[] = "GST";
         $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
-    
+        
+        $cells = $bookingRow;
+        
         $file = fopen("bookings.txt", "a");
         if ($file) {
-            if (fputcsv($file, $bookingRow, "\t")) {
+            if (fputcsv($file, $cells, "\t")) {
                 fclose($file);
                 error_log("File written successfully.");
             } else {
@@ -143,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } else {
             error_log("Error opening file.");
-        }        
+        }               
             
         $_SESSION['booking_data'] = $bookingData;
     
