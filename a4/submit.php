@@ -66,12 +66,12 @@ $formattedSession = formatSession($bookingData["session"]);
                 <div class="grid-cell white-bg">Gold Class Concession</div>
                 <div class="grid-cell white-bg">0</div>
                 <div class="grid-cell white-bg">$0.00</div>
-                <div class="grid-cell"></div>
-                <div class="grid-cell total center" colspan="2">Total</div>
-                <div class="grid-cell center">$136.00</div>
-                <div class="grid-cell"></div>
-                <div class="grid-cell total center" colspan="2">GST (10%)</div>
-                <div class="grid-cell center">$13.60</div>
+                <div class="grid-cell">Content</div>
+                <div class="grid-cell white-bg total center" colspan="2">Total</div>
+                <div class="grid-cell white-bg center">$136.00</div>
+                <div class="grid-cell">Content</div>
+                <div class="grid-cell white-bg total center" colspan="2">GST (10%)</div>
+                <div class="grid-cell white-bg center">$13.60</div>
 
             </div>
 

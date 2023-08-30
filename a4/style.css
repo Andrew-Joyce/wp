@@ -242,6 +242,10 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
   border: 1px solid #ccc;
 }
 
+.grid-cell {
+  border: none;
+}
+
 .header {
   font-weight: bold;
   background-color: black;
