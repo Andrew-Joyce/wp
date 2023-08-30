@@ -110,6 +110,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'total_price' => array_sum($seatPricesData)
         );
     
+        appendBookingDataToFile($bookingData);
+    
+        $_SESSION['booking_data'] = $bookingData;
+        header("Location: submit.php");
+        exit();
+    } else {
+        $_SESSION['errors'] = $errors;
+        header("Location: booking.php?movie=$movieCode");
+        exit();
+    }
+    
+    function appendBookingDataToFile($bookingData) {
         $seatsData = implode("\t", $bookingData["seats"]);
         $seatPricesData = implode("\t", $bookingData["seat_prices"]);
     
@@ -135,15 +147,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             error_log("Error opening file.");
         }
-    
-        $_SESSION['booking_data'] = $bookingData;
-    
-        header("Location: submit.php");
-        exit();
-    } else {
-        $_SESSION['errors'] = $errors;
-        header("Location: booking.php?movie=$movieCode");
-        exit();
-    } 
-}
+    }
 ?>
