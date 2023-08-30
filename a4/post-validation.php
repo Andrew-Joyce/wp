@@ -110,40 +110,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'total_price' => array_sum($seatPricesData)
         );
     
-        $bookingDate = $now;
-        $sessionDetails = formatSession($selectedSession);
-        
-        $bookingRow = array(
-            $bookingDate,
-            $name,
-            $email,
-            $mobile,
-            $movieCode,
-            $sessionDetails
-        );
-        
-        foreach ($seatsData as $seatType => $quantity) {
-            $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
-            $bookingRow[] = "# $seatType";
-            $bookingRow[] = "$subtotal";
-        }
-        
-        $bookingRow[] = "Total";
-        $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
-        $bookingRow[] = "GST";
-        $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
-        
-        $cells = $bookingRow;
-        
+        $seatsData = implode("\t", $bookingData["seats"]);
+        $seatPricesData = implode("\t", $bookingData["seat_prices"]);
+    
+        $csvLine = implode("\t", array(
+            $bookingData["movie_code"],
+            $bookingData["name"],
+            $bookingData["mobile"],
+            $bookingData["email"],
+            $bookingData["session"],
+            $seatsData,
+            $seatPricesData,
+            $bookingData["total_price"]
+        ));
+    
         $file = fopen("bookings.txt", "a");
         if ($file) {
-            if (fputcsv($file, $cells, "\t")) {
+            if (fwrite($file, $csvLine . PHP_EOL)) {
                 fclose($file);
-                error_log("File written successfully.");
+                error_log("Data appended successfully.");
             } else {
-                error_log("Error writing to file: " . print_r(error_get_last(), true));
-            }                  
-            
+                error_log("Error appending data to file.");
+            }
+        } else {
+            error_log("Error opening file.");
+        }
+    
         $_SESSION['booking_data'] = $bookingData;
     
         header("Location: submit.php");
@@ -152,6 +144,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
-    }
+    } 
 }
 ?>
