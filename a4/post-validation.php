@@ -93,60 +93,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    if (empty($errors)) {
-        $selectedSessionValue = explode('-', $selectedSession);
-        $isDiscounted = end($selectedSessionValue) === 'dis';
-    
-        $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
-    
-        $bookingData = array(
-            'movie_code' => $movieCode,
-            'name' => $name,
-            'mobile' => $mobile,
-            'email' => $email,
-            'session' => $selectedSession,
-            'seats' => $_POST['seats'],
-            'seat_prices' => $seatPricesData,
-            'total_price' => array_sum($seatPricesData)
-        );
-    
-        $bookingDate = date('Y-m-d H:i:s');
-        $sessionDetails = formatSession($selectedSession);
+    $errors = array();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
-        $bookingRow = array(
-            $bookingDate,
-            $name,
-            $email,
-            $mobile,
-            $movieCode,
-            $sessionDetails
-        );
+        if (empty($errors)) {
+            $selectedSessionValue = explode('-', $selectedSession);
+            $isDiscounted = end($selectedSessionValue) === 'dis';
+
+            $seatsData = $_POST['seats'];
+
+            $now = date('d/m h:i');
+            $total = number_format(array_sum($seatPricesData), 2);
     
-        foreach ($seatsData as $seatType => $quantity) {
-            $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
-            $bookingRow[] = "# $seatType";
-            $bookingRow[] = "$subtotal";
-        }
-    
-        $bookingRow[] = "Total";
-        $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
-        $bookingRow[] = "GST";
-        $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
-    
-        $file = fopen("bookings.txt", "a");
+            $cells = array_merge(
+                [$now],
+                $_SESSION['cust'],
+                $_SESSION['movie'],
+                $_SESSION['seats'],
+                [$total]
+            );
+        $file = fopen("orders.txt", "a");
         if ($file) {
-            if (fputcsv($file, $bookingRow, "\t")) {
+            if (fputcsv($file, $cells, "\t")) {
                 fclose($file);
-                error_log("File written successfully.");
+                error_log("Order appended successfully.");
             } else {
-                error_log("Error writing to file.");
+                error_log("Error appending order to file.");
             }
         } else {
-            error_log("Error opening file.");
-        }        
-            
+            error_log("Error opening file for appending order.");
+        }
+
         $_SESSION['booking_data'] = $bookingData;
-    
+
         header("Location: submit.php");
         exit();
     } else {
@@ -154,5 +134,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: booking.php?movie=$movieCode");
         exit();
     }
-}
+}    
 ?>
