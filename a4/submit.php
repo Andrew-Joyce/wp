@@ -48,30 +48,31 @@ $formattedSession = formatSession($bookingData["session"]);
                 <div class="grid-cell header black-bg">Seat Type</div>
                 <div class="grid-cell header black-bg">Quantity</div>
                 <div class="grid-cell header black-bg">Subtotal</div>
-                <div class="grid-cell">Gold Class Child</div>
-                <div class="grid-cell">0</div>
-                <div class="grid-cell">$0.00</div>
-                <div class="grid-cell">Standard Adult</div>
-                <div class="grid-cell">2</div>
-                <div class="grid-cell">$43.00</div>
-                <div class="grid-cell">Standard Concession</div>
-                <div class="grid-cell">0</div>
-                <div class="grid-cell">$0.00</div>
-                <div class="grid-cell">Standard Child</div>
-                <div class="grid-cell">0</div>
-                <div class="grid-cell">$0.00</div>
-                <div class="grid-cell">Gold Class Adult</div>
-                <div class="grid-cell">3</div>
-                <div class="grid-cell">$93.00</div>
-                <div class="grid-cell">Gold Class Concession</div>
-                <div class="grid-cell">0</div>
-                <div class="grid-cell">$0.00</div>
+                <div class="grid-cell white-bg">Gold Class Child</div>
+                <div class="grid-cell white-bg">0</div>
+                <div class="grid-cell white-bg">$0.00</div>
+                <div class="grid-cell white-bg">Standard Adult</div>
+                <div class="grid-cell white-bg">2</div>
+                <div class="grid-cell white-bg">$43.00</div>
+                <div class="grid-cell white-bg">Standard Concession</div>
+                <div class="grid-cell white-bg">0</div>
+                <div class="grid-cell white-bg">$0.00</div>
+                <div class="grid-cell white-bg">Standard Child</div>
+                <div class="grid-cell white-bg">0</div>
+                <div class="grid-cell white-bg">$0.00</div>
+                <div class="grid-cell white-bg">Gold Class Adult</div>
+                <div class="grid-cell white-bg">3</div>
+                <div class="grid-cell white-bg">$93.00</div>
+                <div class="grid-cell white-bg">Gold Class Concession</div>
+                <div class="grid-cell white-bg">0</div>
+                <div class="grid-cell white-bg">$0.00</div>
                 <div class="grid-cell"></div>
-                <div class="grid-cell total center colspan="2">Total</div>
-                <div class="grid-cell center ">$136.00</div>
+                <div class="grid-cell total center" colspan="2">Total</div>
+                <div class="grid-cell center">$136.00</div>
                 <div class="grid-cell"></div>
                 <div class="grid-cell total center" colspan="2">GST (10%)</div>
                 <div class="grid-cell center">$13.60</div>
+
             </div>
 
         </main>
