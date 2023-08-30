@@ -96,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = array();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $movieCode = isset($_POST['movie']) ? $_POST['movie'] : '';
     
         if (empty($errors)) {
             $bookingRow = array(
@@ -107,18 +108,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $selectedDay, 
                 $selectedSession
             );
-        
+    
             foreach ($seatsData as $seatType => $quantity) {
                 $subtotal = "$" . number_format($seatPricesData[$seatType] * $quantity, 2);
                 $bookingRow[] = "# $seatType";
                 $bookingRow[] = "$subtotal";
             }
-        
+    
             $bookingRow[] = "Total";
             $bookingRow[] = "$" . number_format(array_sum($seatPricesData), 2);
             $bookingRow[] = "GST";
             $bookingRow[] = "$" . number_format($bookingData["total_price"] * 0.10, 2);
-        
+    
             $file = fopen("bookings.txt", "a");
             if ($file) {
                 if (fputcsv($file, $bookingRow, "\t")) {
@@ -132,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
                 
             $_SESSION['booking_data'] = $bookingData;
-        
+    
             header("Location: submit.php");
             exit();
         } else {
