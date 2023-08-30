@@ -101,6 +101,8 @@ $formattedSession = formatSession($bookingData["session"]);
 
         .header {
             font-weight: bold;
+            background-color: black;
+            color: white;
         }
 
         .right-align {
@@ -138,9 +140,9 @@ $formattedSession = formatSession($bookingData["session"]);
             <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <div class="grid-container">
-                <div class="grid-cell header">Seat Type</div>
-                <div class="grid-cell header">Quantity</div>
-                <div class="grid-cell header">Subtotal</div>
+                <div class="grid-cell header black-bg">Seat Type</div>
+                <div class="grid-cell header black-bg">Quantity</div>
+                <div class="grid-cell header black-bg">Subtotal</div>
                 <div class="grid-cell">Gold Class Child</div>
                 <div class="grid-cell">0</div>
                 <div class="grid-cell">$0.00</div>
@@ -166,7 +168,6 @@ $formattedSession = formatSession($bookingData["session"]);
                 <div class="grid-cell total center" colspan="2">GST (10%)</div>
                 <div class="grid-cell center">$13.60</div>
             </div>
-
 
         </main>
 
