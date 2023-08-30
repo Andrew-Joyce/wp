@@ -227,7 +227,7 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid grey; 
+  border: 5px solid grey; 
 }
 
 .grid-header,
@@ -238,8 +238,10 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
 }
 
 .grid-header {
-  background-color: lightgrey;
+  background-color: black;
+  font: white;
   font-weight: bold;
+  text-align: center;
 }
 
 .grid-cell {
@@ -251,7 +253,7 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
 }
 
 .right-align {
-  text-align: right;
+  text-align: center;
 }
 
 .movie-container {
