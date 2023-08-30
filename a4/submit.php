@@ -89,8 +89,9 @@ $formattedSession = formatSession($bookingData["session"]);
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, auto);
-            grid-gap: 10px;
+            grid-gap: 18px;
             text-align: center;
+            font-family: "Poppins", sans-serif;
         }
 
         .grid-cell {
@@ -159,11 +160,11 @@ $formattedSession = formatSession($bookingData["session"]);
                 <div class="grid-cell">0</div>
                 <div class="grid-cell">$0.00</div>
                 <div class="grid-cell"></div>
-                <div class="grid-cell total right-align" colspan="2">Total</div>
-                <div class="grid-cell right-align">$136.00</div>
+                <div class="grid-cell total center colspan="2">Total</div>
+                <div class="grid-cell center ">$136.00</div>
                 <div class="grid-cell"></div>
-                <div class="grid-cell total right-align" colspan="2">GST (10%)</div>
-                <div class="grid-cell right-align">$13.60</div>
+                <div class="grid-cell total center" colspan="2">GST (10%)</div>
+                <div class="grid-cell center">$13.60</div>
             </div>
 
 
