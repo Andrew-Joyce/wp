@@ -226,38 +226,32 @@ background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transpare
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 18px;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid grey; 
 }
 
-.white-bg {
-  background-color: white;
-  color: black; 
-}
-
+.grid-header,
 .grid-cell {
-  padding: 5px;
-  border: 1px solid #ccc;
+  padding: 8px;
+  border-right: 1px solid grey; 
+  border-bottom: 1px solid grey;
 }
 
-.grid-cell {
-  border: none;
-}
-
-.header {
+.grid-header {
+  background-color: lightgrey;
   font-weight: bold;
-  background-color: black;
-  color: white;
+}
+
+.grid-cell {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .right-align {
   text-align: right;
-}
-
-.total {
-  font-weight: bold;
 }
 
 .movie-container {
