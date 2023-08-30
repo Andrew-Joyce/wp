@@ -158,8 +158,10 @@ $formattedSession = formatSession($bookingData["session"]);
                 <div class="grid-cell">Gold Class Concession</div>
                 <div class="grid-cell">0</div>
                 <div class="grid-cell">$0.00</div>
+                <div class="grid-cell"></div>
                 <div class="grid-cell total right-align" colspan="2">Total</div>
                 <div class="grid-cell right-align">$136.00</div>
+                <div class="grid-cell"></div>
                 <div class="grid-cell total right-align" colspan="2">GST (10%)</div>
                 <div class="grid-cell right-align">$13.60</div>
             </div>
