@@ -14,6 +14,19 @@ if ($selectedMovieDetails) {
 $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
 
 unset($_SESSION['errors']);
+
+$email = $_POST['email'];
+$mobile = $_POST['mobile'];
+$matchedBookings = array(); 
+
+if (count($matchedBookings) > 0) {
+    header("Location: currentbookings.php?email=$email&mobile=$mobile");
+    exit();
+} else {
+    $noBookingMessage = "No bookings found for the provided email and mobile number.";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -162,9 +175,36 @@ unset($_SESSION['errors']);
             <button type="submit" class="submit-button">Submit</button>
 
         </form>
+        <?php
+        if (!empty($matchedBookings)) {
+            foreach ($matchedBookings as $booking) {
+                echo '<div class="booking-summary">';
+                echo '<h2>Booking Summary</h2>';
+                echo '<p>Movie: ' . $booking['movie'] . '</p>';
+                echo '<p>Session: ' . $booking['session'] . '</p>';
+                echo '<a href="receipt.php?booking_id=' . $booking['id'] . '">Submit Booking</a>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No bookings found for the provided email and mobile number.</p>';
+        }
+        ?>
+
     </main>
 
     <footer>
+        <div class="booking-reminder">
+            <h3>Retrieve Your Booking</h3>
+            <form action="check_booking.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mobile">Mobile Phone Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+                
+                <button type="submit">Retrieve Booking</button>
+            </form>
+        </div>
         <div class="contact-info">
             <h3>Contact Us</h3>
             <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
