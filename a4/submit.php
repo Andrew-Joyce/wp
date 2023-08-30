@@ -84,30 +84,31 @@ $formattedSession = formatSession($bookingData["session"]);
             background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
                                                 transparent 50%, rgba(255, 255, 255, 0.2) 50%,
                                                 rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-    
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-gap: 10px;
-        text-align: center;
-    }
+        }
 
-    .grid-cell {
-        padding: 5px;
-        border: 1px solid #ccc;
-    }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 10px;
+            text-align: center;
+        }
 
-    .header {
-        font-weight: bold;
-    }
+        .grid-cell {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
 
-    .right-align {
-        text-align: right;
-    }
+        .header {
+            font-weight: bold;
+        }
 
-    .total {
-        font-weight: bold;
-    }
+        .right-align {
+            text-align: right;
+        }
+
+        .total {
+            font-weight: bold;
+        }
 
     </style>
 
