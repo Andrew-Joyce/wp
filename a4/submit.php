@@ -54,10 +54,10 @@ $formattedSession = formatSession($bookingData["session"]);
                     <div class="grid-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></div>
                 <?php endforeach; ?>
                 <div class="grid-cell right-align bold no-border"></div>
-                <div class="grid-cell right-align bold">Total</div>
+                <div class="grid-cell custom-cell">Total</div>
                 <div class="grid-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></div>
                 <div class="grid-cell right-align bold no-border"></div>
-                <div class="grid-cell right-align bold">GST (10%)</div>
+                <div class="grid-cell custom-cell">GST (10%)</div>
                 <div class="grid-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></div>
             </div>
 
