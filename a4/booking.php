@@ -175,24 +175,25 @@ if (count($matchedBookings) > 0) {
             <button type="submit" class="submit-button">Submit</button>
 
         </form>
-        <?php
-        if (!empty($matchedBookings)) {
-            foreach ($matchedBookings as $booking) {
-                echo '<div class="booking-summary">';
-                echo '<h2>Booking Summary</h2>';
-                echo '<p>Movie: ' . $booking['movie'] . '</p>';
-                echo '<p>Session: ' . $booking['session'] . '</p>';
-                echo '<a href="receipt.php?booking_id=' . $booking['id'] . '">Submit Booking</a>';
-                echo '</div>';
-            }
-        } else {
-            echo '<p>No bookings found for the provided email and mobile number.</p>';
-        }
-        ?>
 
     </main>
 
     <footer>
+    <?php    
+        if (!empty($matchedBookings)) {
+                foreach ($matchedBookings as $booking) {
+                    echo '<div class="booking-summary">';
+                    echo '<h2>Booking Summary</h2>';
+                    echo '<p>Movie: ' . $booking['movie'] . '</p>';
+                    echo '<p>Session: ' . $booking['session'] . '</p>';
+                    echo '<a href="receipt.php?booking_id=' . $booking['id'] . '">Submit Booking</a>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No bookings found for the provided email and mobile number.</p>';
+            }
+    ?>
+
         <div class="booking-reminder">
             <h3>Retrieve Your Booking</h3>
             <form action="submit.php" method="post">
