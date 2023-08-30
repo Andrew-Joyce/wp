@@ -103,6 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $seatsData = $_POST['seats'];
 
+            $seatPricesData = calculateSeatPrices($seatsData, $isDiscounted);
+
             $now = date('d/m h:i');
             $total = number_format(array_sum($seatPricesData), 2);
     
@@ -113,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['seats'],
                 [$total]
             );
-        $file = fopen("orders.txt", "a");
+        $file = fopen("bookings.txt", "a");
         if ($file) {
             if (fputcsv($file, $cells, "\t")) {
                 fclose($file);
