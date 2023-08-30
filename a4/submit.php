@@ -20,92 +20,6 @@ $formattedSession = formatSession($bookingData["session"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-break {
-            break-after: always;
-            page-break-after: always;
-        }
-
-        .table-header {
-            width: 33.33%;
-            text-align: center;
-        }
-
-        .table-cell {
-            width: 33.33%;
-            text-align: center;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            gap: 20px;
-        }
-
-        .ticket-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .ticket-image img {
-            max-width: 200px;
-            max-height: 300px;
-            margin-right: 10px;
-            margin-left: 10px;
-        }
-
-        .ticket-metadata {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .ticket-details {
-            flex: 1;
-        }
-
-        .gold {
-        background-color: gold;
-        color: black;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
-        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
-                                            transparent 50%, rgba(255, 255, 255, 0.2) 50%,
-                                            rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-        }
-
-        .standard {
-            background-color: blue;
-            color: white;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
-            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
-                                                transparent 50%, rgba(255, 255, 255, 0.2) 50%,
-                                                rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-    
-    .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    text-align: center;
-    }
-
-    .grid-header {
-        font-weight: bold;
-    }
-
-    .grid-cell {
-        padding: 5px;
-    }
-
-    .right-align {
-        text-align: right;
-    }
-
-    </style>
-
 
 <title>Receipt</title>
 </head>
@@ -139,9 +53,11 @@ $formattedSession = formatSession($bookingData["session"]);
                     <div class="grid-cell"><?php echo $quantity; ?></div>
                     <div class="grid-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></div>
                 <?php endforeach; ?>
-                <div class="grid-cell right-align bold" colspan="2">Total</div>
+                <div class="grid-cell right-align bold no-border"></div>
+                <div class="grid-cell right-align bold">Total</div>
                 <div class="grid-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></div>
-                <div class="grid-cell right-align bold" colspan="2">GST (10%)</div>
+                <div class="grid-cell right-align bold no-border"></div>
+                <div class="grid-cell right-align bold">GST (10%)</div>
                 <div class="grid-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></div>
             </div>
 
