@@ -141,11 +141,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 fclose($file);
                 error_log("File written successfully.");
             } else {
-                error_log("Error writing to file.");
-            }
-        } else {
-            error_log("Error opening file.");
-        }               
+                error_log("Error writing to file: " . print_r(error_get_last(), true));
+            }                  
             
         $_SESSION['booking_data'] = $bookingData;
     
