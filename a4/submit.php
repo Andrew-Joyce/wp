@@ -45,9 +45,9 @@ $formattedSession = formatSession($bookingData["session"]);
             <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <div class="grid-container">
-                <div class="grid-header">Seat Type</div>
-                <div class="grid-header">Quantity</div>
-                <div class="grid-header">Subtotal</div>
+                    <div class="grid-header">Seat Type</div>
+                    <div class="grid-header">Quantity</div>
+                    <div class="grid-header">Subtotal</div>
                 <?php foreach ($seatsData as $seatType => $quantity): ?>
                     <div class="grid-cell"><?php echo convertSeatType($seatType); ?></div>
                     <div class="grid-cell"><?php echo $quantity; ?></div>
