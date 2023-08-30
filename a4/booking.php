@@ -180,7 +180,7 @@ if (count($matchedBookings) > 0) {
 
     <footer>
     <?php
-        $bookingsFile = "/home/sl0/S3876520/public_html/wp/a4/bookings.txt";
+        $bookingsFile = "bookings.txt"";
         $bookingsData = array();
 
         if (file_exists($bookingsFile)) {
