@@ -195,7 +195,7 @@ if (count($matchedBookings) > 0) {
     <footer>
         <div class="booking-reminder">
             <h3>Retrieve Your Booking</h3>
-            <form action="check_booking.php" method="post">
+            <form action="submit.php" method="post">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 
