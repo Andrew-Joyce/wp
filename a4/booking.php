@@ -15,8 +15,8 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : array();
 
 unset($_SESSION['errors']);
 
-$email = $_POST['email'];
-$mobile = $_POST['mobile'];
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$mobile = isset($_POST['mobile']) ? $_POST['mobile'] : '';
 $matchedBookings = array(); 
 
 if (count($matchedBookings) > 0) {
@@ -25,7 +25,6 @@ if (count($matchedBookings) > 0) {
 } else {
     $noBookingMessage = "No bookings found for the provided email and mobile number.";
 }
-
 
 ?>
 
