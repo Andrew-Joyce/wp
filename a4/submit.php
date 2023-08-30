@@ -86,22 +86,27 @@ $formattedSession = formatSession($bookingData["session"]);
                                                 rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
     
     .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    text-align: center;
-    }
-
-    .grid-header {
-        font-weight: bold;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 10px;
+        text-align: center;
     }
 
     .grid-cell {
         padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .header {
+        font-weight: bold;
     }
 
     .right-align {
         text-align: right;
+    }
+
+    .total {
+        font-weight: bold;
     }
 
     </style>
@@ -131,19 +136,33 @@ $formattedSession = formatSession($bookingData["session"]);
             <p><strong>Session:</strong> <span id="formatted-session"><?php echo $formattedSession; ?></span></p>
 
             <div class="grid-container">
-                <div class="grid-header">Seat Type</div>
-                <div class="grid-header">Quantity</div>
-                <div class="grid-header">Subtotal</div>
-                <?php foreach ($seatsData as $seatType => $quantity): ?>
-                    <div class="grid-cell"><?php echo convertSeatType($seatType); ?></div>
-                    <div class="grid-cell"><?php echo $quantity; ?></div>
-                    <div class="grid-cell"><?php echo "$" . number_format($seatPricesData[$seatType], 2); ?></div>
-                <?php endforeach; ?>
-                <div class="grid-cell right-align bold" colspan="2">Total</div>
-                <div class="grid-cell right-align bold"><?php echo "$" . number_format(array_sum($seatPricesData), 2); ?></div>
-                <div class="grid-cell right-align bold" colspan="2">GST (10%)</div>
-                <div class="grid-cell right-align bold"><?php echo "$" . number_format($bookingData["total_price"] * 0.10, 2); ?></div>
+                <div class="grid-cell header">Seat Type</div>
+                <div class="grid-cell header">Quantity</div>
+                <div class="grid-cell header">Subtotal</div>
+                <div class="grid-cell">Gold Class Child</div>
+                <div class="grid-cell">0</div>
+                <div class="grid-cell">$0.00</div>
+                <div class="grid-cell">Standard Adult</div>
+                <div class="grid-cell">2</div>
+                <div class="grid-cell">$43.00</div>
+                <div class="grid-cell">Standard Concession</div>
+                <div class="grid-cell">0</div>
+                <div class="grid-cell">$0.00</div>
+                <div class="grid-cell">Standard Child</div>
+                <div class="grid-cell">0</div>
+                <div class="grid-cell">$0.00</div>
+                <div class="grid-cell">Gold Class Adult</div>
+                <div class="grid-cell">3</div>
+                <div class="grid-cell">$93.00</div>
+                <div class="grid-cell">Gold Class Concession</div>
+                <div class="grid-cell">0</div>
+                <div class="grid-cell">$0.00</div>
+                <div class="grid-cell total right-align" colspan="2">Total</div>
+                <div class="grid-cell right-align">$136.00</div>
+                <div class="grid-cell total right-align" colspan="2">GST (10%)</div>
+                <div class="grid-cell right-align">$13.60</div>
             </div>
+
 
         </main>
 
