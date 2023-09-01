@@ -122,8 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bookingData["total_price"]
         ));
 
-        $filePath = __DIR__ . "/bookings.txt";
-        echo "File Path: " . $filePath . "<br>";
+        $filePath = '/home/sl0/S3876520/public_html/wp/a4/bookings.txt';
 
         $file = fopen($filePath, "a");
         if ($file) {
