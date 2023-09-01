@@ -101,7 +101,6 @@ if (file_exists($filePath)) {
             echo "<p>Total Seats Booked: {$totalBookedSeats}</p>";
         }
         ?>
-    ?>
 
         <div class="booking-reminder">
             <h3>Retrieve Your Booking</h3>
