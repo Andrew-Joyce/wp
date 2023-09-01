@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $bookings = [];
 
 $filePath = __DIR__ . "/bookings.txt";
