@@ -60,23 +60,26 @@ if (file_exists($filePath)) {
                     <tr>
                         <th>Date</th>
                         <th>Movie</th>
-                        <th>Seat Numbers</th>
+                        <th>Seat </th>
                         <th>Actions</th>
                     </tr>";
 
             foreach ($bookings as $booking) {
-                echo "<tr>
+                $movieDetails = getMovieDetails($booking['movie']);
+                $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie'; 
+                    
+                    echo "<tr>
                         <td>{$booking['date']}</td>
-                        <td>{$booking['movie']}</td>
+                        <td>{$movieTitle}</td>
                         <td>{$booking['seat_numbers']}</td>
                         <td>
                             <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
-                        </td>
+                         </td>
                     </tr>";
-            }
-
-            echo "</table>";
-        }
+                }
+                    
+             echo "</table>";
+                    
         ?>
                 <footer>
     <?php
