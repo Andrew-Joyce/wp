@@ -25,7 +25,6 @@ foreach ($bookings as $booking) {
             $bookings[] = $booking;
         }
     }
-}
 ?>
 
 <!DOCTYPE html>
