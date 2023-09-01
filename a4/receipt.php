@@ -11,7 +11,7 @@ $bookingData = $_SESSION["booking_data"];
 $seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
 $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
 $formattedSession = formatSession($bookingData["session"]);
-
+<link rel="stylesheet" href="style.css">
 ?>
 
         
