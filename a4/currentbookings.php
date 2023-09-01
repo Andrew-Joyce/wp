@@ -1,122 +1,132 @@
 <?php
-session_start();
-include 'tools.php';
+$bookings = [];
 
-if (!isset($_SESSION["booking_data"])) {
-    header("Location: index.php");
-    exit();
+$filePath = __DIR__ . "/bookings.txt";
+if (file_exists($filePath)) {
+    $fileContents = file_get_contents($filePath);
+    $lines = explode(PHP_EOL, $fileContents);
+    
+    foreach ($lines as $line) {
+        $bookingData = explode("\t", $line);
+        
+        $booking = [
+            'date' => date("Y-m-d H:i:s"),
+            'movie' => $bookingData[0], 
+            'seat_numbers' => $bookingData[5], 
+            'id' => uniqid()
+        ];
+        
+        $bookings[] = $booking;
+    }
 }
-
-$bookingData = $_SESSION["booking_data"];
-$seatsData = isset($bookingData["seats"]) && is_array($bookingData["seats"]) ? $bookingData["seats"] : array();
-$seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["seat_prices"]) ? $bookingData["seat_prices"] : array(); 
-$formattedSession = formatSession($bookingData["session"]);
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-break {
-            break-after: always;
-            page-break-after: always;
+    <title>Current Bookings</title>
+</head>
+<body>
+    <header style="text-align: center;">
+    </header>
+    
+    <div class="container">
+        <h2>Your Current Bookings</h2>
+        <?php
+        if (empty($bookings)) {
+            echo "<p>No bookings were found.</p>";
+        } else {
+            echo "<table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Movie</th>
+                        <th>Seat Numbers</th>
+                        <th>Actions</th>
+                    </tr>";
+
+            foreach ($bookings as $booking) {
+                echo "<tr>
+                        <td>{$booking['date']}</td>
+                        <td>{$booking['movie']}</td>
+                        <td>{$booking['seat_numbers']}</td>
+                        <td>
+                            <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
+                        </td>
+                    </tr>";
+            }
+
+            echo "</table>";
         }
-
-        .table-header {
-            width: 33.33%;
-            text-align: center;
-        }
-
-        .table-cell {
-            width: 33.33%;
-            text-align: center;
-        }
-
-        .bold {
-            font-weight: bold;
-        }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            gap: 20px;
-        }
-
-        .ticket-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .ticket-image img {
-            max-width: 200px;
-            max-height: 300px;
-            margin-right: 10px;
-            margin-left: 10px;
-        }
-
-        .ticket-metadata {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .ticket-details {
-            flex: 1;
-        }
-
-        .gold {
-        background-color: gold;
-        color: black;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
-        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
-                                            transparent 50%, rgba(255, 255, 255, 0.2) 50%,
-                                            rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-        }
-
-        .standard {
-            background-color: blue;
-            color: white;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
-            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
-                                                transparent 50%, rgba(255, 255, 255, 0.2) 50%,
-                                                rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-    </style>
-
-
-    <body>
+        ?>
+                <footer>
     <?php
-    $bookings = array(
-        array("date" => "2023-09-15", "movie" => "Movie A", "seats" => "A1, A2"),
-        array("date" => "2023-09-16", "movie" => "Movie B", "seats" => "B3, B4"),
-    );
+    $bookingsFile = "bookings.txt";
+    $bookingsData = array();
 
-    $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
-
-    $foundBookings = array_filter($bookings, function($booking) use ($email, $mobile) {
-        return $booking["email"] == $email && $booking["mobile"] == $mobile;
-    });
-
-    if (empty($foundBookings)) {
-        echo "<p>No bookings were found for the provided information.</p>";
-    } else {
-        echo "<table>";
-        echo "<tr><th>Date</th><th>Movie</th><th>Seats</th><th>Action</th></tr>";
-        foreach ($foundBookings as $booking) {
-            echo "<tr>";
-            echo "<td>{$booking['date']}</td>";
-            echo "<td>{$booking['movie']}</td>";
-            echo "<td>{$booking['seats']}</td>";
-            echo "<td><a href='receipt.php?booking_id={$booking['id']}'>View Receipt</a></td>";
-            echo "</tr>";
+    if (file_exists($bookingsFile)) {
+        $fileLines = file($bookingsFile, FILE_IGNORE_NEW_LINES);
+        foreach ($fileLines as $line) {
+            $booking = explode("\t", $line);
+            $bookingsData[] = $booking;
         }
-        echo "</table>";
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $matchedBookings = array();
+
+        foreach ($bookingsData as $booking) {
+            if ($booking[2] === $email && $booking[3] === $mobile) {
+                $matchedBookings[] = array(
+                    'movie' => $booking[4],
+                    'session' => $booking[5]
+                );
+            }
+        }
     }
     ?>
+
+        <div class="booking-reminder">
+            <h3>Retrieve Your Booking</h3>
+            <form action="currentbookings.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mobile">Mobile Phone Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+                
+                <button type="submit">Retrieve Booking</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> <a href="mailto:info@ourcinema.com">info@ourcinema.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+61-123-456-789">+61 123 456 789</a></p>
+            <p><strong>Address:</strong> 123 Cinema Street, MovieTown, Australia</p>
+        </div>
+        <div>&copy;<script>
+                document.write(new Date().getFullYear());
+            </script>Andrew Joyce, student number - S3876520. Last modified <?= date("Y F d  H:i", filemtime($_SERVER['SCRIPT_FILENAME'])); ?>.</div>
+        <div>Disclaimer: This website is not a real website and is being developed as part of a School of Science Web Programming course at RMIT University in Melbourne, Australia.</div>
+        <div><button id='toggleWireframeCSS' onclick='toggleWireframe()' disabled>Toggle Wireframe CSS</button></div>
+    </footer>
+
+        <div id="debug-module">
+            <h2>Debug Information</h2>
+            <h3>Request Data:</h3>
+            <pre><?php echo json_encode($_GET, JSON_PRETTY_PRINT); ?></pre>
+            <pre><?php echo json_encode($_POST, JSON_PRETTY_PRINT); ?></pre>
+            
+            <h3>Session Contents:</h3>
+            <pre><?php echo json_encode($_SESSION, JSON_PRETTY_PRINT); ?></pre>
+            
+            <h3>Page Code:</h3>
+            <pre><?php echo htmlspecialchars(file_get_contents(__FILE__)); ?></pre>
+        </div>
 </body>
 </html>
