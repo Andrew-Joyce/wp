@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bookingData["total_price"]
         ));
     
-        $file = fopen("bookings.txt", "a");
+        $file = fopen(__DIR__ . "/bookings.txt", "a");
         if ($file) {
             if (fwrite($file, $csvLine . PHP_EOL)) {
                 fclose($file);
@@ -144,6 +144,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
-    } 
-}
+    }    
 ?>
