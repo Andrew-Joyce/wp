@@ -64,22 +64,20 @@ if (file_exists($filePath)) {
                     <th>Actions</th>
                 </tr>";
 
-        $movieSeats = array();
-
         foreach ($bookings as $booking) {
             $movieDetails = getMovieDetails($booking['movie']);
             $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
             $seatNumbers = explode(",", $booking['seat_numbers']);
+            $seatCounts = array();
 
             foreach ($seatNumbers as $seat) {
-                if (!isset($movieSeats[$movieTitle][$seat])) {
-                    $movieSeats[$movieTitle][$seat] = array();
-                }
                 $seatType = convertSeatType($seat);
-                if (!isset($movieSeats[$movieTitle][$seat][$seatType])) {
-                    $movieSeats[$movieTitle][$seat][$seatType] = 0;
+
+                if (!isset($seatCounts[$seatType])) {
+                    $seatCounts[$seatType] = 0;
                 }
-                $movieSeats[$movieTitle][$seat][$seatType]++;
+
+                $seatCounts[$seatType]++;
             }
 
             echo "<tr>
@@ -87,10 +85,8 @@ if (file_exists($filePath)) {
                 <td>{$movieTitle}</td>
                 <td>";
 
-            foreach ($movieSeats[$movieTitle] as $seat => $seatTypes) {
-                foreach ($seatTypes as $seatType => $seatCount) {
-                    echo "{$seatType}: {$seatCount}<br>";
-                }
+            foreach ($seatCounts as $seatType => $count) {
+                echo "{$seatType}: {$count}<br>";
             }
 
             echo "</td>
