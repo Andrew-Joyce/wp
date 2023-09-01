@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $selectedSessionValue = explode('-', $selectedSession);
             $isDiscounted = end($selectedSessionValue) === 'dis';
             $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
-        
+            
             $bookingData = array(
                 'movie_code' => $movieCode,
                 'name' => $name,
@@ -125,13 +125,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'total_price' => array_sum($seatPricesData)
             );
         
-            $bookingDataJson = json_encode($bookingData, JSON_PRETTY_PRINT);
+            $seatsData = implode("\t", $bookingData["seats"]);
+            $seatPricesData = implode("\t", $bookingData["seat_prices"]);
+        
+            $csvData = array(
+                $bookingData["movie_code"],
+                $bookingData["name"],
+                $bookingData["mobile"],
+                $bookingData["email"],
+                $bookingData["session"],
+                $seatsData,
+                $seatPricesData,
+                $bookingData["total_price"]
+            );
         
             $filePath = '/home/sl0/S3876520/public_html/wp/a4/bookings.txt';
         
             $file = fopen($filePath, "a");
             if ($file) {
-                if (fwrite($file, $bookingDataJson . PHP_EOL) !== false) {
+                if (fputcsv($file, $csvData, "\t") !== false) {
                     fclose($file);
                     error_log("Data appended successfully.");
                 } else {
@@ -149,6 +161,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['errors'] = $errors;
             header("Location: booking.php?movie=$movieCode");
             exit();
-        }        
+        }
 }
 ?>
