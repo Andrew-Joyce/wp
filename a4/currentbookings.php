@@ -68,7 +68,7 @@ if (file_exists($filePath)) {
             $movieDetails = getMovieDetails($booking['movie']);
             $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
 
-            $seatCounts = $booking['seats'];
+            $seatCounts = array_map('intval', $booking['seats']);
 
             echo "<tr>
                 <td>{$booking['date']}</td>
