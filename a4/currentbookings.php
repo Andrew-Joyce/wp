@@ -50,7 +50,7 @@ if (file_exists($filePath)) {
     <a class="nav-link nav-section" href="#about-us">About Us</a>
   </nav>
 
-    <div class="container">
+  <div class="container">
         <h2>Your Current Bookings</h2>
         <?php
         if (empty($bookings)) {
@@ -60,54 +60,47 @@ if (file_exists($filePath)) {
                     <tr>
                         <th>Date</th>
                         <th>Movie</th>
-                        <th>Seat </th>
+                        <th>Seats</th>
                         <th>Actions</th>
                     </tr>";
+
+            $totalSeats = array(
+                "FCC" => 0,
+                "STA" => 0,
+                "STP" => 0,
+                "STC" => 0,
+                "FCA" => 0,
+                "FCP" => 0
+            );
 
             foreach ($bookings as $booking) {
                 $movieDetails = getMovieDetails($booking['movie']);
                 $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie'; 
-                    
-                    echo "<tr>
-                        <td>{$booking['date']}</td>
-                        <td>{$movieTitle}</td>
-                        <td>{$booking['seat_numbers']}</td>
-                        <td>
-                            <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
-                         </td>
-                    </tr>";
+                
+                $seatNumbers = explode(",", $booking['seat_numbers']);
+                foreach ($seatNumbers as $seat) {
+                    if (isset($totalSeats[$seat])) {
+                        $totalSeats[$seat]++;
+                    }
                 }
-        }
-             echo "</table>";
-                    
-        ?>
-                <footer>
-    <?php
-    $bookingsFile = "bookings.txt";
-    $bookingsData = array();
-
-    if (file_exists($bookingsFile)) {
-        $fileLines = file($bookingsFile, FILE_IGNORE_NEW_LINES);
-        foreach ($fileLines as $line) {
-            $booking = explode("\t", $line);
-            $bookingsData[] = $booking;
-        }
-    }
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $email = $_POST['email'];
-        $mobile = $_POST['mobile'];
-        $matchedBookings = array();
-
-        foreach ($bookingsData as $booking) {
-            if ($booking[2] === $email && $booking[3] === $mobile) {
-                $matchedBookings[] = array(
-                    'movie' => $booking[4],
-                    'session' => $booking[5]
-                );
+                
+                echo "<tr>
+                    <td>{$booking['date']}</td>
+                    <td>{$movieTitle}</td>
+                    <td>{$booking['seat_numbers']}</td>
+                    <td>
+                        <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
+                     </td>
+                </tr>";
             }
+
+            echo "</table>";
+
+
+            $totalBookedSeats = array_sum($totalSeats);
+            echo "<p>Total Seats Booked: {$totalBookedSeats}</p>";
         }
-    }
+        ?>
     ?>
 
         <div class="booking-reminder">
