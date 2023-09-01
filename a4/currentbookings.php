@@ -9,18 +9,16 @@ if (file_exists($filePath)) {
     $fileContents = file_get_contents($filePath);
     $lines = explode(PHP_EOL, $fileContents);
     
-foreach ($bookings as $booking) {
-    $movieDetails = getMovieDetails($booking['movie']);
-    $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
-
-    echo "<tr>
-            <td>{$booking['date']}</td>
-            <td>{$movieTitle}</td>
-            <td>{$booking['seat_numbers']}</td>
-            <td>
-                <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
-            </td>
-        </tr>";
+    foreach ($lines as $line) {
+        $bookingData = explode("\t", $line);
+        
+        if (count($bookingData) >= 6) {
+            $booking = [
+                'date' => date("Y-m-d H:i:s"),
+                'movie' => $bookingData[0], 
+                'seat_numbers' => $bookingData[5], 
+                'id' => uniqid()
+            ];
             
             $bookings[] = $booking;
         }
