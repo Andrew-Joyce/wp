@@ -14,6 +14,7 @@ $formattedSession = formatSession($bookingData["session"]);
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
