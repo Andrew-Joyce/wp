@@ -45,9 +45,9 @@ if (file_exists($filePath)) {
       </div>
   </header>
   <nav id="navbar">
-    <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
-    <a class="nav-link nav-section" href="#seats-prices">Seats & Prices</a>
-    <a class="nav-link nav-section" href="#about-us">About Us</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#now-showing">Now Showing</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#seats-&-prices">Seats & Prices</a>
+    <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#about-us">About Us</a>
   </nav>
 
   <div class="container">
