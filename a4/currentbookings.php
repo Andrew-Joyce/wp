@@ -25,6 +25,7 @@ foreach ($bookings as $booking) {
             $bookings[] = $booking;
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,18 +67,15 @@ foreach ($bookings as $booking) {
                     </tr>";
 
             foreach ($bookings as $booking) {
-                $movieDetails = getMovieDetails($booking['movie']);
-                $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
-                    
-                    echo "<tr>
+                echo "<tr>
                         <td>{$booking['date']}</td>
-                        <td>{$movieTitle}</td>
+                        <td>{$booking['movie']}</td>
                         <td>{$booking['seat_numbers']}</td>
                         <td>
                             <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
                         </td>
                     </tr>";
-                    }
+            }
 
             echo "</table>";
         }
