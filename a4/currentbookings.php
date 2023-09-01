@@ -9,14 +9,16 @@ if (file_exists($filePath)) {
     foreach ($lines as $line) {
         $bookingData = explode("\t", $line);
         
-        $booking = [
-            'date' => date("Y-m-d H:i:s"),
-            'movie' => $bookingData[0], 
-            'seat_numbers' => $bookingData[5], 
-            'id' => uniqid()
-        ];
-        
-        $bookings[] = $booking;
+        if (count($bookingData) >= 6) {
+            $booking = [
+                'date' => date("Y-m-d H:i:s"),
+                'movie' => $bookingData[0], 
+                'seat_numbers' => $bookingData[5], 
+                'id' => uniqid()
+            ];
+            
+            $bookings[] = $booking;
+        }
     }
 }
 ?>
