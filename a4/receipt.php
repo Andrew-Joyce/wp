@@ -13,15 +13,21 @@ $seatPricesData = isset($bookingData["seat_prices"]) && is_array($bookingData["s
 $formattedSession = formatSession($bookingData["session"]);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Receipt</title>
+    <title>receipt</title>
 </head>
+
 <body>
+    <header style="text-align: center;">
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+            <h1 style="display: inline;">Lunardo Cinema</h1>
+        </div>
+    </header>
  
         <main>
 
