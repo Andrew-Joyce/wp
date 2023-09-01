@@ -68,10 +68,19 @@ if (file_exists($filePath)) {
 
         foreach ($bookings as $booking) {
             $movieDetails = getMovieDetails($booking['movie']);
-            $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie'; 
-            
-            $seats = $booking['seats'];
-            $totalSeats = array_sum(array_map('intval', $seats));
+            $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
+            $seatNumbers = explode(",", $booking['seat_numbers']);
+
+            foreach ($seatNumbers as $seat) {
+                if (!isset($movieSeats[$movieTitle][$seat])) {
+                    $movieSeats[$movieTitle][$seat] = array();
+                }
+                $seatType = convertSeatType($seat);
+                if (!isset($movieSeats[$movieTitle][$seat][$seatType])) {
+                    $movieSeats[$movieTitle][$seat][$seatType] = 0;
+                }
+                $movieSeats[$movieTitle][$seat][$seatType]++;
+            }
 
             echo "<tr>
                 <td>{$booking['date']}</td>
