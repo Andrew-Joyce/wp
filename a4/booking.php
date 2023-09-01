@@ -31,7 +31,22 @@ if (count($matchedBookings) > 0) {
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lunardo Home Page</title>
+    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
+    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
+    <script src='../wireframe.js'></script>
+  <body>
+    <header style="text-align: center;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+          <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php">
+              <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+              <h1 style="display: inline;">Lunardo Cinema</h1>
+          </a>
+      </div>
+  </header>
     <nav id="navbar">
         <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#now-showing">Now Showing</a>
         <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php#seats-&-prices">Seats & Prices</a>
