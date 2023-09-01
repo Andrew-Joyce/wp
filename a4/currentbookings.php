@@ -68,7 +68,7 @@ if (file_exists($filePath)) {
             $movieDetails = getMovieDetails($booking['movie']);
             $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
 
-            $seatCounts = array_map('intval', $booking['seats']);
+            $seatCounts = $booking['seats'];
 
             echo "<tr>
                 <td>{$booking['date']}</td>
@@ -117,7 +117,6 @@ if (file_exists($filePath)) {
             }
         }
     }
-    
     ?>
 
         <div class="booking-reminder">
