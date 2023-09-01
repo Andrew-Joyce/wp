@@ -28,16 +28,27 @@ if (file_exists($filePath)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Current Bookings</title>
-</head>
-<body>
+    <title>Lunardo Home Page</title>
+    <link id='wireframecss' type="text/css" rel="stylesheet" href="../wireframe.css" disabled>
+    <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
+    <script src='../wireframe.js'></script>
+  <body>
     <header style="text-align: center;">
-    </header>
-    
+      <div style="display: flex; justify-content: center; align-items: center;">
+          <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php">
+              <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+              <h1 style="display: inline;">Lunardo Cinema</h1>
+          </a>
+      </div>
+  </header>
+  <nav id="navbar">
+    <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
+    <a class="nav-link nav-section" href="#seats-prices">Seats & Prices</a>
+    <a class="nav-link nav-section" href="#about-us">About Us</a>
+  </nav>
+
     <div class="container">
         <h2>Your Current Bookings</h2>
         <?php
