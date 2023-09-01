@@ -93,22 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['email'] = "Invalid email format";
     }
 
-    if (empty($errors)) {
-        $selectedSessionValue = explode('-', $selectedSession);
-        $isDiscounted = end($selectedSessionValue) === 'dis';
-        $seatPricesData = calculateSeatPrices($_POST['seats'], $isDiscounted);
-        
-        $bookingData = array(
-            'movie_code' => $movieCode,
-            'name' => $name,
-            'mobile' => $mobile,
-            'email' => $email,
-            'session' => $selectedSession,
-            'seats' => $_POST['seats'],
-            'seat_prices' => $seatPricesData,
-            'total_price' => array_sum($seatPricesData)
-        );
-
         if (empty($errors)) {
             $selectedSessionValue = explode('-', $selectedSession);
             $isDiscounted = end($selectedSessionValue) === 'dis';
