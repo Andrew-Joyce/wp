@@ -73,9 +73,13 @@ if (file_exists($filePath)) {
 
             foreach ($seatNumbers as $seat) {
                 if (!isset($movieSeats[$movieTitle][$seat])) {
-                    $movieSeats[$movieTitle][$seat] = 0;
+                    $movieSeats[$movieTitle][$seat] = array();
                 }
-                $movieSeats[$movieTitle][$seat]++;
+                $seatType = convertSeatType($seat);
+                if (!isset($movieSeats[$movieTitle][$seat][$seatType])) {
+                    $movieSeats[$movieTitle][$seat][$seatType] = 0;
+                }
+                $movieSeats[$movieTitle][$seat][$seatType]++;
             }
 
             echo "<tr>
@@ -83,8 +87,10 @@ if (file_exists($filePath)) {
                 <td>{$movieTitle}</td>
                 <td>";
 
-            foreach ($movieSeats[$movieTitle] as $seatType => $seatCount) {
-                echo convertSeatType($seatType) . ": " . $seatCount . "<br>";
+            foreach ($movieSeats[$movieTitle] as $seat => $seatTypes) {
+                foreach ($seatTypes as $seatType => $seatCount) {
+                    echo "{$seatType}: {$seatCount}<br>";
+                }
             }
 
             echo "</td>
@@ -98,7 +104,7 @@ if (file_exists($filePath)) {
     }
                     
         ?>
-                <footer>
+    <footer>
     <?php
     $bookingsFile = "bookings.txt";
     $bookingsData = array();
