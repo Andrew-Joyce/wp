@@ -10,11 +10,13 @@
     <link id='stylecss' type="text/css" rel="stylesheet" href="style.css?t=<?= filemtime("style.css"); ?>">
     <script src='../wireframe.js'></script>
   <body>
-  <header style="text-align: center;">
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
-        <h1 style="display: inline;">Lunardo Cinema</h1>
-    </div>
+    <header style="text-align: center;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+          <a href="https://titan.csit.rmit.edu.au/~s3876520/wp/a4/index.php">
+              <img src="../../media/Cinema.png" alt="Cinema" class="responsive-image" style="margin-right: 10px;">
+              <h1 style="display: inline;">Lunardo Cinema</h1>
+          </a>
+      </div>
   </header>
   <nav id="navbar">
     <a class="nav-link nav-section" href="#now-showing">Now Showing</a>
