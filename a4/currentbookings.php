@@ -64,26 +64,43 @@ if (file_exists($filePath)) {
                     <th>Actions</th>
                 </tr>";
 
-    foreach ($bookings as $booking) {
-        $movieDetails = getMovieDetails($booking['movie']);
-        $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie'; 
-                
-        $seats = $booking['seats'];
-        $totalSeats = array_sum(array_map('intval', $seats));
-                
-        echo "<tr>
-                <td>{$booking['date']}</td>
-                <td>{$movieTitle}</td>
-                <td>{$totalSeats}</td>
-                <td>
-                    <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
-                </td>
-            </tr>";
-        }
+        foreach ($bookings as $booking) {
+            $movieDetails = getMovieDetails($booking['movie']);
+            $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
+
+            if (isset($booking['seats']) && is_array($booking['seats'])) {
+                $seatCounts = array_map('intval', $booking['seats']);
+
+                echo "<tr>
+                    <td>{$booking['date']}</td>
+                    <td>{$movieTitle}</td>
+                    <td>";
+
+                foreach ($seatCounts as $seatType => $count) {
+                    echo "{$seatType}: {$count}<br>";
+                }
+
+                echo "</td>
+                    <td>
+                        <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
+                     </td>
+                </tr>";
+            } else {
+                echo "<tr>
+                    <td>{$booking['date']}</td>
+                    <td>{$movieTitle}</td>
+                    <td>Seat information unavailable</td>
+                    <td>
+                        <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
+                     </td>
+                </tr>";
+            }
         }
 
         echo "</table>";
+    }
     ?>
+</div>
 
 
         <div class="booking-reminder">
