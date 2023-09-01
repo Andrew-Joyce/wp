@@ -50,35 +50,52 @@ if (file_exists($filePath)) {
     <a class="nav-link nav-section" href="#about-us">About Us</a>
   </nav>
 
-    <div class="container">
-        <h2>Your Current Bookings</h2>
-        <?php
-        if (empty($bookings)) {
-            echo "<p>No bookings were found.</p>";
-        } else {
-            echo "<table>
-                    <tr>
-                        <th>Date</th>
-                        <th>Movie</th>
-                        <th>Seat </th>
-                        <th>Actions</th>
-                    </tr>";
+  <div class="container">
+    <h2>Your Current Bookings</h2>
+    <?php
+    if (empty($bookings)) {
+        echo "<p>No bookings were found.</p>";
+    } else {
+        echo "<table>
+                <tr>
+                    <th>Date</th>
+                    <th>Movie</th>
+                    <th>Seats</th>
+                    <th>Actions</th>
+                </tr>";
 
-            foreach ($bookings as $booking) {
-                $movieDetails = getMovieDetails($booking['movie']);
-                $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie'; 
-                    
-                    echo "<tr>
-                        <td>{$booking['date']}</td>
-                        <td>{$movieTitle}</td>
-                        <td>{$booking['seat_numbers']}</td>
-                        <td>
-                            <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
-                         </td>
-                    </tr>";
+        $movieSeats = array();
+
+        foreach ($bookings as $booking) {
+            $movieDetails = getMovieDetails($booking['movie']);
+            $movieTitle = isset($movieDetails['title']) ? $movieDetails['title'] : 'Unknown Movie';
+            $seatNumbers = explode(",", $booking['seat_numbers']);
+
+            foreach ($seatNumbers as $seat) {
+                if (!isset($movieSeats[$movieTitle][$seat])) {
+                    $movieSeats[$movieTitle][$seat] = 0;
                 }
+                $movieSeats[$movieTitle][$seat]++;
+            }
+
+            echo "<tr>
+                <td>{$booking['date']}</td>
+                <td>{$movieTitle}</td>
+                <td>";
+
+            foreach ($movieSeats[$movieTitle] as $seatType => $seatCount) {
+                echo convertSeatType($seatType) . ": " . $seatCount . "<br>";
+            }
+
+            echo "</td>
+                <td>
+                    <a href=\"receipt.php?booking_id={$booking['id']}\">View Receipt</a>
+                 </td>
+            </tr>";
         }
-             echo "</table>";
+
+        echo "</table>";
+    }
                     
         ?>
                 <footer>
