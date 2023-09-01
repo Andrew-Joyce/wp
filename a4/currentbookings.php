@@ -117,6 +117,7 @@ if (file_exists($filePath)) {
             }
         }
     }
+    
     ?>
 
         <div class="booking-reminder">
