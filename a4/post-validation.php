@@ -113,6 +113,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $seatsData = implode("\t", $bookingData["seats"]);
         $seatPricesData = implode("\t", $bookingData["seat_prices"]);
     
+        $filePath = __DIR__ . "/bookings.txt";
+        echo "File Path: " . $filePath . "<br>";
+    
+        $file = fopen($filePath, "a");
+        if ($file) {
+            if (fwrite($file, $csvLine . PHP_EOL)) {
+                fclose($file);
+                error_log("Data appended successfully.");
+            } else {
+                error_log("Error appending data to file.");
+            }
+        } else {
+            error_log("Error opening file.");
+        }
+    
         $csvLine = implode("\t", array(
             $bookingData["movie_code"],
             $bookingData["name"],
@@ -123,6 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $seatPricesData,
             $bookingData["total_price"]
         ));
+        echo "CSV Line: " . $csvLine . "<br>";
     
         $file = fopen(__DIR__ . "/bookings.txt", "a");
         if ($file) {
@@ -144,6 +160,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['errors'] = $errors;
         header("Location: booking.php?movie=$movieCode");
         exit();
-    }    
-}
+    }
+}    
 ?>
